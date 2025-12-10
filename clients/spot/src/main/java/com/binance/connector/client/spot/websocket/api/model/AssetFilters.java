@@ -87,7 +87,7 @@ public class AssetFilters extends AbstractOpenApiSchema {
                                             + " payload is empty.");
                             } else {
                                 // look up the discriminator value in the field `filterType`
-                                switch (jsonObject.get("filterType").getAsString()) {
+                                switch (Helper.getAsString(jsonObject.get("filterType"))) {
                                     case "MAX_ASSET":
                                         deserialized =
                                                 adapterMaxAssetFilter.fromJsonTree(jsonObject);
@@ -107,9 +107,8 @@ public class AssetFilters extends AbstractOpenApiSchema {
                                                             + " for AssetFilters. Possible values:"
                                                             + " MAX_ASSET MaxAssetFilter. Falling"
                                                             + " back to String.",
-                                                        jsonObject
-                                                                .get("filterType")
-                                                                .getAsString()));
+                                                        Helper.getAsString(jsonObject
+                                                                .get("filterType"))));
                                 }
                             }
 

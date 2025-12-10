@@ -248,7 +248,7 @@ public class SymbolFilters extends AbstractOpenApiSchema {
                                             + " payload is empty.");
                             } else {
                                 // look up the discriminator value in the field `filterType`
-                                switch (jsonObject.get("filterType").getAsString()) {
+                                switch (Helper.getAsString(jsonObject.get("filterType"))) {
                                     case "ICEBERG_PARTS":
                                         deserialized =
                                                 adapterIcebergPartsFilter.fromJsonTree(jsonObject);
@@ -446,9 +446,9 @@ public class SymbolFilters extends AbstractOpenApiSchema {
                                                             + " TPlusSellFilter"
                                                             + " TrailingDeltaFilter. Falling back"
                                                             + " to String.",
-                                                        jsonObject
+                                                        Helper.getAsString(jsonObject
                                                                 .get("filterType")
-                                                                .getAsString()));
+                                                                )));
                                 }
                             }
 

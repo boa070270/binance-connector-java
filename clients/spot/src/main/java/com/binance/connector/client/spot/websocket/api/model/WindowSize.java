@@ -239,7 +239,7 @@ public enum WindowSize {
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = jsonElement.getAsString();
+        String value = Helper.getAsString(jsonElement);
         WindowSize.fromValue(value);
     }
 }

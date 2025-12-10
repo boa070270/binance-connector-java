@@ -77,7 +77,7 @@ public enum PendingType {
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = jsonElement.getAsString();
+        String value = Helper.getAsString(jsonElement);
         PendingType.fromValue(value);
     }
 }

@@ -138,7 +138,7 @@ public class ExchangeFilters extends AbstractOpenApiSchema {
                                             + " payload is empty.");
                             } else {
                                 // look up the discriminator value in the field `filterType`
-                                switch (jsonObject.get("filterType").getAsString()) {
+                                switch (Helper.getAsString(jsonObject.get("filterType"))) {
                                     case "EXCHANGE_MAX_NUM_ALGO_ORDERS":
                                         deserialized =
                                                 adapterExchangeMaxNumAlgoOrdersFilter.fromJsonTree(
@@ -205,9 +205,9 @@ public class ExchangeFilters extends AbstractOpenApiSchema {
                                                             + " ExchangeMaxNumOrderListsFilter"
                                                             + " ExchangeMaxNumOrdersFilter. Falling"
                                                             + " back to String.",
-                                                        jsonObject
+                                                        Helper.getAsString(jsonObject
                                                                 .get("filterType")
-                                                                .getAsString()));
+                                                                )));
                                 }
                             }
 

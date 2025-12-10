@@ -65,7 +65,7 @@ public enum AbovePegOffsetType {
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = jsonElement.getAsString();
+        String value = Helper.getAsString(jsonElement);
         AbovePegOffsetType.fromValue(value);
     }
 }

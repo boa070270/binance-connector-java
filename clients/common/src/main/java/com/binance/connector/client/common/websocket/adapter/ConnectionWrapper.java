@@ -448,7 +448,7 @@ public class ConnectionWrapper implements WebSocketListener, ConnectionInterface
             JsonElement root = JsonParser.parseString(message);
             JsonObject obj = root.getAsJsonObject();
             JsonElement idElem = obj.get("id");
-            String id = idElem == null ? null : idElem.getAsString();
+            String id = idElem == null ? null : Helper.getAsString(idElem);
             RequestWrapperDTO requestWrapperDTO = null;
             if (id != null) {
                 requestWrapperDTO = pendingRequest.get(id);

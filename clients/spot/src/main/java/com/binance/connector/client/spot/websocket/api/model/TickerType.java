@@ -67,7 +67,7 @@ public enum TickerType {
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = jsonElement.getAsString();
+        String value = Helper.getAsString(jsonElement);
         TickerType.fromValue(value);
     }
 }

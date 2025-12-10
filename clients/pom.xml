@@ -19,6 +19,7 @@
         <module>algo</module>
         <module>c2c</module>
         <module>convert</module>
+        <module>common-api</module>
         <module>common</module>
         <module>copy-trading</module>
         <module>crypto-loan</module>
@@ -37,6 +38,7 @@
         <module>rebate</module>
         <module>simple-earn</module>
         <module>spot</module>
+        <module>spot-quarkus</module>
         <module>staking</module>
         <module>sub-account</module>
         <module>vip-loan</module>
@@ -60,7 +62,7 @@
 
     <build>
         <plugins>
-            <plugin>
+            <!--plugin>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>3.2.4</version>
                 <executions>
@@ -75,8 +77,8 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
+            </plugin-->
+            <!--plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
                 <version>0.8.0</version>
@@ -84,7 +86,7 @@
                 <configuration>
                     <publishingServerId>central</publishingServerId>
                 </configuration>
-            </plugin>
+            </plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -258,7 +260,7 @@
                     </java>
                 </configuration>
             </plugin>
-            <plugin>
+            <!-- plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.6.0</version>
@@ -286,36 +288,20 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
         </plugins>
     </build>
 
     <dependencies>
-        <!-- @Nullable annotation -->
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>${okhttp-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>logging-interceptor</artifactId>
-            <version>${okhttp-version}</version>
-        </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>${gson-version}</version>
         </dependency>
         <dependency>
-            <groupId>io.gsonfire</groupId>
-            <artifactId>gson-fire</artifactId>
-            <version>${gson-fire-version}</version>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.19.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -330,11 +316,6 @@
             <scope>provided</scope>
         </dependency>
         <!-- Bean Validation Impl. used to perform BeanValidation -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>7.0.5.Final</version>
-        </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
@@ -375,21 +356,6 @@
             <artifactId>jsonassert</artifactId>
             <version>2.0-rc1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.19.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcpkix-jdk18on</artifactId>
-            <version>1.80</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-jetty-client</artifactId>
-            <version>11.0.25</version>
         </dependency>
     </dependencies>
     <properties>

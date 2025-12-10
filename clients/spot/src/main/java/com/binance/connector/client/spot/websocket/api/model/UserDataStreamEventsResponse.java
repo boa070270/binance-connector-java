@@ -154,7 +154,7 @@ public class UserDataStreamEventsResponse extends AbstractOpenApiSchema {
                                             + " in the payload or the payload is empty.");
                             } else {
                                 // look up the discriminator value in the field `e`
-                                switch (jsonObject.get("e").getAsString()) {
+                                switch (Helper.getAsString(jsonObject.get("e"))) {
                                     case "balanceUpdate":
                                         deserialized =
                                                 adapterBalanceUpdate.fromJsonTree(jsonObject);
@@ -212,7 +212,7 @@ public class UserDataStreamEventsResponse extends AbstractOpenApiSchema {
                                                             + " listStatus listenKeyExpired"
                                                             + " outboundAccountPosition. Falling"
                                                             + " back to String.",
-                                                        jsonObject.get("e").getAsString()));
+                                                        Helper.getAsString(jsonObject.get("e"))));
                                 }
                             }
 
