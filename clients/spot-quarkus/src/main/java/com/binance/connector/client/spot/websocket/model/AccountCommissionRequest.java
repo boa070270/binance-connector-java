@@ -26,6 +26,7 @@ public class AccountCommissionRequest extends BaseDTO {
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
+
     public String toUrlQueryString() {
         StringBuilder sb = new StringBuilder();
         Map<String, String> valMap = new TreeMap<>();

@@ -34,153 +34,48 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-/** AccountCommissionResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class AccountCommissionResponseResult extends BaseDTO {
-    public static final String SERIALIZED_NAME_SYMBOL = "symbol";
-
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
     private String symbol;
-
-    public static final String SERIALIZED_NAME_STANDARD_COMMISSION = "standardCommission";
-
-    @SerializedName(SERIALIZED_NAME_STANDARD_COMMISSION)
-    @jakarta.annotation.Nullable
     private AccountCommissionResponseResultStandardCommission standardCommission;
-
-    public static final String SERIALIZED_NAME_SPECIAL_COMMISSION = "specialCommission";
-
-    @SerializedName(SERIALIZED_NAME_SPECIAL_COMMISSION)
-    @jakarta.annotation.Nullable
     private AccountCommissionResponseResultSpecialCommission specialCommission;
-
-    public static final String SERIALIZED_NAME_TAX_COMMISSION = "taxCommission";
-
-    @SerializedName(SERIALIZED_NAME_TAX_COMMISSION)
-    @jakarta.annotation.Nullable
     private AccountCommissionResponseResultTaxCommission taxCommission;
-
-    public static final String SERIALIZED_NAME_DISCOUNT = "discount";
-
-    @SerializedName(SERIALIZED_NAME_DISCOUNT)
-    @jakarta.annotation.Nullable
     private AccountCommissionResponseResultDiscount discount;
 
-    public AccountCommissionResponseResult() {}
-
-    public AccountCommissionResponseResult symbol(@jakarta.annotation.Nullable String symbol) {
-        this.symbol = symbol;
-        return this;
-    }
-
-    /**
-     * Get symbol
-     *
-     * @return symbol
-     */
-    @jakarta.annotation.Nullable
     public String getSymbol() {
         return symbol;
     }
-
     public void setSymbol(@jakarta.annotation.Nullable String symbol) {
         this.symbol = symbol;
     }
 
-    public AccountCommissionResponseResult standardCommission(
-            @jakarta.annotation.Nullable
-                    AccountCommissionResponseResultStandardCommission standardCommission) {
-        this.standardCommission = standardCommission;
-        return this;
-    }
-
-    /**
-     * Get standardCommission
-     *
-     * @return standardCommission
-     */
-    @jakarta.annotation.Nullable
-    @Valid
     public AccountCommissionResponseResultStandardCommission getStandardCommission() {
         return standardCommission;
     }
-
     public void setStandardCommission(
-            @jakarta.annotation.Nullable
                     AccountCommissionResponseResultStandardCommission standardCommission) {
         this.standardCommission = standardCommission;
     }
 
-    public AccountCommissionResponseResult specialCommission(
-            @jakarta.annotation.Nullable
-                    AccountCommissionResponseResultSpecialCommission specialCommission) {
-        this.specialCommission = specialCommission;
-        return this;
-    }
-
-    /**
-     * Get specialCommission
-     *
-     * @return specialCommission
-     */
-    @jakarta.annotation.Nullable
-    @Valid
     public AccountCommissionResponseResultSpecialCommission getSpecialCommission() {
         return specialCommission;
     }
-
     public void setSpecialCommission(
-            @jakarta.annotation.Nullable
                     AccountCommissionResponseResultSpecialCommission specialCommission) {
         this.specialCommission = specialCommission;
     }
 
-    public AccountCommissionResponseResult taxCommission(
-            @jakarta.annotation.Nullable
-                    AccountCommissionResponseResultTaxCommission taxCommission) {
-        this.taxCommission = taxCommission;
-        return this;
-    }
-
-    /**
-     * Get taxCommission
-     *
-     * @return taxCommission
-     */
-    @jakarta.annotation.Nullable
-    @Valid
     public AccountCommissionResponseResultTaxCommission getTaxCommission() {
         return taxCommission;
     }
-
     public void setTaxCommission(
-            @jakarta.annotation.Nullable
                     AccountCommissionResponseResultTaxCommission taxCommission) {
         this.taxCommission = taxCommission;
     }
 
-    public AccountCommissionResponseResult discount(
-            @jakarta.annotation.Nullable AccountCommissionResponseResultDiscount discount) {
-        this.discount = discount;
-        return this;
-    }
-
-    /**
-     * Get discount
-     *
-     * @return discount
-     */
-    @jakarta.annotation.Nullable
-    @Valid
     public AccountCommissionResponseResultDiscount getDiscount() {
         return discount;
     }
-
-    public void setDiscount(
-            @jakarta.annotation.Nullable AccountCommissionResponseResultDiscount discount) {
+    public void setDiscount(AccountCommissionResponseResultDiscount discount) {
         this.discount = discount;
     }
 
@@ -262,34 +157,6 @@ public class AccountCommissionResponseResult extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object symbolValue = getSymbol();
-        if (symbolValue != null) {
-            valMap.put("symbol", symbolValue);
-        }
-        Object standardCommissionValue = getStandardCommission();
-        if (standardCommissionValue != null) {
-            valMap.put("standardCommission", standardCommissionValue);
-        }
-        Object specialCommissionValue = getSpecialCommission();
-        if (specialCommissionValue != null) {
-            valMap.put("specialCommission", specialCommissionValue);
-        }
-        Object taxCommissionValue = getTaxCommission();
-        if (taxCommissionValue != null) {
-            valMap.put("taxCommission", taxCommissionValue);
-        }
-        Object discountValue = getDiscount();
-        if (discountValue != null) {
-            valMap.put("discount", discountValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
@@ -305,135 +172,4 @@ public class AccountCommissionResponseResult extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("standardCommission");
-        openapiFields.add("specialCommission");
-        openapiFields.add("taxCommission");
-        openapiFields.add("discount");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     AccountCommissionResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!AccountCommissionResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in AccountCommissionResponseResult is not"
-                                        + " found in the empty JSON string",
-                                AccountCommissionResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!AccountCommissionResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `AccountCommissionResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the optional field `standardCommission`
-        if (jsonObj.get("standardCommission") != null
-                && !jsonObj.get("standardCommission").isJsonNull()) {
-            AccountCommissionResponseResultStandardCommission.validateJsonElement(
-                    jsonObj.get("standardCommission"));
-        }
-        // validate the optional field `specialCommission`
-        if (jsonObj.get("specialCommission") != null
-                && !jsonObj.get("specialCommission").isJsonNull()) {
-            AccountCommissionResponseResultSpecialCommission.validateJsonElement(
-                    jsonObj.get("specialCommission"));
-        }
-        // validate the optional field `taxCommission`
-        if (jsonObj.get("taxCommission") != null && !jsonObj.get("taxCommission").isJsonNull()) {
-            AccountCommissionResponseResultTaxCommission.validateJsonElement(
-                    jsonObj.get("taxCommission"));
-        }
-        // validate the optional field `discount`
-        if (jsonObj.get("discount") != null && !jsonObj.get("discount").isJsonNull()) {
-            AccountCommissionResponseResultDiscount.validateJsonElement(jsonObj.get("discount"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!AccountCommissionResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'AccountCommissionResponseResult' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<AccountCommissionResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(AccountCommissionResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<AccountCommissionResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, AccountCommissionResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public AccountCommissionResponseResult read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of AccountCommissionResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of AccountCommissionResponseResult
-     * @throws IOException if the JSON string is invalid with respect to
-     *     AccountCommissionResponseResult
-     */
-    public static AccountCommissionResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, AccountCommissionResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of AccountCommissionResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }
