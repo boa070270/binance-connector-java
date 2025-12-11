@@ -3,7 +3,7 @@ package com.binance.connector.client.common.websocket.dtos;
 import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 
-public class RequestWrapperDTO<T extends BaseRequestDTO, U> {
+public class RequestWrapperDTO<T, U> {
     protected String id;
     protected T params;
     protected String method;
@@ -49,7 +49,7 @@ public class RequestWrapperDTO<T extends BaseRequestDTO, U> {
         return responseCallback;
     }
 
-    public static final class Builder<T extends BaseRequestDTO, U> {
+    public static final class Builder<T, U> {
         private String id;
         private T params;
         private String method;
