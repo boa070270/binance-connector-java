@@ -35,6 +35,7 @@
         <module>rebate</module>
         <module>simple-earn</module>
         <module>spot</module>
+        <module>spot-quarkus</module>
         <module>staking</module>
         <module>sub-account</module>
         <module>vip-loan</module>
