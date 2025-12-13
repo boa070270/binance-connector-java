@@ -12,17 +12,8 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
 import java.io.IOException;
 
-
-/** Gets or Sets windowSize */
-@JsonAdapter(WindowSize.Adapter.class)
 public enum WindowSize {
     WINDOW_SIZE_1m("1m"),
 
@@ -224,22 +215,4 @@ public enum WindowSize {
         throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<WindowSize> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final WindowSize enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public WindowSize read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return WindowSize.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        WindowSize.fromValue(value);
-    }
 }

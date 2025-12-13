@@ -12,62 +12,8 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
 import java.io.IOException;
 
-
-/** Gets or Sets workingSide */
-@JsonAdapter(WorkingSide.Adapter.class)
 public enum WorkingSide {
-    BUY("BUY"),
-
-    SELL("SELL");
-
-    private String value;
-
-    WorkingSide(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static WorkingSide fromValue(String value) {
-        for (WorkingSide b : WorkingSide.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<WorkingSide> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final WorkingSide enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public WorkingSide read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return WorkingSide.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        WorkingSide.fromValue(value);
-    }
+    BUY,SELL
 }

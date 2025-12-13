@@ -13,59 +13,48 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderAmendmentsRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderAmendmentsRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_ID)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_ORDER_ID)
+
     private Long orderId;
 
     public static final String SERIALIZED_NAME_FROM_EXECUTION_ID = "fromExecutionId";
 
-    @SerializedName(SERIALIZED_NAME_FROM_EXECUTION_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FROM_EXECUTION_ID)
+    
     private Long fromExecutionId;
 
     public static final String SERIALIZED_NAME_LIMIT = "limit";
 
-    @SerializedName(SERIALIZED_NAME_LIMIT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIMIT)
+    
     private Integer limit;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
-    @SerializedName(SERIALIZED_NAME_RECV_WINDOW)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
+    
     private Double recvWindow;
 
     public OrderAmendmentsRequest() {}
 
-    public OrderAmendmentsRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public OrderAmendmentsRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -75,17 +64,17 @@ public class OrderAmendmentsRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public OrderAmendmentsRequest orderId(@jakarta.annotation.Nonnull Long orderId) {
+    public OrderAmendmentsRequest orderId( Long orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -95,18 +84,18 @@ public class OrderAmendmentsRequest extends BaseDTO {
      *
      * @return orderId
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(@jakarta.annotation.Nonnull Long orderId) {
+    public void setOrderId( Long orderId) {
         this.orderId = orderId;
     }
 
     public OrderAmendmentsRequest fromExecutionId(
-            @jakarta.annotation.Nullable Long fromExecutionId) {
+             Long fromExecutionId) {
         this.fromExecutionId = fromExecutionId;
         return this;
     }
@@ -116,16 +105,16 @@ public class OrderAmendmentsRequest extends BaseDTO {
      *
      * @return fromExecutionId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getFromExecutionId() {
         return fromExecutionId;
     }
 
-    public void setFromExecutionId(@jakarta.annotation.Nullable Long fromExecutionId) {
+    public void setFromExecutionId( Long fromExecutionId) {
         this.fromExecutionId = fromExecutionId;
     }
 
-    public OrderAmendmentsRequest limit(@jakarta.annotation.Nullable Integer limit) {
+    public OrderAmendmentsRequest limit( Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -135,16 +124,16 @@ public class OrderAmendmentsRequest extends BaseDTO {
      *
      * @return limit
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(@jakarta.annotation.Nullable Integer limit) {
+    public void setLimit( Integer limit) {
         this.limit = limit;
     }
 
-    public OrderAmendmentsRequest recvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public OrderAmendmentsRequest recvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -154,13 +143,13 @@ public class OrderAmendmentsRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+
     public Double getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public void setRecvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -279,120 +268,4 @@ public class OrderAmendmentsRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("orderId");
-        openapiFields.add("fromExecutionId");
-        openapiFields.add("limit");
-        openapiFields.add("recvWindow");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("orderId");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to OrderAmendmentsRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderAmendmentsRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderAmendmentsRequest is not found in"
-                                        + " the empty JSON string",
-                                OrderAmendmentsRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderAmendmentsRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderAmendmentsRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : OrderAmendmentsRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderAmendmentsRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderAmendmentsRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderAmendmentsRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(OrderAmendmentsRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderAmendmentsRequest>() {
-                        @Override
-                        public void write(JsonWriter out, OrderAmendmentsRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderAmendmentsRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderAmendmentsRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderAmendmentsRequest
-     * @throws IOException if the JSON string is invalid with respect to OrderAmendmentsRequest
-     */
-    public static OrderAmendmentsRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderAmendmentsRequest.class);
-    }
-
-    /**
-     * Convert an instance of OrderAmendmentsRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

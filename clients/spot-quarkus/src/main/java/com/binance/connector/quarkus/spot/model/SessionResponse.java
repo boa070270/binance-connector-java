@@ -12,14 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.JSON;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -29,35 +22,31 @@ import java.text.DecimalFormatSymbols;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/** SessionLogonResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.11.0")
 public class SessionResponse extends BaseDTO {
     private static final int DIFF_TILL_POSITION_INDEX = 1;
     private static final int MAX_DECIMAL_DIGITS = 30;
     private static DecimalFormat df;
     public static final String SERIALIZED_NAME_ID = "id";
 
-    @SerializedName(SERIALIZED_NAME_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ID)
+    
     private String id;
 
     public static final String SERIALIZED_NAME_STATUS = "status";
 
-    @SerializedName(SERIALIZED_NAME_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STATUS)
+    
     private Integer status;
 
     public static final String SERIALIZED_NAME_RESULT = "result";
 
-    @SerializedName(SERIALIZED_NAME_RESULT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RESULT)
+    
     private Object result;
 
     public SessionResponse() {}
 
-    public SessionResponse id(@jakarta.annotation.Nullable String id) {
+    public SessionResponse id( String id) {
         this.id = id;
         return this;
     }
@@ -67,16 +56,16 @@ public class SessionResponse extends BaseDTO {
      *
      * @return id
      */
-    @jakarta.annotation.Nullable
+    
     public String getId() {
         return id;
     }
 
-    public void setId(@jakarta.annotation.Nullable String id) {
+    public void setId( String id) {
         this.id = id;
     }
 
-    public SessionResponse status(@jakarta.annotation.Nullable Integer status) {
+    public SessionResponse status( Integer status) {
         this.status = status;
         return this;
     }
@@ -86,17 +75,17 @@ public class SessionResponse extends BaseDTO {
      *
      * @return status
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(@jakarta.annotation.Nullable Integer status) {
+    public void setStatus( Integer status) {
         this.status = status;
     }
 
     public SessionResponse result(
-            @jakarta.annotation.Nullable Object result) {
+             Object result) {
         this.result = result;
         return this;
     }
@@ -106,13 +95,13 @@ public class SessionResponse extends BaseDTO {
      *
      * @return result
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Object getResult() {
         return result;
     }
 
-    public void setResult(@jakarta.annotation.Nullable Object result) {
+    public void setResult( Object result) {
         this.result = result;
     }
 
@@ -213,118 +202,4 @@ public class SessionResponse extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    private static final HashSet<String> openapiFields;
-    private static final HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("id");
-        openapiFields.add("status");
-        openapiFields.add("result");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to SessionLogonResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!SessionResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in SessionLogonResponse is not found in"
-                                        + " the empty JSON string",
-                                SessionResponse.openapiRequiredFields));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!SessionResponse.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `SessionLogonResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
-                && !jsonObj.get("id").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `id` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("id").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!SessionResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'SessionLogonResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SessionResponse> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(SessionResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<SessionResponse>() {
-                        @Override
-                        public void write(JsonWriter out, SessionResponse value)
-                                throws IOException {
-                            JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public SessionResponse read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of SessionLogonResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of SessionLogonResponse
-     * @throws IOException if the JSON string is invalid with respect to SessionLogonResponse
-     */
-    public static SessionResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, SessionResponse.class);
-    }
-
-    /**
-     * Convert an instance of SessionLogonResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
-
-    private static DecimalFormat getFormatter() {
-        if (null == df) {
-            // Overrides the default Locale
-            DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.ENGLISH);
-            df = new DecimalFormat("#,##0.###", symbols);
-            df.setMaximumFractionDigits(MAX_DECIMAL_DIGITS);
-            df.setGroupingUsed(false);
-        }
-        return df;
-    }
 }

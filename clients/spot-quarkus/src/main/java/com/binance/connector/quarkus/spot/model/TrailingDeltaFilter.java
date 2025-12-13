@@ -12,57 +12,47 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TrailingDeltaFilter */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TrailingDeltaFilter extends BaseDTO {
     public static final String SERIALIZED_NAME_FILTER_TYPE = "filterType";
 
-    @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FILTER_TYPE)
+    
     private String filterType;
 
     public static final String SERIALIZED_NAME_MIN_TRAILING_ABOVE_DELTA = "minTrailingAboveDelta";
 
-    @SerializedName(SERIALIZED_NAME_MIN_TRAILING_ABOVE_DELTA)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MIN_TRAILING_ABOVE_DELTA)
+    
     private Long minTrailingAboveDelta;
 
     public static final String SERIALIZED_NAME_MAX_TRAILING_ABOVE_DELTA = "maxTrailingAboveDelta";
 
-    @SerializedName(SERIALIZED_NAME_MAX_TRAILING_ABOVE_DELTA)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAX_TRAILING_ABOVE_DELTA)
+    
     private Long maxTrailingAboveDelta;
 
     public static final String SERIALIZED_NAME_MIN_TRAILING_BELOW_DELTA = "minTrailingBelowDelta";
 
-    @SerializedName(SERIALIZED_NAME_MIN_TRAILING_BELOW_DELTA)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MIN_TRAILING_BELOW_DELTA)
+    
     private Long minTrailingBelowDelta;
 
     public static final String SERIALIZED_NAME_MAX_TRAILING_BELOW_DELTA = "maxTrailingBelowDelta";
 
-    @SerializedName(SERIALIZED_NAME_MAX_TRAILING_BELOW_DELTA)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAX_TRAILING_BELOW_DELTA)
+    
     private Long maxTrailingBelowDelta;
 
     public TrailingDeltaFilter() {}
 
-    public TrailingDeltaFilter filterType(@jakarta.annotation.Nullable String filterType) {
+    public TrailingDeltaFilter filterType( String filterType) {
         this.filterType = filterType;
         return this;
     }
@@ -72,17 +62,17 @@ public class TrailingDeltaFilter extends BaseDTO {
      *
      * @return filterType
      */
-    @jakarta.annotation.Nullable
+    
     public String getFilterType() {
         return filterType;
     }
 
-    public void setFilterType(@jakarta.annotation.Nullable String filterType) {
+    public void setFilterType( String filterType) {
         this.filterType = filterType;
     }
 
     public TrailingDeltaFilter minTrailingAboveDelta(
-            @jakarta.annotation.Nullable Long minTrailingAboveDelta) {
+             Long minTrailingAboveDelta) {
         this.minTrailingAboveDelta = minTrailingAboveDelta;
         return this;
     }
@@ -92,17 +82,17 @@ public class TrailingDeltaFilter extends BaseDTO {
      *
      * @return minTrailingAboveDelta
      */
-    @jakarta.annotation.Nullable
+    
     public Long getMinTrailingAboveDelta() {
         return minTrailingAboveDelta;
     }
 
-    public void setMinTrailingAboveDelta(@jakarta.annotation.Nullable Long minTrailingAboveDelta) {
+    public void setMinTrailingAboveDelta( Long minTrailingAboveDelta) {
         this.minTrailingAboveDelta = minTrailingAboveDelta;
     }
 
     public TrailingDeltaFilter maxTrailingAboveDelta(
-            @jakarta.annotation.Nullable Long maxTrailingAboveDelta) {
+             Long maxTrailingAboveDelta) {
         this.maxTrailingAboveDelta = maxTrailingAboveDelta;
         return this;
     }
@@ -112,17 +102,17 @@ public class TrailingDeltaFilter extends BaseDTO {
      *
      * @return maxTrailingAboveDelta
      */
-    @jakarta.annotation.Nullable
+    
     public Long getMaxTrailingAboveDelta() {
         return maxTrailingAboveDelta;
     }
 
-    public void setMaxTrailingAboveDelta(@jakarta.annotation.Nullable Long maxTrailingAboveDelta) {
+    public void setMaxTrailingAboveDelta( Long maxTrailingAboveDelta) {
         this.maxTrailingAboveDelta = maxTrailingAboveDelta;
     }
 
     public TrailingDeltaFilter minTrailingBelowDelta(
-            @jakarta.annotation.Nullable Long minTrailingBelowDelta) {
+             Long minTrailingBelowDelta) {
         this.minTrailingBelowDelta = minTrailingBelowDelta;
         return this;
     }
@@ -132,17 +122,17 @@ public class TrailingDeltaFilter extends BaseDTO {
      *
      * @return minTrailingBelowDelta
      */
-    @jakarta.annotation.Nullable
+    
     public Long getMinTrailingBelowDelta() {
         return minTrailingBelowDelta;
     }
 
-    public void setMinTrailingBelowDelta(@jakarta.annotation.Nullable Long minTrailingBelowDelta) {
+    public void setMinTrailingBelowDelta( Long minTrailingBelowDelta) {
         this.minTrailingBelowDelta = minTrailingBelowDelta;
     }
 
     public TrailingDeltaFilter maxTrailingBelowDelta(
-            @jakarta.annotation.Nullable Long maxTrailingBelowDelta) {
+             Long maxTrailingBelowDelta) {
         this.maxTrailingBelowDelta = maxTrailingBelowDelta;
         return this;
     }
@@ -152,12 +142,12 @@ public class TrailingDeltaFilter extends BaseDTO {
      *
      * @return maxTrailingBelowDelta
      */
-    @jakarta.annotation.Nullable
+    
     public Long getMaxTrailingBelowDelta() {
         return maxTrailingBelowDelta;
     }
 
-    public void setMaxTrailingBelowDelta(@jakarta.annotation.Nullable Long maxTrailingBelowDelta) {
+    public void setMaxTrailingBelowDelta( Long maxTrailingBelowDelta) {
         this.maxTrailingBelowDelta = maxTrailingBelowDelta;
     }
 
@@ -189,27 +179,6 @@ public class TrailingDeltaFilter extends BaseDTO {
                 maxTrailingAboveDelta,
                 minTrailingBelowDelta,
                 maxTrailingBelowDelta);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class TrailingDeltaFilter {\n");
-        sb.append("		filterType: ").append(toIndentedString(filterType)).append("\n");
-        sb.append("		minTrailingAboveDelta: ")
-                .append(toIndentedString(minTrailingAboveDelta))
-                .append("\n");
-        sb.append("		maxTrailingAboveDelta: ")
-                .append(toIndentedString(maxTrailingAboveDelta))
-                .append("\n");
-        sb.append("		minTrailingBelowDelta: ")
-                .append(toIndentedString(minTrailingBelowDelta))
-                .append("\n");
-        sb.append("		maxTrailingBelowDelta: ")
-                .append(toIndentedString(maxTrailingBelowDelta))
-                .append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -249,152 +218,8 @@ public class TrailingDeltaFilter extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object filterTypeValue = getFilterType();
-        if (filterTypeValue != null) {
-            valMap.put("filterType", filterTypeValue);
-        }
-        Object minTrailingAboveDeltaValue = getMinTrailingAboveDelta();
-        if (minTrailingAboveDeltaValue != null) {
-            valMap.put("minTrailingAboveDelta", minTrailingAboveDeltaValue);
-        }
-        Object maxTrailingAboveDeltaValue = getMaxTrailingAboveDelta();
-        if (maxTrailingAboveDeltaValue != null) {
-            valMap.put("maxTrailingAboveDelta", maxTrailingAboveDeltaValue);
-        }
-        Object minTrailingBelowDeltaValue = getMinTrailingBelowDelta();
-        if (minTrailingBelowDeltaValue != null) {
-            valMap.put("minTrailingBelowDelta", minTrailingBelowDeltaValue);
-        }
-        Object maxTrailingBelowDeltaValue = getMaxTrailingBelowDelta();
-        if (maxTrailingBelowDeltaValue != null) {
-            valMap.put("maxTrailingBelowDelta", maxTrailingBelowDeltaValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("filterType");
-        openapiFields.add("minTrailingAboveDelta");
-        openapiFields.add("maxTrailingAboveDelta");
-        openapiFields.add("minTrailingBelowDelta");
-        openapiFields.add("maxTrailingBelowDelta");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TrailingDeltaFilter
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TrailingDeltaFilter.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TrailingDeltaFilter is not found in"
-                                        + " the empty JSON string",
-                                TrailingDeltaFilter.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TrailingDeltaFilter.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TrailingDeltaFilter` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("filterType") != null && !jsonObj.get("filterType").isJsonNull())
-                && !jsonObj.get("filterType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `filterType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("filterType").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TrailingDeltaFilter.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TrailingDeltaFilter' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TrailingDeltaFilter> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TrailingDeltaFilter.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TrailingDeltaFilter>() {
-                        @Override
-                        public void write(JsonWriter out, TrailingDeltaFilter value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TrailingDeltaFilter read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TrailingDeltaFilter given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TrailingDeltaFilter
-     * @throws IOException if the JSON string is invalid with respect to TrailingDeltaFilter
-     */
-    public static TrailingDeltaFilter fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TrailingDeltaFilter.class);
-    }
-
-    /**
-     * Convert an instance of TrailingDeltaFilter to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

@@ -12,41 +12,29 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** RollingWindowTickerRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class RollingWindowTickerRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_WINDOW_SIZE = "windowSize";
 
-    @SerializedName(SERIALIZED_NAME_WINDOW_SIZE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_WINDOW_SIZE)
+
     private WindowSize windowSize;
 
     public RollingWindowTickerRequest() {}
 
-    public RollingWindowTickerRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public RollingWindowTickerRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -56,18 +44,18 @@ public class RollingWindowTickerRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public RollingWindowTickerRequest windowSize(
-            @jakarta.annotation.Nonnull WindowSize windowSize) {
+             WindowSize windowSize) {
         this.windowSize = windowSize;
         return this;
     }
@@ -77,14 +65,14 @@ public class RollingWindowTickerRequest extends BaseDTO {
      *
      * @return windowSize
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public WindowSize getWindowSize() {
         return windowSize;
     }
 
-    public void setWindowSize(@jakarta.annotation.Nonnull WindowSize windowSize) {
+    public void setWindowSize( WindowSize windowSize) {
         this.windowSize = windowSize;
     }
 
@@ -169,120 +157,4 @@ public class RollingWindowTickerRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("windowSize");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("windowSize");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to RollingWindowTickerRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!RollingWindowTickerRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in RollingWindowTickerRequest is not"
-                                        + " found in the empty JSON string",
-                                RollingWindowTickerRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!RollingWindowTickerRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `RollingWindowTickerRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : RollingWindowTickerRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the required field `windowSize`
-        WindowSize.validateJsonElement(jsonObj.get("windowSize"));
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!RollingWindowTickerRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'RollingWindowTickerRequest' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<RollingWindowTickerRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(RollingWindowTickerRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<RollingWindowTickerRequest>() {
-                        @Override
-                        public void write(JsonWriter out, RollingWindowTickerRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public RollingWindowTickerRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of RollingWindowTickerRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of RollingWindowTickerRequest
-     * @throws IOException if the JSON string is invalid with respect to RollingWindowTickerRequest
-     */
-    public static RollingWindowTickerRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, RollingWindowTickerRequest.class);
-    }
-
-    /**
-     * Convert an instance of RollingWindowTickerRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

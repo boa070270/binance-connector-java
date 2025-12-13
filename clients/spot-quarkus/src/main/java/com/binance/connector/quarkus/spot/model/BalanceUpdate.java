@@ -12,51 +12,41 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** BalanceUpdate */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class BalanceUpdate extends BaseDTO {
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_A_LOWER_CASE = "a";
 
-    @SerializedName(SERIALIZED_NAME_A_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A_LOWER_CASE)
+    
     private String aLowerCase;
 
     public static final String SERIALIZED_NAME_D_LOWER_CASE = "d";
 
-    @SerializedName(SERIALIZED_NAME_D_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_D_LOWER_CASE)
+    
     private String dLowerCase;
 
     public static final String SERIALIZED_NAME_T = "T";
 
-    @SerializedName(SERIALIZED_NAME_T)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_T)
+    
     private Long T;
 
     public BalanceUpdate() {}
 
-    public BalanceUpdate E(@jakarta.annotation.Nullable Long E) {
+    public BalanceUpdate E( Long E) {
         this.E = E;
         return this;
     }
@@ -66,16 +56,16 @@ public class BalanceUpdate extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public BalanceUpdate aLowerCase(@jakarta.annotation.Nullable String aLowerCase) {
+    public BalanceUpdate aLowerCase( String aLowerCase) {
         this.aLowerCase = aLowerCase;
         return this;
     }
@@ -85,16 +75,16 @@ public class BalanceUpdate extends BaseDTO {
      *
      * @return aLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getaLowerCase() {
         return aLowerCase;
     }
 
-    public void setaLowerCase(@jakarta.annotation.Nullable String aLowerCase) {
+    public void setaLowerCase( String aLowerCase) {
         this.aLowerCase = aLowerCase;
     }
 
-    public BalanceUpdate dLowerCase(@jakarta.annotation.Nullable String dLowerCase) {
+    public BalanceUpdate dLowerCase( String dLowerCase) {
         this.dLowerCase = dLowerCase;
         return this;
     }
@@ -104,16 +94,16 @@ public class BalanceUpdate extends BaseDTO {
      *
      * @return dLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getdLowerCase() {
         return dLowerCase;
     }
 
-    public void setdLowerCase(@jakarta.annotation.Nullable String dLowerCase) {
+    public void setdLowerCase( String dLowerCase) {
         this.dLowerCase = dLowerCase;
     }
 
-    public BalanceUpdate T(@jakarta.annotation.Nullable Long T) {
+    public BalanceUpdate T( Long T) {
         this.T = T;
         return this;
     }
@@ -123,12 +113,12 @@ public class BalanceUpdate extends BaseDTO {
      *
      * @return T
      */
-    @jakarta.annotation.Nullable
+    
     public Long getT() {
         return T;
     }
 
-    public void setT(@jakarta.annotation.Nullable Long T) {
+    public void setT( Long T) {
         this.T = T;
     }
 
@@ -150,18 +140,6 @@ public class BalanceUpdate extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(E, aLowerCase, dLowerCase, T);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class BalanceUpdate {\n");
-        sb.append("		E: ").append(toIndentedString(E)).append("\n");
-        sb.append("		aLowerCase: ").append(toIndentedString(aLowerCase)).append("\n");
-        sb.append("		dLowerCase: ").append(toIndentedString(dLowerCase)).append("\n");
-        sb.append("		T: ").append(toIndentedString(T)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -196,154 +174,8 @@ public class BalanceUpdate extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object EValue = getE();
-        if (EValue != null) {
-            valMap.put("E", EValue);
-        }
-        Object aLowerCaseValue = getaLowerCase();
-        if (aLowerCaseValue != null) {
-            valMap.put("aLowerCase", aLowerCaseValue);
-        }
-        Object dLowerCaseValue = getdLowerCase();
-        if (dLowerCaseValue != null) {
-            valMap.put("dLowerCase", dLowerCaseValue);
-        }
-        Object TValue = getT();
-        if (TValue != null) {
-            valMap.put("T", TValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("E");
-        openapiFields.add("a");
-        openapiFields.add("d");
-        openapiFields.add("T");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to BalanceUpdate
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!BalanceUpdate.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in BalanceUpdate is not found in the"
-                                        + " empty JSON string",
-                                BalanceUpdate.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!BalanceUpdate.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `BalanceUpdate` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("a") != null && !jsonObj.get("a").isJsonNull())
-                && !jsonObj.get("a").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `a` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("a").toString()));
-        }
-        if ((jsonObj.get("d") != null && !jsonObj.get("d").isJsonNull())
-                && !jsonObj.get("d").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `d` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("d").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!BalanceUpdate.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'BalanceUpdate' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<BalanceUpdate> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(BalanceUpdate.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<BalanceUpdate>() {
-                        @Override
-                        public void write(JsonWriter out, BalanceUpdate value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public BalanceUpdate read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of BalanceUpdate given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of BalanceUpdate
-     * @throws IOException if the JSON string is invalid with respect to BalanceUpdate
-     */
-    public static BalanceUpdate fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, BalanceUpdate.class);
-    }
-
-    /**
-     * Convert an instance of BalanceUpdate to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

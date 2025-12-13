@@ -13,65 +13,54 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderAmendKeepPriorityRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderAmendKeepPriorityRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_ID)
+    
     private Long orderId;
 
     public static final String SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID = "origClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID)
+    
     private String origClientOrderId;
 
     public static final String SERIALIZED_NAME_NEW_CLIENT_ORDER_ID = "newClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
+    
     private String newClientOrderId;
 
     public static final String SERIALIZED_NAME_NEW_QTY = "newQty";
 
-    @SerializedName(SERIALIZED_NAME_NEW_QTY)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_NEW_QTY)
+
     private Double newQty;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
-    @SerializedName(SERIALIZED_NAME_RECV_WINDOW)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
+    
     private Double recvWindow;
 
     public OrderAmendKeepPriorityRequest() {}
 
-    public OrderAmendKeepPriorityRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public OrderAmendKeepPriorityRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -81,17 +70,17 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public OrderAmendKeepPriorityRequest orderId(@jakarta.annotation.Nullable Long orderId) {
+    public OrderAmendKeepPriorityRequest orderId( Long orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -101,17 +90,17 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
      *
      * @return orderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(@jakarta.annotation.Nullable Long orderId) {
+    public void setOrderId( Long orderId) {
         this.orderId = orderId;
     }
 
     public OrderAmendKeepPriorityRequest origClientOrderId(
-            @jakarta.annotation.Nullable String origClientOrderId) {
+             String origClientOrderId) {
         this.origClientOrderId = origClientOrderId;
         return this;
     }
@@ -121,17 +110,17 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
      *
      * @return origClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getOrigClientOrderId() {
         return origClientOrderId;
     }
 
-    public void setOrigClientOrderId(@jakarta.annotation.Nullable String origClientOrderId) {
+    public void setOrigClientOrderId( String origClientOrderId) {
         this.origClientOrderId = origClientOrderId;
     }
 
     public OrderAmendKeepPriorityRequest newClientOrderId(
-            @jakarta.annotation.Nullable String newClientOrderId) {
+             String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
         return this;
     }
@@ -141,16 +130,16 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
      *
      * @return newClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getNewClientOrderId() {
         return newClientOrderId;
     }
 
-    public void setNewClientOrderId(@jakarta.annotation.Nullable String newClientOrderId) {
+    public void setNewClientOrderId( String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
     }
 
-    public OrderAmendKeepPriorityRequest newQty(@jakarta.annotation.Nonnull Double newQty) {
+    public OrderAmendKeepPriorityRequest newQty( Double newQty) {
         this.newQty = newQty;
         return this;
     }
@@ -160,19 +149,19 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
      *
      * @return newQty
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+
     public Double getNewQty() {
         return newQty;
     }
 
-    public void setNewQty(@jakarta.annotation.Nonnull Double newQty) {
+    public void setNewQty( Double newQty) {
         this.newQty = newQty;
     }
 
     public OrderAmendKeepPriorityRequest recvWindow(
-            @jakarta.annotation.Nullable Double recvWindow) {
+             Double recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -182,13 +171,13 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+
     public Double getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public void setRecvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -322,144 +311,4 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("orderId");
-        openapiFields.add("origClientOrderId");
-        openapiFields.add("newClientOrderId");
-        openapiFields.add("newQty");
-        openapiFields.add("recvWindow");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("newQty");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OrderAmendKeepPriorityRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderAmendKeepPriorityRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderAmendKeepPriorityRequest is not"
-                                        + " found in the empty JSON string",
-                                OrderAmendKeepPriorityRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderAmendKeepPriorityRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderAmendKeepPriorityRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : OrderAmendKeepPriorityRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("origClientOrderId") != null
-                        && !jsonObj.get("origClientOrderId").isJsonNull())
-                && !jsonObj.get("origClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `origClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("origClientOrderId").toString()));
-        }
-        if ((jsonObj.get("newClientOrderId") != null
-                        && !jsonObj.get("newClientOrderId").isJsonNull())
-                && !jsonObj.get("newClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `newClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("newClientOrderId").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderAmendKeepPriorityRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderAmendKeepPriorityRequest' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderAmendKeepPriorityRequest> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(OrderAmendKeepPriorityRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderAmendKeepPriorityRequest>() {
-                        @Override
-                        public void write(JsonWriter out, OrderAmendKeepPriorityRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderAmendKeepPriorityRequest read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderAmendKeepPriorityRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderAmendKeepPriorityRequest
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OrderAmendKeepPriorityRequest
-     */
-    public static OrderAmendKeepPriorityRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderAmendKeepPriorityRequest.class);
-    }
-
-    /**
-     * Convert an instance of OrderAmendKeepPriorityRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

@@ -12,57 +12,47 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** MarketLotSizeFilter */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class MarketLotSizeFilter extends BaseDTO {
     public static final String SERIALIZED_NAME_FILTER_TYPE = "filterType";
 
-    @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FILTER_TYPE)
+    
     private String filterType;
 
     public static final String SERIALIZED_NAME_QTY_EXPONENT = "qtyExponent";
 
-    @SerializedName(SERIALIZED_NAME_QTY_EXPONENT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QTY_EXPONENT)
+    
     private Integer qtyExponent;
 
     public static final String SERIALIZED_NAME_MIN_QTY = "minQty";
 
-    @SerializedName(SERIALIZED_NAME_MIN_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MIN_QTY)
+    
     private String minQty;
 
     public static final String SERIALIZED_NAME_MAX_QTY = "maxQty";
 
-    @SerializedName(SERIALIZED_NAME_MAX_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAX_QTY)
+    
     private String maxQty;
 
     public static final String SERIALIZED_NAME_STEP_SIZE = "stepSize";
 
-    @SerializedName(SERIALIZED_NAME_STEP_SIZE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STEP_SIZE)
+    
     private String stepSize;
 
     public MarketLotSizeFilter() {}
 
-    public MarketLotSizeFilter filterType(@jakarta.annotation.Nullable String filterType) {
+    public MarketLotSizeFilter filterType( String filterType) {
         this.filterType = filterType;
         return this;
     }
@@ -72,16 +62,16 @@ public class MarketLotSizeFilter extends BaseDTO {
      *
      * @return filterType
      */
-    @jakarta.annotation.Nullable
+    
     public String getFilterType() {
         return filterType;
     }
 
-    public void setFilterType(@jakarta.annotation.Nullable String filterType) {
+    public void setFilterType( String filterType) {
         this.filterType = filterType;
     }
 
-    public MarketLotSizeFilter qtyExponent(@jakarta.annotation.Nullable Integer qtyExponent) {
+    public MarketLotSizeFilter qtyExponent( Integer qtyExponent) {
         this.qtyExponent = qtyExponent;
         return this;
     }
@@ -91,16 +81,16 @@ public class MarketLotSizeFilter extends BaseDTO {
      *
      * @return qtyExponent
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getQtyExponent() {
         return qtyExponent;
     }
 
-    public void setQtyExponent(@jakarta.annotation.Nullable Integer qtyExponent) {
+    public void setQtyExponent( Integer qtyExponent) {
         this.qtyExponent = qtyExponent;
     }
 
-    public MarketLotSizeFilter minQty(@jakarta.annotation.Nullable String minQty) {
+    public MarketLotSizeFilter minQty( String minQty) {
         this.minQty = minQty;
         return this;
     }
@@ -110,16 +100,16 @@ public class MarketLotSizeFilter extends BaseDTO {
      *
      * @return minQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getMinQty() {
         return minQty;
     }
 
-    public void setMinQty(@jakarta.annotation.Nullable String minQty) {
+    public void setMinQty( String minQty) {
         this.minQty = minQty;
     }
 
-    public MarketLotSizeFilter maxQty(@jakarta.annotation.Nullable String maxQty) {
+    public MarketLotSizeFilter maxQty( String maxQty) {
         this.maxQty = maxQty;
         return this;
     }
@@ -129,16 +119,16 @@ public class MarketLotSizeFilter extends BaseDTO {
      *
      * @return maxQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getMaxQty() {
         return maxQty;
     }
 
-    public void setMaxQty(@jakarta.annotation.Nullable String maxQty) {
+    public void setMaxQty( String maxQty) {
         this.maxQty = maxQty;
     }
 
-    public MarketLotSizeFilter stepSize(@jakarta.annotation.Nullable String stepSize) {
+    public MarketLotSizeFilter stepSize( String stepSize) {
         this.stepSize = stepSize;
         return this;
     }
@@ -148,12 +138,12 @@ public class MarketLotSizeFilter extends BaseDTO {
      *
      * @return stepSize
      */
-    @jakarta.annotation.Nullable
+    
     public String getStepSize() {
         return stepSize;
     }
 
-    public void setStepSize(@jakarta.annotation.Nullable String stepSize) {
+    public void setStepSize( String stepSize) {
         this.stepSize = stepSize;
     }
 
@@ -176,19 +166,6 @@ public class MarketLotSizeFilter extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(filterType, qtyExponent, minQty, maxQty, stepSize);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class MarketLotSizeFilter {\n");
-        sb.append("		filterType: ").append(toIndentedString(filterType)).append("\n");
-        sb.append("		qtyExponent: ").append(toIndentedString(qtyExponent)).append("\n");
-        sb.append("		minQty: ").append(toIndentedString(minQty)).append("\n");
-        sb.append("		maxQty: ").append(toIndentedString(maxQty)).append("\n");
-        sb.append("		stepSize: ").append(toIndentedString(stepSize)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -228,176 +205,8 @@ public class MarketLotSizeFilter extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object filterTypeValue = getFilterType();
-        if (filterTypeValue != null) {
-            valMap.put("filterType", filterTypeValue);
-        }
-        Object qtyExponentValue = getQtyExponent();
-        if (qtyExponentValue != null) {
-            valMap.put("qtyExponent", qtyExponentValue);
-        }
-        Object minQtyValue = getMinQty();
-        if (minQtyValue != null) {
-            valMap.put("minQty", minQtyValue);
-        }
-        Object maxQtyValue = getMaxQty();
-        if (maxQtyValue != null) {
-            valMap.put("maxQty", maxQtyValue);
-        }
-        Object stepSizeValue = getStepSize();
-        if (stepSizeValue != null) {
-            valMap.put("stepSize", stepSizeValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("filterType");
-        openapiFields.add("qtyExponent");
-        openapiFields.add("minQty");
-        openapiFields.add("maxQty");
-        openapiFields.add("stepSize");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to MarketLotSizeFilter
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!MarketLotSizeFilter.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in MarketLotSizeFilter is not found in"
-                                        + " the empty JSON string",
-                                MarketLotSizeFilter.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!MarketLotSizeFilter.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `MarketLotSizeFilter` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("filterType") != null && !jsonObj.get("filterType").isJsonNull())
-                && !jsonObj.get("filterType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `filterType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("filterType").toString()));
-        }
-        if ((jsonObj.get("minQty") != null && !jsonObj.get("minQty").isJsonNull())
-                && !jsonObj.get("minQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `minQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("minQty").toString()));
-        }
-        if ((jsonObj.get("maxQty") != null && !jsonObj.get("maxQty").isJsonNull())
-                && !jsonObj.get("maxQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `maxQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("maxQty").toString()));
-        }
-        if ((jsonObj.get("stepSize") != null && !jsonObj.get("stepSize").isJsonNull())
-                && !jsonObj.get("stepSize").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `stepSize` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("stepSize").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!MarketLotSizeFilter.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'MarketLotSizeFilter' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<MarketLotSizeFilter> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(MarketLotSizeFilter.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<MarketLotSizeFilter>() {
-                        @Override
-                        public void write(JsonWriter out, MarketLotSizeFilter value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public MarketLotSizeFilter read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of MarketLotSizeFilter given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of MarketLotSizeFilter
-     * @throws IOException if the JSON string is invalid with respect to MarketLotSizeFilter
-     */
-    public static MarketLotSizeFilter fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, MarketLotSizeFilter.class);
-    }
-
-    /**
-     * Convert an instance of MarketLotSizeFilter to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

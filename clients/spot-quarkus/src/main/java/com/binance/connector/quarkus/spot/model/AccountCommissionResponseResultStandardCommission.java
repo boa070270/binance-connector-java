@@ -12,126 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/** AccountCommissionResponseResultStandardCommission */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class AccountCommissionResponseResultStandardCommission extends BaseDTO {
-    public static final String SERIALIZED_NAME_MAKER = "maker";
-
-    @SerializedName(SERIALIZED_NAME_MAKER)
-    @jakarta.annotation.Nullable
     private String maker;
-
-    public static final String SERIALIZED_NAME_TAKER = "taker";
-
-    @SerializedName(SERIALIZED_NAME_TAKER)
-    @jakarta.annotation.Nullable
     private String taker;
-
-    public static final String SERIALIZED_NAME_BUYER = "buyer";
-
-    @SerializedName(SERIALIZED_NAME_BUYER)
-    @jakarta.annotation.Nullable
     private String buyer;
-
-    public static final String SERIALIZED_NAME_SELLER = "seller";
-
-    @SerializedName(SERIALIZED_NAME_SELLER)
-    @jakarta.annotation.Nullable
     private String seller;
 
-    public AccountCommissionResponseResultStandardCommission() {}
-
-    public AccountCommissionResponseResultStandardCommission maker(
-            @jakarta.annotation.Nullable String maker) {
-        this.maker = maker;
-        return this;
-    }
-
-    /**
-     * Get maker
-     *
-     * @return maker
-     */
-    @jakarta.annotation.Nullable
     public String getMaker() {
         return maker;
     }
-
-    public void setMaker(@jakarta.annotation.Nullable String maker) {
+    public void setMaker( String maker) {
         this.maker = maker;
     }
 
-    public AccountCommissionResponseResultStandardCommission taker(
-            @jakarta.annotation.Nullable String taker) {
-        this.taker = taker;
-        return this;
-    }
-
-    /**
-     * Get taker
-     *
-     * @return taker
-     */
-    @jakarta.annotation.Nullable
     public String getTaker() {
         return taker;
     }
-
-    public void setTaker(@jakarta.annotation.Nullable String taker) {
+    public void setTaker( String taker) {
         this.taker = taker;
     }
 
-    public AccountCommissionResponseResultStandardCommission buyer(
-            @jakarta.annotation.Nullable String buyer) {
-        this.buyer = buyer;
-        return this;
-    }
-
-    /**
-     * Get buyer
-     *
-     * @return buyer
-     */
-    @jakarta.annotation.Nullable
     public String getBuyer() {
         return buyer;
     }
-
-    public void setBuyer(@jakarta.annotation.Nullable String buyer) {
+    public void setBuyer( String buyer) {
         this.buyer = buyer;
     }
 
-    public AccountCommissionResponseResultStandardCommission seller(
-            @jakarta.annotation.Nullable String seller) {
-        this.seller = seller;
-        return this;
-    }
-
-    /**
-     * Get seller
-     *
-     * @return seller
-     */
-    @jakarta.annotation.Nullable
     public String getSeller() {
         return seller;
     }
-
-    public void setSeller(@jakarta.annotation.Nullable String seller) {
+    public void setSeller( String seller) {
         this.seller = seller;
     }
 
@@ -158,18 +74,6 @@ public class AccountCommissionResponseResultStandardCommission extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(maker, taker, buyer, seller);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class AccountCommissionResponseResultStandardCommission {\n");
-        sb.append("		maker: ").append(toIndentedString(maker)).append("\n");
-        sb.append("		taker: ").append(toIndentedString(taker)).append("\n");
-        sb.append("		buyer: ").append(toIndentedString(buyer)).append("\n");
-        sb.append("		seller: ").append(toIndentedString(seller)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -230,161 +134,5 @@ public class AccountCommissionResponseResultStandardCommission extends BaseDTO {
 
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("maker");
-        openapiFields.add("taker");
-        openapiFields.add("buyer");
-        openapiFields.add("seller");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     AccountCommissionResponseResultStandardCommission
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!AccountCommissionResponseResultStandardCommission.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in"
-                                    + " AccountCommissionResponseResultStandardCommission is not"
-                                    + " found in the empty JSON string",
-                                AccountCommissionResponseResultStandardCommission
-                                        .openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!AccountCommissionResponseResultStandardCommission.openapiFields.contains(
-                    entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `AccountCommissionResponseResultStandardCommission`"
-                                        + " properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("maker") != null && !jsonObj.get("maker").isJsonNull())
-                && !jsonObj.get("maker").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `maker` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("maker").toString()));
-        }
-        if ((jsonObj.get("taker") != null && !jsonObj.get("taker").isJsonNull())
-                && !jsonObj.get("taker").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `taker` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("taker").toString()));
-        }
-        if ((jsonObj.get("buyer") != null && !jsonObj.get("buyer").isJsonNull())
-                && !jsonObj.get("buyer").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `buyer` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("buyer").toString()));
-        }
-        if ((jsonObj.get("seller") != null && !jsonObj.get("seller").isJsonNull())
-                && !jsonObj.get("seller").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `seller` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("seller").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!AccountCommissionResponseResultStandardCommission.class.isAssignableFrom(
-                    type.getRawType())) {
-                return null; // this class only serializes
-                // 'AccountCommissionResponseResultStandardCommission' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<AccountCommissionResponseResultStandardCommission> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this,
-                            TypeToken.get(AccountCommissionResponseResultStandardCommission.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<AccountCommissionResponseResultStandardCommission>() {
-                        @Override
-                        public void write(
-                                JsonWriter out,
-                                AccountCommissionResponseResultStandardCommission value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public AccountCommissionResponseResultStandardCommission read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of AccountCommissionResponseResultStandardCommission given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of AccountCommissionResponseResultStandardCommission
-     * @throws IOException if the JSON string is invalid with respect to
-     *     AccountCommissionResponseResultStandardCommission
-     */
-    public static AccountCommissionResponseResultStandardCommission fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson()
-                .fromJson(jsonString, AccountCommissionResponseResultStandardCommission.class);
-    }
-
-    /**
-     * Convert an instance of AccountCommissionResponseResultStandardCommission to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

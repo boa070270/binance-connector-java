@@ -12,164 +12,155 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/** TickerResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TickerResponseStream extends BaseDTO {
     public static final String SERIALIZED_NAME_E_LOWER_CASE = "e";
 
-    @SerializedName(SERIALIZED_NAME_E_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E_LOWER_CASE)
+    
     private String eLowerCase;
 
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_S_LOWER_CASE = "s";
 
-    @SerializedName(SERIALIZED_NAME_S_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S_LOWER_CASE)
+    
     private String sLowerCase;
 
     public static final String SERIALIZED_NAME_P_LOWER_CASE = "p";
 
-    @SerializedName(SERIALIZED_NAME_P_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_P_LOWER_CASE)
+    
     private String pLowerCase;
 
     public static final String SERIALIZED_NAME_P = "P";
 
-    @SerializedName(SERIALIZED_NAME_P)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_P)
+    
     private String P;
 
     public static final String SERIALIZED_NAME_W_LOWER_CASE = "w";
 
-    @SerializedName(SERIALIZED_NAME_W_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_W_LOWER_CASE)
+    
     private String wLowerCase;
 
     public static final String SERIALIZED_NAME_X_LOWER_CASE = "x";
 
-    @SerializedName(SERIALIZED_NAME_X_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_X_LOWER_CASE)
+    
     private String xLowerCase;
 
     public static final String SERIALIZED_NAME_C_LOWER_CASE = "c";
 
-    @SerializedName(SERIALIZED_NAME_C_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_C_LOWER_CASE)
+    
     private String cLowerCase;
 
     public static final String SERIALIZED_NAME_Q = "Q";
 
-    @SerializedName(SERIALIZED_NAME_Q)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Q)
+    
     private String Q;
 
     public static final String SERIALIZED_NAME_B_LOWER_CASE = "b";
 
-    @SerializedName(SERIALIZED_NAME_B_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_B_LOWER_CASE)
+    
     private String bLowerCase;
 
     public static final String SERIALIZED_NAME_B = "B";
 
-    @SerializedName(SERIALIZED_NAME_B)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_B)
+    
     private String B;
 
     public static final String SERIALIZED_NAME_A_LOWER_CASE = "a";
 
-    @SerializedName(SERIALIZED_NAME_A_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A_LOWER_CASE)
+    
     private String aLowerCase;
 
     public static final String SERIALIZED_NAME_A = "A";
 
-    @SerializedName(SERIALIZED_NAME_A)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A)
+    
     private String A;
 
     public static final String SERIALIZED_NAME_O_LOWER_CASE = "o";
 
-    @SerializedName(SERIALIZED_NAME_O_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_O_LOWER_CASE)
+    
     private String oLowerCase;
 
     public static final String SERIALIZED_NAME_H_LOWER_CASE = "h";
 
-    @SerializedName(SERIALIZED_NAME_H_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_H_LOWER_CASE)
+    
     private String hLowerCase;
 
     public static final String SERIALIZED_NAME_L_LOWER_CASE = "l";
 
-    @SerializedName(SERIALIZED_NAME_L_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L_LOWER_CASE)
+    
     private String lLowerCase;
 
     public static final String SERIALIZED_NAME_V_LOWER_CASE = "v";
 
-    @SerializedName(SERIALIZED_NAME_V_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_V_LOWER_CASE)
+    
     private String vLowerCase;
 
     public static final String SERIALIZED_NAME_Q_LOWER_CASE = "q";
 
-    @SerializedName(SERIALIZED_NAME_Q_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Q_LOWER_CASE)
+    
     private String qLowerCase;
 
     public static final String SERIALIZED_NAME_O = "O";
 
-    @SerializedName(SERIALIZED_NAME_O)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_O)
+    
     private Long O;
 
     public static final String SERIALIZED_NAME_C = "C";
 
-    @SerializedName(SERIALIZED_NAME_C)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_C)
+    
     private Long C;
 
     public static final String SERIALIZED_NAME_F = "F";
 
-    @SerializedName(SERIALIZED_NAME_F)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_F)
+    
     private Long F;
 
     public static final String SERIALIZED_NAME_L = "L";
 
-    @SerializedName(SERIALIZED_NAME_L)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L)
+    
     private Long L;
 
     public static final String SERIALIZED_NAME_N_LOWER_CASE = "n";
 
-    @SerializedName(SERIALIZED_NAME_N_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_N_LOWER_CASE)
+    
     private Long nLowerCase;
 
     public TickerResponseStream() {}
 
-    public TickerResponseStream eLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public TickerResponseStream eLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
         return this;
     }
@@ -179,16 +170,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return eLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String geteLowerCase() {
         return eLowerCase;
     }
 
-    public void seteLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public void seteLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
     }
 
-    public TickerResponseStream E(@jakarta.annotation.Nullable Long E) {
+    public TickerResponseStream E( Long E) {
         this.E = E;
         return this;
     }
@@ -198,16 +189,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public TickerResponseStream sLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public TickerResponseStream sLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
         return this;
     }
@@ -217,16 +208,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return sLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getsLowerCase() {
         return sLowerCase;
     }
 
-    public void setsLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public void setsLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
     }
 
-    public TickerResponseStream pLowerCase(@jakarta.annotation.Nullable String pLowerCase) {
+    public TickerResponseStream pLowerCase( String pLowerCase) {
         this.pLowerCase = pLowerCase;
         return this;
     }
@@ -236,16 +227,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return pLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getpLowerCase() {
         return pLowerCase;
     }
 
-    public void setpLowerCase(@jakarta.annotation.Nullable String pLowerCase) {
+    public void setpLowerCase( String pLowerCase) {
         this.pLowerCase = pLowerCase;
     }
 
-    public TickerResponseStream P(@jakarta.annotation.Nullable String P) {
+    public TickerResponseStream P( String P) {
         this.P = P;
         return this;
     }
@@ -255,16 +246,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return P
      */
-    @jakarta.annotation.Nullable
+    
     public String getP() {
         return P;
     }
 
-    public void setP(@jakarta.annotation.Nullable String P) {
+    public void setP( String P) {
         this.P = P;
     }
 
-    public TickerResponseStream wLowerCase(@jakarta.annotation.Nullable String wLowerCase) {
+    public TickerResponseStream wLowerCase( String wLowerCase) {
         this.wLowerCase = wLowerCase;
         return this;
     }
@@ -274,16 +265,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return wLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getwLowerCase() {
         return wLowerCase;
     }
 
-    public void setwLowerCase(@jakarta.annotation.Nullable String wLowerCase) {
+    public void setwLowerCase( String wLowerCase) {
         this.wLowerCase = wLowerCase;
     }
 
-    public TickerResponseStream xLowerCase(@jakarta.annotation.Nullable String xLowerCase) {
+    public TickerResponseStream xLowerCase( String xLowerCase) {
         this.xLowerCase = xLowerCase;
         return this;
     }
@@ -293,16 +284,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return xLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getxLowerCase() {
         return xLowerCase;
     }
 
-    public void setxLowerCase(@jakarta.annotation.Nullable String xLowerCase) {
+    public void setxLowerCase( String xLowerCase) {
         this.xLowerCase = xLowerCase;
     }
 
-    public TickerResponseStream cLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public TickerResponseStream cLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
         return this;
     }
@@ -312,16 +303,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return cLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getcLowerCase() {
         return cLowerCase;
     }
 
-    public void setcLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public void setcLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
     }
 
-    public TickerResponseStream Q(@jakarta.annotation.Nullable String Q) {
+    public TickerResponseStream Q( String Q) {
         this.Q = Q;
         return this;
     }
@@ -331,16 +322,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return Q
      */
-    @jakarta.annotation.Nullable
+    
     public String getQ() {
         return Q;
     }
 
-    public void setQ(@jakarta.annotation.Nullable String Q) {
+    public void setQ( String Q) {
         this.Q = Q;
     }
 
-    public TickerResponseStream bLowerCase(@jakarta.annotation.Nullable String bLowerCase) {
+    public TickerResponseStream bLowerCase( String bLowerCase) {
         this.bLowerCase = bLowerCase;
         return this;
     }
@@ -350,16 +341,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return bLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getbLowerCase() {
         return bLowerCase;
     }
 
-    public void setbLowerCase(@jakarta.annotation.Nullable String bLowerCase) {
+    public void setbLowerCase( String bLowerCase) {
         this.bLowerCase = bLowerCase;
     }
 
-    public TickerResponseStream B(@jakarta.annotation.Nullable String B) {
+    public TickerResponseStream B( String B) {
         this.B = B;
         return this;
     }
@@ -369,16 +360,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return B
      */
-    @jakarta.annotation.Nullable
+    
     public String getB() {
         return B;
     }
 
-    public void setB(@jakarta.annotation.Nullable String B) {
+    public void setB( String B) {
         this.B = B;
     }
 
-    public TickerResponseStream aLowerCase(@jakarta.annotation.Nullable String aLowerCase) {
+    public TickerResponseStream aLowerCase( String aLowerCase) {
         this.aLowerCase = aLowerCase;
         return this;
     }
@@ -388,16 +379,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return aLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getaLowerCase() {
         return aLowerCase;
     }
 
-    public void setaLowerCase(@jakarta.annotation.Nullable String aLowerCase) {
+    public void setaLowerCase( String aLowerCase) {
         this.aLowerCase = aLowerCase;
     }
 
-    public TickerResponseStream A(@jakarta.annotation.Nullable String A) {
+    public TickerResponseStream A( String A) {
         this.A = A;
         return this;
     }
@@ -407,16 +398,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return A
      */
-    @jakarta.annotation.Nullable
+    
     public String getA() {
         return A;
     }
 
-    public void setA(@jakarta.annotation.Nullable String A) {
+    public void setA( String A) {
         this.A = A;
     }
 
-    public TickerResponseStream oLowerCase(@jakarta.annotation.Nullable String oLowerCase) {
+    public TickerResponseStream oLowerCase( String oLowerCase) {
         this.oLowerCase = oLowerCase;
         return this;
     }
@@ -426,16 +417,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return oLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getoLowerCase() {
         return oLowerCase;
     }
 
-    public void setoLowerCase(@jakarta.annotation.Nullable String oLowerCase) {
+    public void setoLowerCase( String oLowerCase) {
         this.oLowerCase = oLowerCase;
     }
 
-    public TickerResponseStream hLowerCase(@jakarta.annotation.Nullable String hLowerCase) {
+    public TickerResponseStream hLowerCase( String hLowerCase) {
         this.hLowerCase = hLowerCase;
         return this;
     }
@@ -445,16 +436,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return hLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String gethLowerCase() {
         return hLowerCase;
     }
 
-    public void sethLowerCase(@jakarta.annotation.Nullable String hLowerCase) {
+    public void sethLowerCase( String hLowerCase) {
         this.hLowerCase = hLowerCase;
     }
 
-    public TickerResponseStream lLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public TickerResponseStream lLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
         return this;
     }
@@ -464,16 +455,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return lLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getlLowerCase() {
         return lLowerCase;
     }
 
-    public void setlLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public void setlLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
     }
 
-    public TickerResponseStream vLowerCase(@jakarta.annotation.Nullable String vLowerCase) {
+    public TickerResponseStream vLowerCase( String vLowerCase) {
         this.vLowerCase = vLowerCase;
         return this;
     }
@@ -483,16 +474,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return vLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getvLowerCase() {
         return vLowerCase;
     }
 
-    public void setvLowerCase(@jakarta.annotation.Nullable String vLowerCase) {
+    public void setvLowerCase( String vLowerCase) {
         this.vLowerCase = vLowerCase;
     }
 
-    public TickerResponseStream qLowerCase(@jakarta.annotation.Nullable String qLowerCase) {
+    public TickerResponseStream qLowerCase( String qLowerCase) {
         this.qLowerCase = qLowerCase;
         return this;
     }
@@ -502,16 +493,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return qLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getqLowerCase() {
         return qLowerCase;
     }
 
-    public void setqLowerCase(@jakarta.annotation.Nullable String qLowerCase) {
+    public void setqLowerCase( String qLowerCase) {
         this.qLowerCase = qLowerCase;
     }
 
-    public TickerResponseStream O(@jakarta.annotation.Nullable Long O) {
+    public TickerResponseStream O( Long O) {
         this.O = O;
         return this;
     }
@@ -521,16 +512,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return O
      */
-    @jakarta.annotation.Nullable
+    
     public Long getO() {
         return O;
     }
 
-    public void setO(@jakarta.annotation.Nullable Long O) {
+    public void setO( Long O) {
         this.O = O;
     }
 
-    public TickerResponseStream C(@jakarta.annotation.Nullable Long C) {
+    public TickerResponseStream C( Long C) {
         this.C = C;
         return this;
     }
@@ -540,16 +531,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return C
      */
-    @jakarta.annotation.Nullable
+    
     public Long getC() {
         return C;
     }
 
-    public void setC(@jakarta.annotation.Nullable Long C) {
+    public void setC( Long C) {
         this.C = C;
     }
 
-    public TickerResponseStream F(@jakarta.annotation.Nullable Long F) {
+    public TickerResponseStream F( Long F) {
         this.F = F;
         return this;
     }
@@ -559,16 +550,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return F
      */
-    @jakarta.annotation.Nullable
+    
     public Long getF() {
         return F;
     }
 
-    public void setF(@jakarta.annotation.Nullable Long F) {
+    public void setF( Long F) {
         this.F = F;
     }
 
-    public TickerResponseStream L(@jakarta.annotation.Nullable Long L) {
+    public TickerResponseStream L( Long L) {
         this.L = L;
         return this;
     }
@@ -578,16 +569,16 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return L
      */
-    @jakarta.annotation.Nullable
+    
     public Long getL() {
         return L;
     }
 
-    public void setL(@jakarta.annotation.Nullable Long L) {
+    public void setL( Long L) {
         this.L = L;
     }
 
-    public TickerResponseStream nLowerCase(@jakarta.annotation.Nullable Long nLowerCase) {
+    public TickerResponseStream nLowerCase( Long nLowerCase) {
         this.nLowerCase = nLowerCase;
         return this;
     }
@@ -597,12 +588,12 @@ public class TickerResponseStream extends BaseDTO {
      *
      * @return nLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getnLowerCase() {
         return nLowerCase;
     }
 
-    public void setnLowerCase(@jakarta.annotation.Nullable Long nLowerCase) {
+    public void setnLowerCase( Long nLowerCase) {
         this.nLowerCase = nLowerCase;
     }
 
@@ -941,254 +932,4 @@ public class TickerResponseStream extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("e");
-        openapiFields.add("E");
-        openapiFields.add("s");
-        openapiFields.add("p");
-        openapiFields.add("P");
-        openapiFields.add("w");
-        openapiFields.add("x");
-        openapiFields.add("c");
-        openapiFields.add("Q");
-        openapiFields.add("b");
-        openapiFields.add("B");
-        openapiFields.add("a");
-        openapiFields.add("A");
-        openapiFields.add("o");
-        openapiFields.add("h");
-        openapiFields.add("l");
-        openapiFields.add("v");
-        openapiFields.add("q");
-        openapiFields.add("O");
-        openapiFields.add("C");
-        openapiFields.add("F");
-        openapiFields.add("L");
-        openapiFields.add("n");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TickerResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TickerResponseStream.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TickerResponse is not found in the"
-                                        + " empty JSON string",
-                                TickerResponseStream.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TickerResponseStream.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TickerResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("e") != null && !jsonObj.get("e").isJsonNull())
-                && !jsonObj.get("e").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `e` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("e").toString()));
-        }
-        if ((jsonObj.get("s") != null && !jsonObj.get("s").isJsonNull())
-                && !jsonObj.get("s").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `s` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("s").toString()));
-        }
-        if ((jsonObj.get("p") != null && !jsonObj.get("p").isJsonNull())
-                && !jsonObj.get("p").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `p` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("p").toString()));
-        }
-        if ((jsonObj.get("P") != null && !jsonObj.get("P").isJsonNull())
-                && !jsonObj.get("P").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `P` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("P").toString()));
-        }
-        if ((jsonObj.get("w") != null && !jsonObj.get("w").isJsonNull())
-                && !jsonObj.get("w").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `w` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("w").toString()));
-        }
-        if ((jsonObj.get("x") != null && !jsonObj.get("x").isJsonNull())
-                && !jsonObj.get("x").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `x` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("x").toString()));
-        }
-        if ((jsonObj.get("c") != null && !jsonObj.get("c").isJsonNull())
-                && !jsonObj.get("c").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `c` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("c").toString()));
-        }
-        if ((jsonObj.get("Q") != null && !jsonObj.get("Q").isJsonNull())
-                && !jsonObj.get("Q").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `Q` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("Q").toString()));
-        }
-        if ((jsonObj.get("b") != null && !jsonObj.get("b").isJsonNull())
-                && !jsonObj.get("b").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `b` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("b").toString()));
-        }
-        if ((jsonObj.get("B") != null && !jsonObj.get("B").isJsonNull())
-                && !jsonObj.get("B").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `B` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("B").toString()));
-        }
-        if ((jsonObj.get("a") != null && !jsonObj.get("a").isJsonNull())
-                && !jsonObj.get("a").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `a` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("a").toString()));
-        }
-        if ((jsonObj.get("A") != null && !jsonObj.get("A").isJsonNull())
-                && !jsonObj.get("A").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `A` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("A").toString()));
-        }
-        if ((jsonObj.get("o") != null && !jsonObj.get("o").isJsonNull())
-                && !jsonObj.get("o").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `o` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("o").toString()));
-        }
-        if ((jsonObj.get("h") != null && !jsonObj.get("h").isJsonNull())
-                && !jsonObj.get("h").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `h` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("h").toString()));
-        }
-        if ((jsonObj.get("l") != null && !jsonObj.get("l").isJsonNull())
-                && !jsonObj.get("l").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `l` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("l").toString()));
-        }
-        if ((jsonObj.get("v") != null && !jsonObj.get("v").isJsonNull())
-                && !jsonObj.get("v").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `v` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("v").toString()));
-        }
-        if ((jsonObj.get("q") != null && !jsonObj.get("q").isJsonNull())
-                && !jsonObj.get("q").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `q` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("q").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TickerResponseStream.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TickerResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TickerResponseStream> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TickerResponseStream.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TickerResponseStream>() {
-                        @Override
-                        public void write(JsonWriter out, TickerResponseStream value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TickerResponseStream read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TickerResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TickerResponse
-     * @throws IOException if the JSON string is invalid with respect to TickerResponse
-     */
-    public static TickerResponseStream fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TickerResponseStream.class);
-    }
-
-    /**
-     * Convert an instance of TickerResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

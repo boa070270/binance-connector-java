@@ -12,129 +12,119 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** KlineResponseK */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class KlineResponseK extends BaseDTO {
     public static final String SERIALIZED_NAME_T_LOWER_CASE = "t";
 
-    @SerializedName(SERIALIZED_NAME_T_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_T_LOWER_CASE)
+    
     private Long tLowerCase;
 
     public static final String SERIALIZED_NAME_T = "T";
 
-    @SerializedName(SERIALIZED_NAME_T)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_T)
+    
     private Long T;
 
     public static final String SERIALIZED_NAME_S_LOWER_CASE = "s";
 
-    @SerializedName(SERIALIZED_NAME_S_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S_LOWER_CASE)
+    
     private String sLowerCase;
 
     public static final String SERIALIZED_NAME_I_LOWER_CASE = "i";
 
-    @SerializedName(SERIALIZED_NAME_I_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_I_LOWER_CASE)
+    
     private String iLowerCase;
 
     public static final String SERIALIZED_NAME_F_LOWER_CASE = "f";
 
-    @SerializedName(SERIALIZED_NAME_F_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_F_LOWER_CASE)
+    
     private Long fLowerCase;
 
     public static final String SERIALIZED_NAME_L = "L";
 
-    @SerializedName(SERIALIZED_NAME_L)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L)
+    
     private Long L;
 
     public static final String SERIALIZED_NAME_O_LOWER_CASE = "o";
 
-    @SerializedName(SERIALIZED_NAME_O_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_O_LOWER_CASE)
+    
     private String oLowerCase;
 
     public static final String SERIALIZED_NAME_C_LOWER_CASE = "c";
 
-    @SerializedName(SERIALIZED_NAME_C_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_C_LOWER_CASE)
+    
     private String cLowerCase;
 
     public static final String SERIALIZED_NAME_H_LOWER_CASE = "h";
 
-    @SerializedName(SERIALIZED_NAME_H_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_H_LOWER_CASE)
+    
     private String hLowerCase;
 
     public static final String SERIALIZED_NAME_L_LOWER_CASE = "l";
 
-    @SerializedName(SERIALIZED_NAME_L_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L_LOWER_CASE)
+    
     private String lLowerCase;
 
     public static final String SERIALIZED_NAME_V_LOWER_CASE = "v";
 
-    @SerializedName(SERIALIZED_NAME_V_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_V_LOWER_CASE)
+    
     private String vLowerCase;
 
     public static final String SERIALIZED_NAME_N_LOWER_CASE = "n";
 
-    @SerializedName(SERIALIZED_NAME_N_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_N_LOWER_CASE)
+    
     private Long nLowerCase;
 
     public static final String SERIALIZED_NAME_X_LOWER_CASE = "x";
 
-    @SerializedName(SERIALIZED_NAME_X_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_X_LOWER_CASE)
+    
     private Boolean xLowerCase;
 
     public static final String SERIALIZED_NAME_Q_LOWER_CASE = "q";
 
-    @SerializedName(SERIALIZED_NAME_Q_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Q_LOWER_CASE)
+    
     private String qLowerCase;
 
     public static final String SERIALIZED_NAME_V = "V";
 
-    @SerializedName(SERIALIZED_NAME_V)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_V)
+    
     private String V;
 
     public static final String SERIALIZED_NAME_Q = "Q";
 
-    @SerializedName(SERIALIZED_NAME_Q)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Q)
+    
     private String Q;
 
     public static final String SERIALIZED_NAME_B = "B";
 
-    @SerializedName(SERIALIZED_NAME_B)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_B)
+    
     private String B;
 
     public KlineResponseK() {}
 
-    public KlineResponseK tLowerCase(@jakarta.annotation.Nullable Long tLowerCase) {
+    public KlineResponseK tLowerCase( Long tLowerCase) {
         this.tLowerCase = tLowerCase;
         return this;
     }
@@ -144,16 +134,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return tLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long gettLowerCase() {
         return tLowerCase;
     }
 
-    public void settLowerCase(@jakarta.annotation.Nullable Long tLowerCase) {
+    public void settLowerCase( Long tLowerCase) {
         this.tLowerCase = tLowerCase;
     }
 
-    public KlineResponseK T(@jakarta.annotation.Nullable Long T) {
+    public KlineResponseK T( Long T) {
         this.T = T;
         return this;
     }
@@ -163,16 +153,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return T
      */
-    @jakarta.annotation.Nullable
+    
     public Long getT() {
         return T;
     }
 
-    public void setT(@jakarta.annotation.Nullable Long T) {
+    public void setT( Long T) {
         this.T = T;
     }
 
-    public KlineResponseK sLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public KlineResponseK sLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
         return this;
     }
@@ -182,16 +172,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return sLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getsLowerCase() {
         return sLowerCase;
     }
 
-    public void setsLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public void setsLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
     }
 
-    public KlineResponseK iLowerCase(@jakarta.annotation.Nullable String iLowerCase) {
+    public KlineResponseK iLowerCase( String iLowerCase) {
         this.iLowerCase = iLowerCase;
         return this;
     }
@@ -201,16 +191,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return iLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getiLowerCase() {
         return iLowerCase;
     }
 
-    public void setiLowerCase(@jakarta.annotation.Nullable String iLowerCase) {
+    public void setiLowerCase( String iLowerCase) {
         this.iLowerCase = iLowerCase;
     }
 
-    public KlineResponseK fLowerCase(@jakarta.annotation.Nullable Long fLowerCase) {
+    public KlineResponseK fLowerCase( Long fLowerCase) {
         this.fLowerCase = fLowerCase;
         return this;
     }
@@ -220,16 +210,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return fLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getfLowerCase() {
         return fLowerCase;
     }
 
-    public void setfLowerCase(@jakarta.annotation.Nullable Long fLowerCase) {
+    public void setfLowerCase( Long fLowerCase) {
         this.fLowerCase = fLowerCase;
     }
 
-    public KlineResponseK L(@jakarta.annotation.Nullable Long L) {
+    public KlineResponseK L( Long L) {
         this.L = L;
         return this;
     }
@@ -239,16 +229,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return L
      */
-    @jakarta.annotation.Nullable
+    
     public Long getL() {
         return L;
     }
 
-    public void setL(@jakarta.annotation.Nullable Long L) {
+    public void setL( Long L) {
         this.L = L;
     }
 
-    public KlineResponseK oLowerCase(@jakarta.annotation.Nullable String oLowerCase) {
+    public KlineResponseK oLowerCase( String oLowerCase) {
         this.oLowerCase = oLowerCase;
         return this;
     }
@@ -258,16 +248,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return oLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getoLowerCase() {
         return oLowerCase;
     }
 
-    public void setoLowerCase(@jakarta.annotation.Nullable String oLowerCase) {
+    public void setoLowerCase( String oLowerCase) {
         this.oLowerCase = oLowerCase;
     }
 
-    public KlineResponseK cLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public KlineResponseK cLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
         return this;
     }
@@ -277,16 +267,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return cLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getcLowerCase() {
         return cLowerCase;
     }
 
-    public void setcLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public void setcLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
     }
 
-    public KlineResponseK hLowerCase(@jakarta.annotation.Nullable String hLowerCase) {
+    public KlineResponseK hLowerCase( String hLowerCase) {
         this.hLowerCase = hLowerCase;
         return this;
     }
@@ -296,16 +286,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return hLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String gethLowerCase() {
         return hLowerCase;
     }
 
-    public void sethLowerCase(@jakarta.annotation.Nullable String hLowerCase) {
+    public void sethLowerCase( String hLowerCase) {
         this.hLowerCase = hLowerCase;
     }
 
-    public KlineResponseK lLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public KlineResponseK lLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
         return this;
     }
@@ -315,16 +305,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return lLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getlLowerCase() {
         return lLowerCase;
     }
 
-    public void setlLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public void setlLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
     }
 
-    public KlineResponseK vLowerCase(@jakarta.annotation.Nullable String vLowerCase) {
+    public KlineResponseK vLowerCase( String vLowerCase) {
         this.vLowerCase = vLowerCase;
         return this;
     }
@@ -334,16 +324,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return vLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getvLowerCase() {
         return vLowerCase;
     }
 
-    public void setvLowerCase(@jakarta.annotation.Nullable String vLowerCase) {
+    public void setvLowerCase( String vLowerCase) {
         this.vLowerCase = vLowerCase;
     }
 
-    public KlineResponseK nLowerCase(@jakarta.annotation.Nullable Long nLowerCase) {
+    public KlineResponseK nLowerCase( Long nLowerCase) {
         this.nLowerCase = nLowerCase;
         return this;
     }
@@ -353,16 +343,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return nLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getnLowerCase() {
         return nLowerCase;
     }
 
-    public void setnLowerCase(@jakarta.annotation.Nullable Long nLowerCase) {
+    public void setnLowerCase( Long nLowerCase) {
         this.nLowerCase = nLowerCase;
     }
 
-    public KlineResponseK xLowerCase(@jakarta.annotation.Nullable Boolean xLowerCase) {
+    public KlineResponseK xLowerCase( Boolean xLowerCase) {
         this.xLowerCase = xLowerCase;
         return this;
     }
@@ -372,16 +362,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return xLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getxLowerCase() {
         return xLowerCase;
     }
 
-    public void setxLowerCase(@jakarta.annotation.Nullable Boolean xLowerCase) {
+    public void setxLowerCase( Boolean xLowerCase) {
         this.xLowerCase = xLowerCase;
     }
 
-    public KlineResponseK qLowerCase(@jakarta.annotation.Nullable String qLowerCase) {
+    public KlineResponseK qLowerCase( String qLowerCase) {
         this.qLowerCase = qLowerCase;
         return this;
     }
@@ -391,16 +381,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return qLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getqLowerCase() {
         return qLowerCase;
     }
 
-    public void setqLowerCase(@jakarta.annotation.Nullable String qLowerCase) {
+    public void setqLowerCase( String qLowerCase) {
         this.qLowerCase = qLowerCase;
     }
 
-    public KlineResponseK V(@jakarta.annotation.Nullable String V) {
+    public KlineResponseK V( String V) {
         this.V = V;
         return this;
     }
@@ -410,16 +400,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return V
      */
-    @jakarta.annotation.Nullable
+    
     public String getV() {
         return V;
     }
 
-    public void setV(@jakarta.annotation.Nullable String V) {
+    public void setV( String V) {
         this.V = V;
     }
 
-    public KlineResponseK Q(@jakarta.annotation.Nullable String Q) {
+    public KlineResponseK Q( String Q) {
         this.Q = Q;
         return this;
     }
@@ -429,16 +419,16 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return Q
      */
-    @jakarta.annotation.Nullable
+    
     public String getQ() {
         return Q;
     }
 
-    public void setQ(@jakarta.annotation.Nullable String Q) {
+    public void setQ( String Q) {
         this.Q = Q;
     }
 
-    public KlineResponseK B(@jakarta.annotation.Nullable String B) {
+    public KlineResponseK B( String B) {
         this.B = B;
         return this;
     }
@@ -448,12 +438,12 @@ public class KlineResponseK extends BaseDTO {
      *
      * @return B
      */
-    @jakarta.annotation.Nullable
+    
     public String getB() {
         return B;
     }
 
-    public void setB(@jakarta.annotation.Nullable String B) {
+    public void setB( String B) {
         this.B = B;
     }
 
@@ -505,31 +495,6 @@ public class KlineResponseK extends BaseDTO {
                 V,
                 Q,
                 B);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class KlineResponseK {\n");
-        sb.append("		tLowerCase: ").append(toIndentedString(tLowerCase)).append("\n");
-        sb.append("		T: ").append(toIndentedString(T)).append("\n");
-        sb.append("		sLowerCase: ").append(toIndentedString(sLowerCase)).append("\n");
-        sb.append("		iLowerCase: ").append(toIndentedString(iLowerCase)).append("\n");
-        sb.append("		fLowerCase: ").append(toIndentedString(fLowerCase)).append("\n");
-        sb.append("		L: ").append(toIndentedString(L)).append("\n");
-        sb.append("		oLowerCase: ").append(toIndentedString(oLowerCase)).append("\n");
-        sb.append("		cLowerCase: ").append(toIndentedString(cLowerCase)).append("\n");
-        sb.append("		hLowerCase: ").append(toIndentedString(hLowerCase)).append("\n");
-        sb.append("		lLowerCase: ").append(toIndentedString(lLowerCase)).append("\n");
-        sb.append("		vLowerCase: ").append(toIndentedString(vLowerCase)).append("\n");
-        sb.append("		nLowerCase: ").append(toIndentedString(nLowerCase)).append("\n");
-        sb.append("		xLowerCase: ").append(toIndentedString(xLowerCase)).append("\n");
-        sb.append("		qLowerCase: ").append(toIndentedString(qLowerCase)).append("\n");
-        sb.append("		V: ").append(toIndentedString(V)).append("\n");
-        sb.append("		Q: ").append(toIndentedString(Q)).append("\n");
-        sb.append("		B: ").append(toIndentedString(B)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -629,291 +594,7 @@ public class KlineResponseK extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object tLowerCaseValue = gettLowerCase();
-        if (tLowerCaseValue != null) {
-            valMap.put("tLowerCase", tLowerCaseValue);
-        }
-        Object TValue = getT();
-        if (TValue != null) {
-            valMap.put("T", TValue);
-        }
-        Object sLowerCaseValue = getsLowerCase();
-        if (sLowerCaseValue != null) {
-            valMap.put("sLowerCase", sLowerCaseValue);
-        }
-        Object iLowerCaseValue = getiLowerCase();
-        if (iLowerCaseValue != null) {
-            valMap.put("iLowerCase", iLowerCaseValue);
-        }
-        Object fLowerCaseValue = getfLowerCase();
-        if (fLowerCaseValue != null) {
-            valMap.put("fLowerCase", fLowerCaseValue);
-        }
-        Object LValue = getL();
-        if (LValue != null) {
-            valMap.put("L", LValue);
-        }
-        Object oLowerCaseValue = getoLowerCase();
-        if (oLowerCaseValue != null) {
-            valMap.put("oLowerCase", oLowerCaseValue);
-        }
-        Object cLowerCaseValue = getcLowerCase();
-        if (cLowerCaseValue != null) {
-            valMap.put("cLowerCase", cLowerCaseValue);
-        }
-        Object hLowerCaseValue = gethLowerCase();
-        if (hLowerCaseValue != null) {
-            valMap.put("hLowerCase", hLowerCaseValue);
-        }
-        Object lLowerCaseValue = getlLowerCase();
-        if (lLowerCaseValue != null) {
-            valMap.put("lLowerCase", lLowerCaseValue);
-        }
-        Object vLowerCaseValue = getvLowerCase();
-        if (vLowerCaseValue != null) {
-            valMap.put("vLowerCase", vLowerCaseValue);
-        }
-        Object nLowerCaseValue = getnLowerCase();
-        if (nLowerCaseValue != null) {
-            valMap.put("nLowerCase", nLowerCaseValue);
-        }
-        Object xLowerCaseValue = getxLowerCase();
-        if (xLowerCaseValue != null) {
-            valMap.put("xLowerCase", xLowerCaseValue);
-        }
-        Object qLowerCaseValue = getqLowerCase();
-        if (qLowerCaseValue != null) {
-            valMap.put("qLowerCase", qLowerCaseValue);
-        }
-        Object VValue = getV();
-        if (VValue != null) {
-            valMap.put("V", VValue);
-        }
-        Object QValue = getQ();
-        if (QValue != null) {
-            valMap.put("Q", QValue);
-        }
-        Object BValue = getB();
-        if (BValue != null) {
-            valMap.put("B", BValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("t");
-        openapiFields.add("T");
-        openapiFields.add("s");
-        openapiFields.add("i");
-        openapiFields.add("f");
-        openapiFields.add("L");
-        openapiFields.add("o");
-        openapiFields.add("c");
-        openapiFields.add("h");
-        openapiFields.add("l");
-        openapiFields.add("v");
-        openapiFields.add("n");
-        openapiFields.add("x");
-        openapiFields.add("q");
-        openapiFields.add("V");
-        openapiFields.add("Q");
-        openapiFields.add("B");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to KlineResponseK
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!KlineResponseK.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in KlineResponseK is not found in the"
-                                        + " empty JSON string",
-                                KlineResponseK.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!KlineResponseK.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `KlineResponseK` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("s") != null && !jsonObj.get("s").isJsonNull())
-                && !jsonObj.get("s").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `s` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("s").toString()));
-        }
-        if ((jsonObj.get("i") != null && !jsonObj.get("i").isJsonNull())
-                && !jsonObj.get("i").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `i` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("i").toString()));
-        }
-        if ((jsonObj.get("o") != null && !jsonObj.get("o").isJsonNull())
-                && !jsonObj.get("o").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `o` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("o").toString()));
-        }
-        if ((jsonObj.get("c") != null && !jsonObj.get("c").isJsonNull())
-                && !jsonObj.get("c").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `c` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("c").toString()));
-        }
-        if ((jsonObj.get("h") != null && !jsonObj.get("h").isJsonNull())
-                && !jsonObj.get("h").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `h` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("h").toString()));
-        }
-        if ((jsonObj.get("l") != null && !jsonObj.get("l").isJsonNull())
-                && !jsonObj.get("l").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `l` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("l").toString()));
-        }
-        if ((jsonObj.get("v") != null && !jsonObj.get("v").isJsonNull())
-                && !jsonObj.get("v").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `v` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("v").toString()));
-        }
-        if ((jsonObj.get("q") != null && !jsonObj.get("q").isJsonNull())
-                && !jsonObj.get("q").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `q` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("q").toString()));
-        }
-        if ((jsonObj.get("V") != null && !jsonObj.get("V").isJsonNull())
-                && !jsonObj.get("V").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `V` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("V").toString()));
-        }
-        if ((jsonObj.get("Q") != null && !jsonObj.get("Q").isJsonNull())
-                && !jsonObj.get("Q").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `Q` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("Q").toString()));
-        }
-        if ((jsonObj.get("B") != null && !jsonObj.get("B").isJsonNull())
-                && !jsonObj.get("B").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `B` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("B").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!KlineResponseK.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'KlineResponseK' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<KlineResponseK> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(KlineResponseK.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<KlineResponseK>() {
-                        @Override
-                        public void write(JsonWriter out, KlineResponseK value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public KlineResponseK read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of KlineResponseK given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of KlineResponseK
-     * @throws IOException if the JSON string is invalid with respect to KlineResponseK
-     */
-    public static KlineResponseK fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, KlineResponseK.class);
-    }
-
-    /**
-     * Convert an instance of KlineResponseK to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

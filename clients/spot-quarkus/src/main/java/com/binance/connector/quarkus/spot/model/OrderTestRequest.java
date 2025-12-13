@@ -13,151 +13,140 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderTestRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderTestRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_COMPUTE_COMMISSION_RATES = "computeCommissionRates";
 
-    @SerializedName(SERIALIZED_NAME_COMPUTE_COMMISSION_RATES)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COMPUTE_COMMISSION_RATES)
+    
     private Boolean computeCommissionRates;
 
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_SIDE = "side";
 
-    @SerializedName(SERIALIZED_NAME_SIDE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SIDE)
+
     private Side side;
 
     public static final String SERIALIZED_NAME_TYPE = "type";
 
-    @SerializedName(SERIALIZED_NAME_TYPE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_TYPE)
+
     private OrderType type;
 
     public static final String SERIALIZED_NAME_TIME_IN_FORCE = "timeInForce";
 
-    @SerializedName(SERIALIZED_NAME_TIME_IN_FORCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TIME_IN_FORCE)
+    
     private TimeInForce timeInForce;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private Double price;
 
     public static final String SERIALIZED_NAME_QUANTITY = "quantity";
 
-    @SerializedName(SERIALIZED_NAME_QUANTITY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUANTITY)
+    
     private Double quantity;
 
     public static final String SERIALIZED_NAME_QUOTE_ORDER_QTY = "quoteOrderQty";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_ORDER_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_ORDER_QTY)
+    
     private Double quoteOrderQty;
 
     public static final String SERIALIZED_NAME_NEW_CLIENT_ORDER_ID = "newClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
+    
     private String newClientOrderId;
 
     public static final String SERIALIZED_NAME_NEW_ORDER_RESP_TYPE = "newOrderRespType";
 
-    @SerializedName(SERIALIZED_NAME_NEW_ORDER_RESP_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_ORDER_RESP_TYPE)
+    
     private NewOrderRespType newOrderRespType;
 
     public static final String SERIALIZED_NAME_STOP_PRICE = "stopPrice";
 
-    @SerializedName(SERIALIZED_NAME_STOP_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STOP_PRICE)
+    
     private Double stopPrice;
 
     public static final String SERIALIZED_NAME_TRAILING_DELTA = "trailingDelta";
 
-    @SerializedName(SERIALIZED_NAME_TRAILING_DELTA)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TRAILING_DELTA)
+    
     private Integer trailingDelta;
 
     public static final String SERIALIZED_NAME_ICEBERG_QTY = "icebergQty";
 
-    @SerializedName(SERIALIZED_NAME_ICEBERG_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ICEBERG_QTY)
+    
     private Double icebergQty;
 
     public static final String SERIALIZED_NAME_STRATEGY_ID = "strategyId";
 
-    @SerializedName(SERIALIZED_NAME_STRATEGY_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STRATEGY_ID)
+    
     private Long strategyId;
 
     public static final String SERIALIZED_NAME_STRATEGY_TYPE = "strategyType";
 
-    @SerializedName(SERIALIZED_NAME_STRATEGY_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STRATEGY_TYPE)
+    
     private Integer strategyType;
 
     public static final String SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE =
             "selfTradePreventionMode";
 
-    @SerializedName(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
+    
     private SelfTradePreventionMode selfTradePreventionMode;
 
     public static final String SERIALIZED_NAME_PEG_PRICE_TYPE = "pegPriceType";
 
-    @SerializedName(SERIALIZED_NAME_PEG_PRICE_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PEG_PRICE_TYPE)
+    
     private PegPriceType pegPriceType;
 
     public static final String SERIALIZED_NAME_PEG_OFFSET_VALUE = "pegOffsetValue";
 
-    @SerializedName(SERIALIZED_NAME_PEG_OFFSET_VALUE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PEG_OFFSET_VALUE)
+    
     private Integer pegOffsetValue;
 
     public static final String SERIALIZED_NAME_PEG_OFFSET_TYPE = "pegOffsetType";
 
-    @SerializedName(SERIALIZED_NAME_PEG_OFFSET_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PEG_OFFSET_TYPE)
+    
     private PegOffsetType pegOffsetType;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
-    @SerializedName(SERIALIZED_NAME_RECV_WINDOW)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
+    
     private Double recvWindow;
 
     public OrderTestRequest() {}
 
     public OrderTestRequest computeCommissionRates(
-            @jakarta.annotation.Nullable Boolean computeCommissionRates) {
+             Boolean computeCommissionRates) {
         this.computeCommissionRates = computeCommissionRates;
         return this;
     }
@@ -167,17 +156,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return computeCommissionRates
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getComputeCommissionRates() {
         return computeCommissionRates;
     }
 
     public void setComputeCommissionRates(
-            @jakarta.annotation.Nullable Boolean computeCommissionRates) {
+             Boolean computeCommissionRates) {
         this.computeCommissionRates = computeCommissionRates;
     }
 
-    public OrderTestRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public OrderTestRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -187,17 +176,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public OrderTestRequest side(@jakarta.annotation.Nonnull Side side) {
+    public OrderTestRequest side( Side side) {
         this.side = side;
         return this;
     }
@@ -207,18 +196,18 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return side
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public Side getSide() {
         return side;
     }
 
-    public void setSide(@jakarta.annotation.Nonnull Side side) {
+    public void setSide( Side side) {
         this.side = side;
     }
 
-    public OrderTestRequest type(@jakarta.annotation.Nonnull OrderType type) {
+    public OrderTestRequest type( OrderType type) {
         this.type = type;
         return this;
     }
@@ -228,18 +217,18 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return type
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public OrderType getType() {
         return type;
     }
 
-    public void setType(@jakarta.annotation.Nonnull OrderType type) {
+    public void setType( OrderType type) {
         this.type = type;
     }
 
-    public OrderTestRequest timeInForce(@jakarta.annotation.Nullable TimeInForce timeInForce) {
+    public OrderTestRequest timeInForce( TimeInForce timeInForce) {
         this.timeInForce = timeInForce;
         return this;
     }
@@ -249,17 +238,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return timeInForce
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public TimeInForce getTimeInForce() {
         return timeInForce;
     }
 
-    public void setTimeInForce(@jakarta.annotation.Nullable TimeInForce timeInForce) {
+    public void setTimeInForce( TimeInForce timeInForce) {
         this.timeInForce = timeInForce;
     }
 
-    public OrderTestRequest price(@jakarta.annotation.Nullable Double price) {
+    public OrderTestRequest price( Double price) {
         this.price = price;
         return this;
     }
@@ -269,17 +258,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable Double price) {
+    public void setPrice( Double price) {
         this.price = price;
     }
 
-    public OrderTestRequest quantity(@jakarta.annotation.Nullable Double quantity) {
+    public OrderTestRequest quantity( Double quantity) {
         this.quantity = quantity;
         return this;
     }
@@ -289,17 +278,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return quantity
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(@jakarta.annotation.Nullable Double quantity) {
+    public void setQuantity( Double quantity) {
         this.quantity = quantity;
     }
 
-    public OrderTestRequest quoteOrderQty(@jakarta.annotation.Nullable Double quoteOrderQty) {
+    public OrderTestRequest quoteOrderQty( Double quoteOrderQty) {
         this.quoteOrderQty = quoteOrderQty;
         return this;
     }
@@ -309,17 +298,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return quoteOrderQty
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getQuoteOrderQty() {
         return quoteOrderQty;
     }
 
-    public void setQuoteOrderQty(@jakarta.annotation.Nullable Double quoteOrderQty) {
+    public void setQuoteOrderQty( Double quoteOrderQty) {
         this.quoteOrderQty = quoteOrderQty;
     }
 
-    public OrderTestRequest newClientOrderId(@jakarta.annotation.Nullable String newClientOrderId) {
+    public OrderTestRequest newClientOrderId( String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
         return this;
     }
@@ -329,17 +318,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return newClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getNewClientOrderId() {
         return newClientOrderId;
     }
 
-    public void setNewClientOrderId(@jakarta.annotation.Nullable String newClientOrderId) {
+    public void setNewClientOrderId( String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
     }
 
     public OrderTestRequest newOrderRespType(
-            @jakarta.annotation.Nullable NewOrderRespType newOrderRespType) {
+             NewOrderRespType newOrderRespType) {
         this.newOrderRespType = newOrderRespType;
         return this;
     }
@@ -349,18 +338,18 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return newOrderRespType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public NewOrderRespType getNewOrderRespType() {
         return newOrderRespType;
     }
 
     public void setNewOrderRespType(
-            @jakarta.annotation.Nullable NewOrderRespType newOrderRespType) {
+             NewOrderRespType newOrderRespType) {
         this.newOrderRespType = newOrderRespType;
     }
 
-    public OrderTestRequest stopPrice(@jakarta.annotation.Nullable Double stopPrice) {
+    public OrderTestRequest stopPrice( Double stopPrice) {
         this.stopPrice = stopPrice;
         return this;
     }
@@ -370,17 +359,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return stopPrice
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getStopPrice() {
         return stopPrice;
     }
 
-    public void setStopPrice(@jakarta.annotation.Nullable Double stopPrice) {
+    public void setStopPrice( Double stopPrice) {
         this.stopPrice = stopPrice;
     }
 
-    public OrderTestRequest trailingDelta(@jakarta.annotation.Nullable Integer trailingDelta) {
+    public OrderTestRequest trailingDelta( Integer trailingDelta) {
         this.trailingDelta = trailingDelta;
         return this;
     }
@@ -390,16 +379,16 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return trailingDelta
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getTrailingDelta() {
         return trailingDelta;
     }
 
-    public void setTrailingDelta(@jakarta.annotation.Nullable Integer trailingDelta) {
+    public void setTrailingDelta( Integer trailingDelta) {
         this.trailingDelta = trailingDelta;
     }
 
-    public OrderTestRequest icebergQty(@jakarta.annotation.Nullable Double icebergQty) {
+    public OrderTestRequest icebergQty( Double icebergQty) {
         this.icebergQty = icebergQty;
         return this;
     }
@@ -409,17 +398,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return icebergQty
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getIcebergQty() {
         return icebergQty;
     }
 
-    public void setIcebergQty(@jakarta.annotation.Nullable Double icebergQty) {
+    public void setIcebergQty( Double icebergQty) {
         this.icebergQty = icebergQty;
     }
 
-    public OrderTestRequest strategyId(@jakarta.annotation.Nullable Long strategyId) {
+    public OrderTestRequest strategyId( Long strategyId) {
         this.strategyId = strategyId;
         return this;
     }
@@ -429,16 +418,16 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return strategyId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStrategyId() {
         return strategyId;
     }
 
-    public void setStrategyId(@jakarta.annotation.Nullable Long strategyId) {
+    public void setStrategyId( Long strategyId) {
         this.strategyId = strategyId;
     }
 
-    public OrderTestRequest strategyType(@jakarta.annotation.Nullable Integer strategyType) {
+    public OrderTestRequest strategyType( Integer strategyType) {
         this.strategyType = strategyType;
         return this;
     }
@@ -448,17 +437,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return strategyType
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getStrategyType() {
         return strategyType;
     }
 
-    public void setStrategyType(@jakarta.annotation.Nullable Integer strategyType) {
+    public void setStrategyType( Integer strategyType) {
         this.strategyType = strategyType;
     }
 
     public OrderTestRequest selfTradePreventionMode(
-            @jakarta.annotation.Nullable SelfTradePreventionMode selfTradePreventionMode) {
+             SelfTradePreventionMode selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
         return this;
     }
@@ -468,18 +457,18 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return selfTradePreventionMode
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public SelfTradePreventionMode getSelfTradePreventionMode() {
         return selfTradePreventionMode;
     }
 
     public void setSelfTradePreventionMode(
-            @jakarta.annotation.Nullable SelfTradePreventionMode selfTradePreventionMode) {
+             SelfTradePreventionMode selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
     }
 
-    public OrderTestRequest pegPriceType(@jakarta.annotation.Nullable PegPriceType pegPriceType) {
+    public OrderTestRequest pegPriceType( PegPriceType pegPriceType) {
         this.pegPriceType = pegPriceType;
         return this;
     }
@@ -489,17 +478,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return pegPriceType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PegPriceType getPegPriceType() {
         return pegPriceType;
     }
 
-    public void setPegPriceType(@jakarta.annotation.Nullable PegPriceType pegPriceType) {
+    public void setPegPriceType( PegPriceType pegPriceType) {
         this.pegPriceType = pegPriceType;
     }
 
-    public OrderTestRequest pegOffsetValue(@jakarta.annotation.Nullable Integer pegOffsetValue) {
+    public OrderTestRequest pegOffsetValue( Integer pegOffsetValue) {
         this.pegOffsetValue = pegOffsetValue;
         return this;
     }
@@ -509,17 +498,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return pegOffsetValue
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getPegOffsetValue() {
         return pegOffsetValue;
     }
 
-    public void setPegOffsetValue(@jakarta.annotation.Nullable Integer pegOffsetValue) {
+    public void setPegOffsetValue( Integer pegOffsetValue) {
         this.pegOffsetValue = pegOffsetValue;
     }
 
     public OrderTestRequest pegOffsetType(
-            @jakarta.annotation.Nullable PegOffsetType pegOffsetType) {
+             PegOffsetType pegOffsetType) {
         this.pegOffsetType = pegOffsetType;
         return this;
     }
@@ -529,17 +518,17 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return pegOffsetType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PegOffsetType getPegOffsetType() {
         return pegOffsetType;
     }
 
-    public void setPegOffsetType(@jakarta.annotation.Nullable PegOffsetType pegOffsetType) {
+    public void setPegOffsetType( PegOffsetType pegOffsetType) {
         this.pegOffsetType = pegOffsetType;
     }
 
-    public OrderTestRequest recvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public OrderTestRequest recvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -549,13 +538,13 @@ public class OrderTestRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public void setRecvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -866,171 +855,4 @@ public class OrderTestRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("computeCommissionRates");
-        openapiFields.add("symbol");
-        openapiFields.add("side");
-        openapiFields.add("type");
-        openapiFields.add("timeInForce");
-        openapiFields.add("price");
-        openapiFields.add("quantity");
-        openapiFields.add("quoteOrderQty");
-        openapiFields.add("newClientOrderId");
-        openapiFields.add("newOrderRespType");
-        openapiFields.add("stopPrice");
-        openapiFields.add("trailingDelta");
-        openapiFields.add("icebergQty");
-        openapiFields.add("strategyId");
-        openapiFields.add("strategyType");
-        openapiFields.add("selfTradePreventionMode");
-        openapiFields.add("pegPriceType");
-        openapiFields.add("pegOffsetValue");
-        openapiFields.add("pegOffsetType");
-        openapiFields.add("recvWindow");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("side");
-        openapiRequiredFields.add("type");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to OrderTestRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderTestRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderTestRequest is not found in the"
-                                        + " empty JSON string",
-                                OrderTestRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderTestRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderTestRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : OrderTestRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the required field `side`
-        Side.validateJsonElement(jsonObj.get("side"));
-        // validate the required field `type`
-        OrderType.validateJsonElement(jsonObj.get("type"));
-        // validate the optional field `timeInForce`
-        if (jsonObj.get("timeInForce") != null && !jsonObj.get("timeInForce").isJsonNull()) {
-            TimeInForce.validateJsonElement(jsonObj.get("timeInForce"));
-        }
-        if ((jsonObj.get("newClientOrderId") != null
-                        && !jsonObj.get("newClientOrderId").isJsonNull())
-                && !jsonObj.get("newClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `newClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("newClientOrderId").toString()));
-        }
-        // validate the optional field `newOrderRespType`
-        if (jsonObj.get("newOrderRespType") != null
-                && !jsonObj.get("newOrderRespType").isJsonNull()) {
-            NewOrderRespType.validateJsonElement(jsonObj.get("newOrderRespType"));
-        }
-        // validate the optional field `selfTradePreventionMode`
-        if (jsonObj.get("selfTradePreventionMode") != null
-                && !jsonObj.get("selfTradePreventionMode").isJsonNull()) {
-            SelfTradePreventionMode.validateJsonElement(jsonObj.get("selfTradePreventionMode"));
-        }
-        // validate the optional field `pegPriceType`
-        if (jsonObj.get("pegPriceType") != null && !jsonObj.get("pegPriceType").isJsonNull()) {
-            PegPriceType.validateJsonElement(jsonObj.get("pegPriceType"));
-        }
-        // validate the optional field `pegOffsetType`
-        if (jsonObj.get("pegOffsetType") != null && !jsonObj.get("pegOffsetType").isJsonNull()) {
-            PegOffsetType.validateJsonElement(jsonObj.get("pegOffsetType"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderTestRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderTestRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderTestRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(OrderTestRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderTestRequest>() {
-                        @Override
-                        public void write(JsonWriter out, OrderTestRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderTestRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderTestRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderTestRequest
-     * @throws IOException if the JSON string is invalid with respect to OrderTestRequest
-     */
-    public static OrderTestRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderTestRequest.class);
-    }
-
-    /**
-     * Convert an instance of OrderTestRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

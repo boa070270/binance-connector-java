@@ -12,17 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets symbolStatus */
-@JsonAdapter(SymbolStatus.Adapter.class)
 public enum SymbolStatus {
     TRADING("TRADING"),
 
@@ -58,22 +47,4 @@ public enum SymbolStatus {
         throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<SymbolStatus> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final SymbolStatus enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public SymbolStatus read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return SymbolStatus.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        SymbolStatus.fromValue(value);
-    }
 }

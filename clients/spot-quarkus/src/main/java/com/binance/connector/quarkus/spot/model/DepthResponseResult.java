@@ -12,46 +12,35 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** DepthResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class DepthResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_LAST_UPDATE_ID = "lastUpdateId";
 
-    @SerializedName(SERIALIZED_NAME_LAST_UPDATE_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LAST_UPDATE_ID)
+    
     private Long lastUpdateId;
 
     public static final String SERIALIZED_NAME_BIDS = "bids";
 
-    @SerializedName(SERIALIZED_NAME_BIDS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BIDS)
+    
     private List<List<String>> bids;
 
     public static final String SERIALIZED_NAME_ASKS = "asks";
 
-    @SerializedName(SERIALIZED_NAME_ASKS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASKS)
+    
     private List<List<String>> asks;
 
     public DepthResponseResult() {}
 
-    public DepthResponseResult lastUpdateId(@jakarta.annotation.Nullable Long lastUpdateId) {
+    public DepthResponseResult lastUpdateId( Long lastUpdateId) {
         this.lastUpdateId = lastUpdateId;
         return this;
     }
@@ -61,16 +50,16 @@ public class DepthResponseResult extends BaseDTO {
      *
      * @return lastUpdateId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getLastUpdateId() {
         return lastUpdateId;
     }
 
-    public void setLastUpdateId(@jakarta.annotation.Nullable Long lastUpdateId) {
+    public void setLastUpdateId( Long lastUpdateId) {
         this.lastUpdateId = lastUpdateId;
     }
 
-    public DepthResponseResult bids(@jakarta.annotation.Nullable List<List<String>> bids) {
+    public DepthResponseResult bids( List<List<String>> bids) {
         this.bids = bids;
         return this;
     }
@@ -88,17 +77,15 @@ public class DepthResponseResult extends BaseDTO {
      *
      * @return bids
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<List<String>> getBids() {
         return bids;
     }
 
-    public void setBids(@jakarta.annotation.Nullable List<List<String>> bids) {
+    public void setBids( List<List<String>> bids) {
         this.bids = bids;
     }
 
-    public DepthResponseResult asks(@jakarta.annotation.Nullable List<List<String>> asks) {
+    public DepthResponseResult asks( List<List<String>> asks) {
         this.asks = asks;
         return this;
     }
@@ -116,13 +103,11 @@ public class DepthResponseResult extends BaseDTO {
      *
      * @return asks
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<List<String>> getAsks() {
         return asks;
     }
 
-    public void setAsks(@jakarta.annotation.Nullable List<List<String>> asks) {
+    public void setAsks( List<List<String>> asks) {
         this.asks = asks;
     }
 
@@ -145,17 +130,6 @@ public class DepthResponseResult extends BaseDTO {
         return Objects.hash(lastUpdateId, bids, asks);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class DepthResponseResult {\n");
-        sb.append("		lastUpdateId: ").append(toIndentedString(lastUpdateId)).append("\n");
-        sb.append("		bids: ").append(toIndentedString(bids)).append("\n");
-        sb.append("		asks: ").append(toIndentedString(asks)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
     public String toUrlQueryString() {
         StringBuilder sb = new StringBuilder();
         Map<String, String> valMap = new TreeMap<String, String>();
@@ -167,12 +141,12 @@ public class DepthResponseResult extends BaseDTO {
         }
         List<List<String>> bidsValue = getBids();
         if (bidsValue != null) {
-            String bidsValueAsString = JSON.getGson().toJson(bidsValue);
+            String bidsValueAsString = Json.encode(bidsValue);
             valMap.put("bids", bidsValueAsString);
         }
         List<List<String>> asksValue = getAsks();
         if (asksValue != null) {
-            String asksValueAsString = JSON.getGson().toJson(asksValue);
+            String asksValueAsString = Json.encode(asksValue);
             valMap.put("asks", asksValueAsString);
         }
 
@@ -183,154 +157,7 @@ public class DepthResponseResult extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object lastUpdateIdValue = getLastUpdateId();
-        if (lastUpdateIdValue != null) {
-            valMap.put("lastUpdateId", lastUpdateIdValue);
-        }
-        Object bidsValue = getBids();
-        if (bidsValue != null) {
-            valMap.put("bids", bidsValue);
-        }
-        Object asksValue = getAsks();
-        if (asksValue != null) {
-            valMap.put("asks", asksValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("lastUpdateId");
-        openapiFields.add("bids");
-        openapiFields.add("asks");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to DepthResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!DepthResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in DepthResponseResult is not found in"
-                                        + " the empty JSON string",
-                                DepthResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!DepthResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `DepthResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("bids") != null
-                && !jsonObj.get("bids").isJsonNull()
-                && !jsonObj.get("bids").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `bids` to be an array in the JSON string but got"
-                                    + " `%s`",
-                            jsonObj.get("bids").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("asks") != null
-                && !jsonObj.get("asks").isJsonNull()
-                && !jsonObj.get("asks").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `asks` to be an array in the JSON string but got"
-                                    + " `%s`",
-                            jsonObj.get("asks").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!DepthResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'DepthResponseResult' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<DepthResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(DepthResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<DepthResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, DepthResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public DepthResponseResult read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of DepthResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of DepthResponseResult
-     * @throws IOException if the JSON string is invalid with respect to DepthResponseResult
-     */
-    public static DepthResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, DepthResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of DepthResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

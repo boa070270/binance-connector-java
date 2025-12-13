@@ -12,7 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
+import io.vertx.core.json.Json;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class AccountCommissionResponseResult extends BaseDTO {
     public String getSymbol() {
         return symbol;
     }
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
@@ -116,23 +116,23 @@ public class AccountCommissionResponseResult extends BaseDTO {
         AccountCommissionResponseResultStandardCommission standardCommissionValue =
                 getStandardCommission();
         if (standardCommissionValue != null) {
-            String standardCommissionValueAsString = JSON.getGson().toJson(standardCommissionValue);
+            String standardCommissionValueAsString = Json.encode(standardCommissionValue);
             valMap.put("standardCommission", standardCommissionValueAsString);
         }
         AccountCommissionResponseResultSpecialCommission specialCommissionValue =
                 getSpecialCommission();
         if (specialCommissionValue != null) {
-            String specialCommissionValueAsString = JSON.getGson().toJson(specialCommissionValue);
+            String specialCommissionValueAsString = Json.encode(specialCommissionValue);
             valMap.put("specialCommission", specialCommissionValueAsString);
         }
         AccountCommissionResponseResultTaxCommission taxCommissionValue = getTaxCommission();
         if (taxCommissionValue != null) {
-            String taxCommissionValueAsString = JSON.getGson().toJson(taxCommissionValue);
+            String taxCommissionValueAsString = Json.encode(taxCommissionValue);
             valMap.put("taxCommission", taxCommissionValueAsString);
         }
         AccountCommissionResponseResultDiscount discountValue = getDiscount();
         if (discountValue != null) {
-            String discountValueAsString = JSON.getGson().toJson(discountValue);
+            String discountValueAsString = Json.encode(discountValue);
             valMap.put("discount", discountValueAsString);
         }
 

@@ -12,57 +12,47 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TickerBookResponse1Result */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TickerBookResponse1Result extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_BID_PRICE = "bidPrice";
 
-    @SerializedName(SERIALIZED_NAME_BID_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BID_PRICE)
+    
     private String bidPrice;
 
     public static final String SERIALIZED_NAME_BID_QTY = "bidQty";
 
-    @SerializedName(SERIALIZED_NAME_BID_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BID_QTY)
+    
     private String bidQty;
 
     public static final String SERIALIZED_NAME_ASK_PRICE = "askPrice";
 
-    @SerializedName(SERIALIZED_NAME_ASK_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASK_PRICE)
+    
     private String askPrice;
 
     public static final String SERIALIZED_NAME_ASK_QTY = "askQty";
 
-    @SerializedName(SERIALIZED_NAME_ASK_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASK_QTY)
+    
     private String askQty;
 
     public TickerBookResponse1Result() {}
 
-    public TickerBookResponse1Result symbol(@jakarta.annotation.Nullable String symbol) {
+    public TickerBookResponse1Result symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -72,16 +62,16 @@ public class TickerBookResponse1Result extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public TickerBookResponse1Result bidPrice(@jakarta.annotation.Nullable String bidPrice) {
+    public TickerBookResponse1Result bidPrice( String bidPrice) {
         this.bidPrice = bidPrice;
         return this;
     }
@@ -91,16 +81,16 @@ public class TickerBookResponse1Result extends BaseDTO {
      *
      * @return bidPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getBidPrice() {
         return bidPrice;
     }
 
-    public void setBidPrice(@jakarta.annotation.Nullable String bidPrice) {
+    public void setBidPrice( String bidPrice) {
         this.bidPrice = bidPrice;
     }
 
-    public TickerBookResponse1Result bidQty(@jakarta.annotation.Nullable String bidQty) {
+    public TickerBookResponse1Result bidQty( String bidQty) {
         this.bidQty = bidQty;
         return this;
     }
@@ -110,16 +100,16 @@ public class TickerBookResponse1Result extends BaseDTO {
      *
      * @return bidQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getBidQty() {
         return bidQty;
     }
 
-    public void setBidQty(@jakarta.annotation.Nullable String bidQty) {
+    public void setBidQty( String bidQty) {
         this.bidQty = bidQty;
     }
 
-    public TickerBookResponse1Result askPrice(@jakarta.annotation.Nullable String askPrice) {
+    public TickerBookResponse1Result askPrice( String askPrice) {
         this.askPrice = askPrice;
         return this;
     }
@@ -129,16 +119,16 @@ public class TickerBookResponse1Result extends BaseDTO {
      *
      * @return askPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getAskPrice() {
         return askPrice;
     }
 
-    public void setAskPrice(@jakarta.annotation.Nullable String askPrice) {
+    public void setAskPrice( String askPrice) {
         this.askPrice = askPrice;
     }
 
-    public TickerBookResponse1Result askQty(@jakarta.annotation.Nullable String askQty) {
+    public TickerBookResponse1Result askQty( String askQty) {
         this.askQty = askQty;
         return this;
     }
@@ -148,12 +138,12 @@ public class TickerBookResponse1Result extends BaseDTO {
      *
      * @return askQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getAskQty() {
         return askQty;
     }
 
-    public void setAskQty(@jakarta.annotation.Nullable String askQty) {
+    public void setAskQty( String askQty) {
         this.askQty = askQty;
     }
 
@@ -271,142 +261,4 @@ public class TickerBookResponse1Result extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("bidPrice");
-        openapiFields.add("bidQty");
-        openapiFields.add("askPrice");
-        openapiFields.add("askQty");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TickerBookResponse1Result
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TickerBookResponse1Result.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TickerBookResponse1Result is not found"
-                                        + " in the empty JSON string",
-                                TickerBookResponse1Result.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TickerBookResponse1Result.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TickerBookResponse1Result` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("bidPrice") != null && !jsonObj.get("bidPrice").isJsonNull())
-                && !jsonObj.get("bidPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `bidPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("bidPrice").toString()));
-        }
-        if ((jsonObj.get("bidQty") != null && !jsonObj.get("bidQty").isJsonNull())
-                && !jsonObj.get("bidQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `bidQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("bidQty").toString()));
-        }
-        if ((jsonObj.get("askPrice") != null && !jsonObj.get("askPrice").isJsonNull())
-                && !jsonObj.get("askPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `askPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("askPrice").toString()));
-        }
-        if ((jsonObj.get("askQty") != null && !jsonObj.get("askQty").isJsonNull())
-                && !jsonObj.get("askQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `askQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("askQty").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TickerBookResponse1Result.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TickerBookResponse1Result' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TickerBookResponse1Result> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TickerBookResponse1Result.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TickerBookResponse1Result>() {
-                        @Override
-                        public void write(JsonWriter out, TickerBookResponse1Result value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TickerBookResponse1Result read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TickerBookResponse1Result given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TickerBookResponse1Result
-     * @throws IOException if the JSON string is invalid with respect to TickerBookResponse1Result
-     */
-    public static TickerBookResponse1Result fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TickerBookResponse1Result.class);
-    }
-
-    /**
-     * Convert an instance of TickerBookResponse1Result to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

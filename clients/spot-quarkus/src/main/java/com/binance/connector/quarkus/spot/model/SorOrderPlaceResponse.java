@@ -12,52 +12,43 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** SorOrderPlaceResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class SorOrderPlaceResponse extends BaseDTO {
     public static final String SERIALIZED_NAME_ID = "id";
 
-    @SerializedName(SERIALIZED_NAME_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ID)
+    
     private String id;
 
     public static final String SERIALIZED_NAME_STATUS = "status";
 
-    @SerializedName(SERIALIZED_NAME_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STATUS)
+    
     private Long status;
 
     public static final String SERIALIZED_NAME_RESULT = "result";
 
-    @SerializedName(SERIALIZED_NAME_RESULT)
-    @jakarta.annotation.Nullable
-    private List<@Valid SorOrderPlaceResponseResultInner> result;
+    @JsonProperty(SERIALIZED_NAME_RESULT)
+    
+    private List<SorOrderPlaceResponseResultInner> result;
 
     public static final String SERIALIZED_NAME_RATE_LIMITS = "rateLimits";
 
-    @SerializedName(SERIALIZED_NAME_RATE_LIMITS)
-    @jakarta.annotation.Nullable
-    private List<@Valid RateLimits> rateLimits;
+    @JsonProperty(SERIALIZED_NAME_RATE_LIMITS)
+    
+    private List<RateLimits> rateLimits;
 
     public SorOrderPlaceResponse() {}
 
-    public SorOrderPlaceResponse id(@jakarta.annotation.Nullable String id) {
+    public SorOrderPlaceResponse id( String id) {
         this.id = id;
         return this;
     }
@@ -67,16 +58,16 @@ public class SorOrderPlaceResponse extends BaseDTO {
      *
      * @return id
      */
-    @jakarta.annotation.Nullable
+    
     public String getId() {
         return id;
     }
 
-    public void setId(@jakarta.annotation.Nullable String id) {
+    public void setId( String id) {
         this.id = id;
     }
 
-    public SorOrderPlaceResponse status(@jakarta.annotation.Nullable Long status) {
+    public SorOrderPlaceResponse status( Long status) {
         this.status = status;
         return this;
     }
@@ -86,17 +77,17 @@ public class SorOrderPlaceResponse extends BaseDTO {
      *
      * @return status
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStatus() {
         return status;
     }
 
-    public void setStatus(@jakarta.annotation.Nullable Long status) {
+    public void setStatus( Long status) {
         this.status = status;
     }
 
     public SorOrderPlaceResponse result(
-            @jakarta.annotation.Nullable List<@Valid SorOrderPlaceResponseResultInner> result) {
+             List<SorOrderPlaceResponseResultInner> result) {
         this.result = result;
         return this;
     }
@@ -114,19 +105,19 @@ public class SorOrderPlaceResponse extends BaseDTO {
      *
      * @return result
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid SorOrderPlaceResponseResultInner> getResult() {
+    
+    
+    public List<SorOrderPlaceResponseResultInner> getResult() {
         return result;
     }
 
     public void setResult(
-            @jakarta.annotation.Nullable List<@Valid SorOrderPlaceResponseResultInner> result) {
+             List<SorOrderPlaceResponseResultInner> result) {
         this.result = result;
     }
 
     public SorOrderPlaceResponse rateLimits(
-            @jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+             List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
         return this;
     }
@@ -144,13 +135,13 @@ public class SorOrderPlaceResponse extends BaseDTO {
      *
      * @return rateLimits
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid RateLimits> getRateLimits() {
+    
+    
+    public List<RateLimits> getRateLimits() {
         return rateLimits;
     }
 
-    public void setRateLimits(@jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+    public void setRateLimits( List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
     }
 
@@ -200,14 +191,14 @@ public class SorOrderPlaceResponse extends BaseDTO {
             String statusValueAsString = statusValue.toString();
             valMap.put("status", statusValueAsString);
         }
-        List<@Valid SorOrderPlaceResponseResultInner> resultValue = getResult();
+        List<SorOrderPlaceResponseResultInner> resultValue = getResult();
         if (resultValue != null) {
-            String resultValueAsString = JSON.getGson().toJson(resultValue);
+            String resultValueAsString = Json.encode(resultValue);
             valMap.put("result", resultValueAsString);
         }
-        List<@Valid RateLimits> rateLimitsValue = getRateLimits();
+        List<RateLimits> rateLimitsValue = getRateLimits();
         if (rateLimitsValue != null) {
-            String rateLimitsValueAsString = JSON.getGson().toJson(rateLimitsValue);
+            String rateLimitsValueAsString = Json.encode(rateLimitsValue);
             valMap.put("rateLimits", rateLimitsValueAsString);
         }
 
@@ -257,146 +248,4 @@ public class SorOrderPlaceResponse extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("id");
-        openapiFields.add("status");
-        openapiFields.add("result");
-        openapiFields.add("rateLimits");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to SorOrderPlaceResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!SorOrderPlaceResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in SorOrderPlaceResponse is not found in"
-                                        + " the empty JSON string",
-                                SorOrderPlaceResponse.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!SorOrderPlaceResponse.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `SorOrderPlaceResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
-                && !jsonObj.get("id").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `id` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("id").toString()));
-        }
-        if (jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull()) {
-            JsonArray jsonArrayresult = jsonObj.getAsJsonArray("result");
-            if (jsonArrayresult != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("result").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `result` to be an array in the JSON string"
-                                            + " but got `%s`",
-                                    jsonObj.get("result").toString()));
-                }
-
-                // validate the optional field `result` (array)
-                for (int i = 0; i < jsonArrayresult.size(); i++) {
-                    SorOrderPlaceResponseResultInner.validateJsonElement(jsonArrayresult.get(i));
-                }
-                ;
-            }
-        }
-        if (jsonObj.get("rateLimits") != null && !jsonObj.get("rateLimits").isJsonNull()) {
-            JsonArray jsonArrayrateLimits = jsonObj.getAsJsonArray("rateLimits");
-            if (jsonArrayrateLimits != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("rateLimits").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `rateLimits` to be an array in the JSON"
-                                            + " string but got `%s`",
-                                    jsonObj.get("rateLimits").toString()));
-                }
-
-                // validate the optional field `rateLimits` (array)
-                for (int i = 0; i < jsonArrayrateLimits.size(); i++) {
-                    RateLimits.validateJsonElement(jsonArrayrateLimits.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!SorOrderPlaceResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'SorOrderPlaceResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SorOrderPlaceResponse> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(SorOrderPlaceResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<SorOrderPlaceResponse>() {
-                        @Override
-                        public void write(JsonWriter out, SorOrderPlaceResponse value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public SorOrderPlaceResponse read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of SorOrderPlaceResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of SorOrderPlaceResponse
-     * @throws IOException if the JSON string is invalid with respect to SorOrderPlaceResponse
-     */
-    public static SorOrderPlaceResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, SorOrderPlaceResponse.class);
-    }
-
-    /**
-     * Convert an instance of SorOrderPlaceResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

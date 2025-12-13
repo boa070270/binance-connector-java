@@ -13,302 +13,291 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderListPlaceOtocoRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderListPlaceOtocoRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_LIST_CLIENT_ORDER_ID = "listClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_LIST_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIST_CLIENT_ORDER_ID)
+    
     private String listClientOrderId;
 
     public static final String SERIALIZED_NAME_NEW_ORDER_RESP_TYPE = "newOrderRespType";
 
-    @SerializedName(SERIALIZED_NAME_NEW_ORDER_RESP_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_ORDER_RESP_TYPE)
+    
     private NewOrderRespType newOrderRespType;
 
     public static final String SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE =
             "selfTradePreventionMode";
 
-    @SerializedName(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
+    
     private SelfTradePreventionMode selfTradePreventionMode;
 
     public static final String SERIALIZED_NAME_WORKING_TYPE = "workingType";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_TYPE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_WORKING_TYPE)
+
     private WorkingType workingType;
 
     public static final String SERIALIZED_NAME_WORKING_SIDE = "workingSide";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_SIDE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_WORKING_SIDE)
+
     private WorkingSide workingSide;
 
     public static final String SERIALIZED_NAME_WORKING_CLIENT_ORDER_ID = "workingClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_CLIENT_ORDER_ID)
+    
     private String workingClientOrderId;
 
     public static final String SERIALIZED_NAME_WORKING_PRICE = "workingPrice";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_PRICE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_WORKING_PRICE)
+
     private Double workingPrice;
 
     public static final String SERIALIZED_NAME_WORKING_QUANTITY = "workingQuantity";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_QUANTITY)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_WORKING_QUANTITY)
+
     private Double workingQuantity;
 
     public static final String SERIALIZED_NAME_WORKING_ICEBERG_QTY = "workingIcebergQty";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_ICEBERG_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_ICEBERG_QTY)
+    
     private Double workingIcebergQty;
 
     public static final String SERIALIZED_NAME_WORKING_TIME_IN_FORCE = "workingTimeInForce";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_TIME_IN_FORCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_TIME_IN_FORCE)
+    
     private WorkingTimeInForce workingTimeInForce;
 
     public static final String SERIALIZED_NAME_WORKING_STRATEGY_ID = "workingStrategyId";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_STRATEGY_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_STRATEGY_ID)
+    
     private Long workingStrategyId;
 
     public static final String SERIALIZED_NAME_WORKING_STRATEGY_TYPE = "workingStrategyType";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_STRATEGY_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_STRATEGY_TYPE)
+    
     private Integer workingStrategyType;
 
     public static final String SERIALIZED_NAME_WORKING_PEG_PRICE_TYPE = "workingPegPriceType";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_PEG_PRICE_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_PEG_PRICE_TYPE)
+    
     private WorkingPegPriceType workingPegPriceType;
 
     public static final String SERIALIZED_NAME_WORKING_PEG_OFFSET_TYPE = "workingPegOffsetType";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_PEG_OFFSET_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_PEG_OFFSET_TYPE)
+    
     private WorkingPegOffsetType workingPegOffsetType;
 
     public static final String SERIALIZED_NAME_WORKING_PEG_OFFSET_VALUE = "workingPegOffsetValue";
 
-    @SerializedName(SERIALIZED_NAME_WORKING_PEG_OFFSET_VALUE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WORKING_PEG_OFFSET_VALUE)
+    
     private Integer workingPegOffsetValue;
 
     public static final String SERIALIZED_NAME_PENDING_SIDE = "pendingSide";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_SIDE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_PENDING_SIDE)
+
     private PendingSide pendingSide;
 
     public static final String SERIALIZED_NAME_PENDING_QUANTITY = "pendingQuantity";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_QUANTITY)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_PENDING_QUANTITY)
+
     private Double pendingQuantity;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_TYPE = "pendingAboveType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_TYPE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_TYPE)
+
     private PendingAboveType pendingAboveType;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_CLIENT_ORDER_ID =
             "pendingAboveClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_CLIENT_ORDER_ID)
+    
     private String pendingAboveClientOrderId;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_PRICE = "pendingAbovePrice";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_PRICE)
+    
     private Double pendingAbovePrice;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_STOP_PRICE = "pendingAboveStopPrice";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_STOP_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_STOP_PRICE)
+    
     private Double pendingAboveStopPrice;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_TRAILING_DELTA =
             "pendingAboveTrailingDelta";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_TRAILING_DELTA)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_TRAILING_DELTA)
+    
     private Double pendingAboveTrailingDelta;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_ICEBERG_QTY = "pendingAboveIcebergQty";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_ICEBERG_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_ICEBERG_QTY)
+    
     private Double pendingAboveIcebergQty;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_TIME_IN_FORCE =
             "pendingAboveTimeInForce";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_TIME_IN_FORCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_TIME_IN_FORCE)
+    
     private PendingAboveTimeInForce pendingAboveTimeInForce;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_STRATEGY_ID = "pendingAboveStrategyId";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_STRATEGY_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_STRATEGY_ID)
+    
     private Long pendingAboveStrategyId;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_STRATEGY_TYPE =
             "pendingAboveStrategyType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_STRATEGY_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_STRATEGY_TYPE)
+    
     private Integer pendingAboveStrategyType;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_PEG_PRICE_TYPE =
             "pendingAbovePegPriceType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_PEG_PRICE_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_PEG_PRICE_TYPE)
+    
     private PendingAbovePegPriceType pendingAbovePegPriceType;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_PEG_OFFSET_TYPE =
             "pendingAbovePegOffsetType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_PEG_OFFSET_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_PEG_OFFSET_TYPE)
+    
     private PendingAbovePegOffsetType pendingAbovePegOffsetType;
 
     public static final String SERIALIZED_NAME_PENDING_ABOVE_PEG_OFFSET_VALUE =
             "pendingAbovePegOffsetValue";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_ABOVE_PEG_OFFSET_VALUE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_ABOVE_PEG_OFFSET_VALUE)
+    
     private Integer pendingAbovePegOffsetValue;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_TYPE = "pendingBelowType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_TYPE)
+    
     private PendingBelowType pendingBelowType;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_CLIENT_ORDER_ID =
             "pendingBelowClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_CLIENT_ORDER_ID)
+    
     private String pendingBelowClientOrderId;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_PRICE = "pendingBelowPrice";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_PRICE)
+    
     private Double pendingBelowPrice;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_STOP_PRICE = "pendingBelowStopPrice";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_STOP_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_STOP_PRICE)
+    
     private Double pendingBelowStopPrice;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_TRAILING_DELTA =
             "pendingBelowTrailingDelta";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_TRAILING_DELTA)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_TRAILING_DELTA)
+    
     private Double pendingBelowTrailingDelta;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_ICEBERG_QTY = "pendingBelowIcebergQty";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_ICEBERG_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_ICEBERG_QTY)
+    
     private Double pendingBelowIcebergQty;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_TIME_IN_FORCE =
             "pendingBelowTimeInForce";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_TIME_IN_FORCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_TIME_IN_FORCE)
+    
     private PendingBelowTimeInForce pendingBelowTimeInForce;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_STRATEGY_ID = "pendingBelowStrategyId";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_STRATEGY_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_STRATEGY_ID)
+    
     private Long pendingBelowStrategyId;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_STRATEGY_TYPE =
             "pendingBelowStrategyType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_STRATEGY_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_STRATEGY_TYPE)
+    
     private Integer pendingBelowStrategyType;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_PEG_PRICE_TYPE =
             "pendingBelowPegPriceType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_PEG_PRICE_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_PEG_PRICE_TYPE)
+    
     private PendingBelowPegPriceType pendingBelowPegPriceType;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_PEG_OFFSET_TYPE =
             "pendingBelowPegOffsetType";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_PEG_OFFSET_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_PEG_OFFSET_TYPE)
+    
     private PendingBelowPegOffsetType pendingBelowPegOffsetType;
 
     public static final String SERIALIZED_NAME_PENDING_BELOW_PEG_OFFSET_VALUE =
             "pendingBelowPegOffsetValue";
 
-    @SerializedName(SERIALIZED_NAME_PENDING_BELOW_PEG_OFFSET_VALUE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PENDING_BELOW_PEG_OFFSET_VALUE)
+    
     private Integer pendingBelowPegOffsetValue;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
-    @SerializedName(SERIALIZED_NAME_RECV_WINDOW)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
+    
     private Double recvWindow;
 
     public OrderListPlaceOtocoRequest() {}
 
-    public OrderListPlaceOtocoRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public OrderListPlaceOtocoRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -318,18 +307,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public OrderListPlaceOtocoRequest listClientOrderId(
-            @jakarta.annotation.Nullable String listClientOrderId) {
+             String listClientOrderId) {
         this.listClientOrderId = listClientOrderId;
         return this;
     }
@@ -339,17 +328,17 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return listClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getListClientOrderId() {
         return listClientOrderId;
     }
 
-    public void setListClientOrderId(@jakarta.annotation.Nullable String listClientOrderId) {
+    public void setListClientOrderId( String listClientOrderId) {
         this.listClientOrderId = listClientOrderId;
     }
 
     public OrderListPlaceOtocoRequest newOrderRespType(
-            @jakarta.annotation.Nullable NewOrderRespType newOrderRespType) {
+             NewOrderRespType newOrderRespType) {
         this.newOrderRespType = newOrderRespType;
         return this;
     }
@@ -359,19 +348,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return newOrderRespType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public NewOrderRespType getNewOrderRespType() {
         return newOrderRespType;
     }
 
     public void setNewOrderRespType(
-            @jakarta.annotation.Nullable NewOrderRespType newOrderRespType) {
+             NewOrderRespType newOrderRespType) {
         this.newOrderRespType = newOrderRespType;
     }
 
     public OrderListPlaceOtocoRequest selfTradePreventionMode(
-            @jakarta.annotation.Nullable SelfTradePreventionMode selfTradePreventionMode) {
+             SelfTradePreventionMode selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
         return this;
     }
@@ -381,19 +370,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return selfTradePreventionMode
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public SelfTradePreventionMode getSelfTradePreventionMode() {
         return selfTradePreventionMode;
     }
 
     public void setSelfTradePreventionMode(
-            @jakarta.annotation.Nullable SelfTradePreventionMode selfTradePreventionMode) {
+             SelfTradePreventionMode selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
     }
 
     public OrderListPlaceOtocoRequest workingType(
-            @jakarta.annotation.Nonnull WorkingType workingType) {
+             WorkingType workingType) {
         this.workingType = workingType;
         return this;
     }
@@ -403,19 +392,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingType
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public WorkingType getWorkingType() {
         return workingType;
     }
 
-    public void setWorkingType(@jakarta.annotation.Nonnull WorkingType workingType) {
+    public void setWorkingType( WorkingType workingType) {
         this.workingType = workingType;
     }
 
     public OrderListPlaceOtocoRequest workingSide(
-            @jakarta.annotation.Nonnull WorkingSide workingSide) {
+             WorkingSide workingSide) {
         this.workingSide = workingSide;
         return this;
     }
@@ -425,19 +414,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingSide
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public WorkingSide getWorkingSide() {
         return workingSide;
     }
 
-    public void setWorkingSide(@jakarta.annotation.Nonnull WorkingSide workingSide) {
+    public void setWorkingSide( WorkingSide workingSide) {
         this.workingSide = workingSide;
     }
 
     public OrderListPlaceOtocoRequest workingClientOrderId(
-            @jakarta.annotation.Nullable String workingClientOrderId) {
+             String workingClientOrderId) {
         this.workingClientOrderId = workingClientOrderId;
         return this;
     }
@@ -447,17 +436,17 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getWorkingClientOrderId() {
         return workingClientOrderId;
     }
 
-    public void setWorkingClientOrderId(@jakarta.annotation.Nullable String workingClientOrderId) {
+    public void setWorkingClientOrderId( String workingClientOrderId) {
         this.workingClientOrderId = workingClientOrderId;
     }
 
     public OrderListPlaceOtocoRequest workingPrice(
-            @jakarta.annotation.Nonnull Double workingPrice) {
+             Double workingPrice) {
         this.workingPrice = workingPrice;
         return this;
     }
@@ -467,19 +456,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingPrice
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public Double getWorkingPrice() {
         return workingPrice;
     }
 
-    public void setWorkingPrice(@jakarta.annotation.Nonnull Double workingPrice) {
+    public void setWorkingPrice( Double workingPrice) {
         this.workingPrice = workingPrice;
     }
 
     public OrderListPlaceOtocoRequest workingQuantity(
-            @jakarta.annotation.Nonnull Double workingQuantity) {
+             Double workingQuantity) {
         this.workingQuantity = workingQuantity;
         return this;
     }
@@ -489,19 +478,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingQuantity
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public Double getWorkingQuantity() {
         return workingQuantity;
     }
 
-    public void setWorkingQuantity(@jakarta.annotation.Nonnull Double workingQuantity) {
+    public void setWorkingQuantity( Double workingQuantity) {
         this.workingQuantity = workingQuantity;
     }
 
     public OrderListPlaceOtocoRequest workingIcebergQty(
-            @jakarta.annotation.Nullable Double workingIcebergQty) {
+             Double workingIcebergQty) {
         this.workingIcebergQty = workingIcebergQty;
         return this;
     }
@@ -511,18 +500,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingIcebergQty
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getWorkingIcebergQty() {
         return workingIcebergQty;
     }
 
-    public void setWorkingIcebergQty(@jakarta.annotation.Nullable Double workingIcebergQty) {
+    public void setWorkingIcebergQty( Double workingIcebergQty) {
         this.workingIcebergQty = workingIcebergQty;
     }
 
     public OrderListPlaceOtocoRequest workingTimeInForce(
-            @jakarta.annotation.Nullable WorkingTimeInForce workingTimeInForce) {
+             WorkingTimeInForce workingTimeInForce) {
         this.workingTimeInForce = workingTimeInForce;
         return this;
     }
@@ -532,19 +521,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingTimeInForce
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public WorkingTimeInForce getWorkingTimeInForce() {
         return workingTimeInForce;
     }
 
     public void setWorkingTimeInForce(
-            @jakarta.annotation.Nullable WorkingTimeInForce workingTimeInForce) {
+             WorkingTimeInForce workingTimeInForce) {
         this.workingTimeInForce = workingTimeInForce;
     }
 
     public OrderListPlaceOtocoRequest workingStrategyId(
-            @jakarta.annotation.Nullable Long workingStrategyId) {
+             Long workingStrategyId) {
         this.workingStrategyId = workingStrategyId;
         return this;
     }
@@ -554,17 +543,17 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingStrategyId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getWorkingStrategyId() {
         return workingStrategyId;
     }
 
-    public void setWorkingStrategyId(@jakarta.annotation.Nullable Long workingStrategyId) {
+    public void setWorkingStrategyId( Long workingStrategyId) {
         this.workingStrategyId = workingStrategyId;
     }
 
     public OrderListPlaceOtocoRequest workingStrategyType(
-            @jakarta.annotation.Nullable Integer workingStrategyType) {
+             Integer workingStrategyType) {
         this.workingStrategyType = workingStrategyType;
         return this;
     }
@@ -574,17 +563,17 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingStrategyType
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getWorkingStrategyType() {
         return workingStrategyType;
     }
 
-    public void setWorkingStrategyType(@jakarta.annotation.Nullable Integer workingStrategyType) {
+    public void setWorkingStrategyType( Integer workingStrategyType) {
         this.workingStrategyType = workingStrategyType;
     }
 
     public OrderListPlaceOtocoRequest workingPegPriceType(
-            @jakarta.annotation.Nullable WorkingPegPriceType workingPegPriceType) {
+             WorkingPegPriceType workingPegPriceType) {
         this.workingPegPriceType = workingPegPriceType;
         return this;
     }
@@ -594,19 +583,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingPegPriceType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public WorkingPegPriceType getWorkingPegPriceType() {
         return workingPegPriceType;
     }
 
     public void setWorkingPegPriceType(
-            @jakarta.annotation.Nullable WorkingPegPriceType workingPegPriceType) {
+             WorkingPegPriceType workingPegPriceType) {
         this.workingPegPriceType = workingPegPriceType;
     }
 
     public OrderListPlaceOtocoRequest workingPegOffsetType(
-            @jakarta.annotation.Nullable WorkingPegOffsetType workingPegOffsetType) {
+             WorkingPegOffsetType workingPegOffsetType) {
         this.workingPegOffsetType = workingPegOffsetType;
         return this;
     }
@@ -616,19 +605,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingPegOffsetType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public WorkingPegOffsetType getWorkingPegOffsetType() {
         return workingPegOffsetType;
     }
 
     public void setWorkingPegOffsetType(
-            @jakarta.annotation.Nullable WorkingPegOffsetType workingPegOffsetType) {
+             WorkingPegOffsetType workingPegOffsetType) {
         this.workingPegOffsetType = workingPegOffsetType;
     }
 
     public OrderListPlaceOtocoRequest workingPegOffsetValue(
-            @jakarta.annotation.Nullable Integer workingPegOffsetValue) {
+             Integer workingPegOffsetValue) {
         this.workingPegOffsetValue = workingPegOffsetValue;
         return this;
     }
@@ -638,18 +627,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return workingPegOffsetValue
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getWorkingPegOffsetValue() {
         return workingPegOffsetValue;
     }
 
     public void setWorkingPegOffsetValue(
-            @jakarta.annotation.Nullable Integer workingPegOffsetValue) {
+             Integer workingPegOffsetValue) {
         this.workingPegOffsetValue = workingPegOffsetValue;
     }
 
     public OrderListPlaceOtocoRequest pendingSide(
-            @jakarta.annotation.Nonnull PendingSide pendingSide) {
+             PendingSide pendingSide) {
         this.pendingSide = pendingSide;
         return this;
     }
@@ -659,19 +648,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingSide
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public PendingSide getPendingSide() {
         return pendingSide;
     }
 
-    public void setPendingSide(@jakarta.annotation.Nonnull PendingSide pendingSide) {
+    public void setPendingSide( PendingSide pendingSide) {
         this.pendingSide = pendingSide;
     }
 
     public OrderListPlaceOtocoRequest pendingQuantity(
-            @jakarta.annotation.Nonnull Double pendingQuantity) {
+             Double pendingQuantity) {
         this.pendingQuantity = pendingQuantity;
         return this;
     }
@@ -681,19 +670,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingQuantity
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public Double getPendingQuantity() {
         return pendingQuantity;
     }
 
-    public void setPendingQuantity(@jakarta.annotation.Nonnull Double pendingQuantity) {
+    public void setPendingQuantity( Double pendingQuantity) {
         this.pendingQuantity = pendingQuantity;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveType(
-            @jakarta.annotation.Nonnull PendingAboveType pendingAboveType) {
+             PendingAboveType pendingAboveType) {
         this.pendingAboveType = pendingAboveType;
         return this;
     }
@@ -703,19 +692,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveType
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public PendingAboveType getPendingAboveType() {
         return pendingAboveType;
     }
 
-    public void setPendingAboveType(@jakarta.annotation.Nonnull PendingAboveType pendingAboveType) {
+    public void setPendingAboveType( PendingAboveType pendingAboveType) {
         this.pendingAboveType = pendingAboveType;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveClientOrderId(
-            @jakarta.annotation.Nullable String pendingAboveClientOrderId) {
+             String pendingAboveClientOrderId) {
         this.pendingAboveClientOrderId = pendingAboveClientOrderId;
         return this;
     }
@@ -725,18 +714,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getPendingAboveClientOrderId() {
         return pendingAboveClientOrderId;
     }
 
     public void setPendingAboveClientOrderId(
-            @jakarta.annotation.Nullable String pendingAboveClientOrderId) {
+             String pendingAboveClientOrderId) {
         this.pendingAboveClientOrderId = pendingAboveClientOrderId;
     }
 
     public OrderListPlaceOtocoRequest pendingAbovePrice(
-            @jakarta.annotation.Nullable Double pendingAbovePrice) {
+             Double pendingAbovePrice) {
         this.pendingAbovePrice = pendingAbovePrice;
         return this;
     }
@@ -746,18 +735,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAbovePrice
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingAbovePrice() {
         return pendingAbovePrice;
     }
 
-    public void setPendingAbovePrice(@jakarta.annotation.Nullable Double pendingAbovePrice) {
+    public void setPendingAbovePrice( Double pendingAbovePrice) {
         this.pendingAbovePrice = pendingAbovePrice;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveStopPrice(
-            @jakarta.annotation.Nullable Double pendingAboveStopPrice) {
+             Double pendingAboveStopPrice) {
         this.pendingAboveStopPrice = pendingAboveStopPrice;
         return this;
     }
@@ -767,19 +756,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveStopPrice
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingAboveStopPrice() {
         return pendingAboveStopPrice;
     }
 
     public void setPendingAboveStopPrice(
-            @jakarta.annotation.Nullable Double pendingAboveStopPrice) {
+             Double pendingAboveStopPrice) {
         this.pendingAboveStopPrice = pendingAboveStopPrice;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveTrailingDelta(
-            @jakarta.annotation.Nullable Double pendingAboveTrailingDelta) {
+             Double pendingAboveTrailingDelta) {
         this.pendingAboveTrailingDelta = pendingAboveTrailingDelta;
         return this;
     }
@@ -789,19 +778,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveTrailingDelta
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingAboveTrailingDelta() {
         return pendingAboveTrailingDelta;
     }
 
     public void setPendingAboveTrailingDelta(
-            @jakarta.annotation.Nullable Double pendingAboveTrailingDelta) {
+             Double pendingAboveTrailingDelta) {
         this.pendingAboveTrailingDelta = pendingAboveTrailingDelta;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveIcebergQty(
-            @jakarta.annotation.Nullable Double pendingAboveIcebergQty) {
+             Double pendingAboveIcebergQty) {
         this.pendingAboveIcebergQty = pendingAboveIcebergQty;
         return this;
     }
@@ -811,19 +800,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveIcebergQty
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingAboveIcebergQty() {
         return pendingAboveIcebergQty;
     }
 
     public void setPendingAboveIcebergQty(
-            @jakarta.annotation.Nullable Double pendingAboveIcebergQty) {
+             Double pendingAboveIcebergQty) {
         this.pendingAboveIcebergQty = pendingAboveIcebergQty;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveTimeInForce(
-            @jakarta.annotation.Nullable PendingAboveTimeInForce pendingAboveTimeInForce) {
+             PendingAboveTimeInForce pendingAboveTimeInForce) {
         this.pendingAboveTimeInForce = pendingAboveTimeInForce;
         return this;
     }
@@ -833,19 +822,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveTimeInForce
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PendingAboveTimeInForce getPendingAboveTimeInForce() {
         return pendingAboveTimeInForce;
     }
 
     public void setPendingAboveTimeInForce(
-            @jakarta.annotation.Nullable PendingAboveTimeInForce pendingAboveTimeInForce) {
+             PendingAboveTimeInForce pendingAboveTimeInForce) {
         this.pendingAboveTimeInForce = pendingAboveTimeInForce;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveStrategyId(
-            @jakarta.annotation.Nullable Long pendingAboveStrategyId) {
+             Long pendingAboveStrategyId) {
         this.pendingAboveStrategyId = pendingAboveStrategyId;
         return this;
     }
@@ -855,18 +844,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveStrategyId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getPendingAboveStrategyId() {
         return pendingAboveStrategyId;
     }
 
     public void setPendingAboveStrategyId(
-            @jakarta.annotation.Nullable Long pendingAboveStrategyId) {
+             Long pendingAboveStrategyId) {
         this.pendingAboveStrategyId = pendingAboveStrategyId;
     }
 
     public OrderListPlaceOtocoRequest pendingAboveStrategyType(
-            @jakarta.annotation.Nullable Integer pendingAboveStrategyType) {
+             Integer pendingAboveStrategyType) {
         this.pendingAboveStrategyType = pendingAboveStrategyType;
         return this;
     }
@@ -876,18 +865,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAboveStrategyType
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getPendingAboveStrategyType() {
         return pendingAboveStrategyType;
     }
 
     public void setPendingAboveStrategyType(
-            @jakarta.annotation.Nullable Integer pendingAboveStrategyType) {
+             Integer pendingAboveStrategyType) {
         this.pendingAboveStrategyType = pendingAboveStrategyType;
     }
 
     public OrderListPlaceOtocoRequest pendingAbovePegPriceType(
-            @jakarta.annotation.Nullable PendingAbovePegPriceType pendingAbovePegPriceType) {
+             PendingAbovePegPriceType pendingAbovePegPriceType) {
         this.pendingAbovePegPriceType = pendingAbovePegPriceType;
         return this;
     }
@@ -897,19 +886,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAbovePegPriceType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PendingAbovePegPriceType getPendingAbovePegPriceType() {
         return pendingAbovePegPriceType;
     }
 
     public void setPendingAbovePegPriceType(
-            @jakarta.annotation.Nullable PendingAbovePegPriceType pendingAbovePegPriceType) {
+             PendingAbovePegPriceType pendingAbovePegPriceType) {
         this.pendingAbovePegPriceType = pendingAbovePegPriceType;
     }
 
     public OrderListPlaceOtocoRequest pendingAbovePegOffsetType(
-            @jakarta.annotation.Nullable PendingAbovePegOffsetType pendingAbovePegOffsetType) {
+             PendingAbovePegOffsetType pendingAbovePegOffsetType) {
         this.pendingAbovePegOffsetType = pendingAbovePegOffsetType;
         return this;
     }
@@ -919,19 +908,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAbovePegOffsetType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PendingAbovePegOffsetType getPendingAbovePegOffsetType() {
         return pendingAbovePegOffsetType;
     }
 
     public void setPendingAbovePegOffsetType(
-            @jakarta.annotation.Nullable PendingAbovePegOffsetType pendingAbovePegOffsetType) {
+             PendingAbovePegOffsetType pendingAbovePegOffsetType) {
         this.pendingAbovePegOffsetType = pendingAbovePegOffsetType;
     }
 
     public OrderListPlaceOtocoRequest pendingAbovePegOffsetValue(
-            @jakarta.annotation.Nullable Integer pendingAbovePegOffsetValue) {
+             Integer pendingAbovePegOffsetValue) {
         this.pendingAbovePegOffsetValue = pendingAbovePegOffsetValue;
         return this;
     }
@@ -941,18 +930,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingAbovePegOffsetValue
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getPendingAbovePegOffsetValue() {
         return pendingAbovePegOffsetValue;
     }
 
     public void setPendingAbovePegOffsetValue(
-            @jakarta.annotation.Nullable Integer pendingAbovePegOffsetValue) {
+             Integer pendingAbovePegOffsetValue) {
         this.pendingAbovePegOffsetValue = pendingAbovePegOffsetValue;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowType(
-            @jakarta.annotation.Nullable PendingBelowType pendingBelowType) {
+             PendingBelowType pendingBelowType) {
         this.pendingBelowType = pendingBelowType;
         return this;
     }
@@ -962,19 +951,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PendingBelowType getPendingBelowType() {
         return pendingBelowType;
     }
 
     public void setPendingBelowType(
-            @jakarta.annotation.Nullable PendingBelowType pendingBelowType) {
+             PendingBelowType pendingBelowType) {
         this.pendingBelowType = pendingBelowType;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowClientOrderId(
-            @jakarta.annotation.Nullable String pendingBelowClientOrderId) {
+             String pendingBelowClientOrderId) {
         this.pendingBelowClientOrderId = pendingBelowClientOrderId;
         return this;
     }
@@ -984,18 +973,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getPendingBelowClientOrderId() {
         return pendingBelowClientOrderId;
     }
 
     public void setPendingBelowClientOrderId(
-            @jakarta.annotation.Nullable String pendingBelowClientOrderId) {
+             String pendingBelowClientOrderId) {
         this.pendingBelowClientOrderId = pendingBelowClientOrderId;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowPrice(
-            @jakarta.annotation.Nullable Double pendingBelowPrice) {
+             Double pendingBelowPrice) {
         this.pendingBelowPrice = pendingBelowPrice;
         return this;
     }
@@ -1005,18 +994,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowPrice
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingBelowPrice() {
         return pendingBelowPrice;
     }
 
-    public void setPendingBelowPrice(@jakarta.annotation.Nullable Double pendingBelowPrice) {
+    public void setPendingBelowPrice( Double pendingBelowPrice) {
         this.pendingBelowPrice = pendingBelowPrice;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowStopPrice(
-            @jakarta.annotation.Nullable Double pendingBelowStopPrice) {
+             Double pendingBelowStopPrice) {
         this.pendingBelowStopPrice = pendingBelowStopPrice;
         return this;
     }
@@ -1026,19 +1015,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowStopPrice
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingBelowStopPrice() {
         return pendingBelowStopPrice;
     }
 
     public void setPendingBelowStopPrice(
-            @jakarta.annotation.Nullable Double pendingBelowStopPrice) {
+             Double pendingBelowStopPrice) {
         this.pendingBelowStopPrice = pendingBelowStopPrice;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowTrailingDelta(
-            @jakarta.annotation.Nullable Double pendingBelowTrailingDelta) {
+             Double pendingBelowTrailingDelta) {
         this.pendingBelowTrailingDelta = pendingBelowTrailingDelta;
         return this;
     }
@@ -1048,19 +1037,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowTrailingDelta
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingBelowTrailingDelta() {
         return pendingBelowTrailingDelta;
     }
 
     public void setPendingBelowTrailingDelta(
-            @jakarta.annotation.Nullable Double pendingBelowTrailingDelta) {
+             Double pendingBelowTrailingDelta) {
         this.pendingBelowTrailingDelta = pendingBelowTrailingDelta;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowIcebergQty(
-            @jakarta.annotation.Nullable Double pendingBelowIcebergQty) {
+             Double pendingBelowIcebergQty) {
         this.pendingBelowIcebergQty = pendingBelowIcebergQty;
         return this;
     }
@@ -1070,19 +1059,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowIcebergQty
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPendingBelowIcebergQty() {
         return pendingBelowIcebergQty;
     }
 
     public void setPendingBelowIcebergQty(
-            @jakarta.annotation.Nullable Double pendingBelowIcebergQty) {
+             Double pendingBelowIcebergQty) {
         this.pendingBelowIcebergQty = pendingBelowIcebergQty;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowTimeInForce(
-            @jakarta.annotation.Nullable PendingBelowTimeInForce pendingBelowTimeInForce) {
+             PendingBelowTimeInForce pendingBelowTimeInForce) {
         this.pendingBelowTimeInForce = pendingBelowTimeInForce;
         return this;
     }
@@ -1092,19 +1081,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowTimeInForce
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PendingBelowTimeInForce getPendingBelowTimeInForce() {
         return pendingBelowTimeInForce;
     }
 
     public void setPendingBelowTimeInForce(
-            @jakarta.annotation.Nullable PendingBelowTimeInForce pendingBelowTimeInForce) {
+             PendingBelowTimeInForce pendingBelowTimeInForce) {
         this.pendingBelowTimeInForce = pendingBelowTimeInForce;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowStrategyId(
-            @jakarta.annotation.Nullable Long pendingBelowStrategyId) {
+             Long pendingBelowStrategyId) {
         this.pendingBelowStrategyId = pendingBelowStrategyId;
         return this;
     }
@@ -1114,18 +1103,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowStrategyId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getPendingBelowStrategyId() {
         return pendingBelowStrategyId;
     }
 
     public void setPendingBelowStrategyId(
-            @jakarta.annotation.Nullable Long pendingBelowStrategyId) {
+             Long pendingBelowStrategyId) {
         this.pendingBelowStrategyId = pendingBelowStrategyId;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowStrategyType(
-            @jakarta.annotation.Nullable Integer pendingBelowStrategyType) {
+             Integer pendingBelowStrategyType) {
         this.pendingBelowStrategyType = pendingBelowStrategyType;
         return this;
     }
@@ -1135,18 +1124,18 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowStrategyType
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getPendingBelowStrategyType() {
         return pendingBelowStrategyType;
     }
 
     public void setPendingBelowStrategyType(
-            @jakarta.annotation.Nullable Integer pendingBelowStrategyType) {
+             Integer pendingBelowStrategyType) {
         this.pendingBelowStrategyType = pendingBelowStrategyType;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowPegPriceType(
-            @jakarta.annotation.Nullable PendingBelowPegPriceType pendingBelowPegPriceType) {
+             PendingBelowPegPriceType pendingBelowPegPriceType) {
         this.pendingBelowPegPriceType = pendingBelowPegPriceType;
         return this;
     }
@@ -1156,19 +1145,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowPegPriceType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PendingBelowPegPriceType getPendingBelowPegPriceType() {
         return pendingBelowPegPriceType;
     }
 
     public void setPendingBelowPegPriceType(
-            @jakarta.annotation.Nullable PendingBelowPegPriceType pendingBelowPegPriceType) {
+             PendingBelowPegPriceType pendingBelowPegPriceType) {
         this.pendingBelowPegPriceType = pendingBelowPegPriceType;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowPegOffsetType(
-            @jakarta.annotation.Nullable PendingBelowPegOffsetType pendingBelowPegOffsetType) {
+             PendingBelowPegOffsetType pendingBelowPegOffsetType) {
         this.pendingBelowPegOffsetType = pendingBelowPegOffsetType;
         return this;
     }
@@ -1178,19 +1167,19 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowPegOffsetType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public PendingBelowPegOffsetType getPendingBelowPegOffsetType() {
         return pendingBelowPegOffsetType;
     }
 
     public void setPendingBelowPegOffsetType(
-            @jakarta.annotation.Nullable PendingBelowPegOffsetType pendingBelowPegOffsetType) {
+             PendingBelowPegOffsetType pendingBelowPegOffsetType) {
         this.pendingBelowPegOffsetType = pendingBelowPegOffsetType;
     }
 
     public OrderListPlaceOtocoRequest pendingBelowPegOffsetValue(
-            @jakarta.annotation.Nullable Integer pendingBelowPegOffsetValue) {
+             Integer pendingBelowPegOffsetValue) {
         this.pendingBelowPegOffsetValue = pendingBelowPegOffsetValue;
         return this;
     }
@@ -1200,17 +1189,17 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return pendingBelowPegOffsetValue
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getPendingBelowPegOffsetValue() {
         return pendingBelowPegOffsetValue;
     }
 
     public void setPendingBelowPegOffsetValue(
-            @jakarta.annotation.Nullable Integer pendingBelowPegOffsetValue) {
+             Integer pendingBelowPegOffsetValue) {
         this.pendingBelowPegOffsetValue = pendingBelowPegOffsetValue;
     }
 
-    public OrderListPlaceOtocoRequest recvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public OrderListPlaceOtocoRequest recvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -1220,13 +1209,13 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public void setRecvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -1933,271 +1922,5 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("listClientOrderId");
-        openapiFields.add("newOrderRespType");
-        openapiFields.add("selfTradePreventionMode");
-        openapiFields.add("workingType");
-        openapiFields.add("workingSide");
-        openapiFields.add("workingClientOrderId");
-        openapiFields.add("workingPrice");
-        openapiFields.add("workingQuantity");
-        openapiFields.add("workingIcebergQty");
-        openapiFields.add("workingTimeInForce");
-        openapiFields.add("workingStrategyId");
-        openapiFields.add("workingStrategyType");
-        openapiFields.add("workingPegPriceType");
-        openapiFields.add("workingPegOffsetType");
-        openapiFields.add("workingPegOffsetValue");
-        openapiFields.add("pendingSide");
-        openapiFields.add("pendingQuantity");
-        openapiFields.add("pendingAboveType");
-        openapiFields.add("pendingAboveClientOrderId");
-        openapiFields.add("pendingAbovePrice");
-        openapiFields.add("pendingAboveStopPrice");
-        openapiFields.add("pendingAboveTrailingDelta");
-        openapiFields.add("pendingAboveIcebergQty");
-        openapiFields.add("pendingAboveTimeInForce");
-        openapiFields.add("pendingAboveStrategyId");
-        openapiFields.add("pendingAboveStrategyType");
-        openapiFields.add("pendingAbovePegPriceType");
-        openapiFields.add("pendingAbovePegOffsetType");
-        openapiFields.add("pendingAbovePegOffsetValue");
-        openapiFields.add("pendingBelowType");
-        openapiFields.add("pendingBelowClientOrderId");
-        openapiFields.add("pendingBelowPrice");
-        openapiFields.add("pendingBelowStopPrice");
-        openapiFields.add("pendingBelowTrailingDelta");
-        openapiFields.add("pendingBelowIcebergQty");
-        openapiFields.add("pendingBelowTimeInForce");
-        openapiFields.add("pendingBelowStrategyId");
-        openapiFields.add("pendingBelowStrategyType");
-        openapiFields.add("pendingBelowPegPriceType");
-        openapiFields.add("pendingBelowPegOffsetType");
-        openapiFields.add("pendingBelowPegOffsetValue");
-        openapiFields.add("recvWindow");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("workingType");
-        openapiRequiredFields.add("workingSide");
-        openapiRequiredFields.add("workingPrice");
-        openapiRequiredFields.add("workingQuantity");
-        openapiRequiredFields.add("pendingSide");
-        openapiRequiredFields.add("pendingQuantity");
-        openapiRequiredFields.add("pendingAboveType");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to OrderListPlaceOtocoRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderListPlaceOtocoRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderListPlaceOtocoRequest is not"
-                                        + " found in the empty JSON string",
-                                OrderListPlaceOtocoRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderListPlaceOtocoRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderListPlaceOtocoRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : OrderListPlaceOtocoRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("listClientOrderId") != null
-                        && !jsonObj.get("listClientOrderId").isJsonNull())
-                && !jsonObj.get("listClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `listClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("listClientOrderId").toString()));
-        }
-        // validate the optional field `newOrderRespType`
-        if (jsonObj.get("newOrderRespType") != null
-                && !jsonObj.get("newOrderRespType").isJsonNull()) {
-            NewOrderRespType.validateJsonElement(jsonObj.get("newOrderRespType"));
-        }
-        // validate the optional field `selfTradePreventionMode`
-        if (jsonObj.get("selfTradePreventionMode") != null
-                && !jsonObj.get("selfTradePreventionMode").isJsonNull()) {
-            SelfTradePreventionMode.validateJsonElement(jsonObj.get("selfTradePreventionMode"));
-        }
-        // validate the required field `workingType`
-        WorkingType.validateJsonElement(jsonObj.get("workingType"));
-        // validate the required field `workingSide`
-        WorkingSide.validateJsonElement(jsonObj.get("workingSide"));
-        if ((jsonObj.get("workingClientOrderId") != null
-                        && !jsonObj.get("workingClientOrderId").isJsonNull())
-                && !jsonObj.get("workingClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `workingClientOrderId` to be a primitive type in"
-                                    + " the JSON string but got `%s`",
-                            jsonObj.get("workingClientOrderId").toString()));
-        }
-        // validate the optional field `workingTimeInForce`
-        if (jsonObj.get("workingTimeInForce") != null
-                && !jsonObj.get("workingTimeInForce").isJsonNull()) {
-            WorkingTimeInForce.validateJsonElement(jsonObj.get("workingTimeInForce"));
-        }
-        // validate the optional field `workingPegPriceType`
-        if (jsonObj.get("workingPegPriceType") != null
-                && !jsonObj.get("workingPegPriceType").isJsonNull()) {
-            WorkingPegPriceType.validateJsonElement(jsonObj.get("workingPegPriceType"));
-        }
-        // validate the optional field `workingPegOffsetType`
-        if (jsonObj.get("workingPegOffsetType") != null
-                && !jsonObj.get("workingPegOffsetType").isJsonNull()) {
-            WorkingPegOffsetType.validateJsonElement(jsonObj.get("workingPegOffsetType"));
-        }
-        // validate the required field `pendingSide`
-        PendingSide.validateJsonElement(jsonObj.get("pendingSide"));
-        // validate the required field `pendingAboveType`
-        PendingAboveType.validateJsonElement(jsonObj.get("pendingAboveType"));
-        if ((jsonObj.get("pendingAboveClientOrderId") != null
-                        && !jsonObj.get("pendingAboveClientOrderId").isJsonNull())
-                && !jsonObj.get("pendingAboveClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `pendingAboveClientOrderId` to be a primitive type"
-                                    + " in the JSON string but got `%s`",
-                            jsonObj.get("pendingAboveClientOrderId").toString()));
-        }
-        // validate the optional field `pendingAboveTimeInForce`
-        if (jsonObj.get("pendingAboveTimeInForce") != null
-                && !jsonObj.get("pendingAboveTimeInForce").isJsonNull()) {
-            PendingAboveTimeInForce.validateJsonElement(jsonObj.get("pendingAboveTimeInForce"));
-        }
-        // validate the optional field `pendingAbovePegPriceType`
-        if (jsonObj.get("pendingAbovePegPriceType") != null
-                && !jsonObj.get("pendingAbovePegPriceType").isJsonNull()) {
-            PendingAbovePegPriceType.validateJsonElement(jsonObj.get("pendingAbovePegPriceType"));
-        }
-        // validate the optional field `pendingAbovePegOffsetType`
-        if (jsonObj.get("pendingAbovePegOffsetType") != null
-                && !jsonObj.get("pendingAbovePegOffsetType").isJsonNull()) {
-            PendingAbovePegOffsetType.validateJsonElement(jsonObj.get("pendingAbovePegOffsetType"));
-        }
-        // validate the optional field `pendingBelowType`
-        if (jsonObj.get("pendingBelowType") != null
-                && !jsonObj.get("pendingBelowType").isJsonNull()) {
-            PendingBelowType.validateJsonElement(jsonObj.get("pendingBelowType"));
-        }
-        if ((jsonObj.get("pendingBelowClientOrderId") != null
-                        && !jsonObj.get("pendingBelowClientOrderId").isJsonNull())
-                && !jsonObj.get("pendingBelowClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `pendingBelowClientOrderId` to be a primitive type"
-                                    + " in the JSON string but got `%s`",
-                            jsonObj.get("pendingBelowClientOrderId").toString()));
-        }
-        // validate the optional field `pendingBelowTimeInForce`
-        if (jsonObj.get("pendingBelowTimeInForce") != null
-                && !jsonObj.get("pendingBelowTimeInForce").isJsonNull()) {
-            PendingBelowTimeInForce.validateJsonElement(jsonObj.get("pendingBelowTimeInForce"));
-        }
-        // validate the optional field `pendingBelowPegPriceType`
-        if (jsonObj.get("pendingBelowPegPriceType") != null
-                && !jsonObj.get("pendingBelowPegPriceType").isJsonNull()) {
-            PendingBelowPegPriceType.validateJsonElement(jsonObj.get("pendingBelowPegPriceType"));
-        }
-        // validate the optional field `pendingBelowPegOffsetType`
-        if (jsonObj.get("pendingBelowPegOffsetType") != null
-                && !jsonObj.get("pendingBelowPegOffsetType").isJsonNull()) {
-            PendingBelowPegOffsetType.validateJsonElement(jsonObj.get("pendingBelowPegOffsetType"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderListPlaceOtocoRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderListPlaceOtocoRequest' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderListPlaceOtocoRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(OrderListPlaceOtocoRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderListPlaceOtocoRequest>() {
-                        @Override
-                        public void write(JsonWriter out, OrderListPlaceOtocoRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderListPlaceOtocoRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderListPlaceOtocoRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderListPlaceOtocoRequest
-     * @throws IOException if the JSON string is invalid with respect to OrderListPlaceOtocoRequest
-     */
-    public static OrderListPlaceOtocoRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderListPlaceOtocoRequest.class);
-    }
-
-    /**
-     * Convert an instance of OrderListPlaceOtocoRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

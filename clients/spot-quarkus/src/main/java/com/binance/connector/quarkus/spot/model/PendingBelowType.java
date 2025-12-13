@@ -12,66 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets pendingBelowType */
-@JsonAdapter(PendingBelowType.Adapter.class)
 public enum PendingBelowType {
-    STOP_LOSS("STOP_LOSS"),
-
-    STOP_LOSS_LIMIT("STOP_LOSS_LIMIT"),
-
-    TAKE_PROFIT("TAKE_PROFIT"),
-
-    TAKE_PROFIT_LIMIT("TAKE_PROFIT_LIMIT");
-
-    private String value;
-
-    PendingBelowType(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static PendingBelowType fromValue(String value) {
-        for (PendingBelowType b : PendingBelowType.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PendingBelowType> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final PendingBelowType enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public PendingBelowType read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return PendingBelowType.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        PendingBelowType.fromValue(value);
-    }
+    STOP_LOSS,STOP_LOSS_LIMIT,TAKE_PROFIT,TAKE_PROFIT_LIMIT
 }

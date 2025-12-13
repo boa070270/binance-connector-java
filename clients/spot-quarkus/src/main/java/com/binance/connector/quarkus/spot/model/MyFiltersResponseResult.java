@@ -12,47 +12,37 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** MyFiltersResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class MyFiltersResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_EXCHANGE_FILTERS = "exchangeFilters";
 
-    @SerializedName(SERIALIZED_NAME_EXCHANGE_FILTERS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_EXCHANGE_FILTERS)
+    
     private List<ExchangeFilters> exchangeFilters;
 
     public static final String SERIALIZED_NAME_SYMBOL_FILTERS = "symbolFilters";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL_FILTERS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL_FILTERS)
+    
     private List<SymbolFilters> symbolFilters;
 
     public static final String SERIALIZED_NAME_ASSET_FILTERS = "assetFilters";
 
-    @SerializedName(SERIALIZED_NAME_ASSET_FILTERS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASSET_FILTERS)
+    
     private List<AssetFilters> assetFilters;
 
     public MyFiltersResponseResult() {}
 
     public MyFiltersResponseResult exchangeFilters(
-            @jakarta.annotation.Nullable List<ExchangeFilters> exchangeFilters) {
+             List<ExchangeFilters> exchangeFilters) {
         this.exchangeFilters = exchangeFilters;
         return this;
     }
@@ -70,19 +60,17 @@ public class MyFiltersResponseResult extends BaseDTO {
      *
      * @return exchangeFilters
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<ExchangeFilters> getExchangeFilters() {
         return exchangeFilters;
     }
 
     public void setExchangeFilters(
-            @jakarta.annotation.Nullable List<ExchangeFilters> exchangeFilters) {
+             List<ExchangeFilters> exchangeFilters) {
         this.exchangeFilters = exchangeFilters;
     }
 
     public MyFiltersResponseResult symbolFilters(
-            @jakarta.annotation.Nullable List<SymbolFilters> symbolFilters) {
+             List<SymbolFilters> symbolFilters) {
         this.symbolFilters = symbolFilters;
         return this;
     }
@@ -100,18 +88,16 @@ public class MyFiltersResponseResult extends BaseDTO {
      *
      * @return symbolFilters
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<SymbolFilters> getSymbolFilters() {
         return symbolFilters;
     }
 
-    public void setSymbolFilters(@jakarta.annotation.Nullable List<SymbolFilters> symbolFilters) {
+    public void setSymbolFilters( List<SymbolFilters> symbolFilters) {
         this.symbolFilters = symbolFilters;
     }
 
     public MyFiltersResponseResult assetFilters(
-            @jakarta.annotation.Nullable List<AssetFilters> assetFilters) {
+             List<AssetFilters> assetFilters) {
         this.assetFilters = assetFilters;
         return this;
     }
@@ -129,13 +115,11 @@ public class MyFiltersResponseResult extends BaseDTO {
      *
      * @return assetFilters
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<AssetFilters> getAssetFilters() {
         return assetFilters;
     }
 
-    public void setAssetFilters(@jakarta.annotation.Nullable List<AssetFilters> assetFilters) {
+    public void setAssetFilters( List<AssetFilters> assetFilters) {
         this.assetFilters = assetFilters;
     }
 
@@ -175,17 +159,17 @@ public class MyFiltersResponseResult extends BaseDTO {
         valMap.put("apiKey", getApiKey());
         List<ExchangeFilters> exchangeFiltersValue = getExchangeFilters();
         if (exchangeFiltersValue != null) {
-            String exchangeFiltersValueAsString = JSON.getGson().toJson(exchangeFiltersValue);
+            String exchangeFiltersValueAsString = Json.encode(exchangeFiltersValue);
             valMap.put("exchangeFilters", exchangeFiltersValueAsString);
         }
         List<SymbolFilters> symbolFiltersValue = getSymbolFilters();
         if (symbolFiltersValue != null) {
-            String symbolFiltersValueAsString = JSON.getGson().toJson(symbolFiltersValue);
+            String symbolFiltersValueAsString = Json.encode(symbolFiltersValue);
             valMap.put("symbolFilters", symbolFiltersValueAsString);
         }
         List<AssetFilters> assetFiltersValue = getAssetFilters();
         if (assetFiltersValue != null) {
-            String assetFiltersValueAsString = JSON.getGson().toJson(assetFiltersValue);
+            String assetFiltersValueAsString = Json.encode(assetFiltersValue);
             valMap.put("assetFilters", assetFiltersValueAsString);
         }
 
@@ -229,160 +213,5 @@ public class MyFiltersResponseResult extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("exchangeFilters");
-        openapiFields.add("symbolFilters");
-        openapiFields.add("assetFilters");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to MyFiltersResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!MyFiltersResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in MyFiltersResponseResult is not found"
-                                        + " in the empty JSON string",
-                                MyFiltersResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!MyFiltersResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `MyFiltersResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (jsonObj.get("exchangeFilters") != null
-                && !jsonObj.get("exchangeFilters").isJsonNull()) {
-            JsonArray jsonArrayexchangeFilters = jsonObj.getAsJsonArray("exchangeFilters");
-            if (jsonArrayexchangeFilters != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("exchangeFilters").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `exchangeFilters` to be an array in the"
-                                            + " JSON string but got `%s`",
-                                    jsonObj.get("exchangeFilters").toString()));
-                }
-
-                // validate the optional field `exchangeFilters` (array)
-                for (int i = 0; i < jsonArrayexchangeFilters.size(); i++) {
-                    ExchangeFilters.validateJsonElement(jsonArrayexchangeFilters.get(i));
-                }
-                ;
-            }
-        }
-        if (jsonObj.get("symbolFilters") != null && !jsonObj.get("symbolFilters").isJsonNull()) {
-            JsonArray jsonArraysymbolFilters = jsonObj.getAsJsonArray("symbolFilters");
-            if (jsonArraysymbolFilters != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("symbolFilters").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `symbolFilters` to be an array in the JSON"
-                                            + " string but got `%s`",
-                                    jsonObj.get("symbolFilters").toString()));
-                }
-
-                // validate the optional field `symbolFilters` (array)
-                for (int i = 0; i < jsonArraysymbolFilters.size(); i++) {
-                    SymbolFilters.validateJsonElement(jsonArraysymbolFilters.get(i));
-                }
-                ;
-            }
-        }
-        if (jsonObj.get("assetFilters") != null && !jsonObj.get("assetFilters").isJsonNull()) {
-            JsonArray jsonArrayassetFilters = jsonObj.getAsJsonArray("assetFilters");
-            if (jsonArrayassetFilters != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("assetFilters").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `assetFilters` to be an array in the JSON"
-                                            + " string but got `%s`",
-                                    jsonObj.get("assetFilters").toString()));
-                }
-
-                // validate the optional field `assetFilters` (array)
-                for (int i = 0; i < jsonArrayassetFilters.size(); i++) {
-                    AssetFilters.validateJsonElement(jsonArrayassetFilters.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!MyFiltersResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'MyFiltersResponseResult' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<MyFiltersResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(MyFiltersResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<MyFiltersResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, MyFiltersResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public MyFiltersResponseResult read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of MyFiltersResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of MyFiltersResponseResult
-     * @throws IOException if the JSON string is invalid with respect to MyFiltersResponseResult
-     */
-    public static MyFiltersResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, MyFiltersResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of MyFiltersResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

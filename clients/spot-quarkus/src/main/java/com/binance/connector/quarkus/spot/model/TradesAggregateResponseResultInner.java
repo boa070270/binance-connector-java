@@ -12,12 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -32,56 +27,56 @@ import java.util.stream.Collectors;
 public class TradesAggregateResponseResultInner extends BaseDTO {
     public static final String SERIALIZED_NAME_A_LOWER_CASE = "a";
 
-    @SerializedName(SERIALIZED_NAME_A_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A_LOWER_CASE)
+    
     private Long aLowerCase;
 
     public static final String SERIALIZED_NAME_P_LOWER_CASE = "p";
 
-    @SerializedName(SERIALIZED_NAME_P_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_P_LOWER_CASE)
+    
     private String pLowerCase;
 
     public static final String SERIALIZED_NAME_Q_LOWER_CASE = "q";
 
-    @SerializedName(SERIALIZED_NAME_Q_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Q_LOWER_CASE)
+    
     private String qLowerCase;
 
     public static final String SERIALIZED_NAME_F_LOWER_CASE = "f";
 
-    @SerializedName(SERIALIZED_NAME_F_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_F_LOWER_CASE)
+    
     private Long fLowerCase;
 
     public static final String SERIALIZED_NAME_L_LOWER_CASE = "l";
 
-    @SerializedName(SERIALIZED_NAME_L_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L_LOWER_CASE)
+    
     private Long lLowerCase;
 
     public static final String SERIALIZED_NAME_T = "T";
 
-    @SerializedName(SERIALIZED_NAME_T)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_T)
+    
     private Long T;
 
     public static final String SERIALIZED_NAME_M_LOWER_CASE = "m";
 
-    @SerializedName(SERIALIZED_NAME_M_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_M_LOWER_CASE)
+    
     private Boolean mLowerCase;
 
     public static final String SERIALIZED_NAME_M = "M";
 
-    @SerializedName(SERIALIZED_NAME_M)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_M)
+    
     private Boolean M;
 
     public TradesAggregateResponseResultInner() {}
 
     public TradesAggregateResponseResultInner aLowerCase(
-            @jakarta.annotation.Nullable Long aLowerCase) {
+             Long aLowerCase) {
         this.aLowerCase = aLowerCase;
         return this;
     }
@@ -91,17 +86,17 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return aLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getaLowerCase() {
         return aLowerCase;
     }
 
-    public void setaLowerCase(@jakarta.annotation.Nullable Long aLowerCase) {
+    public void setaLowerCase( Long aLowerCase) {
         this.aLowerCase = aLowerCase;
     }
 
     public TradesAggregateResponseResultInner pLowerCase(
-            @jakarta.annotation.Nullable String pLowerCase) {
+             String pLowerCase) {
         this.pLowerCase = pLowerCase;
         return this;
     }
@@ -111,17 +106,17 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return pLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getpLowerCase() {
         return pLowerCase;
     }
 
-    public void setpLowerCase(@jakarta.annotation.Nullable String pLowerCase) {
+    public void setpLowerCase( String pLowerCase) {
         this.pLowerCase = pLowerCase;
     }
 
     public TradesAggregateResponseResultInner qLowerCase(
-            @jakarta.annotation.Nullable String qLowerCase) {
+             String qLowerCase) {
         this.qLowerCase = qLowerCase;
         return this;
     }
@@ -131,17 +126,17 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return qLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getqLowerCase() {
         return qLowerCase;
     }
 
-    public void setqLowerCase(@jakarta.annotation.Nullable String qLowerCase) {
+    public void setqLowerCase( String qLowerCase) {
         this.qLowerCase = qLowerCase;
     }
 
     public TradesAggregateResponseResultInner fLowerCase(
-            @jakarta.annotation.Nullable Long fLowerCase) {
+             Long fLowerCase) {
         this.fLowerCase = fLowerCase;
         return this;
     }
@@ -151,17 +146,17 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return fLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getfLowerCase() {
         return fLowerCase;
     }
 
-    public void setfLowerCase(@jakarta.annotation.Nullable Long fLowerCase) {
+    public void setfLowerCase( Long fLowerCase) {
         this.fLowerCase = fLowerCase;
     }
 
     public TradesAggregateResponseResultInner lLowerCase(
-            @jakarta.annotation.Nullable Long lLowerCase) {
+             Long lLowerCase) {
         this.lLowerCase = lLowerCase;
         return this;
     }
@@ -171,16 +166,16 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return lLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getlLowerCase() {
         return lLowerCase;
     }
 
-    public void setlLowerCase(@jakarta.annotation.Nullable Long lLowerCase) {
+    public void setlLowerCase( Long lLowerCase) {
         this.lLowerCase = lLowerCase;
     }
 
-    public TradesAggregateResponseResultInner T(@jakarta.annotation.Nullable Long T) {
+    public TradesAggregateResponseResultInner T( Long T) {
         this.T = T;
         return this;
     }
@@ -190,17 +185,17 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return T
      */
-    @jakarta.annotation.Nullable
+    
     public Long getT() {
         return T;
     }
 
-    public void setT(@jakarta.annotation.Nullable Long T) {
+    public void setT( Long T) {
         this.T = T;
     }
 
     public TradesAggregateResponseResultInner mLowerCase(
-            @jakarta.annotation.Nullable Boolean mLowerCase) {
+             Boolean mLowerCase) {
         this.mLowerCase = mLowerCase;
         return this;
     }
@@ -210,16 +205,16 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return mLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getmLowerCase() {
         return mLowerCase;
     }
 
-    public void setmLowerCase(@jakarta.annotation.Nullable Boolean mLowerCase) {
+    public void setmLowerCase( Boolean mLowerCase) {
         this.mLowerCase = mLowerCase;
     }
 
-    public TradesAggregateResponseResultInner M(@jakarta.annotation.Nullable Boolean M) {
+    public TradesAggregateResponseResultInner M( Boolean M) {
         this.M = M;
         return this;
     }
@@ -229,12 +224,12 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
      *
      * @return M
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getM() {
         return M;
     }
 
-    public void setM(@jakarta.annotation.Nullable Boolean M) {
+    public void setM( Boolean M) {
         this.M = M;
     }
 
@@ -387,127 +382,4 @@ public class TradesAggregateResponseResultInner extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("a");
-        openapiFields.add("p");
-        openapiFields.add("q");
-        openapiFields.add("f");
-        openapiFields.add("l");
-        openapiFields.add("T");
-        openapiFields.add("m");
-        openapiFields.add("M");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     TradesAggregateResponseResultInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TradesAggregateResponseResultInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TradesAggregateResponseResultInner is"
-                                        + " not found in the empty JSON string",
-                                TradesAggregateResponseResultInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TradesAggregateResponseResultInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `TradesAggregateResponseResultInner` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("p") != null && !jsonObj.get("p").isJsonNull())
-                && !jsonObj.get("p").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `p` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("p").toString()));
-        }
-        if ((jsonObj.get("q") != null && !jsonObj.get("q").isJsonNull())
-                && !jsonObj.get("q").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `q` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("q").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TradesAggregateResponseResultInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TradesAggregateResponseResultInner' and
-                // its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TradesAggregateResponseResultInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(TradesAggregateResponseResultInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TradesAggregateResponseResultInner>() {
-                        @Override
-                        public void write(JsonWriter out, TradesAggregateResponseResultInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TradesAggregateResponseResultInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TradesAggregateResponseResultInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TradesAggregateResponseResultInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     TradesAggregateResponseResultInner
-     */
-    public static TradesAggregateResponseResultInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson().fromJson(jsonString, TradesAggregateResponseResultInner.class);
-    }
-
-    /**
-     * Convert an instance of TradesAggregateResponseResultInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

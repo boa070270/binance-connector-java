@@ -12,89 +12,79 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** MyPreventedMatchesResponseResultInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class MyPreventedMatchesResponseResultInner extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_PREVENTED_MATCH_ID = "preventedMatchId";
 
-    @SerializedName(SERIALIZED_NAME_PREVENTED_MATCH_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PREVENTED_MATCH_ID)
+    
     private Long preventedMatchId;
 
     public static final String SERIALIZED_NAME_TAKER_ORDER_ID = "takerOrderId";
 
-    @SerializedName(SERIALIZED_NAME_TAKER_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TAKER_ORDER_ID)
+    
     private Long takerOrderId;
 
     public static final String SERIALIZED_NAME_MAKER_SYMBOL = "makerSymbol";
 
-    @SerializedName(SERIALIZED_NAME_MAKER_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAKER_SYMBOL)
+    
     private String makerSymbol;
 
     public static final String SERIALIZED_NAME_MAKER_ORDER_ID = "makerOrderId";
 
-    @SerializedName(SERIALIZED_NAME_MAKER_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAKER_ORDER_ID)
+    
     private Long makerOrderId;
 
     public static final String SERIALIZED_NAME_TRADE_GROUP_ID = "tradeGroupId";
 
-    @SerializedName(SERIALIZED_NAME_TRADE_GROUP_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TRADE_GROUP_ID)
+    
     private Long tradeGroupId;
 
     public static final String SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE =
             "selfTradePreventionMode";
 
-    @SerializedName(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
+    
     private String selfTradePreventionMode;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private String price;
 
     public static final String SERIALIZED_NAME_MAKER_PREVENTED_QUANTITY = "makerPreventedQuantity";
 
-    @SerializedName(SERIALIZED_NAME_MAKER_PREVENTED_QUANTITY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAKER_PREVENTED_QUANTITY)
+    
     private String makerPreventedQuantity;
 
     public static final String SERIALIZED_NAME_TRANSACT_TIME = "transactTime";
 
-    @SerializedName(SERIALIZED_NAME_TRANSACT_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TRANSACT_TIME)
+    
     private Long transactTime;
 
     public MyPreventedMatchesResponseResultInner() {}
 
     public MyPreventedMatchesResponseResultInner symbol(
-            @jakarta.annotation.Nullable String symbol) {
+             String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -104,17 +94,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public MyPreventedMatchesResponseResultInner preventedMatchId(
-            @jakarta.annotation.Nullable Long preventedMatchId) {
+             Long preventedMatchId) {
         this.preventedMatchId = preventedMatchId;
         return this;
     }
@@ -124,17 +114,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return preventedMatchId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getPreventedMatchId() {
         return preventedMatchId;
     }
 
-    public void setPreventedMatchId(@jakarta.annotation.Nullable Long preventedMatchId) {
+    public void setPreventedMatchId( Long preventedMatchId) {
         this.preventedMatchId = preventedMatchId;
     }
 
     public MyPreventedMatchesResponseResultInner takerOrderId(
-            @jakarta.annotation.Nullable Long takerOrderId) {
+             Long takerOrderId) {
         this.takerOrderId = takerOrderId;
         return this;
     }
@@ -144,17 +134,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return takerOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTakerOrderId() {
         return takerOrderId;
     }
 
-    public void setTakerOrderId(@jakarta.annotation.Nullable Long takerOrderId) {
+    public void setTakerOrderId( Long takerOrderId) {
         this.takerOrderId = takerOrderId;
     }
 
     public MyPreventedMatchesResponseResultInner makerSymbol(
-            @jakarta.annotation.Nullable String makerSymbol) {
+             String makerSymbol) {
         this.makerSymbol = makerSymbol;
         return this;
     }
@@ -164,17 +154,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return makerSymbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getMakerSymbol() {
         return makerSymbol;
     }
 
-    public void setMakerSymbol(@jakarta.annotation.Nullable String makerSymbol) {
+    public void setMakerSymbol( String makerSymbol) {
         this.makerSymbol = makerSymbol;
     }
 
     public MyPreventedMatchesResponseResultInner makerOrderId(
-            @jakarta.annotation.Nullable Long makerOrderId) {
+             Long makerOrderId) {
         this.makerOrderId = makerOrderId;
         return this;
     }
@@ -184,17 +174,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return makerOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getMakerOrderId() {
         return makerOrderId;
     }
 
-    public void setMakerOrderId(@jakarta.annotation.Nullable Long makerOrderId) {
+    public void setMakerOrderId( Long makerOrderId) {
         this.makerOrderId = makerOrderId;
     }
 
     public MyPreventedMatchesResponseResultInner tradeGroupId(
-            @jakarta.annotation.Nullable Long tradeGroupId) {
+             Long tradeGroupId) {
         this.tradeGroupId = tradeGroupId;
         return this;
     }
@@ -204,17 +194,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return tradeGroupId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTradeGroupId() {
         return tradeGroupId;
     }
 
-    public void setTradeGroupId(@jakarta.annotation.Nullable Long tradeGroupId) {
+    public void setTradeGroupId( Long tradeGroupId) {
         this.tradeGroupId = tradeGroupId;
     }
 
     public MyPreventedMatchesResponseResultInner selfTradePreventionMode(
-            @jakarta.annotation.Nullable String selfTradePreventionMode) {
+             String selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
         return this;
     }
@@ -224,17 +214,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return selfTradePreventionMode
      */
-    @jakarta.annotation.Nullable
+    
     public String getSelfTradePreventionMode() {
         return selfTradePreventionMode;
     }
 
     public void setSelfTradePreventionMode(
-            @jakarta.annotation.Nullable String selfTradePreventionMode) {
+             String selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
     }
 
-    public MyPreventedMatchesResponseResultInner price(@jakarta.annotation.Nullable String price) {
+    public MyPreventedMatchesResponseResultInner price( String price) {
         this.price = price;
         return this;
     }
@@ -244,17 +234,17 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
+    
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable String price) {
+    public void setPrice( String price) {
         this.price = price;
     }
 
     public MyPreventedMatchesResponseResultInner makerPreventedQuantity(
-            @jakarta.annotation.Nullable String makerPreventedQuantity) {
+             String makerPreventedQuantity) {
         this.makerPreventedQuantity = makerPreventedQuantity;
         return this;
     }
@@ -264,18 +254,18 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return makerPreventedQuantity
      */
-    @jakarta.annotation.Nullable
+    
     public String getMakerPreventedQuantity() {
         return makerPreventedQuantity;
     }
 
     public void setMakerPreventedQuantity(
-            @jakarta.annotation.Nullable String makerPreventedQuantity) {
+             String makerPreventedQuantity) {
         this.makerPreventedQuantity = makerPreventedQuantity;
     }
 
     public MyPreventedMatchesResponseResultInner transactTime(
-            @jakarta.annotation.Nullable Long transactTime) {
+             Long transactTime) {
         this.transactTime = transactTime;
         return this;
     }
@@ -285,12 +275,12 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
      *
      * @return transactTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTransactTime() {
         return transactTime;
     }
 
-    public void setTransactTime(@jakarta.annotation.Nullable Long transactTime) {
+    public void setTransactTime( Long transactTime) {
         this.transactTime = transactTime;
     }
 
@@ -487,159 +477,5 @@ public class MyPreventedMatchesResponseResultInner extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("preventedMatchId");
-        openapiFields.add("takerOrderId");
-        openapiFields.add("makerSymbol");
-        openapiFields.add("makerOrderId");
-        openapiFields.add("tradeGroupId");
-        openapiFields.add("selfTradePreventionMode");
-        openapiFields.add("price");
-        openapiFields.add("makerPreventedQuantity");
-        openapiFields.add("transactTime");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     MyPreventedMatchesResponseResultInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!MyPreventedMatchesResponseResultInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in MyPreventedMatchesResponseResultInner"
-                                        + " is not found in the empty JSON string",
-                                MyPreventedMatchesResponseResultInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!MyPreventedMatchesResponseResultInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `MyPreventedMatchesResponseResultInner` properties. JSON:"
-                                    + " %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("makerSymbol") != null && !jsonObj.get("makerSymbol").isJsonNull())
-                && !jsonObj.get("makerSymbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `makerSymbol` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("makerSymbol").toString()));
-        }
-        if ((jsonObj.get("selfTradePreventionMode") != null
-                        && !jsonObj.get("selfTradePreventionMode").isJsonNull())
-                && !jsonObj.get("selfTradePreventionMode").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `selfTradePreventionMode` to be a primitive type in"
-                                    + " the JSON string but got `%s`",
-                            jsonObj.get("selfTradePreventionMode").toString()));
-        }
-        if ((jsonObj.get("price") != null && !jsonObj.get("price").isJsonNull())
-                && !jsonObj.get("price").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `price` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("price").toString()));
-        }
-        if ((jsonObj.get("makerPreventedQuantity") != null
-                        && !jsonObj.get("makerPreventedQuantity").isJsonNull())
-                && !jsonObj.get("makerPreventedQuantity").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `makerPreventedQuantity` to be a primitive type in"
-                                    + " the JSON string but got `%s`",
-                            jsonObj.get("makerPreventedQuantity").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!MyPreventedMatchesResponseResultInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'MyPreventedMatchesResponseResultInner'
-                // and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<MyPreventedMatchesResponseResultInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(MyPreventedMatchesResponseResultInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<MyPreventedMatchesResponseResultInner>() {
-                        @Override
-                        public void write(
-                                JsonWriter out, MyPreventedMatchesResponseResultInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public MyPreventedMatchesResponseResultInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of MyPreventedMatchesResponseResultInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of MyPreventedMatchesResponseResultInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     MyPreventedMatchesResponseResultInner
-     */
-    public static MyPreventedMatchesResponseResultInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson().fromJson(jsonString, MyPreventedMatchesResponseResultInner.class);
-    }
-
-    /**
-     * Convert an instance of MyPreventedMatchesResponseResultInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

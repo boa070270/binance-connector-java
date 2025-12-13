@@ -12,47 +12,35 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** PartialBookDepthRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class PartialBookDepthRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_LEVELS = "levels";
 
-    @SerializedName(SERIALIZED_NAME_LEVELS)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_LEVELS)
+
     private Levels levels;
 
     public static final String SERIALIZED_NAME_UPDATE_SPEED = "updateSpeed";
 
-    @SerializedName(SERIALIZED_NAME_UPDATE_SPEED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_UPDATE_SPEED)
+    
     private String updateSpeed;
 
     public PartialBookDepthRequest() {}
 
-    public PartialBookDepthRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public PartialBookDepthRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -62,17 +50,17 @@ public class PartialBookDepthRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public PartialBookDepthRequest levels(@jakarta.annotation.Nonnull Levels levels) {
+    public PartialBookDepthRequest levels( Levels levels) {
         this.levels = levels;
         return this;
     }
@@ -82,18 +70,18 @@ public class PartialBookDepthRequest extends BaseDTO {
      *
      * @return levels
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public Levels getLevels() {
         return levels;
     }
 
-    public void setLevels(@jakarta.annotation.Nonnull Levels levels) {
+    public void setLevels( Levels levels) {
         this.levels = levels;
     }
 
-    public PartialBookDepthRequest updateSpeed(@jakarta.annotation.Nullable String updateSpeed) {
+    public PartialBookDepthRequest updateSpeed( String updateSpeed) {
         this.updateSpeed = updateSpeed;
         return this;
     }
@@ -103,12 +91,12 @@ public class PartialBookDepthRequest extends BaseDTO {
      *
      * @return updateSpeed
      */
-    @jakarta.annotation.Nullable
+    
     public String getUpdateSpeed() {
         return updateSpeed;
     }
 
-    public void setUpdateSpeed(@jakarta.annotation.Nullable String updateSpeed) {
+    public void setUpdateSpeed( String updateSpeed) {
         this.updateSpeed = updateSpeed;
     }
 
@@ -204,129 +192,4 @@ public class PartialBookDepthRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("levels");
-        openapiFields.add("updateSpeed");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("levels");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to PartialBookDepthRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!PartialBookDepthRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in PartialBookDepthRequest is not found"
-                                        + " in the empty JSON string",
-                                PartialBookDepthRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!PartialBookDepthRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `PartialBookDepthRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : PartialBookDepthRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the required field `levels`
-        Levels.validateJsonElement(jsonObj.get("levels"));
-        if ((jsonObj.get("updateSpeed") != null && !jsonObj.get("updateSpeed").isJsonNull())
-                && !jsonObj.get("updateSpeed").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `updateSpeed` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("updateSpeed").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!PartialBookDepthRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'PartialBookDepthRequest' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<PartialBookDepthRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(PartialBookDepthRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<PartialBookDepthRequest>() {
-                        @Override
-                        public void write(JsonWriter out, PartialBookDepthRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public PartialBookDepthRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of PartialBookDepthRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of PartialBookDepthRequest
-     * @throws IOException if the JSON string is invalid with respect to PartialBookDepthRequest
-     */
-    public static PartialBookDepthRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, PartialBookDepthRequest.class);
-    }
-
-    /**
-     * Convert an instance of PartialBookDepthRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

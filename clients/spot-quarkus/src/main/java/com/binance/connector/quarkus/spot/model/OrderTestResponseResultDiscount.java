@@ -12,52 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderTestResponseResultDiscount */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderTestResponseResultDiscount extends BaseDTO {
     public static final String SERIALIZED_NAME_ENABLED_FOR_ACCOUNT = "enabledForAccount";
 
-    @SerializedName(SERIALIZED_NAME_ENABLED_FOR_ACCOUNT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ENABLED_FOR_ACCOUNT)
+    
     private Boolean enabledForAccount;
 
     public static final String SERIALIZED_NAME_ENABLED_FOR_SYMBOL = "enabledForSymbol";
 
-    @SerializedName(SERIALIZED_NAME_ENABLED_FOR_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ENABLED_FOR_SYMBOL)
+    
     private Boolean enabledForSymbol;
 
     public static final String SERIALIZED_NAME_DISCOUNT_ASSET = "discountAsset";
 
-    @SerializedName(SERIALIZED_NAME_DISCOUNT_ASSET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_DISCOUNT_ASSET)
+    
     private String discountAsset;
 
     public static final String SERIALIZED_NAME_DISCOUNT = "discount";
 
-    @SerializedName(SERIALIZED_NAME_DISCOUNT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_DISCOUNT)
+    
     private String discount;
 
     public OrderTestResponseResultDiscount() {}
 
     public OrderTestResponseResultDiscount enabledForAccount(
-            @jakarta.annotation.Nullable Boolean enabledForAccount) {
+             Boolean enabledForAccount) {
         this.enabledForAccount = enabledForAccount;
         return this;
     }
@@ -67,17 +57,17 @@ public class OrderTestResponseResultDiscount extends BaseDTO {
      *
      * @return enabledForAccount
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getEnabledForAccount() {
         return enabledForAccount;
     }
 
-    public void setEnabledForAccount(@jakarta.annotation.Nullable Boolean enabledForAccount) {
+    public void setEnabledForAccount( Boolean enabledForAccount) {
         this.enabledForAccount = enabledForAccount;
     }
 
     public OrderTestResponseResultDiscount enabledForSymbol(
-            @jakarta.annotation.Nullable Boolean enabledForSymbol) {
+             Boolean enabledForSymbol) {
         this.enabledForSymbol = enabledForSymbol;
         return this;
     }
@@ -87,17 +77,17 @@ public class OrderTestResponseResultDiscount extends BaseDTO {
      *
      * @return enabledForSymbol
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getEnabledForSymbol() {
         return enabledForSymbol;
     }
 
-    public void setEnabledForSymbol(@jakarta.annotation.Nullable Boolean enabledForSymbol) {
+    public void setEnabledForSymbol( Boolean enabledForSymbol) {
         this.enabledForSymbol = enabledForSymbol;
     }
 
     public OrderTestResponseResultDiscount discountAsset(
-            @jakarta.annotation.Nullable String discountAsset) {
+             String discountAsset) {
         this.discountAsset = discountAsset;
         return this;
     }
@@ -107,16 +97,16 @@ public class OrderTestResponseResultDiscount extends BaseDTO {
      *
      * @return discountAsset
      */
-    @jakarta.annotation.Nullable
+    
     public String getDiscountAsset() {
         return discountAsset;
     }
 
-    public void setDiscountAsset(@jakarta.annotation.Nullable String discountAsset) {
+    public void setDiscountAsset( String discountAsset) {
         this.discountAsset = discountAsset;
     }
 
-    public OrderTestResponseResultDiscount discount(@jakarta.annotation.Nullable String discount) {
+    public OrderTestResponseResultDiscount discount( String discount) {
         this.discount = discount;
         return this;
     }
@@ -126,12 +116,12 @@ public class OrderTestResponseResultDiscount extends BaseDTO {
      *
      * @return discount
      */
-    @jakarta.annotation.Nullable
+    
     public String getDiscount() {
         return discount;
     }
 
-    public void setDiscount(@jakarta.annotation.Nullable String discount) {
+    public void setDiscount( String discount) {
         this.discount = discount;
     }
 
@@ -241,121 +231,4 @@ public class OrderTestResponseResultDiscount extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("enabledForAccount");
-        openapiFields.add("enabledForSymbol");
-        openapiFields.add("discountAsset");
-        openapiFields.add("discount");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OrderTestResponseResultDiscount
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderTestResponseResultDiscount.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderTestResponseResultDiscount is not"
-                                        + " found in the empty JSON string",
-                                OrderTestResponseResultDiscount.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderTestResponseResultDiscount.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderTestResponseResultDiscount` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("discountAsset") != null && !jsonObj.get("discountAsset").isJsonNull())
-                && !jsonObj.get("discountAsset").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `discountAsset` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("discountAsset").toString()));
-        }
-        if ((jsonObj.get("discount") != null && !jsonObj.get("discount").isJsonNull())
-                && !jsonObj.get("discount").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `discount` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("discount").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderTestResponseResultDiscount.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderTestResponseResultDiscount' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderTestResponseResultDiscount> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(OrderTestResponseResultDiscount.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderTestResponseResultDiscount>() {
-                        @Override
-                        public void write(JsonWriter out, OrderTestResponseResultDiscount value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderTestResponseResultDiscount read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderTestResponseResultDiscount given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderTestResponseResultDiscount
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OrderTestResponseResultDiscount
-     */
-    public static OrderTestResponseResultDiscount fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderTestResponseResultDiscount.class);
-    }
-
-    /**
-     * Convert an instance of OrderTestResponseResultDiscount to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

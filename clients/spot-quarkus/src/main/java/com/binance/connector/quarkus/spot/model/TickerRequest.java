@@ -12,52 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TickerRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TickerRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_SYMBOLS = "symbols";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOLS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOLS)
+    
     private Symbols symbols;
 
     public static final String SERIALIZED_NAME_TICKER_TYPE = "tickerType";
 
-    @SerializedName(SERIALIZED_NAME_TICKER_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TICKER_TYPE)
+    
     private TickerType tickerType;
 
     public static final String SERIALIZED_NAME_WINDOW_SIZE = "windowSize";
 
-    @SerializedName(SERIALIZED_NAME_WINDOW_SIZE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WINDOW_SIZE)
+    
     private WindowSize windowSize;
 
     public TickerRequest() {}
 
-    public TickerRequest symbol(@jakarta.annotation.Nullable String symbol) {
+    public TickerRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -67,16 +57,16 @@ public class TickerRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public TickerRequest symbols(@jakarta.annotation.Nullable Symbols symbols) {
+    public TickerRequest symbols( Symbols symbols) {
         this.symbols = symbols;
         return this;
     }
@@ -86,17 +76,17 @@ public class TickerRequest extends BaseDTO {
      *
      * @return symbols
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Symbols getSymbols() {
         return symbols;
     }
 
-    public void setSymbols(@jakarta.annotation.Nullable Symbols symbols) {
+    public void setSymbols( Symbols symbols) {
         this.symbols = symbols;
     }
 
-    public TickerRequest tickerType(@jakarta.annotation.Nullable TickerType tickerType) {
+    public TickerRequest tickerType( TickerType tickerType) {
         this.tickerType = tickerType;
         return this;
     }
@@ -106,17 +96,17 @@ public class TickerRequest extends BaseDTO {
      *
      * @return tickerType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public TickerType getTickerType() {
         return tickerType;
     }
 
-    public void setTickerType(@jakarta.annotation.Nullable TickerType tickerType) {
+    public void setTickerType( TickerType tickerType) {
         this.tickerType = tickerType;
     }
 
-    public TickerRequest windowSize(@jakarta.annotation.Nullable WindowSize windowSize) {
+    public TickerRequest windowSize( WindowSize windowSize) {
         this.windowSize = windowSize;
         return this;
     }
@@ -126,13 +116,13 @@ public class TickerRequest extends BaseDTO {
      *
      * @return windowSize
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public WindowSize getWindowSize() {
         return windowSize;
     }
 
-    public void setWindowSize(@jakarta.annotation.Nullable WindowSize windowSize) {
+    public void setWindowSize( WindowSize windowSize) {
         this.windowSize = windowSize;
     }
 
@@ -179,7 +169,7 @@ public class TickerRequest extends BaseDTO {
         }
         Symbols symbolsValue = getSymbols();
         if (symbolsValue != null) {
-            String symbolsValueAsString = JSON.getGson().toJson(symbolsValue);
+            String symbolsValueAsString = Json.encode(symbolsValue);
             valMap.put("symbols", symbolsValueAsString);
         }
         TickerType tickerTypeValue = getTickerType();
@@ -237,117 +227,5 @@ public class TickerRequest extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("symbols");
-        openapiFields.add("tickerType");
-        openapiFields.add("windowSize");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TickerRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TickerRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TickerRequest is not found in the"
-                                        + " empty JSON string",
-                                TickerRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TickerRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TickerRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the optional field `tickerType`
-        if (jsonObj.get("tickerType") != null && !jsonObj.get("tickerType").isJsonNull()) {
-            TickerType.validateJsonElement(jsonObj.get("tickerType"));
-        }
-        // validate the optional field `windowSize`
-        if (jsonObj.get("windowSize") != null && !jsonObj.get("windowSize").isJsonNull()) {
-            WindowSize.validateJsonElement(jsonObj.get("windowSize"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TickerRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TickerRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TickerRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TickerRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TickerRequest>() {
-                        @Override
-                        public void write(JsonWriter out, TickerRequest value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TickerRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TickerRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TickerRequest
-     * @throws IOException if the JSON string is invalid with respect to TickerRequest
-     */
-    public static TickerRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TickerRequest.class);
-    }
-
-    /**
-     * Convert an instance of TickerRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

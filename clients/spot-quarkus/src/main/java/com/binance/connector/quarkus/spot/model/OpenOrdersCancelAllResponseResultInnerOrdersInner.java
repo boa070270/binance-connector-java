@@ -12,46 +12,36 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OpenOrdersCancelAllResponseResultInnerOrdersInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OpenOrdersCancelAllResponseResultInnerOrdersInner extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_ID)
+    
     private Long orderId;
 
     public static final String SERIALIZED_NAME_CLIENT_ORDER_ID = "clientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CLIENT_ORDER_ID)
+    
     private String clientOrderId;
 
     public OpenOrdersCancelAllResponseResultInnerOrdersInner() {}
 
     public OpenOrdersCancelAllResponseResultInnerOrdersInner symbol(
-            @jakarta.annotation.Nullable String symbol) {
+             String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -61,17 +51,17 @@ public class OpenOrdersCancelAllResponseResultInnerOrdersInner extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public OpenOrdersCancelAllResponseResultInnerOrdersInner orderId(
-            @jakarta.annotation.Nullable Long orderId) {
+             Long orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -81,17 +71,17 @@ public class OpenOrdersCancelAllResponseResultInnerOrdersInner extends BaseDTO {
      *
      * @return orderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(@jakarta.annotation.Nullable Long orderId) {
+    public void setOrderId( Long orderId) {
         this.orderId = orderId;
     }
 
     public OpenOrdersCancelAllResponseResultInnerOrdersInner clientOrderId(
-            @jakarta.annotation.Nullable String clientOrderId) {
+             String clientOrderId) {
         this.clientOrderId = clientOrderId;
         return this;
     }
@@ -101,12 +91,12 @@ public class OpenOrdersCancelAllResponseResultInnerOrdersInner extends BaseDTO {
      *
      * @return clientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getClientOrderId() {
         return clientOrderId;
     }
 
-    public void setClientOrderId(@jakarta.annotation.Nullable String clientOrderId) {
+    public void setClientOrderId( String clientOrderId) {
         this.clientOrderId = clientOrderId;
     }
 
@@ -205,133 +195,5 @@ public class OpenOrdersCancelAllResponseResultInnerOrdersInner extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("orderId");
-        openapiFields.add("clientOrderId");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OpenOrdersCancelAllResponseResultInnerOrdersInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OpenOrdersCancelAllResponseResultInnerOrdersInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in"
-                                    + " OpenOrdersCancelAllResponseResultInnerOrdersInner is not"
-                                    + " found in the empty JSON string",
-                                OpenOrdersCancelAllResponseResultInnerOrdersInner
-                                        .openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OpenOrdersCancelAllResponseResultInnerOrdersInner.openapiFields.contains(
-                    entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OpenOrdersCancelAllResponseResultInnerOrdersInner`"
-                                        + " properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("clientOrderId") != null && !jsonObj.get("clientOrderId").isJsonNull())
-                && !jsonObj.get("clientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `clientOrderId` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("clientOrderId").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OpenOrdersCancelAllResponseResultInnerOrdersInner.class.isAssignableFrom(
-                    type.getRawType())) {
-                return null; // this class only serializes
-                // 'OpenOrdersCancelAllResponseResultInnerOrdersInner' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OpenOrdersCancelAllResponseResultInnerOrdersInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this,
-                            TypeToken.get(OpenOrdersCancelAllResponseResultInnerOrdersInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OpenOrdersCancelAllResponseResultInnerOrdersInner>() {
-                        @Override
-                        public void write(
-                                JsonWriter out,
-                                OpenOrdersCancelAllResponseResultInnerOrdersInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OpenOrdersCancelAllResponseResultInnerOrdersInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OpenOrdersCancelAllResponseResultInnerOrdersInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OpenOrdersCancelAllResponseResultInnerOrdersInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OpenOrdersCancelAllResponseResultInnerOrdersInner
-     */
-    public static OpenOrdersCancelAllResponseResultInnerOrdersInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson()
-                .fromJson(jsonString, OpenOrdersCancelAllResponseResultInnerOrdersInner.class);
-    }
-
-    /**
-     * Convert an instance of OpenOrdersCancelAllResponseResultInnerOrdersInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

@@ -12,12 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -25,21 +20,17 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-/** SessionSubscriptionsResponseResultInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class SessionSubscriptionsResponseResultInner extends BaseDTO {
     public static final String SERIALIZED_NAME_SUBSCRIPTION_ID = "subscriptionId";
 
-    @SerializedName(SERIALIZED_NAME_SUBSCRIPTION_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SUBSCRIPTION_ID)
+    
     private Long subscriptionId;
 
     public SessionSubscriptionsResponseResultInner() {}
 
     public SessionSubscriptionsResponseResultInner subscriptionId(
-            @jakarta.annotation.Nullable Long subscriptionId) {
+             Long subscriptionId) {
         this.subscriptionId = subscriptionId;
         return this;
     }
@@ -49,12 +40,12 @@ public class SessionSubscriptionsResponseResultInner extends BaseDTO {
      *
      * @return subscriptionId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getSubscriptionId() {
         return subscriptionId;
     }
 
-    public void setSubscriptionId(@jakarta.annotation.Nullable Long subscriptionId) {
+    public void setSubscriptionId( Long subscriptionId) {
         this.subscriptionId = subscriptionId;
     }
 
@@ -130,108 +121,4 @@ public class SessionSubscriptionsResponseResultInner extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("subscriptionId");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     SessionSubscriptionsResponseResultInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!SessionSubscriptionsResponseResultInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in"
-                                    + " SessionSubscriptionsResponseResultInner is not found in the"
-                                    + " empty JSON string",
-                                SessionSubscriptionsResponseResultInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!SessionSubscriptionsResponseResultInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `SessionSubscriptionsResponseResultInner` properties. JSON:"
-                                    + " %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!SessionSubscriptionsResponseResultInner.class.isAssignableFrom(
-                    type.getRawType())) {
-                return null; // this class only serializes 'SessionSubscriptionsResponseResultInner'
-                // and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SessionSubscriptionsResponseResultInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(SessionSubscriptionsResponseResultInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<SessionSubscriptionsResponseResultInner>() {
-                        @Override
-                        public void write(
-                                JsonWriter out, SessionSubscriptionsResponseResultInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public SessionSubscriptionsResponseResultInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of SessionSubscriptionsResponseResultInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of SessionSubscriptionsResponseResultInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     SessionSubscriptionsResponseResultInner
-     */
-    public static SessionSubscriptionsResponseResultInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson().fromJson(jsonString, SessionSubscriptionsResponseResultInner.class);
-    }
-
-    /**
-     * Convert an instance of SessionSubscriptionsResponseResultInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

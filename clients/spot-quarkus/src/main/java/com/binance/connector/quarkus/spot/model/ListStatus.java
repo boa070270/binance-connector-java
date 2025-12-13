@@ -12,88 +12,78 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** ListStatus */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class ListStatus extends BaseDTO {
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_S_LOWER_CASE = "s";
 
-    @SerializedName(SERIALIZED_NAME_S_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S_LOWER_CASE)
+    
     private String sLowerCase;
 
     public static final String SERIALIZED_NAME_G_LOWER_CASE = "g";
 
-    @SerializedName(SERIALIZED_NAME_G_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_G_LOWER_CASE)
+    
     private Long gLowerCase;
 
     public static final String SERIALIZED_NAME_C_LOWER_CASE = "c";
 
-    @SerializedName(SERIALIZED_NAME_C_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_C_LOWER_CASE)
+    
     private String cLowerCase;
 
     public static final String SERIALIZED_NAME_L_LOWER_CASE = "l";
 
-    @SerializedName(SERIALIZED_NAME_L_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L_LOWER_CASE)
+    
     private String lLowerCase;
 
     public static final String SERIALIZED_NAME_L = "L";
 
-    @SerializedName(SERIALIZED_NAME_L)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L)
+    
     private String L;
 
     public static final String SERIALIZED_NAME_R_LOWER_CASE = "r";
 
-    @SerializedName(SERIALIZED_NAME_R_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_R_LOWER_CASE)
+    
     private String rLowerCase;
 
     public static final String SERIALIZED_NAME_C = "C";
 
-    @SerializedName(SERIALIZED_NAME_C)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_C)
+    
     private String C;
 
     public static final String SERIALIZED_NAME_T = "T";
 
-    @SerializedName(SERIALIZED_NAME_T)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_T)
+    
     private Long T;
 
     public static final String SERIALIZED_NAME_O = "O";
 
-    @SerializedName(SERIALIZED_NAME_O)
-    @jakarta.annotation.Nullable
-    private List<@Valid ListStatusOInner> O;
+    @JsonProperty(SERIALIZED_NAME_O)
+    
+    private List<ListStatusOInner> O;
 
     public ListStatus() {}
 
-    public ListStatus E(@jakarta.annotation.Nullable Long E) {
+    public ListStatus E( Long E) {
         this.E = E;
         return this;
     }
@@ -103,16 +93,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public ListStatus sLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public ListStatus sLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
         return this;
     }
@@ -122,16 +112,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return sLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getsLowerCase() {
         return sLowerCase;
     }
 
-    public void setsLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public void setsLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
     }
 
-    public ListStatus gLowerCase(@jakarta.annotation.Nullable Long gLowerCase) {
+    public ListStatus gLowerCase( Long gLowerCase) {
         this.gLowerCase = gLowerCase;
         return this;
     }
@@ -141,16 +131,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return gLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getgLowerCase() {
         return gLowerCase;
     }
 
-    public void setgLowerCase(@jakarta.annotation.Nullable Long gLowerCase) {
+    public void setgLowerCase( Long gLowerCase) {
         this.gLowerCase = gLowerCase;
     }
 
-    public ListStatus cLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public ListStatus cLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
         return this;
     }
@@ -160,16 +150,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return cLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getcLowerCase() {
         return cLowerCase;
     }
 
-    public void setcLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public void setcLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
     }
 
-    public ListStatus lLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public ListStatus lLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
         return this;
     }
@@ -179,16 +169,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return lLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getlLowerCase() {
         return lLowerCase;
     }
 
-    public void setlLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public void setlLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
     }
 
-    public ListStatus L(@jakarta.annotation.Nullable String L) {
+    public ListStatus L( String L) {
         this.L = L;
         return this;
     }
@@ -198,16 +188,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return L
      */
-    @jakarta.annotation.Nullable
+    
     public String getL() {
         return L;
     }
 
-    public void setL(@jakarta.annotation.Nullable String L) {
+    public void setL( String L) {
         this.L = L;
     }
 
-    public ListStatus rLowerCase(@jakarta.annotation.Nullable String rLowerCase) {
+    public ListStatus rLowerCase( String rLowerCase) {
         this.rLowerCase = rLowerCase;
         return this;
     }
@@ -217,16 +207,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return rLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getrLowerCase() {
         return rLowerCase;
     }
 
-    public void setrLowerCase(@jakarta.annotation.Nullable String rLowerCase) {
+    public void setrLowerCase( String rLowerCase) {
         this.rLowerCase = rLowerCase;
     }
 
-    public ListStatus C(@jakarta.annotation.Nullable String C) {
+    public ListStatus C( String C) {
         this.C = C;
         return this;
     }
@@ -236,16 +226,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return C
      */
-    @jakarta.annotation.Nullable
+    
     public String getC() {
         return C;
     }
 
-    public void setC(@jakarta.annotation.Nullable String C) {
+    public void setC( String C) {
         this.C = C;
     }
 
-    public ListStatus T(@jakarta.annotation.Nullable Long T) {
+    public ListStatus T( Long T) {
         this.T = T;
         return this;
     }
@@ -255,16 +245,16 @@ public class ListStatus extends BaseDTO {
      *
      * @return T
      */
-    @jakarta.annotation.Nullable
+    
     public Long getT() {
         return T;
     }
 
-    public void setT(@jakarta.annotation.Nullable Long T) {
+    public void setT( Long T) {
         this.T = T;
     }
 
-    public ListStatus O(@jakarta.annotation.Nullable List<@Valid ListStatusOInner> O) {
+    public ListStatus O( List<ListStatusOInner> O) {
         this.O = O;
         return this;
     }
@@ -282,13 +272,11 @@ public class ListStatus extends BaseDTO {
      *
      * @return O
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid ListStatusOInner> getO() {
+    public List<ListStatusOInner> getO() {
         return O;
     }
 
-    public void setO(@jakarta.annotation.Nullable List<@Valid ListStatusOInner> O) {
+    public void setO( List<ListStatusOInner> O) {
         this.O = O;
     }
 
@@ -317,24 +305,6 @@ public class ListStatus extends BaseDTO {
     public int hashCode() {
         return Objects.hash(
                 E, sLowerCase, gLowerCase, cLowerCase, lLowerCase, L, rLowerCase, C, T, O);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class ListStatus {\n");
-        sb.append("		E: ").append(toIndentedString(E)).append("\n");
-        sb.append("		sLowerCase: ").append(toIndentedString(sLowerCase)).append("\n");
-        sb.append("		gLowerCase: ").append(toIndentedString(gLowerCase)).append("\n");
-        sb.append("		cLowerCase: ").append(toIndentedString(cLowerCase)).append("\n");
-        sb.append("		lLowerCase: ").append(toIndentedString(lLowerCase)).append("\n");
-        sb.append("		L: ").append(toIndentedString(L)).append("\n");
-        sb.append("		rLowerCase: ").append(toIndentedString(rLowerCase)).append("\n");
-        sb.append("		C: ").append(toIndentedString(C)).append("\n");
-        sb.append("		T: ").append(toIndentedString(T)).append("\n");
-        sb.append("		O: ").append(toIndentedString(O)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -386,9 +356,9 @@ public class ListStatus extends BaseDTO {
             String TValueAsString = TValue.toString();
             valMap.put("T", TValueAsString);
         }
-        List<@Valid ListStatusOInner> OValue = getO();
+        List<ListStatusOInner> OValue = getO();
         if (OValue != null) {
-            String OValueAsString = JSON.getGson().toJson(OValue);
+            String OValueAsString = Json.encode(OValue);
             valMap.put("O", OValueAsString);
         }
 
@@ -399,235 +369,7 @@ public class ListStatus extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object EValue = getE();
-        if (EValue != null) {
-            valMap.put("E", EValue);
-        }
-        Object sLowerCaseValue = getsLowerCase();
-        if (sLowerCaseValue != null) {
-            valMap.put("sLowerCase", sLowerCaseValue);
-        }
-        Object gLowerCaseValue = getgLowerCase();
-        if (gLowerCaseValue != null) {
-            valMap.put("gLowerCase", gLowerCaseValue);
-        }
-        Object cLowerCaseValue = getcLowerCase();
-        if (cLowerCaseValue != null) {
-            valMap.put("cLowerCase", cLowerCaseValue);
-        }
-        Object lLowerCaseValue = getlLowerCase();
-        if (lLowerCaseValue != null) {
-            valMap.put("lLowerCase", lLowerCaseValue);
-        }
-        Object LValue = getL();
-        if (LValue != null) {
-            valMap.put("L", LValue);
-        }
-        Object rLowerCaseValue = getrLowerCase();
-        if (rLowerCaseValue != null) {
-            valMap.put("rLowerCase", rLowerCaseValue);
-        }
-        Object CValue = getC();
-        if (CValue != null) {
-            valMap.put("C", CValue);
-        }
-        Object TValue = getT();
-        if (TValue != null) {
-            valMap.put("T", TValue);
-        }
-        Object OValue = getO();
-        if (OValue != null) {
-            valMap.put("O", OValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("E");
-        openapiFields.add("s");
-        openapiFields.add("g");
-        openapiFields.add("c");
-        openapiFields.add("l");
-        openapiFields.add("L");
-        openapiFields.add("r");
-        openapiFields.add("C");
-        openapiFields.add("T");
-        openapiFields.add("O");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to ListStatus
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!ListStatus.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in ListStatus is not found in the empty"
-                                        + " JSON string",
-                                ListStatus.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!ListStatus.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `ListStatus` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("s") != null && !jsonObj.get("s").isJsonNull())
-                && !jsonObj.get("s").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `s` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("s").toString()));
-        }
-        if ((jsonObj.get("c") != null && !jsonObj.get("c").isJsonNull())
-                && !jsonObj.get("c").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `c` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("c").toString()));
-        }
-        if ((jsonObj.get("l") != null && !jsonObj.get("l").isJsonNull())
-                && !jsonObj.get("l").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `l` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("l").toString()));
-        }
-        if ((jsonObj.get("L") != null && !jsonObj.get("L").isJsonNull())
-                && !jsonObj.get("L").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `L` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("L").toString()));
-        }
-        if ((jsonObj.get("r") != null && !jsonObj.get("r").isJsonNull())
-                && !jsonObj.get("r").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `r` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("r").toString()));
-        }
-        if ((jsonObj.get("C") != null && !jsonObj.get("C").isJsonNull())
-                && !jsonObj.get("C").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `C` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("C").toString()));
-        }
-        if (jsonObj.get("O") != null && !jsonObj.get("O").isJsonNull()) {
-            JsonArray jsonArrayO = jsonObj.getAsJsonArray("O");
-            if (jsonArrayO != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("O").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `O` to be an array in the JSON string but"
-                                            + " got `%s`",
-                                    jsonObj.get("O").toString()));
-                }
-
-                // validate the optional field `O` (array)
-                for (int i = 0; i < jsonArrayO.size(); i++) {
-                    ListStatusOInner.validateJsonElement(jsonArrayO.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!ListStatus.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'ListStatus' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<ListStatus> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(ListStatus.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<ListStatus>() {
-                        @Override
-                        public void write(JsonWriter out, ListStatus value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public ListStatus read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of ListStatus given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of ListStatus
-     * @throws IOException if the JSON string is invalid with respect to ListStatus
-     */
-    public static ListStatus fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, ListStatus.class);
-    }
-
-    /**
-     * Convert an instance of ListStatus to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

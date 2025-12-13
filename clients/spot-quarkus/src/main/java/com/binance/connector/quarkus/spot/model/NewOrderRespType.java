@@ -12,17 +12,8 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
 import java.io.IOException;
 
-
-/** Gets or Sets newOrderRespType */
-@JsonAdapter(NewOrderRespType.Adapter.class)
 public enum NewOrderRespType {
     ACK("ACK"),
 
@@ -58,22 +49,4 @@ public enum NewOrderRespType {
         throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<NewOrderRespType> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final NewOrderRespType enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public NewOrderRespType read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return NewOrderRespType.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        NewOrderRespType.fromValue(value);
-    }
 }

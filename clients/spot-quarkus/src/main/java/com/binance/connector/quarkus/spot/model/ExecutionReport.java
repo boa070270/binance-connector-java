@@ -12,351 +12,341 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** ExecutionReport */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class ExecutionReport extends BaseDTO {
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_S_LOWER_CASE = "s";
 
-    @SerializedName(SERIALIZED_NAME_S_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S_LOWER_CASE)
+    
     private String sLowerCase;
 
     public static final String SERIALIZED_NAME_C_LOWER_CASE = "c";
 
-    @SerializedName(SERIALIZED_NAME_C_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_C_LOWER_CASE)
+    
     private String cLowerCase;
 
     public static final String SERIALIZED_NAME_S = "S";
 
-    @SerializedName(SERIALIZED_NAME_S)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S)
+    
     private String S;
 
     public static final String SERIALIZED_NAME_O_LOWER_CASE = "o";
 
-    @SerializedName(SERIALIZED_NAME_O_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_O_LOWER_CASE)
+    
     private String oLowerCase;
 
     public static final String SERIALIZED_NAME_F_LOWER_CASE = "f";
 
-    @SerializedName(SERIALIZED_NAME_F_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_F_LOWER_CASE)
+    
     private String fLowerCase;
 
     public static final String SERIALIZED_NAME_Q_LOWER_CASE = "q";
 
-    @SerializedName(SERIALIZED_NAME_Q_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Q_LOWER_CASE)
+    
     private String qLowerCase;
 
     public static final String SERIALIZED_NAME_P_LOWER_CASE = "p";
 
-    @SerializedName(SERIALIZED_NAME_P_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_P_LOWER_CASE)
+    
     private String pLowerCase;
 
     public static final String SERIALIZED_NAME_P = "P";
 
-    @SerializedName(SERIALIZED_NAME_P)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_P)
+    
     private String P;
 
     public static final String SERIALIZED_NAME_F = "F";
 
-    @SerializedName(SERIALIZED_NAME_F)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_F)
+    
     private String F;
 
     public static final String SERIALIZED_NAME_G_LOWER_CASE = "g";
 
-    @SerializedName(SERIALIZED_NAME_G_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_G_LOWER_CASE)
+    
     private Long gLowerCase;
 
     public static final String SERIALIZED_NAME_C = "C";
 
-    @SerializedName(SERIALIZED_NAME_C)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_C)
+    
     private String C;
 
     public static final String SERIALIZED_NAME_X_LOWER_CASE = "x";
 
-    @SerializedName(SERIALIZED_NAME_X_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_X_LOWER_CASE)
+    
     private String xLowerCase;
 
     public static final String SERIALIZED_NAME_X = "X";
 
-    @SerializedName(SERIALIZED_NAME_X)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_X)
+    
     private String X;
 
     public static final String SERIALIZED_NAME_R_LOWER_CASE = "r";
 
-    @SerializedName(SERIALIZED_NAME_R_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_R_LOWER_CASE)
+    
     private String rLowerCase;
 
     public static final String SERIALIZED_NAME_I_LOWER_CASE = "i";
 
-    @SerializedName(SERIALIZED_NAME_I_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_I_LOWER_CASE)
+    
     private Long iLowerCase;
 
     public static final String SERIALIZED_NAME_L_LOWER_CASE = "l";
 
-    @SerializedName(SERIALIZED_NAME_L_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L_LOWER_CASE)
+    
     private String lLowerCase;
 
     public static final String SERIALIZED_NAME_Z_LOWER_CASE = "z";
 
-    @SerializedName(SERIALIZED_NAME_Z_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Z_LOWER_CASE)
+    
     private String zLowerCase;
 
     public static final String SERIALIZED_NAME_L = "L";
 
-    @SerializedName(SERIALIZED_NAME_L)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L)
+    
     private String L;
 
     public static final String SERIALIZED_NAME_N_LOWER_CASE = "n";
 
-    @SerializedName(SERIALIZED_NAME_N_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_N_LOWER_CASE)
+    
     private String nLowerCase;
 
     public static final String SERIALIZED_NAME_N = "N";
 
-    @SerializedName(SERIALIZED_NAME_N)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_N)
+    
     private String N;
 
     public static final String SERIALIZED_NAME_T = "T";
 
-    @SerializedName(SERIALIZED_NAME_T)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_T)
+    
     private Long T;
 
     public static final String SERIALIZED_NAME_T_LOWER_CASE = "t";
 
-    @SerializedName(SERIALIZED_NAME_T_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_T_LOWER_CASE)
+    
     private Long tLowerCase;
 
     public static final String SERIALIZED_NAME_V_LOWER_CASE = "v";
 
-    @SerializedName(SERIALIZED_NAME_V_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_V_LOWER_CASE)
+    
     private Long vLowerCase;
 
     public static final String SERIALIZED_NAME_I = "I";
 
-    @SerializedName(SERIALIZED_NAME_I)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_I)
+    
     private Long I;
 
     public static final String SERIALIZED_NAME_W_LOWER_CASE = "w";
 
-    @SerializedName(SERIALIZED_NAME_W_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_W_LOWER_CASE)
+    
     private Boolean wLowerCase;
 
     public static final String SERIALIZED_NAME_M_LOWER_CASE = "m";
 
-    @SerializedName(SERIALIZED_NAME_M_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_M_LOWER_CASE)
+    
     private Boolean mLowerCase;
 
     public static final String SERIALIZED_NAME_M = "M";
 
-    @SerializedName(SERIALIZED_NAME_M)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_M)
+    
     private Boolean M;
 
     public static final String SERIALIZED_NAME_O = "O";
 
-    @SerializedName(SERIALIZED_NAME_O)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_O)
+    
     private Long O;
 
     public static final String SERIALIZED_NAME_Z = "Z";
 
-    @SerializedName(SERIALIZED_NAME_Z)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Z)
+    
     private String Z;
 
     public static final String SERIALIZED_NAME_Y = "Y";
 
-    @SerializedName(SERIALIZED_NAME_Y)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Y)
+    
     private String Y;
 
     public static final String SERIALIZED_NAME_Q = "Q";
 
-    @SerializedName(SERIALIZED_NAME_Q)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_Q)
+    
     private String Q;
 
     public static final String SERIALIZED_NAME_W = "W";
 
-    @SerializedName(SERIALIZED_NAME_W)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_W)
+    
     private Long W;
 
     public static final String SERIALIZED_NAME_V = "V";
 
-    @SerializedName(SERIALIZED_NAME_V)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_V)
+    
     private String V;
 
     public static final String SERIALIZED_NAME_D_LOWER_CASE = "d";
 
-    @SerializedName(SERIALIZED_NAME_D_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_D_LOWER_CASE)
+    
     private Long dLowerCase;
 
     public static final String SERIALIZED_NAME_D = "D";
 
-    @SerializedName(SERIALIZED_NAME_D)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_D)
+    
     private Long D;
 
     public static final String SERIALIZED_NAME_J_LOWER_CASE = "j";
 
-    @SerializedName(SERIALIZED_NAME_J_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_J_LOWER_CASE)
+    
     private Long jLowerCase;
 
     public static final String SERIALIZED_NAME_J = "J";
 
-    @SerializedName(SERIALIZED_NAME_J)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_J)
+    
     private Long J;
 
     public static final String SERIALIZED_NAME_A = "A";
 
-    @SerializedName(SERIALIZED_NAME_A)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A)
+    
     private String A;
 
     public static final String SERIALIZED_NAME_B = "B";
 
-    @SerializedName(SERIALIZED_NAME_B)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_B)
+    
     private String B;
 
     public static final String SERIALIZED_NAME_U_LOWER_CASE = "u";
 
-    @SerializedName(SERIALIZED_NAME_U_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_U_LOWER_CASE)
+    
     private Long uLowerCase;
 
     public static final String SERIALIZED_NAME_U = "U";
 
-    @SerializedName(SERIALIZED_NAME_U)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_U)
+    
     private Long U;
 
     public static final String SERIALIZED_NAME_CS = "Cs";
 
-    @SerializedName(SERIALIZED_NAME_CS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CS)
+    
     private String cs;
 
     public static final String SERIALIZED_NAME_PL = "pl";
 
-    @SerializedName(SERIALIZED_NAME_PL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PL)
+    
     private String pl;
 
     public static final String SERIALIZED_NAME_P_L = "pL";
 
-    @SerializedName(SERIALIZED_NAME_P_L)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_P_L)
+    
     private String pL;
 
     public static final String SERIALIZED_NAME_P_Y = "pY";
 
-    @SerializedName(SERIALIZED_NAME_P_Y)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_P_Y)
+    
     private String pY;
 
     public static final String SERIALIZED_NAME_B_LOWER_CASE = "b";
 
-    @SerializedName(SERIALIZED_NAME_B_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_B_LOWER_CASE)
+    
     private String bLowerCase;
 
     public static final String SERIALIZED_NAME_A_LOWER_CASE = "a";
 
-    @SerializedName(SERIALIZED_NAME_A_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A_LOWER_CASE)
+    
     private Long aLowerCase;
 
     public static final String SERIALIZED_NAME_K_LOWER_CASE = "k";
 
-    @SerializedName(SERIALIZED_NAME_K_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_K_LOWER_CASE)
+    
     private String kLowerCase;
 
     public static final String SERIALIZED_NAME_U_S = "uS";
 
-    @SerializedName(SERIALIZED_NAME_U_S)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_U_S)
+    
     private Boolean uS;
 
     public static final String SERIALIZED_NAME_G_P = "gP";
 
-    @SerializedName(SERIALIZED_NAME_G_P)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_G_P)
+    
     private String gP;
 
     public static final String SERIALIZED_NAME_G_O_T = "gOT";
 
-    @SerializedName(SERIALIZED_NAME_G_O_T)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_G_O_T)
+    
     private String gOT;
 
     public static final String SERIALIZED_NAME_G_O_V = "gOV";
 
-    @SerializedName(SERIALIZED_NAME_G_O_V)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_G_O_V)
+    
     private Long gOV;
 
     public static final String SERIALIZED_NAME_GP = "gp";
 
-    @SerializedName(SERIALIZED_NAME_GP)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_GP)
+    
     private String gp;
 
     public ExecutionReport() {}
 
-    public ExecutionReport E(@jakarta.annotation.Nullable Long E) {
+    public ExecutionReport E( Long E) {
         this.E = E;
         return this;
     }
@@ -366,16 +356,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public ExecutionReport sLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public ExecutionReport sLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
         return this;
     }
@@ -385,16 +375,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return sLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getsLowerCase() {
         return sLowerCase;
     }
 
-    public void setsLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public void setsLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
     }
 
-    public ExecutionReport cLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public ExecutionReport cLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
         return this;
     }
@@ -404,16 +394,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return cLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getcLowerCase() {
         return cLowerCase;
     }
 
-    public void setcLowerCase(@jakarta.annotation.Nullable String cLowerCase) {
+    public void setcLowerCase( String cLowerCase) {
         this.cLowerCase = cLowerCase;
     }
 
-    public ExecutionReport S(@jakarta.annotation.Nullable String S) {
+    public ExecutionReport S( String S) {
         this.S = S;
         return this;
     }
@@ -423,16 +413,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return S
      */
-    @jakarta.annotation.Nullable
+    
     public String getS() {
         return S;
     }
 
-    public void setS(@jakarta.annotation.Nullable String S) {
+    public void setS( String S) {
         this.S = S;
     }
 
-    public ExecutionReport oLowerCase(@jakarta.annotation.Nullable String oLowerCase) {
+    public ExecutionReport oLowerCase( String oLowerCase) {
         this.oLowerCase = oLowerCase;
         return this;
     }
@@ -442,16 +432,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return oLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getoLowerCase() {
         return oLowerCase;
     }
 
-    public void setoLowerCase(@jakarta.annotation.Nullable String oLowerCase) {
+    public void setoLowerCase( String oLowerCase) {
         this.oLowerCase = oLowerCase;
     }
 
-    public ExecutionReport fLowerCase(@jakarta.annotation.Nullable String fLowerCase) {
+    public ExecutionReport fLowerCase( String fLowerCase) {
         this.fLowerCase = fLowerCase;
         return this;
     }
@@ -461,16 +451,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return fLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getfLowerCase() {
         return fLowerCase;
     }
 
-    public void setfLowerCase(@jakarta.annotation.Nullable String fLowerCase) {
+    public void setfLowerCase( String fLowerCase) {
         this.fLowerCase = fLowerCase;
     }
 
-    public ExecutionReport qLowerCase(@jakarta.annotation.Nullable String qLowerCase) {
+    public ExecutionReport qLowerCase( String qLowerCase) {
         this.qLowerCase = qLowerCase;
         return this;
     }
@@ -480,16 +470,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return qLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getqLowerCase() {
         return qLowerCase;
     }
 
-    public void setqLowerCase(@jakarta.annotation.Nullable String qLowerCase) {
+    public void setqLowerCase( String qLowerCase) {
         this.qLowerCase = qLowerCase;
     }
 
-    public ExecutionReport pLowerCase(@jakarta.annotation.Nullable String pLowerCase) {
+    public ExecutionReport pLowerCase( String pLowerCase) {
         this.pLowerCase = pLowerCase;
         return this;
     }
@@ -499,16 +489,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return pLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getpLowerCase() {
         return pLowerCase;
     }
 
-    public void setpLowerCase(@jakarta.annotation.Nullable String pLowerCase) {
+    public void setpLowerCase( String pLowerCase) {
         this.pLowerCase = pLowerCase;
     }
 
-    public ExecutionReport P(@jakarta.annotation.Nullable String P) {
+    public ExecutionReport P( String P) {
         this.P = P;
         return this;
     }
@@ -518,16 +508,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return P
      */
-    @jakarta.annotation.Nullable
+    
     public String getP() {
         return P;
     }
 
-    public void setP(@jakarta.annotation.Nullable String P) {
+    public void setP( String P) {
         this.P = P;
     }
 
-    public ExecutionReport F(@jakarta.annotation.Nullable String F) {
+    public ExecutionReport F( String F) {
         this.F = F;
         return this;
     }
@@ -537,16 +527,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return F
      */
-    @jakarta.annotation.Nullable
+    
     public String getF() {
         return F;
     }
 
-    public void setF(@jakarta.annotation.Nullable String F) {
+    public void setF( String F) {
         this.F = F;
     }
 
-    public ExecutionReport gLowerCase(@jakarta.annotation.Nullable Long gLowerCase) {
+    public ExecutionReport gLowerCase( Long gLowerCase) {
         this.gLowerCase = gLowerCase;
         return this;
     }
@@ -556,16 +546,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return gLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getgLowerCase() {
         return gLowerCase;
     }
 
-    public void setgLowerCase(@jakarta.annotation.Nullable Long gLowerCase) {
+    public void setgLowerCase( Long gLowerCase) {
         this.gLowerCase = gLowerCase;
     }
 
-    public ExecutionReport C(@jakarta.annotation.Nullable String C) {
+    public ExecutionReport C( String C) {
         this.C = C;
         return this;
     }
@@ -575,16 +565,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return C
      */
-    @jakarta.annotation.Nullable
+    
     public String getC() {
         return C;
     }
 
-    public void setC(@jakarta.annotation.Nullable String C) {
+    public void setC( String C) {
         this.C = C;
     }
 
-    public ExecutionReport xLowerCase(@jakarta.annotation.Nullable String xLowerCase) {
+    public ExecutionReport xLowerCase( String xLowerCase) {
         this.xLowerCase = xLowerCase;
         return this;
     }
@@ -594,16 +584,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return xLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getxLowerCase() {
         return xLowerCase;
     }
 
-    public void setxLowerCase(@jakarta.annotation.Nullable String xLowerCase) {
+    public void setxLowerCase( String xLowerCase) {
         this.xLowerCase = xLowerCase;
     }
 
-    public ExecutionReport X(@jakarta.annotation.Nullable String X) {
+    public ExecutionReport X( String X) {
         this.X = X;
         return this;
     }
@@ -613,16 +603,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return X
      */
-    @jakarta.annotation.Nullable
+    
     public String getX() {
         return X;
     }
 
-    public void setX(@jakarta.annotation.Nullable String X) {
+    public void setX( String X) {
         this.X = X;
     }
 
-    public ExecutionReport rLowerCase(@jakarta.annotation.Nullable String rLowerCase) {
+    public ExecutionReport rLowerCase( String rLowerCase) {
         this.rLowerCase = rLowerCase;
         return this;
     }
@@ -632,16 +622,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return rLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getrLowerCase() {
         return rLowerCase;
     }
 
-    public void setrLowerCase(@jakarta.annotation.Nullable String rLowerCase) {
+    public void setrLowerCase( String rLowerCase) {
         this.rLowerCase = rLowerCase;
     }
 
-    public ExecutionReport iLowerCase(@jakarta.annotation.Nullable Long iLowerCase) {
+    public ExecutionReport iLowerCase( Long iLowerCase) {
         this.iLowerCase = iLowerCase;
         return this;
     }
@@ -651,16 +641,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return iLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getiLowerCase() {
         return iLowerCase;
     }
 
-    public void setiLowerCase(@jakarta.annotation.Nullable Long iLowerCase) {
+    public void setiLowerCase( Long iLowerCase) {
         this.iLowerCase = iLowerCase;
     }
 
-    public ExecutionReport lLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public ExecutionReport lLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
         return this;
     }
@@ -670,16 +660,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return lLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getlLowerCase() {
         return lLowerCase;
     }
 
-    public void setlLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public void setlLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
     }
 
-    public ExecutionReport zLowerCase(@jakarta.annotation.Nullable String zLowerCase) {
+    public ExecutionReport zLowerCase( String zLowerCase) {
         this.zLowerCase = zLowerCase;
         return this;
     }
@@ -689,16 +679,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return zLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getzLowerCase() {
         return zLowerCase;
     }
 
-    public void setzLowerCase(@jakarta.annotation.Nullable String zLowerCase) {
+    public void setzLowerCase( String zLowerCase) {
         this.zLowerCase = zLowerCase;
     }
 
-    public ExecutionReport L(@jakarta.annotation.Nullable String L) {
+    public ExecutionReport L( String L) {
         this.L = L;
         return this;
     }
@@ -708,16 +698,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return L
      */
-    @jakarta.annotation.Nullable
+    
     public String getL() {
         return L;
     }
 
-    public void setL(@jakarta.annotation.Nullable String L) {
+    public void setL( String L) {
         this.L = L;
     }
 
-    public ExecutionReport nLowerCase(@jakarta.annotation.Nullable String nLowerCase) {
+    public ExecutionReport nLowerCase( String nLowerCase) {
         this.nLowerCase = nLowerCase;
         return this;
     }
@@ -727,16 +717,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return nLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getnLowerCase() {
         return nLowerCase;
     }
 
-    public void setnLowerCase(@jakarta.annotation.Nullable String nLowerCase) {
+    public void setnLowerCase( String nLowerCase) {
         this.nLowerCase = nLowerCase;
     }
 
-    public ExecutionReport N(@jakarta.annotation.Nullable String N) {
+    public ExecutionReport N( String N) {
         this.N = N;
         return this;
     }
@@ -746,16 +736,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return N
      */
-    @jakarta.annotation.Nullable
+    
     public String getN() {
         return N;
     }
 
-    public void setN(@jakarta.annotation.Nullable String N) {
+    public void setN( String N) {
         this.N = N;
     }
 
-    public ExecutionReport T(@jakarta.annotation.Nullable Long T) {
+    public ExecutionReport T( Long T) {
         this.T = T;
         return this;
     }
@@ -765,16 +755,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return T
      */
-    @jakarta.annotation.Nullable
+    
     public Long getT() {
         return T;
     }
 
-    public void setT(@jakarta.annotation.Nullable Long T) {
+    public void setT( Long T) {
         this.T = T;
     }
 
-    public ExecutionReport tLowerCase(@jakarta.annotation.Nullable Long tLowerCase) {
+    public ExecutionReport tLowerCase( Long tLowerCase) {
         this.tLowerCase = tLowerCase;
         return this;
     }
@@ -784,16 +774,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return tLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long gettLowerCase() {
         return tLowerCase;
     }
 
-    public void settLowerCase(@jakarta.annotation.Nullable Long tLowerCase) {
+    public void settLowerCase( Long tLowerCase) {
         this.tLowerCase = tLowerCase;
     }
 
-    public ExecutionReport vLowerCase(@jakarta.annotation.Nullable Long vLowerCase) {
+    public ExecutionReport vLowerCase( Long vLowerCase) {
         this.vLowerCase = vLowerCase;
         return this;
     }
@@ -803,16 +793,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return vLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getvLowerCase() {
         return vLowerCase;
     }
 
-    public void setvLowerCase(@jakarta.annotation.Nullable Long vLowerCase) {
+    public void setvLowerCase( Long vLowerCase) {
         this.vLowerCase = vLowerCase;
     }
 
-    public ExecutionReport I(@jakarta.annotation.Nullable Long I) {
+    public ExecutionReport I( Long I) {
         this.I = I;
         return this;
     }
@@ -822,16 +812,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return I
      */
-    @jakarta.annotation.Nullable
+    
     public Long getI() {
         return I;
     }
 
-    public void setI(@jakarta.annotation.Nullable Long I) {
+    public void setI( Long I) {
         this.I = I;
     }
 
-    public ExecutionReport wLowerCase(@jakarta.annotation.Nullable Boolean wLowerCase) {
+    public ExecutionReport wLowerCase( Boolean wLowerCase) {
         this.wLowerCase = wLowerCase;
         return this;
     }
@@ -841,16 +831,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return wLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getwLowerCase() {
         return wLowerCase;
     }
 
-    public void setwLowerCase(@jakarta.annotation.Nullable Boolean wLowerCase) {
+    public void setwLowerCase( Boolean wLowerCase) {
         this.wLowerCase = wLowerCase;
     }
 
-    public ExecutionReport mLowerCase(@jakarta.annotation.Nullable Boolean mLowerCase) {
+    public ExecutionReport mLowerCase( Boolean mLowerCase) {
         this.mLowerCase = mLowerCase;
         return this;
     }
@@ -860,16 +850,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return mLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getmLowerCase() {
         return mLowerCase;
     }
 
-    public void setmLowerCase(@jakarta.annotation.Nullable Boolean mLowerCase) {
+    public void setmLowerCase( Boolean mLowerCase) {
         this.mLowerCase = mLowerCase;
     }
 
-    public ExecutionReport M(@jakarta.annotation.Nullable Boolean M) {
+    public ExecutionReport M( Boolean M) {
         this.M = M;
         return this;
     }
@@ -879,16 +869,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return M
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getM() {
         return M;
     }
 
-    public void setM(@jakarta.annotation.Nullable Boolean M) {
+    public void setM( Boolean M) {
         this.M = M;
     }
 
-    public ExecutionReport O(@jakarta.annotation.Nullable Long O) {
+    public ExecutionReport O( Long O) {
         this.O = O;
         return this;
     }
@@ -898,16 +888,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return O
      */
-    @jakarta.annotation.Nullable
+    
     public Long getO() {
         return O;
     }
 
-    public void setO(@jakarta.annotation.Nullable Long O) {
+    public void setO( Long O) {
         this.O = O;
     }
 
-    public ExecutionReport Z(@jakarta.annotation.Nullable String Z) {
+    public ExecutionReport Z( String Z) {
         this.Z = Z;
         return this;
     }
@@ -917,16 +907,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return Z
      */
-    @jakarta.annotation.Nullable
+    
     public String getZ() {
         return Z;
     }
 
-    public void setZ(@jakarta.annotation.Nullable String Z) {
+    public void setZ( String Z) {
         this.Z = Z;
     }
 
-    public ExecutionReport Y(@jakarta.annotation.Nullable String Y) {
+    public ExecutionReport Y( String Y) {
         this.Y = Y;
         return this;
     }
@@ -936,16 +926,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return Y
      */
-    @jakarta.annotation.Nullable
+    
     public String getY() {
         return Y;
     }
 
-    public void setY(@jakarta.annotation.Nullable String Y) {
+    public void setY( String Y) {
         this.Y = Y;
     }
 
-    public ExecutionReport Q(@jakarta.annotation.Nullable String Q) {
+    public ExecutionReport Q( String Q) {
         this.Q = Q;
         return this;
     }
@@ -955,16 +945,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return Q
      */
-    @jakarta.annotation.Nullable
+    
     public String getQ() {
         return Q;
     }
 
-    public void setQ(@jakarta.annotation.Nullable String Q) {
+    public void setQ( String Q) {
         this.Q = Q;
     }
 
-    public ExecutionReport W(@jakarta.annotation.Nullable Long W) {
+    public ExecutionReport W( Long W) {
         this.W = W;
         return this;
     }
@@ -974,16 +964,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return W
      */
-    @jakarta.annotation.Nullable
+    
     public Long getW() {
         return W;
     }
 
-    public void setW(@jakarta.annotation.Nullable Long W) {
+    public void setW( Long W) {
         this.W = W;
     }
 
-    public ExecutionReport V(@jakarta.annotation.Nullable String V) {
+    public ExecutionReport V( String V) {
         this.V = V;
         return this;
     }
@@ -993,16 +983,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return V
      */
-    @jakarta.annotation.Nullable
+    
     public String getV() {
         return V;
     }
 
-    public void setV(@jakarta.annotation.Nullable String V) {
+    public void setV( String V) {
         this.V = V;
     }
 
-    public ExecutionReport dLowerCase(@jakarta.annotation.Nullable Long dLowerCase) {
+    public ExecutionReport dLowerCase( Long dLowerCase) {
         this.dLowerCase = dLowerCase;
         return this;
     }
@@ -1012,16 +1002,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return dLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getdLowerCase() {
         return dLowerCase;
     }
 
-    public void setdLowerCase(@jakarta.annotation.Nullable Long dLowerCase) {
+    public void setdLowerCase( Long dLowerCase) {
         this.dLowerCase = dLowerCase;
     }
 
-    public ExecutionReport D(@jakarta.annotation.Nullable Long D) {
+    public ExecutionReport D( Long D) {
         this.D = D;
         return this;
     }
@@ -1031,16 +1021,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return D
      */
-    @jakarta.annotation.Nullable
+    
     public Long getD() {
         return D;
     }
 
-    public void setD(@jakarta.annotation.Nullable Long D) {
+    public void setD( Long D) {
         this.D = D;
     }
 
-    public ExecutionReport jLowerCase(@jakarta.annotation.Nullable Long jLowerCase) {
+    public ExecutionReport jLowerCase( Long jLowerCase) {
         this.jLowerCase = jLowerCase;
         return this;
     }
@@ -1050,16 +1040,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return jLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getjLowerCase() {
         return jLowerCase;
     }
 
-    public void setjLowerCase(@jakarta.annotation.Nullable Long jLowerCase) {
+    public void setjLowerCase( Long jLowerCase) {
         this.jLowerCase = jLowerCase;
     }
 
-    public ExecutionReport J(@jakarta.annotation.Nullable Long J) {
+    public ExecutionReport J( Long J) {
         this.J = J;
         return this;
     }
@@ -1069,16 +1059,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return J
      */
-    @jakarta.annotation.Nullable
+    
     public Long getJ() {
         return J;
     }
 
-    public void setJ(@jakarta.annotation.Nullable Long J) {
+    public void setJ( Long J) {
         this.J = J;
     }
 
-    public ExecutionReport A(@jakarta.annotation.Nullable String A) {
+    public ExecutionReport A( String A) {
         this.A = A;
         return this;
     }
@@ -1088,16 +1078,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return A
      */
-    @jakarta.annotation.Nullable
+    
     public String getA() {
         return A;
     }
 
-    public void setA(@jakarta.annotation.Nullable String A) {
+    public void setA( String A) {
         this.A = A;
     }
 
-    public ExecutionReport B(@jakarta.annotation.Nullable String B) {
+    public ExecutionReport B( String B) {
         this.B = B;
         return this;
     }
@@ -1107,16 +1097,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return B
      */
-    @jakarta.annotation.Nullable
+    
     public String getB() {
         return B;
     }
 
-    public void setB(@jakarta.annotation.Nullable String B) {
+    public void setB( String B) {
         this.B = B;
     }
 
-    public ExecutionReport uLowerCase(@jakarta.annotation.Nullable Long uLowerCase) {
+    public ExecutionReport uLowerCase( Long uLowerCase) {
         this.uLowerCase = uLowerCase;
         return this;
     }
@@ -1126,16 +1116,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return uLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getuLowerCase() {
         return uLowerCase;
     }
 
-    public void setuLowerCase(@jakarta.annotation.Nullable Long uLowerCase) {
+    public void setuLowerCase( Long uLowerCase) {
         this.uLowerCase = uLowerCase;
     }
 
-    public ExecutionReport U(@jakarta.annotation.Nullable Long U) {
+    public ExecutionReport U( Long U) {
         this.U = U;
         return this;
     }
@@ -1145,16 +1135,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return U
      */
-    @jakarta.annotation.Nullable
+    
     public Long getU() {
         return U;
     }
 
-    public void setU(@jakarta.annotation.Nullable Long U) {
+    public void setU( Long U) {
         this.U = U;
     }
 
-    public ExecutionReport cs(@jakarta.annotation.Nullable String cs) {
+    public ExecutionReport cs( String cs) {
         this.cs = cs;
         return this;
     }
@@ -1164,16 +1154,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return cs
      */
-    @jakarta.annotation.Nullable
+    
     public String getCs() {
         return cs;
     }
 
-    public void setCs(@jakarta.annotation.Nullable String cs) {
+    public void setCs( String cs) {
         this.cs = cs;
     }
 
-    public ExecutionReport pl(@jakarta.annotation.Nullable String pl) {
+    public ExecutionReport pl( String pl) {
         this.pl = pl;
         return this;
     }
@@ -1183,16 +1173,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return pl
      */
-    @jakarta.annotation.Nullable
+    
     public String getPl() {
         return pl;
     }
 
-    public void setPl(@jakarta.annotation.Nullable String pl) {
+    public void setPl( String pl) {
         this.pl = pl;
     }
 
-    public ExecutionReport pL(@jakarta.annotation.Nullable String pL) {
+    public ExecutionReport pL( String pL) {
         this.pL = pL;
         return this;
     }
@@ -1202,16 +1192,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return pL
      */
-    @jakarta.annotation.Nullable
+    
     public String getpL() {
         return pL;
     }
 
-    public void setpL(@jakarta.annotation.Nullable String pL) {
+    public void setpL( String pL) {
         this.pL = pL;
     }
 
-    public ExecutionReport pY(@jakarta.annotation.Nullable String pY) {
+    public ExecutionReport pY( String pY) {
         this.pY = pY;
         return this;
     }
@@ -1221,16 +1211,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return pY
      */
-    @jakarta.annotation.Nullable
+    
     public String getpY() {
         return pY;
     }
 
-    public void setpY(@jakarta.annotation.Nullable String pY) {
+    public void setpY( String pY) {
         this.pY = pY;
     }
 
-    public ExecutionReport bLowerCase(@jakarta.annotation.Nullable String bLowerCase) {
+    public ExecutionReport bLowerCase( String bLowerCase) {
         this.bLowerCase = bLowerCase;
         return this;
     }
@@ -1240,16 +1230,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return bLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getbLowerCase() {
         return bLowerCase;
     }
 
-    public void setbLowerCase(@jakarta.annotation.Nullable String bLowerCase) {
+    public void setbLowerCase( String bLowerCase) {
         this.bLowerCase = bLowerCase;
     }
 
-    public ExecutionReport aLowerCase(@jakarta.annotation.Nullable Long aLowerCase) {
+    public ExecutionReport aLowerCase( Long aLowerCase) {
         this.aLowerCase = aLowerCase;
         return this;
     }
@@ -1259,16 +1249,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return aLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getaLowerCase() {
         return aLowerCase;
     }
 
-    public void setaLowerCase(@jakarta.annotation.Nullable Long aLowerCase) {
+    public void setaLowerCase( Long aLowerCase) {
         this.aLowerCase = aLowerCase;
     }
 
-    public ExecutionReport kLowerCase(@jakarta.annotation.Nullable String kLowerCase) {
+    public ExecutionReport kLowerCase( String kLowerCase) {
         this.kLowerCase = kLowerCase;
         return this;
     }
@@ -1278,16 +1268,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return kLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getkLowerCase() {
         return kLowerCase;
     }
 
-    public void setkLowerCase(@jakarta.annotation.Nullable String kLowerCase) {
+    public void setkLowerCase( String kLowerCase) {
         this.kLowerCase = kLowerCase;
     }
 
-    public ExecutionReport uS(@jakarta.annotation.Nullable Boolean uS) {
+    public ExecutionReport uS( Boolean uS) {
         this.uS = uS;
         return this;
     }
@@ -1297,16 +1287,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return uS
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getuS() {
         return uS;
     }
 
-    public void setuS(@jakarta.annotation.Nullable Boolean uS) {
+    public void setuS( Boolean uS) {
         this.uS = uS;
     }
 
-    public ExecutionReport gP(@jakarta.annotation.Nullable String gP) {
+    public ExecutionReport gP( String gP) {
         this.gP = gP;
         return this;
     }
@@ -1316,16 +1306,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return gP
      */
-    @jakarta.annotation.Nullable
+    
     public String getgP() {
         return gP;
     }
 
-    public void setgP(@jakarta.annotation.Nullable String gP) {
+    public void setgP( String gP) {
         this.gP = gP;
     }
 
-    public ExecutionReport gOT(@jakarta.annotation.Nullable String gOT) {
+    public ExecutionReport gOT( String gOT) {
         this.gOT = gOT;
         return this;
     }
@@ -1335,16 +1325,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return gOT
      */
-    @jakarta.annotation.Nullable
+    
     public String getgOT() {
         return gOT;
     }
 
-    public void setgOT(@jakarta.annotation.Nullable String gOT) {
+    public void setgOT( String gOT) {
         this.gOT = gOT;
     }
 
-    public ExecutionReport gOV(@jakarta.annotation.Nullable Long gOV) {
+    public ExecutionReport gOV( Long gOV) {
         this.gOV = gOV;
         return this;
     }
@@ -1354,16 +1344,16 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return gOV
      */
-    @jakarta.annotation.Nullable
+    
     public Long getgOV() {
         return gOV;
     }
 
-    public void setgOV(@jakarta.annotation.Nullable Long gOV) {
+    public void setgOV( Long gOV) {
         this.gOV = gOV;
     }
 
-    public ExecutionReport gp(@jakarta.annotation.Nullable String gp) {
+    public ExecutionReport gp( String gp) {
         this.gp = gp;
         return this;
     }
@@ -1373,12 +1363,12 @@ public class ExecutionReport extends BaseDTO {
      *
      * @return gp
      */
-    @jakarta.annotation.Nullable
+    
     public String getGp() {
         return gp;
     }
 
-    public void setGp(@jakarta.annotation.Nullable String gp) {
+    public void setGp( String gp) {
         this.gp = gp;
     }
 
@@ -1504,68 +1494,6 @@ public class ExecutionReport extends BaseDTO {
                 gOT,
                 gOV,
                 gp);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class ExecutionReport {\n");
-        sb.append("		E: ").append(toIndentedString(E)).append("\n");
-        sb.append("		sLowerCase: ").append(toIndentedString(sLowerCase)).append("\n");
-        sb.append("		cLowerCase: ").append(toIndentedString(cLowerCase)).append("\n");
-        sb.append("		S: ").append(toIndentedString(S)).append("\n");
-        sb.append("		oLowerCase: ").append(toIndentedString(oLowerCase)).append("\n");
-        sb.append("		fLowerCase: ").append(toIndentedString(fLowerCase)).append("\n");
-        sb.append("		qLowerCase: ").append(toIndentedString(qLowerCase)).append("\n");
-        sb.append("		pLowerCase: ").append(toIndentedString(pLowerCase)).append("\n");
-        sb.append("		P: ").append(toIndentedString(P)).append("\n");
-        sb.append("		F: ").append(toIndentedString(F)).append("\n");
-        sb.append("		gLowerCase: ").append(toIndentedString(gLowerCase)).append("\n");
-        sb.append("		C: ").append(toIndentedString(C)).append("\n");
-        sb.append("		xLowerCase: ").append(toIndentedString(xLowerCase)).append("\n");
-        sb.append("		X: ").append(toIndentedString(X)).append("\n");
-        sb.append("		rLowerCase: ").append(toIndentedString(rLowerCase)).append("\n");
-        sb.append("		iLowerCase: ").append(toIndentedString(iLowerCase)).append("\n");
-        sb.append("		lLowerCase: ").append(toIndentedString(lLowerCase)).append("\n");
-        sb.append("		zLowerCase: ").append(toIndentedString(zLowerCase)).append("\n");
-        sb.append("		L: ").append(toIndentedString(L)).append("\n");
-        sb.append("		nLowerCase: ").append(toIndentedString(nLowerCase)).append("\n");
-        sb.append("		N: ").append(toIndentedString(N)).append("\n");
-        sb.append("		T: ").append(toIndentedString(T)).append("\n");
-        sb.append("		tLowerCase: ").append(toIndentedString(tLowerCase)).append("\n");
-        sb.append("		vLowerCase: ").append(toIndentedString(vLowerCase)).append("\n");
-        sb.append("		I: ").append(toIndentedString(I)).append("\n");
-        sb.append("		wLowerCase: ").append(toIndentedString(wLowerCase)).append("\n");
-        sb.append("		mLowerCase: ").append(toIndentedString(mLowerCase)).append("\n");
-        sb.append("		M: ").append(toIndentedString(M)).append("\n");
-        sb.append("		O: ").append(toIndentedString(O)).append("\n");
-        sb.append("		Z: ").append(toIndentedString(Z)).append("\n");
-        sb.append("		Y: ").append(toIndentedString(Y)).append("\n");
-        sb.append("		Q: ").append(toIndentedString(Q)).append("\n");
-        sb.append("		W: ").append(toIndentedString(W)).append("\n");
-        sb.append("		V: ").append(toIndentedString(V)).append("\n");
-        sb.append("		dLowerCase: ").append(toIndentedString(dLowerCase)).append("\n");
-        sb.append("		D: ").append(toIndentedString(D)).append("\n");
-        sb.append("		jLowerCase: ").append(toIndentedString(jLowerCase)).append("\n");
-        sb.append("		J: ").append(toIndentedString(J)).append("\n");
-        sb.append("		A: ").append(toIndentedString(A)).append("\n");
-        sb.append("		B: ").append(toIndentedString(B)).append("\n");
-        sb.append("		uLowerCase: ").append(toIndentedString(uLowerCase)).append("\n");
-        sb.append("		U: ").append(toIndentedString(U)).append("\n");
-        sb.append("		cs: ").append(toIndentedString(cs)).append("\n");
-        sb.append("		pl: ").append(toIndentedString(pl)).append("\n");
-        sb.append("		pL: ").append(toIndentedString(pL)).append("\n");
-        sb.append("		pY: ").append(toIndentedString(pY)).append("\n");
-        sb.append("		bLowerCase: ").append(toIndentedString(bLowerCase)).append("\n");
-        sb.append("		aLowerCase: ").append(toIndentedString(aLowerCase)).append("\n");
-        sb.append("		kLowerCase: ").append(toIndentedString(kLowerCase)).append("\n");
-        sb.append("		uS: ").append(toIndentedString(uS)).append("\n");
-        sb.append("		gP: ").append(toIndentedString(gP)).append("\n");
-        sb.append("		gOT: ").append(toIndentedString(gOT)).append("\n");
-        sb.append("		gOV: ").append(toIndentedString(gOV)).append("\n");
-        sb.append("		gp: ").append(toIndentedString(gp)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -2078,425 +2006,4 @@ public class ExecutionReport extends BaseDTO {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("E");
-        openapiFields.add("s");
-        openapiFields.add("c");
-        openapiFields.add("S");
-        openapiFields.add("o");
-        openapiFields.add("f");
-        openapiFields.add("q");
-        openapiFields.add("p");
-        openapiFields.add("P");
-        openapiFields.add("F");
-        openapiFields.add("g");
-        openapiFields.add("C");
-        openapiFields.add("x");
-        openapiFields.add("X");
-        openapiFields.add("r");
-        openapiFields.add("i");
-        openapiFields.add("l");
-        openapiFields.add("z");
-        openapiFields.add("L");
-        openapiFields.add("n");
-        openapiFields.add("N");
-        openapiFields.add("T");
-        openapiFields.add("t");
-        openapiFields.add("v");
-        openapiFields.add("I");
-        openapiFields.add("w");
-        openapiFields.add("m");
-        openapiFields.add("M");
-        openapiFields.add("O");
-        openapiFields.add("Z");
-        openapiFields.add("Y");
-        openapiFields.add("Q");
-        openapiFields.add("W");
-        openapiFields.add("V");
-        openapiFields.add("d");
-        openapiFields.add("D");
-        openapiFields.add("j");
-        openapiFields.add("J");
-        openapiFields.add("A");
-        openapiFields.add("B");
-        openapiFields.add("u");
-        openapiFields.add("U");
-        openapiFields.add("Cs");
-        openapiFields.add("pl");
-        openapiFields.add("pL");
-        openapiFields.add("pY");
-        openapiFields.add("b");
-        openapiFields.add("a");
-        openapiFields.add("k");
-        openapiFields.add("uS");
-        openapiFields.add("gP");
-        openapiFields.add("gOT");
-        openapiFields.add("gOV");
-        openapiFields.add("gp");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to ExecutionReport
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!ExecutionReport.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in ExecutionReport is not found in the"
-                                        + " empty JSON string",
-                                ExecutionReport.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!ExecutionReport.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `ExecutionReport` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("s") != null && !jsonObj.get("s").isJsonNull())
-                && !jsonObj.get("s").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `s` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("s").toString()));
-        }
-        if ((jsonObj.get("c") != null && !jsonObj.get("c").isJsonNull())
-                && !jsonObj.get("c").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `c` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("c").toString()));
-        }
-        if ((jsonObj.get("S") != null && !jsonObj.get("S").isJsonNull())
-                && !jsonObj.get("S").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `S` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("S").toString()));
-        }
-        if ((jsonObj.get("o") != null && !jsonObj.get("o").isJsonNull())
-                && !jsonObj.get("o").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `o` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("o").toString()));
-        }
-        if ((jsonObj.get("f") != null && !jsonObj.get("f").isJsonNull())
-                && !jsonObj.get("f").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `f` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("f").toString()));
-        }
-        if ((jsonObj.get("q") != null && !jsonObj.get("q").isJsonNull())
-                && !jsonObj.get("q").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `q` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("q").toString()));
-        }
-        if ((jsonObj.get("p") != null && !jsonObj.get("p").isJsonNull())
-                && !jsonObj.get("p").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `p` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("p").toString()));
-        }
-        if ((jsonObj.get("P") != null && !jsonObj.get("P").isJsonNull())
-                && !jsonObj.get("P").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `P` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("P").toString()));
-        }
-        if ((jsonObj.get("F") != null && !jsonObj.get("F").isJsonNull())
-                && !jsonObj.get("F").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `F` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("F").toString()));
-        }
-        if ((jsonObj.get("C") != null && !jsonObj.get("C").isJsonNull())
-                && !jsonObj.get("C").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `C` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("C").toString()));
-        }
-        if ((jsonObj.get("x") != null && !jsonObj.get("x").isJsonNull())
-                && !jsonObj.get("x").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `x` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("x").toString()));
-        }
-        if ((jsonObj.get("X") != null && !jsonObj.get("X").isJsonNull())
-                && !jsonObj.get("X").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `X` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("X").toString()));
-        }
-        if ((jsonObj.get("r") != null && !jsonObj.get("r").isJsonNull())
-                && !jsonObj.get("r").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `r` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("r").toString()));
-        }
-        if ((jsonObj.get("l") != null && !jsonObj.get("l").isJsonNull())
-                && !jsonObj.get("l").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `l` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("l").toString()));
-        }
-        if ((jsonObj.get("z") != null && !jsonObj.get("z").isJsonNull())
-                && !jsonObj.get("z").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `z` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("z").toString()));
-        }
-        if ((jsonObj.get("L") != null && !jsonObj.get("L").isJsonNull())
-                && !jsonObj.get("L").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `L` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("L").toString()));
-        }
-        if ((jsonObj.get("n") != null && !jsonObj.get("n").isJsonNull())
-                && !jsonObj.get("n").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `n` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("n").toString()));
-        }
-        if ((jsonObj.get("N") != null && !jsonObj.get("N").isJsonNull())
-                && !jsonObj.get("N").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `N` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("N").toString()));
-        }
-        if ((jsonObj.get("Z") != null && !jsonObj.get("Z").isJsonNull())
-                && !jsonObj.get("Z").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `Z` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("Z").toString()));
-        }
-        if ((jsonObj.get("Y") != null && !jsonObj.get("Y").isJsonNull())
-                && !jsonObj.get("Y").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `Y` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("Y").toString()));
-        }
-        if ((jsonObj.get("Q") != null && !jsonObj.get("Q").isJsonNull())
-                && !jsonObj.get("Q").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `Q` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("Q").toString()));
-        }
-        if ((jsonObj.get("V") != null && !jsonObj.get("V").isJsonNull())
-                && !jsonObj.get("V").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `V` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("V").toString()));
-        }
-        if ((jsonObj.get("A") != null && !jsonObj.get("A").isJsonNull())
-                && !jsonObj.get("A").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `A` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("A").toString()));
-        }
-        if ((jsonObj.get("B") != null && !jsonObj.get("B").isJsonNull())
-                && !jsonObj.get("B").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `B` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("B").toString()));
-        }
-        if ((jsonObj.get("Cs") != null && !jsonObj.get("Cs").isJsonNull())
-                && !jsonObj.get("Cs").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `Cs` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("Cs").toString()));
-        }
-        if ((jsonObj.get("pl") != null && !jsonObj.get("pl").isJsonNull())
-                && !jsonObj.get("pl").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `pl` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("pl").toString()));
-        }
-        if ((jsonObj.get("pL") != null && !jsonObj.get("pL").isJsonNull())
-                && !jsonObj.get("pL").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `pL` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("pL").toString()));
-        }
-        if ((jsonObj.get("pY") != null && !jsonObj.get("pY").isJsonNull())
-                && !jsonObj.get("pY").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `pY` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("pY").toString()));
-        }
-        if ((jsonObj.get("b") != null && !jsonObj.get("b").isJsonNull())
-                && !jsonObj.get("b").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `b` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("b").toString()));
-        }
-        if ((jsonObj.get("k") != null && !jsonObj.get("k").isJsonNull())
-                && !jsonObj.get("k").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `k` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("k").toString()));
-        }
-        if ((jsonObj.get("gP") != null && !jsonObj.get("gP").isJsonNull())
-                && !jsonObj.get("gP").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `gP` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("gP").toString()));
-        }
-        if ((jsonObj.get("gOT") != null && !jsonObj.get("gOT").isJsonNull())
-                && !jsonObj.get("gOT").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `gOT` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("gOT").toString()));
-        }
-        if ((jsonObj.get("gp") != null && !jsonObj.get("gp").isJsonNull())
-                && !jsonObj.get("gp").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `gp` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("gp").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!ExecutionReport.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'ExecutionReport' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<ExecutionReport> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(ExecutionReport.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<ExecutionReport>() {
-                        @Override
-                        public void write(JsonWriter out, ExecutionReport value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public ExecutionReport read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of ExecutionReport given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of ExecutionReport
-     * @throws IOException if the JSON string is invalid with respect to ExecutionReport
-     */
-    public static ExecutionReport fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, ExecutionReport.class);
-    }
-
-    /**
-     * Convert an instance of ExecutionReport to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

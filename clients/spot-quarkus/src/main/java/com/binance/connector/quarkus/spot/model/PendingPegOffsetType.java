@@ -12,60 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets pendingPegOffsetType */
-@JsonAdapter(PendingPegOffsetType.Adapter.class)
 public enum PendingPegOffsetType {
-    PRICE_LEVEL("PRICE_LEVEL");
-
-    private String value;
-
-    PendingPegOffsetType(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static PendingPegOffsetType fromValue(String value) {
-        for (PendingPegOffsetType b : PendingPegOffsetType.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PendingPegOffsetType> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final PendingPegOffsetType enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public PendingPegOffsetType read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return PendingPegOffsetType.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        PendingPegOffsetType.fromValue(value);
-    }
+    PRICE_LEVEL
 }

@@ -12,82 +12,72 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderListPlaceResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderListPlaceResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_ORDER_LIST_ID = "orderListId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_LIST_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_LIST_ID)
+    
     private Long orderListId;
 
     public static final String SERIALIZED_NAME_CONTINGENCY_TYPE = "contingencyType";
 
-    @SerializedName(SERIALIZED_NAME_CONTINGENCY_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CONTINGENCY_TYPE)
+    
     private String contingencyType;
 
     public static final String SERIALIZED_NAME_LIST_STATUS_TYPE = "listStatusType";
 
-    @SerializedName(SERIALIZED_NAME_LIST_STATUS_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIST_STATUS_TYPE)
+    
     private String listStatusType;
 
     public static final String SERIALIZED_NAME_LIST_ORDER_STATUS = "listOrderStatus";
 
-    @SerializedName(SERIALIZED_NAME_LIST_ORDER_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIST_ORDER_STATUS)
+    
     private String listOrderStatus;
 
     public static final String SERIALIZED_NAME_LIST_CLIENT_ORDER_ID = "listClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_LIST_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIST_CLIENT_ORDER_ID)
+    
     private String listClientOrderId;
 
     public static final String SERIALIZED_NAME_TRANSACTION_TIME = "transactionTime";
 
-    @SerializedName(SERIALIZED_NAME_TRANSACTION_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TRANSACTION_TIME)
+    
     private Long transactionTime;
 
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_ORDERS = "orders";
 
-    @SerializedName(SERIALIZED_NAME_ORDERS)
-    @jakarta.annotation.Nullable
-    private List<@Valid OrderListCancelResponseResultOrdersInner> orders;
+    @JsonProperty(SERIALIZED_NAME_ORDERS)
+    
+    private List<OrderListCancelResponseResultOrdersInner> orders;
 
     public static final String SERIALIZED_NAME_ORDER_REPORTS = "orderReports";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_REPORTS)
-    @jakarta.annotation.Nullable
-    private List<@Valid OrderListPlaceResponseResultOrderReportsInner> orderReports;
+    @JsonProperty(SERIALIZED_NAME_ORDER_REPORTS)
+    
+    private List<OrderListPlaceResponseResultOrderReportsInner> orderReports;
 
     public OrderListPlaceResponseResult() {}
 
-    public OrderListPlaceResponseResult orderListId(@jakarta.annotation.Nullable Long orderListId) {
+    public OrderListPlaceResponseResult orderListId( Long orderListId) {
         this.orderListId = orderListId;
         return this;
     }
@@ -97,17 +87,17 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return orderListId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderListId() {
         return orderListId;
     }
 
-    public void setOrderListId(@jakarta.annotation.Nullable Long orderListId) {
+    public void setOrderListId( Long orderListId) {
         this.orderListId = orderListId;
     }
 
     public OrderListPlaceResponseResult contingencyType(
-            @jakarta.annotation.Nullable String contingencyType) {
+             String contingencyType) {
         this.contingencyType = contingencyType;
         return this;
     }
@@ -117,17 +107,17 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return contingencyType
      */
-    @jakarta.annotation.Nullable
+    
     public String getContingencyType() {
         return contingencyType;
     }
 
-    public void setContingencyType(@jakarta.annotation.Nullable String contingencyType) {
+    public void setContingencyType( String contingencyType) {
         this.contingencyType = contingencyType;
     }
 
     public OrderListPlaceResponseResult listStatusType(
-            @jakarta.annotation.Nullable String listStatusType) {
+             String listStatusType) {
         this.listStatusType = listStatusType;
         return this;
     }
@@ -137,17 +127,17 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return listStatusType
      */
-    @jakarta.annotation.Nullable
+    
     public String getListStatusType() {
         return listStatusType;
     }
 
-    public void setListStatusType(@jakarta.annotation.Nullable String listStatusType) {
+    public void setListStatusType( String listStatusType) {
         this.listStatusType = listStatusType;
     }
 
     public OrderListPlaceResponseResult listOrderStatus(
-            @jakarta.annotation.Nullable String listOrderStatus) {
+             String listOrderStatus) {
         this.listOrderStatus = listOrderStatus;
         return this;
     }
@@ -157,17 +147,17 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return listOrderStatus
      */
-    @jakarta.annotation.Nullable
+    
     public String getListOrderStatus() {
         return listOrderStatus;
     }
 
-    public void setListOrderStatus(@jakarta.annotation.Nullable String listOrderStatus) {
+    public void setListOrderStatus( String listOrderStatus) {
         this.listOrderStatus = listOrderStatus;
     }
 
     public OrderListPlaceResponseResult listClientOrderId(
-            @jakarta.annotation.Nullable String listClientOrderId) {
+             String listClientOrderId) {
         this.listClientOrderId = listClientOrderId;
         return this;
     }
@@ -177,17 +167,17 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return listClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getListClientOrderId() {
         return listClientOrderId;
     }
 
-    public void setListClientOrderId(@jakarta.annotation.Nullable String listClientOrderId) {
+    public void setListClientOrderId( String listClientOrderId) {
         this.listClientOrderId = listClientOrderId;
     }
 
     public OrderListPlaceResponseResult transactionTime(
-            @jakarta.annotation.Nullable Long transactionTime) {
+             Long transactionTime) {
         this.transactionTime = transactionTime;
         return this;
     }
@@ -197,16 +187,16 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return transactionTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTransactionTime() {
         return transactionTime;
     }
 
-    public void setTransactionTime(@jakarta.annotation.Nullable Long transactionTime) {
+    public void setTransactionTime( Long transactionTime) {
         this.transactionTime = transactionTime;
     }
 
-    public OrderListPlaceResponseResult symbol(@jakarta.annotation.Nullable String symbol) {
+    public OrderListPlaceResponseResult symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -216,18 +206,18 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public OrderListPlaceResponseResult orders(
-            @jakarta.annotation.Nullable
-                    List<@Valid OrderListCancelResponseResultOrdersInner> orders) {
+            
+                    List<OrderListCancelResponseResultOrdersInner> orders) {
         this.orders = orders;
         return this;
     }
@@ -246,21 +236,21 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return orders
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid OrderListCancelResponseResultOrdersInner> getOrders() {
+    
+    
+    public List<OrderListCancelResponseResultOrdersInner> getOrders() {
         return orders;
     }
 
     public void setOrders(
-            @jakarta.annotation.Nullable
-                    List<@Valid OrderListCancelResponseResultOrdersInner> orders) {
+            
+                    List<OrderListCancelResponseResultOrdersInner> orders) {
         this.orders = orders;
     }
 
     public OrderListPlaceResponseResult orderReports(
-            @jakarta.annotation.Nullable
-                    List<@Valid OrderListPlaceResponseResultOrderReportsInner> orderReports) {
+            
+                    List<OrderListPlaceResponseResultOrderReportsInner> orderReports) {
         this.orderReports = orderReports;
         return this;
     }
@@ -279,15 +269,15 @@ public class OrderListPlaceResponseResult extends BaseDTO {
      *
      * @return orderReports
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid OrderListPlaceResponseResultOrderReportsInner> getOrderReports() {
+    
+    
+    public List<OrderListPlaceResponseResultOrderReportsInner> getOrderReports() {
         return orderReports;
     }
 
     public void setOrderReports(
-            @jakarta.annotation.Nullable
-                    List<@Valid OrderListPlaceResponseResultOrderReportsInner> orderReports) {
+            
+                    List<OrderListPlaceResponseResultOrderReportsInner> orderReports) {
         this.orderReports = orderReports;
     }
 
@@ -386,15 +376,15 @@ public class OrderListPlaceResponseResult extends BaseDTO {
             String symbolValueAsString = symbolValue.toString();
             valMap.put("symbol", symbolValueAsString);
         }
-        List<@Valid OrderListCancelResponseResultOrdersInner> ordersValue = getOrders();
+        List<OrderListCancelResponseResultOrdersInner> ordersValue = getOrders();
         if (ordersValue != null) {
-            String ordersValueAsString = JSON.getGson().toJson(ordersValue);
+            String ordersValueAsString = Json.encode(ordersValue);
             valMap.put("orders", ordersValueAsString);
         }
-        List<@Valid OrderListPlaceResponseResultOrderReportsInner> orderReportsValue =
+        List<OrderListPlaceResponseResultOrderReportsInner> orderReportsValue =
                 getOrderReports();
         if (orderReportsValue != null) {
-            String orderReportsValueAsString = JSON.getGson().toJson(orderReportsValue);
+            String orderReportsValueAsString = Json.encode(orderReportsValue);
             valMap.put("orderReports", orderReportsValueAsString);
         }
 
@@ -462,192 +452,5 @@ public class OrderListPlaceResponseResult extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("orderListId");
-        openapiFields.add("contingencyType");
-        openapiFields.add("listStatusType");
-        openapiFields.add("listOrderStatus");
-        openapiFields.add("listClientOrderId");
-        openapiFields.add("transactionTime");
-        openapiFields.add("symbol");
-        openapiFields.add("orders");
-        openapiFields.add("orderReports");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OrderListPlaceResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderListPlaceResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderListPlaceResponseResult is not"
-                                        + " found in the empty JSON string",
-                                OrderListPlaceResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderListPlaceResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderListPlaceResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("contingencyType") != null && !jsonObj.get("contingencyType").isJsonNull())
-                && !jsonObj.get("contingencyType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `contingencyType` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("contingencyType").toString()));
-        }
-        if ((jsonObj.get("listStatusType") != null && !jsonObj.get("listStatusType").isJsonNull())
-                && !jsonObj.get("listStatusType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `listStatusType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("listStatusType").toString()));
-        }
-        if ((jsonObj.get("listOrderStatus") != null && !jsonObj.get("listOrderStatus").isJsonNull())
-                && !jsonObj.get("listOrderStatus").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `listOrderStatus` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("listOrderStatus").toString()));
-        }
-        if ((jsonObj.get("listClientOrderId") != null
-                        && !jsonObj.get("listClientOrderId").isJsonNull())
-                && !jsonObj.get("listClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `listClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("listClientOrderId").toString()));
-        }
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if (jsonObj.get("orders") != null && !jsonObj.get("orders").isJsonNull()) {
-            JsonArray jsonArrayorders = jsonObj.getAsJsonArray("orders");
-            if (jsonArrayorders != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("orders").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `orders` to be an array in the JSON string"
-                                            + " but got `%s`",
-                                    jsonObj.get("orders").toString()));
-                }
-
-                // validate the optional field `orders` (array)
-                for (int i = 0; i < jsonArrayorders.size(); i++) {
-                    OrderListCancelResponseResultOrdersInner.validateJsonElement(
-                            jsonArrayorders.get(i));
-                }
-                ;
-            }
-        }
-        if (jsonObj.get("orderReports") != null && !jsonObj.get("orderReports").isJsonNull()) {
-            JsonArray jsonArrayorderReports = jsonObj.getAsJsonArray("orderReports");
-            if (jsonArrayorderReports != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("orderReports").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `orderReports` to be an array in the JSON"
-                                            + " string but got `%s`",
-                                    jsonObj.get("orderReports").toString()));
-                }
-
-                // validate the optional field `orderReports` (array)
-                for (int i = 0; i < jsonArrayorderReports.size(); i++) {
-                    OrderListPlaceResponseResultOrderReportsInner.validateJsonElement(
-                            jsonArrayorderReports.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderListPlaceResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderListPlaceResponseResult' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderListPlaceResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(OrderListPlaceResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderListPlaceResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, OrderListPlaceResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderListPlaceResponseResult read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderListPlaceResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderListPlaceResponseResult
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OrderListPlaceResponseResult
-     */
-    public static OrderListPlaceResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderListPlaceResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of OrderListPlaceResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

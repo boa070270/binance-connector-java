@@ -12,46 +12,36 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OutboundAccountPositionBInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OutboundAccountPositionBInner extends BaseDTO {
     public static final String SERIALIZED_NAME_A_LOWER_CASE = "a";
 
-    @SerializedName(SERIALIZED_NAME_A_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A_LOWER_CASE)
+    
     private String aLowerCase;
 
     public static final String SERIALIZED_NAME_F_LOWER_CASE = "f";
 
-    @SerializedName(SERIALIZED_NAME_F_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_F_LOWER_CASE)
+    
     private String fLowerCase;
 
     public static final String SERIALIZED_NAME_L_LOWER_CASE = "l";
 
-    @SerializedName(SERIALIZED_NAME_L_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_L_LOWER_CASE)
+    
     private String lLowerCase;
 
     public OutboundAccountPositionBInner() {}
 
     public OutboundAccountPositionBInner aLowerCase(
-            @jakarta.annotation.Nullable String aLowerCase) {
+             String aLowerCase) {
         this.aLowerCase = aLowerCase;
         return this;
     }
@@ -61,17 +51,17 @@ public class OutboundAccountPositionBInner extends BaseDTO {
      *
      * @return aLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getaLowerCase() {
         return aLowerCase;
     }
 
-    public void setaLowerCase(@jakarta.annotation.Nullable String aLowerCase) {
+    public void setaLowerCase( String aLowerCase) {
         this.aLowerCase = aLowerCase;
     }
 
     public OutboundAccountPositionBInner fLowerCase(
-            @jakarta.annotation.Nullable String fLowerCase) {
+             String fLowerCase) {
         this.fLowerCase = fLowerCase;
         return this;
     }
@@ -81,17 +71,17 @@ public class OutboundAccountPositionBInner extends BaseDTO {
      *
      * @return fLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getfLowerCase() {
         return fLowerCase;
     }
 
-    public void setfLowerCase(@jakarta.annotation.Nullable String fLowerCase) {
+    public void setfLowerCase( String fLowerCase) {
         this.fLowerCase = fLowerCase;
     }
 
     public OutboundAccountPositionBInner lLowerCase(
-            @jakarta.annotation.Nullable String lLowerCase) {
+             String lLowerCase) {
         this.lLowerCase = lLowerCase;
         return this;
     }
@@ -101,12 +91,12 @@ public class OutboundAccountPositionBInner extends BaseDTO {
      *
      * @return lLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getlLowerCase() {
         return lLowerCase;
     }
 
-    public void setlLowerCase(@jakarta.annotation.Nullable String lLowerCase) {
+    public void setlLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
     }
 
@@ -201,130 +191,5 @@ public class OutboundAccountPositionBInner extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("a");
-        openapiFields.add("f");
-        openapiFields.add("l");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OutboundAccountPositionBInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OutboundAccountPositionBInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OutboundAccountPositionBInner is not"
-                                        + " found in the empty JSON string",
-                                OutboundAccountPositionBInner.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OutboundAccountPositionBInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OutboundAccountPositionBInner` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("a") != null && !jsonObj.get("a").isJsonNull())
-                && !jsonObj.get("a").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `a` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("a").toString()));
-        }
-        if ((jsonObj.get("f") != null && !jsonObj.get("f").isJsonNull())
-                && !jsonObj.get("f").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `f` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("f").toString()));
-        }
-        if ((jsonObj.get("l") != null && !jsonObj.get("l").isJsonNull())
-                && !jsonObj.get("l").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `l` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("l").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OutboundAccountPositionBInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OutboundAccountPositionBInner' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OutboundAccountPositionBInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(OutboundAccountPositionBInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OutboundAccountPositionBInner>() {
-                        @Override
-                        public void write(JsonWriter out, OutboundAccountPositionBInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OutboundAccountPositionBInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OutboundAccountPositionBInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OutboundAccountPositionBInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OutboundAccountPositionBInner
-     */
-    public static OutboundAccountPositionBInner fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OutboundAccountPositionBInner.class);
-    }
-
-    /**
-     * Convert an instance of OutboundAccountPositionBInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

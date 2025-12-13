@@ -12,111 +12,101 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** MyAllocationsResponseResultInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class MyAllocationsResponseResultInner extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_ALLOCATION_ID = "allocationId";
 
-    @SerializedName(SERIALIZED_NAME_ALLOCATION_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ALLOCATION_ID)
+    
     private Long allocationId;
 
     public static final String SERIALIZED_NAME_ALLOCATION_TYPE = "allocationType";
 
-    @SerializedName(SERIALIZED_NAME_ALLOCATION_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ALLOCATION_TYPE)
+    
     private String allocationType;
 
     public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_ID)
+    
     private Long orderId;
 
     public static final String SERIALIZED_NAME_ORDER_LIST_ID = "orderListId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_LIST_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_LIST_ID)
+    
     private Long orderListId;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private String price;
 
     public static final String SERIALIZED_NAME_QTY = "qty";
 
-    @SerializedName(SERIALIZED_NAME_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QTY)
+    
     private String qty;
 
     public static final String SERIALIZED_NAME_QUOTE_QTY = "quoteQty";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_QTY)
+    
     private String quoteQty;
 
     public static final String SERIALIZED_NAME_COMMISSION = "commission";
 
-    @SerializedName(SERIALIZED_NAME_COMMISSION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COMMISSION)
+    
     private String commission;
 
     public static final String SERIALIZED_NAME_COMMISSION_ASSET = "commissionAsset";
 
-    @SerializedName(SERIALIZED_NAME_COMMISSION_ASSET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COMMISSION_ASSET)
+    
     private String commissionAsset;
 
     public static final String SERIALIZED_NAME_TIME = "time";
 
-    @SerializedName(SERIALIZED_NAME_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TIME)
+    
     private Long time;
 
     public static final String SERIALIZED_NAME_IS_BUYER = "isBuyer";
 
-    @SerializedName(SERIALIZED_NAME_IS_BUYER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_IS_BUYER)
+    
     private Boolean isBuyer;
 
     public static final String SERIALIZED_NAME_IS_MAKER = "isMaker";
 
-    @SerializedName(SERIALIZED_NAME_IS_MAKER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_IS_MAKER)
+    
     private Boolean isMaker;
 
     public static final String SERIALIZED_NAME_IS_ALLOCATOR = "isAllocator";
 
-    @SerializedName(SERIALIZED_NAME_IS_ALLOCATOR)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_IS_ALLOCATOR)
+    
     private Boolean isAllocator;
 
     public MyAllocationsResponseResultInner() {}
 
-    public MyAllocationsResponseResultInner symbol(@jakarta.annotation.Nullable String symbol) {
+    public MyAllocationsResponseResultInner symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -126,17 +116,17 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public MyAllocationsResponseResultInner allocationId(
-            @jakarta.annotation.Nullable Long allocationId) {
+             Long allocationId) {
         this.allocationId = allocationId;
         return this;
     }
@@ -146,17 +136,17 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return allocationId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getAllocationId() {
         return allocationId;
     }
 
-    public void setAllocationId(@jakarta.annotation.Nullable Long allocationId) {
+    public void setAllocationId( Long allocationId) {
         this.allocationId = allocationId;
     }
 
     public MyAllocationsResponseResultInner allocationType(
-            @jakarta.annotation.Nullable String allocationType) {
+             String allocationType) {
         this.allocationType = allocationType;
         return this;
     }
@@ -166,16 +156,16 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return allocationType
      */
-    @jakarta.annotation.Nullable
+    
     public String getAllocationType() {
         return allocationType;
     }
 
-    public void setAllocationType(@jakarta.annotation.Nullable String allocationType) {
+    public void setAllocationType( String allocationType) {
         this.allocationType = allocationType;
     }
 
-    public MyAllocationsResponseResultInner orderId(@jakarta.annotation.Nullable Long orderId) {
+    public MyAllocationsResponseResultInner orderId( Long orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -185,17 +175,17 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return orderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(@jakarta.annotation.Nullable Long orderId) {
+    public void setOrderId( Long orderId) {
         this.orderId = orderId;
     }
 
     public MyAllocationsResponseResultInner orderListId(
-            @jakarta.annotation.Nullable Long orderListId) {
+             Long orderListId) {
         this.orderListId = orderListId;
         return this;
     }
@@ -205,16 +195,16 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return orderListId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderListId() {
         return orderListId;
     }
 
-    public void setOrderListId(@jakarta.annotation.Nullable Long orderListId) {
+    public void setOrderListId( Long orderListId) {
         this.orderListId = orderListId;
     }
 
-    public MyAllocationsResponseResultInner price(@jakarta.annotation.Nullable String price) {
+    public MyAllocationsResponseResultInner price( String price) {
         this.price = price;
         return this;
     }
@@ -224,16 +214,16 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
+    
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable String price) {
+    public void setPrice( String price) {
         this.price = price;
     }
 
-    public MyAllocationsResponseResultInner qty(@jakarta.annotation.Nullable String qty) {
+    public MyAllocationsResponseResultInner qty( String qty) {
         this.qty = qty;
         return this;
     }
@@ -243,16 +233,16 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return qty
      */
-    @jakarta.annotation.Nullable
+    
     public String getQty() {
         return qty;
     }
 
-    public void setQty(@jakarta.annotation.Nullable String qty) {
+    public void setQty( String qty) {
         this.qty = qty;
     }
 
-    public MyAllocationsResponseResultInner quoteQty(@jakarta.annotation.Nullable String quoteQty) {
+    public MyAllocationsResponseResultInner quoteQty( String quoteQty) {
         this.quoteQty = quoteQty;
         return this;
     }
@@ -262,17 +252,17 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return quoteQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getQuoteQty() {
         return quoteQty;
     }
 
-    public void setQuoteQty(@jakarta.annotation.Nullable String quoteQty) {
+    public void setQuoteQty( String quoteQty) {
         this.quoteQty = quoteQty;
     }
 
     public MyAllocationsResponseResultInner commission(
-            @jakarta.annotation.Nullable String commission) {
+             String commission) {
         this.commission = commission;
         return this;
     }
@@ -282,17 +272,17 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return commission
      */
-    @jakarta.annotation.Nullable
+    
     public String getCommission() {
         return commission;
     }
 
-    public void setCommission(@jakarta.annotation.Nullable String commission) {
+    public void setCommission( String commission) {
         this.commission = commission;
     }
 
     public MyAllocationsResponseResultInner commissionAsset(
-            @jakarta.annotation.Nullable String commissionAsset) {
+             String commissionAsset) {
         this.commissionAsset = commissionAsset;
         return this;
     }
@@ -302,16 +292,16 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return commissionAsset
      */
-    @jakarta.annotation.Nullable
+    
     public String getCommissionAsset() {
         return commissionAsset;
     }
 
-    public void setCommissionAsset(@jakarta.annotation.Nullable String commissionAsset) {
+    public void setCommissionAsset( String commissionAsset) {
         this.commissionAsset = commissionAsset;
     }
 
-    public MyAllocationsResponseResultInner time(@jakarta.annotation.Nullable Long time) {
+    public MyAllocationsResponseResultInner time( Long time) {
         this.time = time;
         return this;
     }
@@ -321,16 +311,16 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return time
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTime() {
         return time;
     }
 
-    public void setTime(@jakarta.annotation.Nullable Long time) {
+    public void setTime( Long time) {
         this.time = time;
     }
 
-    public MyAllocationsResponseResultInner isBuyer(@jakarta.annotation.Nullable Boolean isBuyer) {
+    public MyAllocationsResponseResultInner isBuyer( Boolean isBuyer) {
         this.isBuyer = isBuyer;
         return this;
     }
@@ -340,16 +330,16 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return isBuyer
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIsBuyer() {
         return isBuyer;
     }
 
-    public void setIsBuyer(@jakarta.annotation.Nullable Boolean isBuyer) {
+    public void setIsBuyer( Boolean isBuyer) {
         this.isBuyer = isBuyer;
     }
 
-    public MyAllocationsResponseResultInner isMaker(@jakarta.annotation.Nullable Boolean isMaker) {
+    public MyAllocationsResponseResultInner isMaker( Boolean isMaker) {
         this.isMaker = isMaker;
         return this;
     }
@@ -359,17 +349,17 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return isMaker
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIsMaker() {
         return isMaker;
     }
 
-    public void setIsMaker(@jakarta.annotation.Nullable Boolean isMaker) {
+    public void setIsMaker( Boolean isMaker) {
         this.isMaker = isMaker;
     }
 
     public MyAllocationsResponseResultInner isAllocator(
-            @jakarta.annotation.Nullable Boolean isAllocator) {
+             Boolean isAllocator) {
         this.isAllocator = isAllocator;
         return this;
     }
@@ -379,12 +369,12 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
      *
      * @return isAllocator
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIsAllocator() {
         return isAllocator;
     }
 
-    public void setIsAllocator(@jakarta.annotation.Nullable Boolean isAllocator) {
+    public void setIsAllocator( Boolean isAllocator) {
         this.isAllocator = isAllocator;
     }
 
@@ -616,173 +606,5 @@ public class MyAllocationsResponseResultInner extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("allocationId");
-        openapiFields.add("allocationType");
-        openapiFields.add("orderId");
-        openapiFields.add("orderListId");
-        openapiFields.add("price");
-        openapiFields.add("qty");
-        openapiFields.add("quoteQty");
-        openapiFields.add("commission");
-        openapiFields.add("commissionAsset");
-        openapiFields.add("time");
-        openapiFields.add("isBuyer");
-        openapiFields.add("isMaker");
-        openapiFields.add("isAllocator");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     MyAllocationsResponseResultInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!MyAllocationsResponseResultInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in MyAllocationsResponseResultInner is"
-                                        + " not found in the empty JSON string",
-                                MyAllocationsResponseResultInner.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!MyAllocationsResponseResultInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `MyAllocationsResponseResultInner` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("allocationType") != null && !jsonObj.get("allocationType").isJsonNull())
-                && !jsonObj.get("allocationType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `allocationType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("allocationType").toString()));
-        }
-        if ((jsonObj.get("price") != null && !jsonObj.get("price").isJsonNull())
-                && !jsonObj.get("price").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `price` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("price").toString()));
-        }
-        if ((jsonObj.get("qty") != null && !jsonObj.get("qty").isJsonNull())
-                && !jsonObj.get("qty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `qty` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("qty").toString()));
-        }
-        if ((jsonObj.get("quoteQty") != null && !jsonObj.get("quoteQty").isJsonNull())
-                && !jsonObj.get("quoteQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `quoteQty` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("quoteQty").toString()));
-        }
-        if ((jsonObj.get("commission") != null && !jsonObj.get("commission").isJsonNull())
-                && !jsonObj.get("commission").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `commission` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("commission").toString()));
-        }
-        if ((jsonObj.get("commissionAsset") != null && !jsonObj.get("commissionAsset").isJsonNull())
-                && !jsonObj.get("commissionAsset").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `commissionAsset` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("commissionAsset").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!MyAllocationsResponseResultInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'MyAllocationsResponseResultInner' and
-                // its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<MyAllocationsResponseResultInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(MyAllocationsResponseResultInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<MyAllocationsResponseResultInner>() {
-                        @Override
-                        public void write(JsonWriter out, MyAllocationsResponseResultInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public MyAllocationsResponseResultInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of MyAllocationsResponseResultInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of MyAllocationsResponseResultInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     MyAllocationsResponseResultInner
-     */
-    public static MyAllocationsResponseResultInner fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, MyAllocationsResponseResultInner.class);
-    }
-
-    /**
-     * Convert an instance of MyAllocationsResponseResultInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

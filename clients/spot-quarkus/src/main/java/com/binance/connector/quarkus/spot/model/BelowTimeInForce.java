@@ -12,64 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets belowTimeInForce */
-@JsonAdapter(BelowTimeInForce.Adapter.class)
 public enum BelowTimeInForce {
-    GTC("GTC"),
-
-    IOC("IOC"),
-
-    FOK("FOK");
-
-    private String value;
-
-    BelowTimeInForce(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static BelowTimeInForce fromValue(String value) {
-        for (BelowTimeInForce b : BelowTimeInForce.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<BelowTimeInForce> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final BelowTimeInForce enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public BelowTimeInForce read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return BelowTimeInForce.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        BelowTimeInForce.fromValue(value);
-    }
+    GTC, IOC, FOK
 }

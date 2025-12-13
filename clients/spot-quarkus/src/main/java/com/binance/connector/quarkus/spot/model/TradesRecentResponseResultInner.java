@@ -12,69 +12,59 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TradesRecentResponseResultInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TradesRecentResponseResultInner extends BaseDTO {
     public static final String SERIALIZED_NAME_ID = "id";
 
-    @SerializedName(SERIALIZED_NAME_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ID)
+    
     private Long id;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private String price;
 
     public static final String SERIALIZED_NAME_QTY = "qty";
 
-    @SerializedName(SERIALIZED_NAME_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QTY)
+    
     private String qty;
 
     public static final String SERIALIZED_NAME_QUOTE_QTY = "quoteQty";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_QTY)
+    
     private String quoteQty;
 
     public static final String SERIALIZED_NAME_TIME = "time";
 
-    @SerializedName(SERIALIZED_NAME_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TIME)
+    
     private Long time;
 
     public static final String SERIALIZED_NAME_IS_BUYER_MAKER = "isBuyerMaker";
 
-    @SerializedName(SERIALIZED_NAME_IS_BUYER_MAKER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_IS_BUYER_MAKER)
+    
     private Boolean isBuyerMaker;
 
     public static final String SERIALIZED_NAME_IS_BEST_MATCH = "isBestMatch";
 
-    @SerializedName(SERIALIZED_NAME_IS_BEST_MATCH)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_IS_BEST_MATCH)
+    
     private Boolean isBestMatch;
 
     public TradesRecentResponseResultInner() {}
 
-    public TradesRecentResponseResultInner id(@jakarta.annotation.Nullable Long id) {
+    public TradesRecentResponseResultInner id( Long id) {
         this.id = id;
         return this;
     }
@@ -84,16 +74,16 @@ public class TradesRecentResponseResultInner extends BaseDTO {
      *
      * @return id
      */
-    @jakarta.annotation.Nullable
+    
     public Long getId() {
         return id;
     }
 
-    public void setId(@jakarta.annotation.Nullable Long id) {
+    public void setId( Long id) {
         this.id = id;
     }
 
-    public TradesRecentResponseResultInner price(@jakarta.annotation.Nullable String price) {
+    public TradesRecentResponseResultInner price( String price) {
         this.price = price;
         return this;
     }
@@ -103,16 +93,16 @@ public class TradesRecentResponseResultInner extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
+    
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable String price) {
+    public void setPrice( String price) {
         this.price = price;
     }
 
-    public TradesRecentResponseResultInner qty(@jakarta.annotation.Nullable String qty) {
+    public TradesRecentResponseResultInner qty( String qty) {
         this.qty = qty;
         return this;
     }
@@ -122,16 +112,16 @@ public class TradesRecentResponseResultInner extends BaseDTO {
      *
      * @return qty
      */
-    @jakarta.annotation.Nullable
+    
     public String getQty() {
         return qty;
     }
 
-    public void setQty(@jakarta.annotation.Nullable String qty) {
+    public void setQty( String qty) {
         this.qty = qty;
     }
 
-    public TradesRecentResponseResultInner quoteQty(@jakarta.annotation.Nullable String quoteQty) {
+    public TradesRecentResponseResultInner quoteQty( String quoteQty) {
         this.quoteQty = quoteQty;
         return this;
     }
@@ -141,16 +131,16 @@ public class TradesRecentResponseResultInner extends BaseDTO {
      *
      * @return quoteQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getQuoteQty() {
         return quoteQty;
     }
 
-    public void setQuoteQty(@jakarta.annotation.Nullable String quoteQty) {
+    public void setQuoteQty( String quoteQty) {
         this.quoteQty = quoteQty;
     }
 
-    public TradesRecentResponseResultInner time(@jakarta.annotation.Nullable Long time) {
+    public TradesRecentResponseResultInner time( Long time) {
         this.time = time;
         return this;
     }
@@ -160,17 +150,17 @@ public class TradesRecentResponseResultInner extends BaseDTO {
      *
      * @return time
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTime() {
         return time;
     }
 
-    public void setTime(@jakarta.annotation.Nullable Long time) {
+    public void setTime( Long time) {
         this.time = time;
     }
 
     public TradesRecentResponseResultInner isBuyerMaker(
-            @jakarta.annotation.Nullable Boolean isBuyerMaker) {
+             Boolean isBuyerMaker) {
         this.isBuyerMaker = isBuyerMaker;
         return this;
     }
@@ -180,17 +170,17 @@ public class TradesRecentResponseResultInner extends BaseDTO {
      *
      * @return isBuyerMaker
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIsBuyerMaker() {
         return isBuyerMaker;
     }
 
-    public void setIsBuyerMaker(@jakarta.annotation.Nullable Boolean isBuyerMaker) {
+    public void setIsBuyerMaker( Boolean isBuyerMaker) {
         this.isBuyerMaker = isBuyerMaker;
     }
 
     public TradesRecentResponseResultInner isBestMatch(
-            @jakarta.annotation.Nullable Boolean isBestMatch) {
+             Boolean isBestMatch) {
         this.isBestMatch = isBestMatch;
         return this;
     }
@@ -200,12 +190,12 @@ public class TradesRecentResponseResultInner extends BaseDTO {
      *
      * @return isBestMatch
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIsBestMatch() {
         return isBestMatch;
     }
 
-    public void setIsBestMatch(@jakarta.annotation.Nullable Boolean isBestMatch) {
+    public void setIsBestMatch( Boolean isBestMatch) {
         this.isBestMatch = isBestMatch;
     }
 
@@ -346,132 +336,4 @@ public class TradesRecentResponseResultInner extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("id");
-        openapiFields.add("price");
-        openapiFields.add("qty");
-        openapiFields.add("quoteQty");
-        openapiFields.add("time");
-        openapiFields.add("isBuyerMaker");
-        openapiFields.add("isBestMatch");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     TradesRecentResponseResultInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TradesRecentResponseResultInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TradesRecentResponseResultInner is not"
-                                        + " found in the empty JSON string",
-                                TradesRecentResponseResultInner.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TradesRecentResponseResultInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TradesRecentResponseResultInner` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("price") != null && !jsonObj.get("price").isJsonNull())
-                && !jsonObj.get("price").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `price` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("price").toString()));
-        }
-        if ((jsonObj.get("qty") != null && !jsonObj.get("qty").isJsonNull())
-                && !jsonObj.get("qty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `qty` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("qty").toString()));
-        }
-        if ((jsonObj.get("quoteQty") != null && !jsonObj.get("quoteQty").isJsonNull())
-                && !jsonObj.get("quoteQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `quoteQty` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("quoteQty").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TradesRecentResponseResultInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TradesRecentResponseResultInner' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TradesRecentResponseResultInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(TradesRecentResponseResultInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TradesRecentResponseResultInner>() {
-                        @Override
-                        public void write(JsonWriter out, TradesRecentResponseResultInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TradesRecentResponseResultInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TradesRecentResponseResultInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TradesRecentResponseResultInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     TradesRecentResponseResultInner
-     */
-    public static TradesRecentResponseResultInner fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TradesRecentResponseResultInner.class);
-    }
-
-    /**
-     * Convert an instance of TradesRecentResponseResultInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

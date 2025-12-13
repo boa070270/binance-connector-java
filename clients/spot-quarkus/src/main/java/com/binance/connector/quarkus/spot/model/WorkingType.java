@@ -12,62 +12,9 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-
-/** Gets or Sets workingType */
-@JsonAdapter(WorkingType.Adapter.class)
 public enum WorkingType {
-    LIMIT("LIMIT"),
-
-    LIMIT_MAKER("LIMIT_MAKER");
-
-    private String value;
-
-    WorkingType(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static WorkingType fromValue(String value) {
-        for (WorkingType b : WorkingType.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<WorkingType> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final WorkingType enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public WorkingType read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return WorkingType.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        WorkingType.fromValue(value);
-    }
+    LIMIT, LIMIT_MAKER
 }

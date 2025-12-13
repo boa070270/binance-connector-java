@@ -12,52 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TickerBookResponse1 */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TickerBookResponse1 extends BaseDTO {
     public static final String SERIALIZED_NAME_ID = "id";
 
-    @SerializedName(SERIALIZED_NAME_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ID)
+    
     private String id;
 
     public static final String SERIALIZED_NAME_STATUS = "status";
 
-    @SerializedName(SERIALIZED_NAME_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STATUS)
+    
     private Long status;
 
     public static final String SERIALIZED_NAME_RESULT = "result";
 
-    @SerializedName(SERIALIZED_NAME_RESULT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RESULT)
+    
     private TickerBookResponse1Result result;
 
     public static final String SERIALIZED_NAME_RATE_LIMITS = "rateLimits";
 
-    @SerializedName(SERIALIZED_NAME_RATE_LIMITS)
-    @jakarta.annotation.Nullable
-    private List<@Valid RateLimits> rateLimits;
+    @JsonProperty(SERIALIZED_NAME_RATE_LIMITS)
+    
+    private List<RateLimits> rateLimits;
 
     public TickerBookResponse1() {}
 
-    public TickerBookResponse1 id(@jakarta.annotation.Nullable String id) {
+    public TickerBookResponse1 id( String id) {
         this.id = id;
         return this;
     }
@@ -67,16 +57,16 @@ public class TickerBookResponse1 extends BaseDTO {
      *
      * @return id
      */
-    @jakarta.annotation.Nullable
+    
     public String getId() {
         return id;
     }
 
-    public void setId(@jakarta.annotation.Nullable String id) {
+    public void setId( String id) {
         this.id = id;
     }
 
-    public TickerBookResponse1 status(@jakarta.annotation.Nullable Long status) {
+    public TickerBookResponse1 status( Long status) {
         this.status = status;
         return this;
     }
@@ -86,17 +76,17 @@ public class TickerBookResponse1 extends BaseDTO {
      *
      * @return status
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStatus() {
         return status;
     }
 
-    public void setStatus(@jakarta.annotation.Nullable Long status) {
+    public void setStatus( Long status) {
         this.status = status;
     }
 
     public TickerBookResponse1 result(
-            @jakarta.annotation.Nullable TickerBookResponse1Result result) {
+             TickerBookResponse1Result result) {
         this.result = result;
         return this;
     }
@@ -106,18 +96,18 @@ public class TickerBookResponse1 extends BaseDTO {
      *
      * @return result
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public TickerBookResponse1Result getResult() {
         return result;
     }
 
-    public void setResult(@jakarta.annotation.Nullable TickerBookResponse1Result result) {
+    public void setResult( TickerBookResponse1Result result) {
         this.result = result;
     }
 
     public TickerBookResponse1 rateLimits(
-            @jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+             List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
         return this;
     }
@@ -135,13 +125,13 @@ public class TickerBookResponse1 extends BaseDTO {
      *
      * @return rateLimits
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid RateLimits> getRateLimits() {
+    
+    
+    public List<RateLimits> getRateLimits() {
         return rateLimits;
     }
 
-    public void setRateLimits(@jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+    public void setRateLimits( List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
     }
 
@@ -193,12 +183,12 @@ public class TickerBookResponse1 extends BaseDTO {
         }
         TickerBookResponse1Result resultValue = getResult();
         if (resultValue != null) {
-            String resultValueAsString = JSON.getGson().toJson(resultValue);
+            String resultValueAsString = Json.encode(resultValue);
             valMap.put("result", resultValueAsString);
         }
-        List<@Valid RateLimits> rateLimitsValue = getRateLimits();
+        List<RateLimits> rateLimitsValue = getRateLimits();
         if (rateLimitsValue != null) {
-            String rateLimitsValueAsString = JSON.getGson().toJson(rateLimitsValue);
+            String rateLimitsValueAsString = Json.encode(rateLimitsValue);
             valMap.put("rateLimits", rateLimitsValueAsString);
         }
 
@@ -248,131 +238,4 @@ public class TickerBookResponse1 extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("id");
-        openapiFields.add("status");
-        openapiFields.add("result");
-        openapiFields.add("rateLimits");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TickerBookResponse1
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TickerBookResponse1.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TickerBookResponse1 is not found in"
-                                        + " the empty JSON string",
-                                TickerBookResponse1.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TickerBookResponse1.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TickerBookResponse1` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
-                && !jsonObj.get("id").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `id` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("id").toString()));
-        }
-        // validate the optional field `result`
-        if (jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull()) {
-            TickerBookResponse1Result.validateJsonElement(jsonObj.get("result"));
-        }
-        if (jsonObj.get("rateLimits") != null && !jsonObj.get("rateLimits").isJsonNull()) {
-            JsonArray jsonArrayrateLimits = jsonObj.getAsJsonArray("rateLimits");
-            if (jsonArrayrateLimits != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("rateLimits").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `rateLimits` to be an array in the JSON"
-                                            + " string but got `%s`",
-                                    jsonObj.get("rateLimits").toString()));
-                }
-
-                // validate the optional field `rateLimits` (array)
-                for (int i = 0; i < jsonArrayrateLimits.size(); i++) {
-                    RateLimits.validateJsonElement(jsonArrayrateLimits.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TickerBookResponse1.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TickerBookResponse1' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TickerBookResponse1> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TickerBookResponse1.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TickerBookResponse1>() {
-                        @Override
-                        public void write(JsonWriter out, TickerBookResponse1 value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TickerBookResponse1 read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TickerBookResponse1 given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TickerBookResponse1
-     * @throws IOException if the JSON string is invalid with respect to TickerBookResponse1
-     */
-    public static TickerBookResponse1 fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TickerBookResponse1.class);
-    }
-
-    /**
-     * Convert an instance of TickerBookResponse1 to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

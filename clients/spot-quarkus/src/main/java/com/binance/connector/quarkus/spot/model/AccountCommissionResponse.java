@@ -13,7 +13,9 @@
 package com.binance.connector.quarkus.spot.model;
 
 
-import jakarta.validation.Valid;
+
+
+import io.vertx.core.json.Json;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -23,7 +25,7 @@ public class AccountCommissionResponse extends BaseDTO {
     private String id;
     private Long status;
     private AccountCommissionResponseResult result;
-    private List<@Valid RateLimits> rateLimits;
+    private List<RateLimits> rateLimits;
 
     public String getId() {
         return id;
@@ -54,10 +56,10 @@ public class AccountCommissionResponse extends BaseDTO {
         return this;
     }
 
-    public List<@Valid RateLimits> getRateLimits() {
+    public List<RateLimits> getRateLimits() {
         return rateLimits;
     }
-    public void setRateLimits(List<@Valid RateLimits> rateLimits) {
+    public void setRateLimits(List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
     }
 
@@ -109,12 +111,12 @@ public class AccountCommissionResponse extends BaseDTO {
         }
         AccountCommissionResponseResult resultValue = getResult();
         if (resultValue != null) {
-            String resultValueAsString = JSON.getGson().toJson(resultValue);
+            String resultValueAsString = Json.encode(resultValue);
             valMap.put("result", resultValueAsString);
         }
-        List<@Valid RateLimits> rateLimitsValue = getRateLimits();
+        List<RateLimits> rateLimitsValue = getRateLimits();
         if (rateLimitsValue != null) {
-            String rateLimitsValueAsString = JSON.getGson().toJson(rateLimitsValue);
+            String rateLimitsValueAsString = Json.encode(rateLimitsValue);
             valMap.put("rateLimits", rateLimitsValueAsString);
         }
 

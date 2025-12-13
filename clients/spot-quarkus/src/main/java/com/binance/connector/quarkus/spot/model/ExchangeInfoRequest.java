@@ -12,13 +12,8 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,44 +21,40 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-/** ExchangeInfoRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class ExchangeInfoRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_SYMBOLS = "symbols";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOLS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOLS)
+    
     private Symbols symbols;
 
     public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
 
-    @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PERMISSIONS)
+    
     private Permissions permissions;
 
     public static final String SERIALIZED_NAME_SHOW_PERMISSION_SETS = "showPermissionSets";
 
-    @SerializedName(SERIALIZED_NAME_SHOW_PERMISSION_SETS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SHOW_PERMISSION_SETS)
+    
     private Boolean showPermissionSets;
 
     public static final String SERIALIZED_NAME_SYMBOL_STATUS = "symbolStatus";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL_STATUS)
+    
     private SymbolStatus symbolStatus;
 
     public ExchangeInfoRequest() {}
 
-    public ExchangeInfoRequest symbol(@jakarta.annotation.Nullable String symbol) {
+    public ExchangeInfoRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -73,16 +64,16 @@ public class ExchangeInfoRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public ExchangeInfoRequest symbols(@jakarta.annotation.Nullable Symbols symbols) {
+    public ExchangeInfoRequest symbols( Symbols symbols) {
         this.symbols = symbols;
         return this;
     }
@@ -92,17 +83,15 @@ public class ExchangeInfoRequest extends BaseDTO {
      *
      * @return symbols
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public Symbols getSymbols() {
         return symbols;
     }
 
-    public void setSymbols(@jakarta.annotation.Nullable Symbols symbols) {
+    public void setSymbols( Symbols symbols) {
         this.symbols = symbols;
     }
 
-    public ExchangeInfoRequest permissions(@jakarta.annotation.Nullable Permissions permissions) {
+    public ExchangeInfoRequest permissions( Permissions permissions) {
         this.permissions = permissions;
         return this;
     }
@@ -112,18 +101,16 @@ public class ExchangeInfoRequest extends BaseDTO {
      *
      * @return permissions
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public Permissions getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(@jakarta.annotation.Nullable Permissions permissions) {
+    public void setPermissions( Permissions permissions) {
         this.permissions = permissions;
     }
 
     public ExchangeInfoRequest showPermissionSets(
-            @jakarta.annotation.Nullable Boolean showPermissionSets) {
+             Boolean showPermissionSets) {
         this.showPermissionSets = showPermissionSets;
         return this;
     }
@@ -133,17 +120,17 @@ public class ExchangeInfoRequest extends BaseDTO {
      *
      * @return showPermissionSets
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getShowPermissionSets() {
         return showPermissionSets;
     }
 
-    public void setShowPermissionSets(@jakarta.annotation.Nullable Boolean showPermissionSets) {
+    public void setShowPermissionSets( Boolean showPermissionSets) {
         this.showPermissionSets = showPermissionSets;
     }
 
     public ExchangeInfoRequest symbolStatus(
-            @jakarta.annotation.Nullable SymbolStatus symbolStatus) {
+             SymbolStatus symbolStatus) {
         this.symbolStatus = symbolStatus;
         return this;
     }
@@ -153,13 +140,11 @@ public class ExchangeInfoRequest extends BaseDTO {
      *
      * @return symbolStatus
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public SymbolStatus getSymbolStatus() {
         return symbolStatus;
     }
 
-    public void setSymbolStatus(@jakarta.annotation.Nullable SymbolStatus symbolStatus) {
+    public void setSymbolStatus( SymbolStatus symbolStatus) {
         this.symbolStatus = symbolStatus;
     }
 
@@ -184,21 +169,6 @@ public class ExchangeInfoRequest extends BaseDTO {
         return Objects.hash(symbol, symbols, permissions, showPermissionSets, symbolStatus);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class ExchangeInfoRequest {\n");
-        sb.append("		symbol: ").append(toIndentedString(symbol)).append("\n");
-        sb.append("		symbols: ").append(toIndentedString(symbols)).append("\n");
-        sb.append("		permissions: ").append(toIndentedString(permissions)).append("\n");
-        sb.append("		showPermissionSets: ")
-                .append(toIndentedString(showPermissionSets))
-                .append("\n");
-        sb.append("		symbolStatus: ").append(toIndentedString(symbolStatus)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
     public String toUrlQueryString() {
         StringBuilder sb = new StringBuilder();
         Map<String, String> valMap = new TreeMap<String, String>();
@@ -210,12 +180,12 @@ public class ExchangeInfoRequest extends BaseDTO {
         }
         Symbols symbolsValue = getSymbols();
         if (symbolsValue != null) {
-            String symbolsValueAsString = JSON.getGson().toJson(symbolsValue);
+            String symbolsValueAsString = Json.encode(symbolsValue);
             valMap.put("symbols", symbolsValueAsString);
         }
         Permissions permissionsValue = getPermissions();
         if (permissionsValue != null) {
-            String permissionsValueAsString = JSON.getGson().toJson(permissionsValue);
+            String permissionsValueAsString = Json.encode(permissionsValue);
             valMap.put("permissions", permissionsValueAsString);
         }
         Boolean showPermissionSetsValue = getShowPermissionSets();
@@ -236,156 +206,7 @@ public class ExchangeInfoRequest extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object symbolValue = getSymbol();
-        if (symbolValue != null) {
-            valMap.put("symbol", symbolValue);
-        }
-        Object symbolsValue = getSymbols();
-        if (symbolsValue != null) {
-            valMap.put("symbols", symbolsValue);
-        }
-        Object permissionsValue = getPermissions();
-        if (permissionsValue != null) {
-            valMap.put("permissions", permissionsValue);
-        }
-        Object showPermissionSetsValue = getShowPermissionSets();
-        if (showPermissionSetsValue != null) {
-            valMap.put("showPermissionSets", showPermissionSetsValue);
-        }
-        Object symbolStatusValue = getSymbolStatus();
-        if (symbolStatusValue != null) {
-            valMap.put("symbolStatus", symbolStatusValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("symbols");
-        openapiFields.add("permissions");
-        openapiFields.add("showPermissionSets");
-        openapiFields.add("symbolStatus");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to ExchangeInfoRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!ExchangeInfoRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in ExchangeInfoRequest is not found in"
-                                        + " the empty JSON string",
-                                ExchangeInfoRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!ExchangeInfoRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `ExchangeInfoRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the optional field `symbolStatus`
-        if (jsonObj.get("symbolStatus") != null && !jsonObj.get("symbolStatus").isJsonNull()) {
-            SymbolStatus.validateJsonElement(jsonObj.get("symbolStatus"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!ExchangeInfoRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'ExchangeInfoRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<ExchangeInfoRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(ExchangeInfoRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<ExchangeInfoRequest>() {
-                        @Override
-                        public void write(JsonWriter out, ExchangeInfoRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public ExchangeInfoRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of ExchangeInfoRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of ExchangeInfoRequest
-     * @throws IOException if the JSON string is invalid with respect to ExchangeInfoRequest
-     */
-    public static ExchangeInfoRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, ExchangeInfoRequest.class);
-    }
-
-    /**
-     * Convert an instance of ExchangeInfoRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

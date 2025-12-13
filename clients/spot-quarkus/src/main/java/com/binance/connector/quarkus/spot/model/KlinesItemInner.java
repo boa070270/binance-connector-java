@@ -13,10 +13,10 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.AbstractOpenApiSchema;
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+
+
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,130 +25,8 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class KlinesItemInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(KlinesItemInner.class.getName());
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!KlinesItemInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'KlinesItemInner' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<String> adapterString =
-                    gson.getDelegateAdapter(this, TypeToken.get(String.class));
-            final TypeAdapter<Long> adapterLong =
-                    gson.getDelegateAdapter(this, TypeToken.get(Long.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<KlinesItemInner>() {
-                        @Override
-                        public void write(JsonWriter out, KlinesItemInner value)
-                                throws IOException {
-                            if (value == null || value.getActualInstance() == null) {
-                                elementAdapter.write(out, null);
-                                return;
-                            }
-
-                            // check if the actual instance is of the type `String`
-                            if (value.getActualInstance() instanceof String) {
-                                JsonPrimitive primitive =
-                                        adapterString
-                                                .toJsonTree((String) value.getActualInstance())
-                                                .getAsJsonPrimitive();
-                                elementAdapter.write(out, primitive);
-                                return;
-                            }
-                            // check if the actual instance is of the type `Long`
-                            if (value.getActualInstance() instanceof Long) {
-                                JsonPrimitive primitive =
-                                        adapterLong
-                                                .toJsonTree((Long) value.getActualInstance())
-                                                .getAsJsonPrimitive();
-                                elementAdapter.write(out, primitive);
-                                return;
-                            }
-                            throw new IOException(
-                                    "Failed to serialize as the type doesn't match oneOf schemas:"
-                                            + " Long, String");
-                        }
-
-                        @Override
-                        public KlinesItemInner read(JsonReader in) throws IOException {
-                            Object deserialized = null;
-                            JsonElement jsonElement = elementAdapter.read(in);
-
-                            int match = 0;
-                            ArrayList<String> errorMessages = new ArrayList<>();
-                            TypeAdapter actualAdapter = elementAdapter;
-
-                            // deserialize String
-                            try {
-                                // validate the JSON object to see if any exception is thrown
-                                if (!jsonElement.getAsJsonPrimitive().isString()) {
-                                    throw new IllegalArgumentException(
-                                            String.format(
-                                                    "Expected json element to be of type String in"
-                                                            + " the JSON string but got `%s`",
-                                                    jsonElement.toString()));
-                                }
-                                actualAdapter = adapterString;
-                                match++;
-                                log.log(Level.FINER, "Input data matches schema 'String'");
-                            } catch (Exception e) {
-                                // deserialization failed, continue
-                                errorMessages.add(
-                                        String.format(
-                                                "Deserialization for String failed with `%s`.",
-                                                e.getMessage()));
-                                log.log(
-                                        Level.FINER,
-                                        "Input data does not match schema 'String'",
-                                        e);
-                            }
-                            // deserialize Long
-                            try {
-                                // validate the JSON object to see if any exception is thrown
-                                if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                                    throw new IllegalArgumentException(
-                                            String.format(
-                                                    "Expected json element to be of type Number in"
-                                                            + " the JSON string but got `%s`",
-                                                    jsonElement.toString()));
-                                }
-                                actualAdapter = adapterLong;
-                                match++;
-                                log.log(Level.FINER, "Input data matches schema 'Long'");
-                            } catch (Exception e) {
-                                // deserialization failed, continue
-                                errorMessages.add(
-                                        String.format(
-                                                "Deserialization for Long failed with `%s`.",
-                                                e.getMessage()));
-                                log.log(Level.FINER, "Input data does not match schema 'Long'", e);
-                            }
-
-                            if (match == 1) {
-                                KlinesItemInner ret = new KlinesItemInner();
-                                ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                                return ret;
-                            }
-
-                            throw new IOException(
-                                    String.format(
-                                            "Failed deserialization for KlinesItemInner: %d classes"
-                                                    + " match result, expected 1. Detailed failure"
-                                                    + " message for oneOf schemas: %s. JSON: %s",
-                                            match, errorMessages, jsonElement.toString()));
-                        }
-                    }.nullSafe();
-        }
-    }
 
     // store a list of schema names defined in oneOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
@@ -224,75 +102,5 @@ public class KlinesItemInner extends AbstractOpenApiSchema {
      */
     public Long getLong() throws ClassCastException {
         return (Long) super.getActualInstance();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to KlinesItemInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate oneOf schemas one by one
-        int validCount = 0;
-        ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with String
-        try {
-            if (!jsonElement.getAsJsonPrimitive().isString()) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "Expected json element to be of type String in the JSON string but"
-                                        + " got `%s`",
-                                jsonElement.toString()));
-            }
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(
-                    String.format("Deserialization for String failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with Long
-        try {
-            if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "Expected json element to be of type Number in the JSON string but"
-                                        + " got `%s`",
-                                jsonElement.toString()));
-            }
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(
-                    String.format("Deserialization for Long failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        if (validCount != 1) {
-            throw new IOException(
-                    String.format(
-                            "The JSON string is invalid for KlinesItemInner with oneOf schemas:"
-                                    + " Long, String. %d class(es) match the result, expected 1."
-                                    + " Detailed failure message for oneOf schemas: %s. JSON: %s",
-                            validCount, errorMessages, jsonElement.toString()));
-        }
-    }
-
-    /**
-     * Create an instance of KlinesItemInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of KlinesItemInner
-     * @throws IOException if the JSON string is invalid with respect to KlinesItemInner
-     */
-    public static KlinesItemInner fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, KlinesItemInner.class);
-    }
-
-    /**
-     * Convert an instance of KlinesItemInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

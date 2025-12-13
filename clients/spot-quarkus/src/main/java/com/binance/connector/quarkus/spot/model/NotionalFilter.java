@@ -12,69 +12,59 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** NotionalFilter */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class NotionalFilter extends BaseDTO {
     public static final String SERIALIZED_NAME_FILTER_TYPE = "filterType";
 
-    @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FILTER_TYPE)
+    
     private String filterType;
 
     public static final String SERIALIZED_NAME_PRICE_EXPONENT = "priceExponent";
 
-    @SerializedName(SERIALIZED_NAME_PRICE_EXPONENT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE_EXPONENT)
+    
     private Integer priceExponent;
 
     public static final String SERIALIZED_NAME_MIN_NOTIONAL = "minNotional";
 
-    @SerializedName(SERIALIZED_NAME_MIN_NOTIONAL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MIN_NOTIONAL)
+    
     private String minNotional;
 
     public static final String SERIALIZED_NAME_APPLY_MIN_TO_MARKET = "applyMinToMarket";
 
-    @SerializedName(SERIALIZED_NAME_APPLY_MIN_TO_MARKET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_APPLY_MIN_TO_MARKET)
+    
     private Boolean applyMinToMarket;
 
     public static final String SERIALIZED_NAME_MAX_NOTIONAL = "maxNotional";
 
-    @SerializedName(SERIALIZED_NAME_MAX_NOTIONAL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAX_NOTIONAL)
+    
     private String maxNotional;
 
     public static final String SERIALIZED_NAME_APPLY_MAX_TO_MARKET = "applyMaxToMarket";
 
-    @SerializedName(SERIALIZED_NAME_APPLY_MAX_TO_MARKET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_APPLY_MAX_TO_MARKET)
+    
     private Boolean applyMaxToMarket;
 
     public static final String SERIALIZED_NAME_AVG_PRICE_MINS = "avgPriceMins";
 
-    @SerializedName(SERIALIZED_NAME_AVG_PRICE_MINS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_AVG_PRICE_MINS)
+    
     private Integer avgPriceMins;
 
     public NotionalFilter() {}
 
-    public NotionalFilter filterType(@jakarta.annotation.Nullable String filterType) {
+    public NotionalFilter filterType( String filterType) {
         this.filterType = filterType;
         return this;
     }
@@ -84,16 +74,16 @@ public class NotionalFilter extends BaseDTO {
      *
      * @return filterType
      */
-    @jakarta.annotation.Nullable
+    
     public String getFilterType() {
         return filterType;
     }
 
-    public void setFilterType(@jakarta.annotation.Nullable String filterType) {
+    public void setFilterType( String filterType) {
         this.filterType = filterType;
     }
 
-    public NotionalFilter priceExponent(@jakarta.annotation.Nullable Integer priceExponent) {
+    public NotionalFilter priceExponent( Integer priceExponent) {
         this.priceExponent = priceExponent;
         return this;
     }
@@ -103,16 +93,16 @@ public class NotionalFilter extends BaseDTO {
      *
      * @return priceExponent
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getPriceExponent() {
         return priceExponent;
     }
 
-    public void setPriceExponent(@jakarta.annotation.Nullable Integer priceExponent) {
+    public void setPriceExponent( Integer priceExponent) {
         this.priceExponent = priceExponent;
     }
 
-    public NotionalFilter minNotional(@jakarta.annotation.Nullable String minNotional) {
+    public NotionalFilter minNotional( String minNotional) {
         this.minNotional = minNotional;
         return this;
     }
@@ -122,16 +112,16 @@ public class NotionalFilter extends BaseDTO {
      *
      * @return minNotional
      */
-    @jakarta.annotation.Nullable
+    
     public String getMinNotional() {
         return minNotional;
     }
 
-    public void setMinNotional(@jakarta.annotation.Nullable String minNotional) {
+    public void setMinNotional( String minNotional) {
         this.minNotional = minNotional;
     }
 
-    public NotionalFilter applyMinToMarket(@jakarta.annotation.Nullable Boolean applyMinToMarket) {
+    public NotionalFilter applyMinToMarket( Boolean applyMinToMarket) {
         this.applyMinToMarket = applyMinToMarket;
         return this;
     }
@@ -141,16 +131,16 @@ public class NotionalFilter extends BaseDTO {
      *
      * @return applyMinToMarket
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getApplyMinToMarket() {
         return applyMinToMarket;
     }
 
-    public void setApplyMinToMarket(@jakarta.annotation.Nullable Boolean applyMinToMarket) {
+    public void setApplyMinToMarket( Boolean applyMinToMarket) {
         this.applyMinToMarket = applyMinToMarket;
     }
 
-    public NotionalFilter maxNotional(@jakarta.annotation.Nullable String maxNotional) {
+    public NotionalFilter maxNotional( String maxNotional) {
         this.maxNotional = maxNotional;
         return this;
     }
@@ -160,16 +150,16 @@ public class NotionalFilter extends BaseDTO {
      *
      * @return maxNotional
      */
-    @jakarta.annotation.Nullable
+    
     public String getMaxNotional() {
         return maxNotional;
     }
 
-    public void setMaxNotional(@jakarta.annotation.Nullable String maxNotional) {
+    public void setMaxNotional( String maxNotional) {
         this.maxNotional = maxNotional;
     }
 
-    public NotionalFilter applyMaxToMarket(@jakarta.annotation.Nullable Boolean applyMaxToMarket) {
+    public NotionalFilter applyMaxToMarket( Boolean applyMaxToMarket) {
         this.applyMaxToMarket = applyMaxToMarket;
         return this;
     }
@@ -179,16 +169,16 @@ public class NotionalFilter extends BaseDTO {
      *
      * @return applyMaxToMarket
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getApplyMaxToMarket() {
         return applyMaxToMarket;
     }
 
-    public void setApplyMaxToMarket(@jakarta.annotation.Nullable Boolean applyMaxToMarket) {
+    public void setApplyMaxToMarket( Boolean applyMaxToMarket) {
         this.applyMaxToMarket = applyMaxToMarket;
     }
 
-    public NotionalFilter avgPriceMins(@jakarta.annotation.Nullable Integer avgPriceMins) {
+    public NotionalFilter avgPriceMins( Integer avgPriceMins) {
         this.avgPriceMins = avgPriceMins;
         return this;
     }
@@ -198,12 +188,12 @@ public class NotionalFilter extends BaseDTO {
      *
      * @return avgPriceMins
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getAvgPriceMins() {
         return avgPriceMins;
     }
 
-    public void setAvgPriceMins(@jakarta.annotation.Nullable Integer avgPriceMins) {
+    public void setAvgPriceMins( Integer avgPriceMins) {
         this.avgPriceMins = avgPriceMins;
     }
 
@@ -235,21 +225,6 @@ public class NotionalFilter extends BaseDTO {
                 maxNotional,
                 applyMaxToMarket,
                 avgPriceMins);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class NotionalFilter {\n");
-        sb.append("		filterType: ").append(toIndentedString(filterType)).append("\n");
-        sb.append("		priceExponent: ").append(toIndentedString(priceExponent)).append("\n");
-        sb.append("		minNotional: ").append(toIndentedString(minNotional)).append("\n");
-        sb.append("		applyMinToMarket: ").append(toIndentedString(applyMinToMarket)).append("\n");
-        sb.append("		maxNotional: ").append(toIndentedString(maxNotional)).append("\n");
-        sb.append("		applyMaxToMarket: ").append(toIndentedString(applyMaxToMarket)).append("\n");
-        sb.append("		avgPriceMins: ").append(toIndentedString(avgPriceMins)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -299,177 +274,8 @@ public class NotionalFilter extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object filterTypeValue = getFilterType();
-        if (filterTypeValue != null) {
-            valMap.put("filterType", filterTypeValue);
-        }
-        Object priceExponentValue = getPriceExponent();
-        if (priceExponentValue != null) {
-            valMap.put("priceExponent", priceExponentValue);
-        }
-        Object minNotionalValue = getMinNotional();
-        if (minNotionalValue != null) {
-            valMap.put("minNotional", minNotionalValue);
-        }
-        Object applyMinToMarketValue = getApplyMinToMarket();
-        if (applyMinToMarketValue != null) {
-            valMap.put("applyMinToMarket", applyMinToMarketValue);
-        }
-        Object maxNotionalValue = getMaxNotional();
-        if (maxNotionalValue != null) {
-            valMap.put("maxNotional", maxNotionalValue);
-        }
-        Object applyMaxToMarketValue = getApplyMaxToMarket();
-        if (applyMaxToMarketValue != null) {
-            valMap.put("applyMaxToMarket", applyMaxToMarketValue);
-        }
-        Object avgPriceMinsValue = getAvgPriceMins();
-        if (avgPriceMinsValue != null) {
-            valMap.put("avgPriceMins", avgPriceMinsValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("filterType");
-        openapiFields.add("priceExponent");
-        openapiFields.add("minNotional");
-        openapiFields.add("applyMinToMarket");
-        openapiFields.add("maxNotional");
-        openapiFields.add("applyMaxToMarket");
-        openapiFields.add("avgPriceMins");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to NotionalFilter
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!NotionalFilter.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in NotionalFilter is not found in the"
-                                        + " empty JSON string",
-                                NotionalFilter.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!NotionalFilter.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `NotionalFilter` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("filterType") != null && !jsonObj.get("filterType").isJsonNull())
-                && !jsonObj.get("filterType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `filterType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("filterType").toString()));
-        }
-        if ((jsonObj.get("minNotional") != null && !jsonObj.get("minNotional").isJsonNull())
-                && !jsonObj.get("minNotional").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `minNotional` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("minNotional").toString()));
-        }
-        if ((jsonObj.get("maxNotional") != null && !jsonObj.get("maxNotional").isJsonNull())
-                && !jsonObj.get("maxNotional").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `maxNotional` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("maxNotional").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!NotionalFilter.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'NotionalFilter' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<NotionalFilter> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(NotionalFilter.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<NotionalFilter>() {
-                        @Override
-                        public void write(JsonWriter out, NotionalFilter value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public NotionalFilter read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of NotionalFilter given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of NotionalFilter
-     * @throws IOException if the JSON string is invalid with respect to NotionalFilter
-     */
-    public static NotionalFilter fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, NotionalFilter.class);
-    }
-
-    /**
-     * Convert an instance of NotionalFilter to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

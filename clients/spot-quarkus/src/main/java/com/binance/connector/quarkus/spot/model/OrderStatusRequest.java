@@ -13,53 +13,42 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderStatusRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderStatusRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_ID)
+    
     private Long orderId;
 
     public static final String SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID = "origClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID)
+    
     private String origClientOrderId;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
-    @SerializedName(SERIALIZED_NAME_RECV_WINDOW)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
+    
     private Double recvWindow;
 
     public OrderStatusRequest() {}
 
-    public OrderStatusRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public OrderStatusRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -69,17 +58,17 @@ public class OrderStatusRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public OrderStatusRequest orderId(@jakarta.annotation.Nullable Long orderId) {
+    public OrderStatusRequest orderId( Long orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -89,17 +78,17 @@ public class OrderStatusRequest extends BaseDTO {
      *
      * @return orderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(@jakarta.annotation.Nullable Long orderId) {
+    public void setOrderId( Long orderId) {
         this.orderId = orderId;
     }
 
     public OrderStatusRequest origClientOrderId(
-            @jakarta.annotation.Nullable String origClientOrderId) {
+             String origClientOrderId) {
         this.origClientOrderId = origClientOrderId;
         return this;
     }
@@ -109,16 +98,16 @@ public class OrderStatusRequest extends BaseDTO {
      *
      * @return origClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getOrigClientOrderId() {
         return origClientOrderId;
     }
 
-    public void setOrigClientOrderId(@jakarta.annotation.Nullable String origClientOrderId) {
+    public void setOrigClientOrderId( String origClientOrderId) {
         this.origClientOrderId = origClientOrderId;
     }
 
-    public OrderStatusRequest recvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public OrderStatusRequest recvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -128,13 +117,13 @@ public class OrderStatusRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public void setRecvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -242,127 +231,4 @@ public class OrderStatusRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("orderId");
-        openapiFields.add("origClientOrderId");
-        openapiFields.add("recvWindow");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to OrderStatusRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderStatusRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderStatusRequest is not found in the"
-                                        + " empty JSON string",
-                                OrderStatusRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderStatusRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderStatusRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : OrderStatusRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("origClientOrderId") != null
-                        && !jsonObj.get("origClientOrderId").isJsonNull())
-                && !jsonObj.get("origClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `origClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("origClientOrderId").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderStatusRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderStatusRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderStatusRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(OrderStatusRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderStatusRequest>() {
-                        @Override
-                        public void write(JsonWriter out, OrderStatusRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderStatusRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderStatusRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderStatusRequest
-     * @throws IOException if the JSON string is invalid with respect to OrderStatusRequest
-     */
-    public static OrderStatusRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderStatusRequest.class);
-    }
-
-    /**
-     * Convert an instance of OrderStatusRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

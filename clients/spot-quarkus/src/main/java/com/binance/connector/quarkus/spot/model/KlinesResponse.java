@@ -12,52 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** KlinesResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class KlinesResponse extends BaseDTO {
     public static final String SERIALIZED_NAME_ID = "id";
 
-    @SerializedName(SERIALIZED_NAME_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ID)
+    
     private String id;
 
     public static final String SERIALIZED_NAME_STATUS = "status";
 
-    @SerializedName(SERIALIZED_NAME_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STATUS)
+    
     private Long status;
 
     public static final String SERIALIZED_NAME_RESULT = "result";
 
-    @SerializedName(SERIALIZED_NAME_RESULT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RESULT)
+    
     private List<KlinesItem> result;
 
     public static final String SERIALIZED_NAME_RATE_LIMITS = "rateLimits";
 
-    @SerializedName(SERIALIZED_NAME_RATE_LIMITS)
-    @jakarta.annotation.Nullable
-    private List<@Valid RateLimits> rateLimits;
+    @JsonProperty(SERIALIZED_NAME_RATE_LIMITS)
+    
+    private List<RateLimits> rateLimits;
 
     public KlinesResponse() {}
 
-    public KlinesResponse id(@jakarta.annotation.Nullable String id) {
+    public KlinesResponse id( String id) {
         this.id = id;
         return this;
     }
@@ -67,16 +57,16 @@ public class KlinesResponse extends BaseDTO {
      *
      * @return id
      */
-    @jakarta.annotation.Nullable
+    
     public String getId() {
         return id;
     }
 
-    public void setId(@jakarta.annotation.Nullable String id) {
+    public void setId( String id) {
         this.id = id;
     }
 
-    public KlinesResponse status(@jakarta.annotation.Nullable Long status) {
+    public KlinesResponse status( Long status) {
         this.status = status;
         return this;
     }
@@ -86,16 +76,16 @@ public class KlinesResponse extends BaseDTO {
      *
      * @return status
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStatus() {
         return status;
     }
 
-    public void setStatus(@jakarta.annotation.Nullable Long status) {
+    public void setStatus( Long status) {
         this.status = status;
     }
 
-    public KlinesResponse result(@jakarta.annotation.Nullable List<KlinesItem> result) {
+    public KlinesResponse result( List<KlinesItem> result) {
         this.result = result;
         return this;
     }
@@ -113,18 +103,16 @@ public class KlinesResponse extends BaseDTO {
      *
      * @return result
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<KlinesItem> getResult() {
         return result;
     }
 
-    public void setResult(@jakarta.annotation.Nullable List<KlinesItem> result) {
+    public void setResult( List<KlinesItem> result) {
         this.result = result;
     }
 
     public KlinesResponse rateLimits(
-            @jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+             List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
         return this;
     }
@@ -142,13 +130,11 @@ public class KlinesResponse extends BaseDTO {
      *
      * @return rateLimits
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid RateLimits> getRateLimits() {
+    public List<RateLimits> getRateLimits() {
         return rateLimits;
     }
 
-    public void setRateLimits(@jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+    public void setRateLimits( List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
     }
 
@@ -172,18 +158,6 @@ public class KlinesResponse extends BaseDTO {
         return Objects.hash(id, status, result, rateLimits);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class KlinesResponse {\n");
-        sb.append("		id: ").append(toIndentedString(id)).append("\n");
-        sb.append("		status: ").append(toIndentedString(status)).append("\n");
-        sb.append("		result: ").append(toIndentedString(result)).append("\n");
-        sb.append("		rateLimits: ").append(toIndentedString(rateLimits)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
     public String toUrlQueryString() {
         StringBuilder sb = new StringBuilder();
         Map<String, String> valMap = new TreeMap<String, String>();
@@ -200,12 +174,12 @@ public class KlinesResponse extends BaseDTO {
         }
         List<KlinesItem> resultValue = getResult();
         if (resultValue != null) {
-            String resultValueAsString = JSON.getGson().toJson(resultValue);
+            String resultValueAsString = Json.encode(resultValue);
             valMap.put("result", resultValueAsString);
         }
-        List<@Valid RateLimits> rateLimitsValue = getRateLimits();
+        List<RateLimits> rateLimitsValue = getRateLimits();
         if (rateLimitsValue != null) {
-            String rateLimitsValueAsString = JSON.getGson().toJson(rateLimitsValue);
+            String rateLimitsValueAsString = Json.encode(rateLimitsValue);
             valMap.put("rateLimits", rateLimitsValueAsString);
         }
 
@@ -216,175 +190,8 @@ public class KlinesResponse extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object idValue = getId();
-        if (idValue != null) {
-            valMap.put("id", idValue);
-        }
-        Object statusValue = getStatus();
-        if (statusValue != null) {
-            valMap.put("status", statusValue);
-        }
-        Object resultValue = getResult();
-        if (resultValue != null) {
-            valMap.put("result", resultValue);
-        }
-        Object rateLimitsValue = getRateLimits();
-        if (rateLimitsValue != null) {
-            valMap.put("rateLimits", rateLimitsValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("id");
-        openapiFields.add("status");
-        openapiFields.add("result");
-        openapiFields.add("rateLimits");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to KlinesResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!KlinesResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in KlinesResponse is not found in the"
-                                        + " empty JSON string",
-                                KlinesResponse.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!KlinesResponse.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `KlinesResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
-                && !jsonObj.get("id").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `id` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("id").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("result") != null
-                && !jsonObj.get("result").isJsonNull()
-                && !jsonObj.get("result").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `result` to be an array in the JSON string but got"
-                                    + " `%s`",
-                            jsonObj.get("result").toString()));
-        }
-        if (jsonObj.get("rateLimits") != null && !jsonObj.get("rateLimits").isJsonNull()) {
-            JsonArray jsonArrayrateLimits = jsonObj.getAsJsonArray("rateLimits");
-            if (jsonArrayrateLimits != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("rateLimits").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `rateLimits` to be an array in the JSON"
-                                            + " string but got `%s`",
-                                    jsonObj.get("rateLimits").toString()));
-                }
-
-                // validate the optional field `rateLimits` (array)
-                for (int i = 0; i < jsonArrayrateLimits.size(); i++) {
-                    RateLimits.validateJsonElement(jsonArrayrateLimits.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!KlinesResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'KlinesResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<KlinesResponse> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(KlinesResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<KlinesResponse>() {
-                        @Override
-                        public void write(JsonWriter out, KlinesResponse value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public KlinesResponse read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of KlinesResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of KlinesResponse
-     * @throws IOException if the JSON string is invalid with respect to KlinesResponse
-     */
-    public static KlinesResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, KlinesResponse.class);
-    }
-
-    /**
-     * Convert an instance of KlinesResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

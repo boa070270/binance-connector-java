@@ -12,26 +12,11 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-//import com.binance.connector.client.spot.websocket.api.JSON;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** Permissions */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class Permissions extends ArrayList<String> {
     public Permissions() {}
 
@@ -91,94 +76,4 @@ public class Permissions extends ArrayList<String> {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to Permissions
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!Permissions.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in Permissions is not found in the empty"
-                                        + " JSON string",
-                                Permissions.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!Permissions.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `Permissions` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!Permissions.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'Permissions' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<Permissions> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(Permissions.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<Permissions>() {
-                        @Override
-                        public void write(JsonWriter out, Permissions value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonArray();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public Permissions read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of Permissions given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of Permissions
-     * @throws IOException if the JSON string is invalid with respect to Permissions
-     */
-    public static Permissions fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, Permissions.class);
-    }
-
-    /**
-     * Convert an instance of Permissions to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

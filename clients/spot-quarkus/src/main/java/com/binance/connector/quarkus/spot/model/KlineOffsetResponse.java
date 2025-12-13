@@ -12,52 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** KlineOffsetResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class KlineOffsetResponse extends BaseDTO {
     public static final String SERIALIZED_NAME_E_LOWER_CASE = "e";
 
-    @SerializedName(SERIALIZED_NAME_E_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E_LOWER_CASE)
+    
     private String eLowerCase;
 
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_S_LOWER_CASE = "s";
 
-    @SerializedName(SERIALIZED_NAME_S_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S_LOWER_CASE)
+    
     private String sLowerCase;
 
     public static final String SERIALIZED_NAME_K_LOWER_CASE = "k";
 
-    @SerializedName(SERIALIZED_NAME_K_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_K_LOWER_CASE)
+    
     private KlineResponseK kLowerCase;
 
     public KlineOffsetResponse() {}
 
-    public KlineOffsetResponse eLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public KlineOffsetResponse eLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
         return this;
     }
@@ -67,16 +57,16 @@ public class KlineOffsetResponse extends BaseDTO {
      *
      * @return eLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String geteLowerCase() {
         return eLowerCase;
     }
 
-    public void seteLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public void seteLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
     }
 
-    public KlineOffsetResponse E(@jakarta.annotation.Nullable Long E) {
+    public KlineOffsetResponse E( Long E) {
         this.E = E;
         return this;
     }
@@ -86,16 +76,16 @@ public class KlineOffsetResponse extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public KlineOffsetResponse sLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public KlineOffsetResponse sLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
         return this;
     }
@@ -105,16 +95,16 @@ public class KlineOffsetResponse extends BaseDTO {
      *
      * @return sLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getsLowerCase() {
         return sLowerCase;
     }
 
-    public void setsLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public void setsLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
     }
 
-    public KlineOffsetResponse kLowerCase(@jakarta.annotation.Nullable KlineResponseK kLowerCase) {
+    public KlineOffsetResponse kLowerCase( KlineResponseK kLowerCase) {
         this.kLowerCase = kLowerCase;
         return this;
     }
@@ -124,13 +114,11 @@ public class KlineOffsetResponse extends BaseDTO {
      *
      * @return kLowerCase
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public KlineResponseK getkLowerCase() {
         return kLowerCase;
     }
 
-    public void setkLowerCase(@jakarta.annotation.Nullable KlineResponseK kLowerCase) {
+    public void setkLowerCase( KlineResponseK kLowerCase) {
         this.kLowerCase = kLowerCase;
     }
 
@@ -154,18 +142,6 @@ public class KlineOffsetResponse extends BaseDTO {
         return Objects.hash(eLowerCase, E, sLowerCase, kLowerCase);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class KlineOffsetResponse {\n");
-        sb.append("		eLowerCase: ").append(toIndentedString(eLowerCase)).append("\n");
-        sb.append("		E: ").append(toIndentedString(E)).append("\n");
-        sb.append("		sLowerCase: ").append(toIndentedString(sLowerCase)).append("\n");
-        sb.append("		kLowerCase: ").append(toIndentedString(kLowerCase)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
     public String toUrlQueryString() {
         StringBuilder sb = new StringBuilder();
         Map<String, String> valMap = new TreeMap<String, String>();
@@ -187,7 +163,7 @@ public class KlineOffsetResponse extends BaseDTO {
         }
         KlineResponseK kLowerCaseValue = getkLowerCase();
         if (kLowerCaseValue != null) {
-            String kLowerCaseValueAsString = JSON.getGson().toJson(kLowerCaseValue);
+            String kLowerCaseValueAsString = Json.encode(kLowerCaseValue);
             valMap.put("kLowerCase", kLowerCaseValueAsString);
         }
 
@@ -198,159 +174,7 @@ public class KlineOffsetResponse extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object eLowerCaseValue = geteLowerCase();
-        if (eLowerCaseValue != null) {
-            valMap.put("eLowerCase", eLowerCaseValue);
-        }
-        Object EValue = getE();
-        if (EValue != null) {
-            valMap.put("E", EValue);
-        }
-        Object sLowerCaseValue = getsLowerCase();
-        if (sLowerCaseValue != null) {
-            valMap.put("sLowerCase", sLowerCaseValue);
-        }
-        Object kLowerCaseValue = getkLowerCase();
-        if (kLowerCaseValue != null) {
-            valMap.put("kLowerCase", kLowerCaseValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("e");
-        openapiFields.add("E");
-        openapiFields.add("s");
-        openapiFields.add("k");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to KlineOffsetResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!KlineOffsetResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in KlineOffsetResponse is not found in"
-                                        + " the empty JSON string",
-                                KlineOffsetResponse.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!KlineOffsetResponse.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `KlineOffsetResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("e") != null && !jsonObj.get("e").isJsonNull())
-                && !jsonObj.get("e").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `e` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("e").toString()));
-        }
-        if ((jsonObj.get("s") != null && !jsonObj.get("s").isJsonNull())
-                && !jsonObj.get("s").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `s` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("s").toString()));
-        }
-        // validate the optional field `k`
-        if (jsonObj.get("k") != null && !jsonObj.get("k").isJsonNull()) {
-            KlineResponseK.validateJsonElement(jsonObj.get("k"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!KlineOffsetResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'KlineOffsetResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<KlineOffsetResponse> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(KlineOffsetResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<KlineOffsetResponse>() {
-                        @Override
-                        public void write(JsonWriter out, KlineOffsetResponse value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public KlineOffsetResponse read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of KlineOffsetResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of KlineOffsetResponse
-     * @throws IOException if the JSON string is invalid with respect to KlineOffsetResponse
-     */
-    public static KlineOffsetResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, KlineOffsetResponse.class);
-    }
-
-    /**
-     * Convert an instance of KlineOffsetResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

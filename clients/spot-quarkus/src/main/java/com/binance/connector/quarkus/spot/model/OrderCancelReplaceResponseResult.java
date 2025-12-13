@@ -12,53 +12,43 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderCancelReplaceResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderCancelReplaceResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_CANCEL_RESULT = "cancelResult";
 
-    @SerializedName(SERIALIZED_NAME_CANCEL_RESULT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CANCEL_RESULT)
+    
     private String cancelResult;
 
     public static final String SERIALIZED_NAME_NEW_ORDER_RESULT = "newOrderResult";
 
-    @SerializedName(SERIALIZED_NAME_NEW_ORDER_RESULT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_ORDER_RESULT)
+    
     private String newOrderResult;
 
     public static final String SERIALIZED_NAME_CANCEL_RESPONSE = "cancelResponse";
 
-    @SerializedName(SERIALIZED_NAME_CANCEL_RESPONSE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CANCEL_RESPONSE)
+    
     private OrderCancelReplaceResponseResultCancelResponse cancelResponse;
 
     public static final String SERIALIZED_NAME_NEW_ORDER_RESPONSE = "newOrderResponse";
 
-    @SerializedName(SERIALIZED_NAME_NEW_ORDER_RESPONSE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_ORDER_RESPONSE)
+    
     private OrderCancelReplaceResponseResultNewOrderResponse newOrderResponse;
 
     public OrderCancelReplaceResponseResult() {}
 
     public OrderCancelReplaceResponseResult cancelResult(
-            @jakarta.annotation.Nullable String cancelResult) {
+             String cancelResult) {
         this.cancelResult = cancelResult;
         return this;
     }
@@ -68,17 +58,17 @@ public class OrderCancelReplaceResponseResult extends BaseDTO {
      *
      * @return cancelResult
      */
-    @jakarta.annotation.Nullable
+    
     public String getCancelResult() {
         return cancelResult;
     }
 
-    public void setCancelResult(@jakarta.annotation.Nullable String cancelResult) {
+    public void setCancelResult( String cancelResult) {
         this.cancelResult = cancelResult;
     }
 
     public OrderCancelReplaceResponseResult newOrderResult(
-            @jakarta.annotation.Nullable String newOrderResult) {
+             String newOrderResult) {
         this.newOrderResult = newOrderResult;
         return this;
     }
@@ -88,17 +78,17 @@ public class OrderCancelReplaceResponseResult extends BaseDTO {
      *
      * @return newOrderResult
      */
-    @jakarta.annotation.Nullable
+    
     public String getNewOrderResult() {
         return newOrderResult;
     }
 
-    public void setNewOrderResult(@jakarta.annotation.Nullable String newOrderResult) {
+    public void setNewOrderResult( String newOrderResult) {
         this.newOrderResult = newOrderResult;
     }
 
     public OrderCancelReplaceResponseResult cancelResponse(
-            @jakarta.annotation.Nullable
+            
             OrderCancelReplaceResponseResultCancelResponse cancelResponse) {
         this.cancelResponse = cancelResponse;
         return this;
@@ -109,20 +99,18 @@ public class OrderCancelReplaceResponseResult extends BaseDTO {
      *
      * @return cancelResponse
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public OrderCancelReplaceResponseResultCancelResponse getCancelResponse() {
         return cancelResponse;
     }
 
     public void setCancelResponse(
-            @jakarta.annotation.Nullable
+            
             OrderCancelReplaceResponseResultCancelResponse cancelResponse) {
         this.cancelResponse = cancelResponse;
     }
 
     public OrderCancelReplaceResponseResult newOrderResponse(
-            @jakarta.annotation.Nullable
+            
             OrderCancelReplaceResponseResultNewOrderResponse newOrderResponse) {
         this.newOrderResponse = newOrderResponse;
         return this;
@@ -133,14 +121,14 @@ public class OrderCancelReplaceResponseResult extends BaseDTO {
      *
      * @return newOrderResponse
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public OrderCancelReplaceResponseResultNewOrderResponse getNewOrderResponse() {
         return newOrderResponse;
     }
 
     public void setNewOrderResponse(
-            @jakarta.annotation.Nullable
+            
             OrderCancelReplaceResponseResultNewOrderResponse newOrderResponse) {
         this.newOrderResponse = newOrderResponse;
     }
@@ -197,13 +185,13 @@ public class OrderCancelReplaceResponseResult extends BaseDTO {
         }
         OrderCancelReplaceResponseResultCancelResponse cancelResponseValue = getCancelResponse();
         if (cancelResponseValue != null) {
-            String cancelResponseValueAsString = JSON.getGson().toJson(cancelResponseValue);
+            String cancelResponseValueAsString = Json.encode(cancelResponseValue);
             valMap.put("cancelResponse", cancelResponseValueAsString);
         }
         OrderCancelReplaceResponseResultNewOrderResponse newOrderResponseValue =
                 getNewOrderResponse();
         if (newOrderResponseValue != null) {
-            String newOrderResponseValueAsString = JSON.getGson().toJson(newOrderResponseValue);
+            String newOrderResponseValueAsString = Json.encode(newOrderResponseValue);
             valMap.put("newOrderResponse", newOrderResponseValueAsString);
         }
 
@@ -251,134 +239,5 @@ public class OrderCancelReplaceResponseResult extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("cancelResult");
-        openapiFields.add("newOrderResult");
-        openapiFields.add("cancelResponse");
-        openapiFields.add("newOrderResponse");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OrderCancelReplaceResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderCancelReplaceResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderCancelReplaceResponseResult is"
-                                        + " not found in the empty JSON string",
-                                OrderCancelReplaceResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderCancelReplaceResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `OrderCancelReplaceResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("cancelResult") != null && !jsonObj.get("cancelResult").isJsonNull())
-                && !jsonObj.get("cancelResult").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `cancelResult` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("cancelResult").toString()));
-        }
-        if ((jsonObj.get("newOrderResult") != null && !jsonObj.get("newOrderResult").isJsonNull())
-                && !jsonObj.get("newOrderResult").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `newOrderResult` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("newOrderResult").toString()));
-        }
-        // validate the optional field `cancelResponse`
-        if (jsonObj.get("cancelResponse") != null && !jsonObj.get("cancelResponse").isJsonNull()) {
-            OrderCancelReplaceResponseResultCancelResponse.validateJsonElement(
-                    jsonObj.get("cancelResponse"));
-        }
-        // validate the optional field `newOrderResponse`
-        if (jsonObj.get("newOrderResponse") != null
-                && !jsonObj.get("newOrderResponse").isJsonNull()) {
-            OrderCancelReplaceResponseResultNewOrderResponse.validateJsonElement(
-                    jsonObj.get("newOrderResponse"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderCancelReplaceResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderCancelReplaceResponseResult' and
-                // its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderCancelReplaceResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(OrderCancelReplaceResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderCancelReplaceResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, OrderCancelReplaceResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderCancelReplaceResponseResult read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderCancelReplaceResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderCancelReplaceResponseResult
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OrderCancelReplaceResponseResult
-     */
-    public static OrderCancelReplaceResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderCancelReplaceResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of OrderCancelReplaceResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

@@ -12,45 +12,35 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** AvgPriceResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class AvgPriceResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_MINS = "mins";
 
-    @SerializedName(SERIALIZED_NAME_MINS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MINS)
+    
     private Long mins;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private String price;
 
     public static final String SERIALIZED_NAME_CLOSE_TIME = "closeTime";
 
-    @SerializedName(SERIALIZED_NAME_CLOSE_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CLOSE_TIME)
+    
     private Long closeTime;
 
     public AvgPriceResponseResult() {}
 
-    public AvgPriceResponseResult mins(@jakarta.annotation.Nullable Long mins) {
+    public AvgPriceResponseResult mins( Long mins) {
         this.mins = mins;
         return this;
     }
@@ -60,16 +50,16 @@ public class AvgPriceResponseResult extends BaseDTO {
      *
      * @return mins
      */
-    @jakarta.annotation.Nullable
+    
     public Long getMins() {
         return mins;
     }
 
-    public void setMins(@jakarta.annotation.Nullable Long mins) {
+    public void setMins( Long mins) {
         this.mins = mins;
     }
 
-    public AvgPriceResponseResult price(@jakarta.annotation.Nullable String price) {
+    public AvgPriceResponseResult price( String price) {
         this.price = price;
         return this;
     }
@@ -79,16 +69,16 @@ public class AvgPriceResponseResult extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
+    
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable String price) {
+    public void setPrice( String price) {
         this.price = price;
     }
 
-    public AvgPriceResponseResult closeTime(@jakarta.annotation.Nullable Long closeTime) {
+    public AvgPriceResponseResult closeTime( Long closeTime) {
         this.closeTime = closeTime;
         return this;
     }
@@ -98,12 +88,12 @@ public class AvgPriceResponseResult extends BaseDTO {
      *
      * @return closeTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getCloseTime() {
         return closeTime;
     }
 
-    public void setCloseTime(@jakarta.annotation.Nullable Long closeTime) {
+    public void setCloseTime( Long closeTime) {
         this.closeTime = closeTime;
     }
 
@@ -124,17 +114,6 @@ public class AvgPriceResponseResult extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(mins, price, closeTime);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class AvgPriceResponseResult {\n");
-        sb.append("		mins: ").append(toIndentedString(mins)).append("\n");
-        sb.append("		price: ").append(toIndentedString(price)).append("\n");
-        sb.append("		closeTime: ").append(toIndentedString(closeTime)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -188,118 +167,4 @@ public class AvgPriceResponseResult extends BaseDTO {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("mins");
-        openapiFields.add("price");
-        openapiFields.add("closeTime");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to AvgPriceResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!AvgPriceResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in AvgPriceResponseResult is not found in"
-                                        + " the empty JSON string",
-                                AvgPriceResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!AvgPriceResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `AvgPriceResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("price") != null && !jsonObj.get("price").isJsonNull())
-                && !jsonObj.get("price").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `price` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("price").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!AvgPriceResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'AvgPriceResponseResult' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<AvgPriceResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(AvgPriceResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<AvgPriceResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, AvgPriceResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public AvgPriceResponseResult read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of AvgPriceResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of AvgPriceResponseResult
-     * @throws IOException if the JSON string is invalid with respect to AvgPriceResponseResult
-     */
-    public static AvgPriceResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, AvgPriceResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of AvgPriceResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

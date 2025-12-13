@@ -12,62 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets pegOffsetType */
-@JsonAdapter(PegOffsetType.Adapter.class)
 public enum PegOffsetType {
-    PRICE_LEVEL("PRICE_LEVEL"),
-
-    NON_REPRESENTABLE("NON_REPRESENTABLE");
-
-    private String value;
-
-    PegOffsetType(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static PegOffsetType fromValue(String value) {
-        for (PegOffsetType b : PegOffsetType.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PegOffsetType> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final PegOffsetType enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public PegOffsetType read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return PegOffsetType.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        PegOffsetType.fromValue(value);
-    }
+    PRICE_LEVEL,NON_REPRESENTABLE
 }

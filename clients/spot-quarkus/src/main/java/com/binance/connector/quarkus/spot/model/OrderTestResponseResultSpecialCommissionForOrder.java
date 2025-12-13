@@ -12,40 +12,30 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderTestResponseResultSpecialCommissionForOrder */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderTestResponseResultSpecialCommissionForOrder extends BaseDTO {
     public static final String SERIALIZED_NAME_MAKER = "maker";
 
-    @SerializedName(SERIALIZED_NAME_MAKER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAKER)
+    
     private String maker;
 
     public static final String SERIALIZED_NAME_TAKER = "taker";
 
-    @SerializedName(SERIALIZED_NAME_TAKER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TAKER)
+    
     private String taker;
 
     public OrderTestResponseResultSpecialCommissionForOrder() {}
 
     public OrderTestResponseResultSpecialCommissionForOrder maker(
-            @jakarta.annotation.Nullable String maker) {
+             String maker) {
         this.maker = maker;
         return this;
     }
@@ -55,17 +45,17 @@ public class OrderTestResponseResultSpecialCommissionForOrder extends BaseDTO {
      *
      * @return maker
      */
-    @jakarta.annotation.Nullable
+    
     public String getMaker() {
         return maker;
     }
 
-    public void setMaker(@jakarta.annotation.Nullable String maker) {
+    public void setMaker( String maker) {
         this.maker = maker;
     }
 
     public OrderTestResponseResultSpecialCommissionForOrder taker(
-            @jakarta.annotation.Nullable String taker) {
+             String taker) {
         this.taker = taker;
         return this;
     }
@@ -75,12 +65,12 @@ public class OrderTestResponseResultSpecialCommissionForOrder extends BaseDTO {
      *
      * @return taker
      */
-    @jakarta.annotation.Nullable
+    
     public String getTaker() {
         return taker;
     }
 
-    public void setTaker(@jakarta.annotation.Nullable String taker) {
+    public void setTaker( String taker) {
         this.taker = taker;
     }
 
@@ -168,130 +158,4 @@ public class OrderTestResponseResultSpecialCommissionForOrder extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("maker");
-        openapiFields.add("taker");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OrderTestResponseResultSpecialCommissionForOrder
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderTestResponseResultSpecialCommissionForOrder.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in"
-                                        + " OrderTestResponseResultSpecialCommissionForOrder is not"
-                                        + " found in the empty JSON string",
-                                OrderTestResponseResultSpecialCommissionForOrder
-                                        .openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderTestResponseResultSpecialCommissionForOrder.openapiFields.contains(
-                    entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderTestResponseResultSpecialCommissionForOrder`"
-                                        + " properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("maker") != null && !jsonObj.get("maker").isJsonNull())
-                && !jsonObj.get("maker").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `maker` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("maker").toString()));
-        }
-        if ((jsonObj.get("taker") != null && !jsonObj.get("taker").isJsonNull())
-                && !jsonObj.get("taker").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `taker` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("taker").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderTestResponseResultSpecialCommissionForOrder.class.isAssignableFrom(
-                    type.getRawType())) {
-                return null; // this class only serializes
-                // 'OrderTestResponseResultSpecialCommissionForOrder' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderTestResponseResultSpecialCommissionForOrder> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this,
-                            TypeToken.get(OrderTestResponseResultSpecialCommissionForOrder.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderTestResponseResultSpecialCommissionForOrder>() {
-                        @Override
-                        public void write(
-                                JsonWriter out,
-                                OrderTestResponseResultSpecialCommissionForOrder value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderTestResponseResultSpecialCommissionForOrder read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderTestResponseResultSpecialCommissionForOrder given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderTestResponseResultSpecialCommissionForOrder
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OrderTestResponseResultSpecialCommissionForOrder
-     */
-    public static OrderTestResponseResultSpecialCommissionForOrder fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson()
-                .fromJson(jsonString, OrderTestResponseResultSpecialCommissionForOrder.class);
-    }
-
-    /**
-     * Convert an instance of OrderTestResponseResultSpecialCommissionForOrder to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

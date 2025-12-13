@@ -12,34 +12,24 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** UserDataStreamStartResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class UserDataStreamStartResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_LISTEN_KEY = "listenKey";
 
-    @SerializedName(SERIALIZED_NAME_LISTEN_KEY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LISTEN_KEY)
+    
     private String listenKey;
 
     public UserDataStreamStartResponseResult() {}
 
     public UserDataStreamStartResponseResult listenKey(
-            @jakarta.annotation.Nullable String listenKey) {
+             String listenKey) {
         this.listenKey = listenKey;
         return this;
     }
@@ -49,12 +39,12 @@ public class UserDataStreamStartResponseResult extends BaseDTO {
      *
      * @return listenKey
      */
-    @jakarta.annotation.Nullable
+    
     public String getListenKey() {
         return listenKey;
     }
 
-    public void setListenKey(@jakarta.annotation.Nullable String listenKey) {
+    public void setListenKey( String listenKey) {
         this.listenKey = listenKey;
     }
 
@@ -129,111 +119,4 @@ public class UserDataStreamStartResponseResult extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("listenKey");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     UserDataStreamStartResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!UserDataStreamStartResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in UserDataStreamStartResponseResult is"
-                                        + " not found in the empty JSON string",
-                                UserDataStreamStartResponseResult.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!UserDataStreamStartResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `UserDataStreamStartResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("listenKey") != null && !jsonObj.get("listenKey").isJsonNull())
-                && !jsonObj.get("listenKey").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `listenKey` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("listenKey").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!UserDataStreamStartResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'UserDataStreamStartResponseResult' and
-                // its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<UserDataStreamStartResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(UserDataStreamStartResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<UserDataStreamStartResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, UserDataStreamStartResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public UserDataStreamStartResponseResult read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of UserDataStreamStartResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of UserDataStreamStartResponseResult
-     * @throws IOException if the JSON string is invalid with respect to
-     *     UserDataStreamStartResponseResult
-     */
-    public static UserDataStreamStartResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, UserDataStreamStartResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of UserDataStreamStartResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

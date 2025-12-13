@@ -12,55 +12,45 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderTestResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderTestResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_STANDARD_COMMISSION_FOR_ORDER =
             "standardCommissionForOrder";
 
-    @SerializedName(SERIALIZED_NAME_STANDARD_COMMISSION_FOR_ORDER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STANDARD_COMMISSION_FOR_ORDER)
+    
     private OrderTestResponseResultStandardCommissionForOrder standardCommissionForOrder;
 
     public static final String SERIALIZED_NAME_SPECIAL_COMMISSION_FOR_ORDER =
             "specialCommissionForOrder";
 
-    @SerializedName(SERIALIZED_NAME_SPECIAL_COMMISSION_FOR_ORDER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SPECIAL_COMMISSION_FOR_ORDER)
+    
     private OrderTestResponseResultSpecialCommissionForOrder specialCommissionForOrder;
 
     public static final String SERIALIZED_NAME_TAX_COMMISSION_FOR_ORDER = "taxCommissionForOrder";
 
-    @SerializedName(SERIALIZED_NAME_TAX_COMMISSION_FOR_ORDER)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TAX_COMMISSION_FOR_ORDER)
+    
     private OrderTestResponseResultStandardCommissionForOrder taxCommissionForOrder;
 
     public static final String SERIALIZED_NAME_DISCOUNT = "discount";
 
-    @SerializedName(SERIALIZED_NAME_DISCOUNT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_DISCOUNT)
+    
     private OrderTestResponseResultDiscount discount;
 
     public OrderTestResponseResult() {}
 
     public OrderTestResponseResult standardCommissionForOrder(
-            @jakarta.annotation.Nullable
+            
             OrderTestResponseResultStandardCommissionForOrder standardCommissionForOrder) {
         this.standardCommissionForOrder = standardCommissionForOrder;
         return this;
@@ -71,20 +61,20 @@ public class OrderTestResponseResult extends BaseDTO {
      *
      * @return standardCommissionForOrder
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public OrderTestResponseResultStandardCommissionForOrder getStandardCommissionForOrder() {
         return standardCommissionForOrder;
     }
 
     public void setStandardCommissionForOrder(
-            @jakarta.annotation.Nullable
+            
             OrderTestResponseResultStandardCommissionForOrder standardCommissionForOrder) {
         this.standardCommissionForOrder = standardCommissionForOrder;
     }
 
     public OrderTestResponseResult specialCommissionForOrder(
-            @jakarta.annotation.Nullable
+            
             OrderTestResponseResultSpecialCommissionForOrder specialCommissionForOrder) {
         this.specialCommissionForOrder = specialCommissionForOrder;
         return this;
@@ -95,20 +85,20 @@ public class OrderTestResponseResult extends BaseDTO {
      *
      * @return specialCommissionForOrder
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public OrderTestResponseResultSpecialCommissionForOrder getSpecialCommissionForOrder() {
         return specialCommissionForOrder;
     }
 
     public void setSpecialCommissionForOrder(
-            @jakarta.annotation.Nullable
+            
             OrderTestResponseResultSpecialCommissionForOrder specialCommissionForOrder) {
         this.specialCommissionForOrder = specialCommissionForOrder;
     }
 
     public OrderTestResponseResult taxCommissionForOrder(
-            @jakarta.annotation.Nullable
+            
             OrderTestResponseResultStandardCommissionForOrder taxCommissionForOrder) {
         this.taxCommissionForOrder = taxCommissionForOrder;
         return this;
@@ -119,20 +109,20 @@ public class OrderTestResponseResult extends BaseDTO {
      *
      * @return taxCommissionForOrder
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public OrderTestResponseResultStandardCommissionForOrder getTaxCommissionForOrder() {
         return taxCommissionForOrder;
     }
 
     public void setTaxCommissionForOrder(
-            @jakarta.annotation.Nullable
+            
             OrderTestResponseResultStandardCommissionForOrder taxCommissionForOrder) {
         this.taxCommissionForOrder = taxCommissionForOrder;
     }
 
     public OrderTestResponseResult discount(
-            @jakarta.annotation.Nullable OrderTestResponseResultDiscount discount) {
+             OrderTestResponseResultDiscount discount) {
         this.discount = discount;
         return this;
     }
@@ -142,13 +132,13 @@ public class OrderTestResponseResult extends BaseDTO {
      *
      * @return discount
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public OrderTestResponseResultDiscount getDiscount() {
         return discount;
     }
 
-    public void setDiscount(@jakarta.annotation.Nullable OrderTestResponseResultDiscount discount) {
+    public void setDiscount( OrderTestResponseResultDiscount discount) {
         this.discount = discount;
     }
 
@@ -207,26 +197,26 @@ public class OrderTestResponseResult extends BaseDTO {
                 getStandardCommissionForOrder();
         if (standardCommissionForOrderValue != null) {
             String standardCommissionForOrderValueAsString =
-                    JSON.getGson().toJson(standardCommissionForOrderValue);
+                    Json.encode(standardCommissionForOrderValue);
             valMap.put("standardCommissionForOrder", standardCommissionForOrderValueAsString);
         }
         OrderTestResponseResultSpecialCommissionForOrder specialCommissionForOrderValue =
                 getSpecialCommissionForOrder();
         if (specialCommissionForOrderValue != null) {
             String specialCommissionForOrderValueAsString =
-                    JSON.getGson().toJson(specialCommissionForOrderValue);
+                    Json.encode(specialCommissionForOrderValue);
             valMap.put("specialCommissionForOrder", specialCommissionForOrderValueAsString);
         }
         OrderTestResponseResultStandardCommissionForOrder taxCommissionForOrderValue =
                 getTaxCommissionForOrder();
         if (taxCommissionForOrderValue != null) {
             String taxCommissionForOrderValueAsString =
-                    JSON.getGson().toJson(taxCommissionForOrderValue);
+                    Json.encode(taxCommissionForOrderValue);
             valMap.put("taxCommissionForOrder", taxCommissionForOrderValueAsString);
         }
         OrderTestResponseResultDiscount discountValue = getDiscount();
         if (discountValue != null) {
-            String discountValueAsString = JSON.getGson().toJson(discountValue);
+            String discountValueAsString = Json.encode(discountValue);
             valMap.put("discount", discountValueAsString);
         }
 
@@ -276,123 +266,4 @@ public class OrderTestResponseResult extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("standardCommissionForOrder");
-        openapiFields.add("specialCommissionForOrder");
-        openapiFields.add("taxCommissionForOrder");
-        openapiFields.add("discount");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to OrderTestResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderTestResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderTestResponseResult is not found"
-                                        + " in the empty JSON string",
-                                OrderTestResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderTestResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderTestResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        // validate the optional field `standardCommissionForOrder`
-        if (jsonObj.get("standardCommissionForOrder") != null
-                && !jsonObj.get("standardCommissionForOrder").isJsonNull()) {
-            OrderTestResponseResultStandardCommissionForOrder.validateJsonElement(
-                    jsonObj.get("standardCommissionForOrder"));
-        }
-        // validate the optional field `specialCommissionForOrder`
-        if (jsonObj.get("specialCommissionForOrder") != null
-                && !jsonObj.get("specialCommissionForOrder").isJsonNull()) {
-            OrderTestResponseResultSpecialCommissionForOrder.validateJsonElement(
-                    jsonObj.get("specialCommissionForOrder"));
-        }
-        // validate the optional field `taxCommissionForOrder`
-        if (jsonObj.get("taxCommissionForOrder") != null
-                && !jsonObj.get("taxCommissionForOrder").isJsonNull()) {
-            OrderTestResponseResultStandardCommissionForOrder.validateJsonElement(
-                    jsonObj.get("taxCommissionForOrder"));
-        }
-        // validate the optional field `discount`
-        if (jsonObj.get("discount") != null && !jsonObj.get("discount").isJsonNull()) {
-            OrderTestResponseResultDiscount.validateJsonElement(jsonObj.get("discount"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderTestResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderTestResponseResult' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderTestResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(OrderTestResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderTestResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, OrderTestResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderTestResponseResult read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderTestResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderTestResponseResult
-     * @throws IOException if the JSON string is invalid with respect to OrderTestResponseResult
-     */
-    public static OrderTestResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderTestResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of OrderTestResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

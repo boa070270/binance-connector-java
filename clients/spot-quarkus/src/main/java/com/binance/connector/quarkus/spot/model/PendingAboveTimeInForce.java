@@ -12,64 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets pendingAboveTimeInForce */
-@JsonAdapter(PendingAboveTimeInForce.Adapter.class)
 public enum PendingAboveTimeInForce {
-    GTC("GTC"),
-
-    IOC("IOC"),
-
-    FOK("FOK");
-
-    private String value;
-
-    PendingAboveTimeInForce(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static PendingAboveTimeInForce fromValue(String value) {
-        for (PendingAboveTimeInForce b : PendingAboveTimeInForce.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PendingAboveTimeInForce> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final PendingAboveTimeInForce enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public PendingAboveTimeInForce read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return PendingAboveTimeInForce.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        PendingAboveTimeInForce.fromValue(value);
-    }
+    GTC,IOC,FOK
 }

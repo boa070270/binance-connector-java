@@ -13,58 +13,47 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** AllOrderListsRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class AllOrderListsRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_FROM_ID = "fromId";
 
-    @SerializedName(SERIALIZED_NAME_FROM_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FROM_ID)
+    
     private Integer fromId;
 
     public static final String SERIALIZED_NAME_START_TIME = "startTime";
 
-    @SerializedName(SERIALIZED_NAME_START_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_START_TIME)
+    
     private Long startTime;
 
     public static final String SERIALIZED_NAME_END_TIME = "endTime";
 
-    @SerializedName(SERIALIZED_NAME_END_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_END_TIME)
+    
     private Long endTime;
 
     public static final String SERIALIZED_NAME_LIMIT = "limit";
 
-    @SerializedName(SERIALIZED_NAME_LIMIT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIMIT)
+    
     private Integer limit;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
-    @SerializedName(SERIALIZED_NAME_RECV_WINDOW)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
+    
     private Double recvWindow;
 
     public AllOrderListsRequest() {}
 
-    public AllOrderListsRequest fromId(@jakarta.annotation.Nullable Integer fromId) {
+    public AllOrderListsRequest fromId( Integer fromId) {
         this.fromId = fromId;
         return this;
     }
@@ -74,16 +63,16 @@ public class AllOrderListsRequest extends BaseDTO {
      *
      * @return fromId
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getFromId() {
         return fromId;
     }
 
-    public void setFromId(@jakarta.annotation.Nullable Integer fromId) {
+    public void setFromId( Integer fromId) {
         this.fromId = fromId;
     }
 
-    public AllOrderListsRequest startTime(@jakarta.annotation.Nullable Long startTime) {
+    public AllOrderListsRequest startTime( Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -93,16 +82,16 @@ public class AllOrderListsRequest extends BaseDTO {
      *
      * @return startTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(@jakarta.annotation.Nullable Long startTime) {
+    public void setStartTime( Long startTime) {
         this.startTime = startTime;
     }
 
-    public AllOrderListsRequest endTime(@jakarta.annotation.Nullable Long endTime) {
+    public AllOrderListsRequest endTime( Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -112,16 +101,16 @@ public class AllOrderListsRequest extends BaseDTO {
      *
      * @return endTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(@jakarta.annotation.Nullable Long endTime) {
+    public void setEndTime( Long endTime) {
         this.endTime = endTime;
     }
 
-    public AllOrderListsRequest limit(@jakarta.annotation.Nullable Integer limit) {
+    public AllOrderListsRequest limit( Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -131,16 +120,16 @@ public class AllOrderListsRequest extends BaseDTO {
      *
      * @return limit
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(@jakarta.annotation.Nullable Integer limit) {
+    public void setLimit( Integer limit) {
         this.limit = limit;
     }
 
-    public AllOrderListsRequest recvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public AllOrderListsRequest recvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -150,13 +139,11 @@ public class AllOrderListsRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public Double getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public void setRecvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -179,19 +166,6 @@ public class AllOrderListsRequest extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(fromId, startTime, endTime, limit, recvWindow);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class AllOrderListsRequest {\n");
-        sb.append("		fromId: ").append(toIndentedString(fromId)).append("\n");
-        sb.append("		startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("		endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("		limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("		recvWindow: ").append(toIndentedString(recvWindow)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -232,144 +206,8 @@ public class AllOrderListsRequest extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object fromIdValue = getFromId();
-        if (fromIdValue != null) {
-            valMap.put("fromId", fromIdValue);
-        }
-        Object startTimeValue = getStartTime();
-        if (startTimeValue != null) {
-            valMap.put("startTime", startTimeValue);
-        }
-        Object endTimeValue = getEndTime();
-        if (endTimeValue != null) {
-            valMap.put("endTime", endTimeValue);
-        }
-        Object limitValue = getLimit();
-        if (limitValue != null) {
-            valMap.put("limit", limitValue);
-        }
-        Object recvWindowValue = getRecvWindow();
-        if (recvWindowValue != null) {
-            valMap.put("recvWindow", recvWindowValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("fromId");
-        openapiFields.add("startTime");
-        openapiFields.add("endTime");
-        openapiFields.add("limit");
-        openapiFields.add("recvWindow");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to AllOrderListsRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!AllOrderListsRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in AllOrderListsRequest is not found in"
-                                        + " the empty JSON string",
-                                AllOrderListsRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!AllOrderListsRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `AllOrderListsRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!AllOrderListsRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'AllOrderListsRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<AllOrderListsRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(AllOrderListsRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<AllOrderListsRequest>() {
-                        @Override
-                        public void write(JsonWriter out, AllOrderListsRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public AllOrderListsRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of AllOrderListsRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of AllOrderListsRequest
-     * @throws IOException if the JSON string is invalid with respect to AllOrderListsRequest
-     */
-    public static AllOrderListsRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, AllOrderListsRequest.class);
-    }
-
-    /**
-     * Convert an instance of AllOrderListsRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

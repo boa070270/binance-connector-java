@@ -12,51 +12,41 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** MaxAssetFilter */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class MaxAssetFilter extends BaseDTO {
     public static final String SERIALIZED_NAME_FILTER_TYPE = "filterType";
 
-    @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FILTER_TYPE)
+    
     private String filterType;
 
     public static final String SERIALIZED_NAME_QTY_EXPONENT = "qtyExponent";
 
-    @SerializedName(SERIALIZED_NAME_QTY_EXPONENT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QTY_EXPONENT)
+    
     private Integer qtyExponent;
 
     public static final String SERIALIZED_NAME_LIMIT = "limit";
 
-    @SerializedName(SERIALIZED_NAME_LIMIT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIMIT)
+    
     private String limit;
 
     public static final String SERIALIZED_NAME_ASSET = "asset";
 
-    @SerializedName(SERIALIZED_NAME_ASSET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASSET)
+    
     private String asset;
 
     public MaxAssetFilter() {}
 
-    public MaxAssetFilter filterType(@jakarta.annotation.Nullable String filterType) {
+    public MaxAssetFilter filterType( String filterType) {
         this.filterType = filterType;
         return this;
     }
@@ -66,16 +56,16 @@ public class MaxAssetFilter extends BaseDTO {
      *
      * @return filterType
      */
-    @jakarta.annotation.Nullable
+    
     public String getFilterType() {
         return filterType;
     }
 
-    public void setFilterType(@jakarta.annotation.Nullable String filterType) {
+    public void setFilterType( String filterType) {
         this.filterType = filterType;
     }
 
-    public MaxAssetFilter qtyExponent(@jakarta.annotation.Nullable Integer qtyExponent) {
+    public MaxAssetFilter qtyExponent( Integer qtyExponent) {
         this.qtyExponent = qtyExponent;
         return this;
     }
@@ -85,16 +75,16 @@ public class MaxAssetFilter extends BaseDTO {
      *
      * @return qtyExponent
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getQtyExponent() {
         return qtyExponent;
     }
 
-    public void setQtyExponent(@jakarta.annotation.Nullable Integer qtyExponent) {
+    public void setQtyExponent( Integer qtyExponent) {
         this.qtyExponent = qtyExponent;
     }
 
-    public MaxAssetFilter limit(@jakarta.annotation.Nullable String limit) {
+    public MaxAssetFilter limit( String limit) {
         this.limit = limit;
         return this;
     }
@@ -104,16 +94,16 @@ public class MaxAssetFilter extends BaseDTO {
      *
      * @return limit
      */
-    @jakarta.annotation.Nullable
+    
     public String getLimit() {
         return limit;
     }
 
-    public void setLimit(@jakarta.annotation.Nullable String limit) {
+    public void setLimit( String limit) {
         this.limit = limit;
     }
 
-    public MaxAssetFilter asset(@jakarta.annotation.Nullable String asset) {
+    public MaxAssetFilter asset( String asset) {
         this.asset = asset;
         return this;
     }
@@ -123,12 +113,12 @@ public class MaxAssetFilter extends BaseDTO {
      *
      * @return asset
      */
-    @jakarta.annotation.Nullable
+    
     public String getAsset() {
         return asset;
     }
 
-    public void setAsset(@jakarta.annotation.Nullable String asset) {
+    public void setAsset( String asset) {
         this.asset = asset;
     }
 
@@ -150,18 +140,6 @@ public class MaxAssetFilter extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(filterType, qtyExponent, limit, asset);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class MaxAssetFilter {\n");
-        sb.append("		filterType: ").append(toIndentedString(filterType)).append("\n");
-        sb.append("		qtyExponent: ").append(toIndentedString(qtyExponent)).append("\n");
-        sb.append("		limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("		asset: ").append(toIndentedString(asset)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -196,162 +174,8 @@ public class MaxAssetFilter extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object filterTypeValue = getFilterType();
-        if (filterTypeValue != null) {
-            valMap.put("filterType", filterTypeValue);
-        }
-        Object qtyExponentValue = getQtyExponent();
-        if (qtyExponentValue != null) {
-            valMap.put("qtyExponent", qtyExponentValue);
-        }
-        Object limitValue = getLimit();
-        if (limitValue != null) {
-            valMap.put("limit", limitValue);
-        }
-        Object assetValue = getAsset();
-        if (assetValue != null) {
-            valMap.put("asset", assetValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("filterType");
-        openapiFields.add("qtyExponent");
-        openapiFields.add("limit");
-        openapiFields.add("asset");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to MaxAssetFilter
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!MaxAssetFilter.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in MaxAssetFilter is not found in the"
-                                        + " empty JSON string",
-                                MaxAssetFilter.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!MaxAssetFilter.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `MaxAssetFilter` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("filterType") != null && !jsonObj.get("filterType").isJsonNull())
-                && !jsonObj.get("filterType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `filterType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("filterType").toString()));
-        }
-        if ((jsonObj.get("limit") != null && !jsonObj.get("limit").isJsonNull())
-                && !jsonObj.get("limit").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `limit` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("limit").toString()));
-        }
-        if ((jsonObj.get("asset") != null && !jsonObj.get("asset").isJsonNull())
-                && !jsonObj.get("asset").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `asset` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("asset").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!MaxAssetFilter.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'MaxAssetFilter' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<MaxAssetFilter> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(MaxAssetFilter.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<MaxAssetFilter>() {
-                        @Override
-                        public void write(JsonWriter out, MaxAssetFilter value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public MaxAssetFilter read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of MaxAssetFilter given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of MaxAssetFilter
-     * @throws IOException if the JSON string is invalid with respect to MaxAssetFilter
-     */
-    public static MaxAssetFilter fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, MaxAssetFilter.class);
-    }
-
-    /**
-     * Convert an instance of MaxAssetFilter to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

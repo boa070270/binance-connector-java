@@ -12,40 +12,30 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** ExchangeInfoResponseResultSorsInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class ExchangeInfoResponseResultSorsInner extends BaseDTO {
     public static final String SERIALIZED_NAME_BASE_ASSET = "baseAsset";
 
-    @SerializedName(SERIALIZED_NAME_BASE_ASSET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BASE_ASSET)
+    
     private String baseAsset;
 
     public static final String SERIALIZED_NAME_SYMBOLS = "symbols";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOLS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOLS)
+    
     private List<String> symbols;
 
     public ExchangeInfoResponseResultSorsInner() {}
 
     public ExchangeInfoResponseResultSorsInner baseAsset(
-            @jakarta.annotation.Nullable String baseAsset) {
+             String baseAsset) {
         this.baseAsset = baseAsset;
         return this;
     }
@@ -55,17 +45,17 @@ public class ExchangeInfoResponseResultSorsInner extends BaseDTO {
      *
      * @return baseAsset
      */
-    @jakarta.annotation.Nullable
+    
     public String getBaseAsset() {
         return baseAsset;
     }
 
-    public void setBaseAsset(@jakarta.annotation.Nullable String baseAsset) {
+    public void setBaseAsset( String baseAsset) {
         this.baseAsset = baseAsset;
     }
 
     public ExchangeInfoResponseResultSorsInner symbols(
-            @jakarta.annotation.Nullable List<String> symbols) {
+             List<String> symbols) {
         this.symbols = symbols;
         return this;
     }
@@ -83,12 +73,12 @@ public class ExchangeInfoResponseResultSorsInner extends BaseDTO {
      *
      * @return symbols
      */
-    @jakarta.annotation.Nullable
+    
     public List<String> getSymbols() {
         return symbols;
     }
 
-    public void setSymbols(@jakarta.annotation.Nullable List<String> symbols) {
+    public void setSymbols( List<String> symbols) {
         this.symbols = symbols;
     }
 
@@ -109,16 +99,6 @@ public class ExchangeInfoResponseResultSorsInner extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(baseAsset, symbols);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class ExchangeInfoResponseResultSorsInner {\n");
-        sb.append("		baseAsset: ").append(toIndentedString(baseAsset)).append("\n");
-        sb.append("		symbols: ").append(toIndentedString(symbols)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -143,154 +123,8 @@ public class ExchangeInfoResponseResultSorsInner extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object baseAssetValue = getBaseAsset();
-        if (baseAssetValue != null) {
-            valMap.put("baseAsset", baseAssetValue);
-        }
-        Object symbolsValue = getSymbols();
-        if (symbolsValue != null) {
-            valMap.put("symbols", symbolsValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("baseAsset");
-        openapiFields.add("symbols");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     ExchangeInfoResponseResultSorsInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!ExchangeInfoResponseResultSorsInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in ExchangeInfoResponseResultSorsInner is"
-                                        + " not found in the empty JSON string",
-                                ExchangeInfoResponseResultSorsInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!ExchangeInfoResponseResultSorsInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `ExchangeInfoResponseResultSorsInner` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("baseAsset") != null && !jsonObj.get("baseAsset").isJsonNull())
-                && !jsonObj.get("baseAsset").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `baseAsset` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("baseAsset").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("symbols") != null
-                && !jsonObj.get("symbols").isJsonNull()
-                && !jsonObj.get("symbols").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbols` to be an array in the JSON string but got"
-                                    + " `%s`",
-                            jsonObj.get("symbols").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!ExchangeInfoResponseResultSorsInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'ExchangeInfoResponseResultSorsInner' and
-                // its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<ExchangeInfoResponseResultSorsInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(ExchangeInfoResponseResultSorsInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<ExchangeInfoResponseResultSorsInner>() {
-                        @Override
-                        public void write(JsonWriter out, ExchangeInfoResponseResultSorsInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public ExchangeInfoResponseResultSorsInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of ExchangeInfoResponseResultSorsInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of ExchangeInfoResponseResultSorsInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     ExchangeInfoResponseResultSorsInner
-     */
-    public static ExchangeInfoResponseResultSorsInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson().fromJson(jsonString, ExchangeInfoResponseResultSorsInner.class);
-    }
-
-    /**
-     * Convert an instance of ExchangeInfoResponseResultSorsInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

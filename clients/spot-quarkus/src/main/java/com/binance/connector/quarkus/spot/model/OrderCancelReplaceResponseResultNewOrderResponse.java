@@ -12,119 +12,109 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderCancelReplaceResponseResultNewOrderResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_ID)
+    
     private Long orderId;
 
     public static final String SERIALIZED_NAME_ORDER_LIST_ID = "orderListId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_LIST_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_LIST_ID)
+    
     private Long orderListId;
 
     public static final String SERIALIZED_NAME_CLIENT_ORDER_ID = "clientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CLIENT_ORDER_ID)
+    
     private String clientOrderId;
 
     public static final String SERIALIZED_NAME_TRANSACT_TIME = "transactTime";
 
-    @SerializedName(SERIALIZED_NAME_TRANSACT_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TRANSACT_TIME)
+    
     private Long transactTime;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private String price;
 
     public static final String SERIALIZED_NAME_ORIG_QTY = "origQty";
 
-    @SerializedName(SERIALIZED_NAME_ORIG_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORIG_QTY)
+    
     private String origQty;
 
     public static final String SERIALIZED_NAME_EXECUTED_QTY = "executedQty";
 
-    @SerializedName(SERIALIZED_NAME_EXECUTED_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_EXECUTED_QTY)
+    
     private String executedQty;
 
     public static final String SERIALIZED_NAME_ORIG_QUOTE_ORDER_QTY = "origQuoteOrderQty";
 
-    @SerializedName(SERIALIZED_NAME_ORIG_QUOTE_ORDER_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORIG_QUOTE_ORDER_QTY)
+    
     private String origQuoteOrderQty;
 
     public static final String SERIALIZED_NAME_CUMMULATIVE_QUOTE_QTY = "cummulativeQuoteQty";
 
-    @SerializedName(SERIALIZED_NAME_CUMMULATIVE_QUOTE_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CUMMULATIVE_QUOTE_QTY)
+    
     private String cummulativeQuoteQty;
 
     public static final String SERIALIZED_NAME_STATUS = "status";
 
-    @SerializedName(SERIALIZED_NAME_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STATUS)
+    
     private String status;
 
     public static final String SERIALIZED_NAME_TIME_IN_FORCE = "timeInForce";
 
-    @SerializedName(SERIALIZED_NAME_TIME_IN_FORCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TIME_IN_FORCE)
+    
     private String timeInForce;
 
     public static final String SERIALIZED_NAME_TYPE = "type";
 
-    @SerializedName(SERIALIZED_NAME_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TYPE)
+    
     private String type;
 
     public static final String SERIALIZED_NAME_SIDE = "side";
 
-    @SerializedName(SERIALIZED_NAME_SIDE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SIDE)
+    
     private String side;
 
     public static final String SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE =
             "selfTradePreventionMode";
 
-    @SerializedName(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
+    
     private String selfTradePreventionMode;
 
     public OrderCancelReplaceResponseResultNewOrderResponse() {}
 
     public OrderCancelReplaceResponseResultNewOrderResponse symbol(
-            @jakarta.annotation.Nullable String symbol) {
+             String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -134,17 +124,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse orderId(
-            @jakarta.annotation.Nullable Long orderId) {
+             Long orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -154,17 +144,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return orderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(@jakarta.annotation.Nullable Long orderId) {
+    public void setOrderId( Long orderId) {
         this.orderId = orderId;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse orderListId(
-            @jakarta.annotation.Nullable Long orderListId) {
+             Long orderListId) {
         this.orderListId = orderListId;
         return this;
     }
@@ -174,17 +164,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return orderListId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderListId() {
         return orderListId;
     }
 
-    public void setOrderListId(@jakarta.annotation.Nullable Long orderListId) {
+    public void setOrderListId( Long orderListId) {
         this.orderListId = orderListId;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse clientOrderId(
-            @jakarta.annotation.Nullable String clientOrderId) {
+             String clientOrderId) {
         this.clientOrderId = clientOrderId;
         return this;
     }
@@ -194,17 +184,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return clientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getClientOrderId() {
         return clientOrderId;
     }
 
-    public void setClientOrderId(@jakarta.annotation.Nullable String clientOrderId) {
+    public void setClientOrderId( String clientOrderId) {
         this.clientOrderId = clientOrderId;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse transactTime(
-            @jakarta.annotation.Nullable Long transactTime) {
+             Long transactTime) {
         this.transactTime = transactTime;
         return this;
     }
@@ -214,17 +204,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return transactTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTransactTime() {
         return transactTime;
     }
 
-    public void setTransactTime(@jakarta.annotation.Nullable Long transactTime) {
+    public void setTransactTime( Long transactTime) {
         this.transactTime = transactTime;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse price(
-            @jakarta.annotation.Nullable String price) {
+             String price) {
         this.price = price;
         return this;
     }
@@ -234,17 +224,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
+    
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable String price) {
+    public void setPrice( String price) {
         this.price = price;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse origQty(
-            @jakarta.annotation.Nullable String origQty) {
+             String origQty) {
         this.origQty = origQty;
         return this;
     }
@@ -254,17 +244,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return origQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getOrigQty() {
         return origQty;
     }
 
-    public void setOrigQty(@jakarta.annotation.Nullable String origQty) {
+    public void setOrigQty( String origQty) {
         this.origQty = origQty;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse executedQty(
-            @jakarta.annotation.Nullable String executedQty) {
+             String executedQty) {
         this.executedQty = executedQty;
         return this;
     }
@@ -274,17 +264,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return executedQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getExecutedQty() {
         return executedQty;
     }
 
-    public void setExecutedQty(@jakarta.annotation.Nullable String executedQty) {
+    public void setExecutedQty( String executedQty) {
         this.executedQty = executedQty;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse origQuoteOrderQty(
-            @jakarta.annotation.Nullable String origQuoteOrderQty) {
+             String origQuoteOrderQty) {
         this.origQuoteOrderQty = origQuoteOrderQty;
         return this;
     }
@@ -294,17 +284,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return origQuoteOrderQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getOrigQuoteOrderQty() {
         return origQuoteOrderQty;
     }
 
-    public void setOrigQuoteOrderQty(@jakarta.annotation.Nullable String origQuoteOrderQty) {
+    public void setOrigQuoteOrderQty( String origQuoteOrderQty) {
         this.origQuoteOrderQty = origQuoteOrderQty;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse cummulativeQuoteQty(
-            @jakarta.annotation.Nullable String cummulativeQuoteQty) {
+             String cummulativeQuoteQty) {
         this.cummulativeQuoteQty = cummulativeQuoteQty;
         return this;
     }
@@ -314,17 +304,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return cummulativeQuoteQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getCummulativeQuoteQty() {
         return cummulativeQuoteQty;
     }
 
-    public void setCummulativeQuoteQty(@jakarta.annotation.Nullable String cummulativeQuoteQty) {
+    public void setCummulativeQuoteQty( String cummulativeQuoteQty) {
         this.cummulativeQuoteQty = cummulativeQuoteQty;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse status(
-            @jakarta.annotation.Nullable String status) {
+             String status) {
         this.status = status;
         return this;
     }
@@ -334,17 +324,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return status
      */
-    @jakarta.annotation.Nullable
+    
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(@jakarta.annotation.Nullable String status) {
+    public void setStatus( String status) {
         this.status = status;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse timeInForce(
-            @jakarta.annotation.Nullable String timeInForce) {
+             String timeInForce) {
         this.timeInForce = timeInForce;
         return this;
     }
@@ -354,17 +344,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return timeInForce
      */
-    @jakarta.annotation.Nullable
+    
     public String getTimeInForce() {
         return timeInForce;
     }
 
-    public void setTimeInForce(@jakarta.annotation.Nullable String timeInForce) {
+    public void setTimeInForce( String timeInForce) {
         this.timeInForce = timeInForce;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse type(
-            @jakarta.annotation.Nullable String type) {
+             String type) {
         this.type = type;
         return this;
     }
@@ -374,17 +364,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return type
      */
-    @jakarta.annotation.Nullable
+    
     public String getType() {
         return type;
     }
 
-    public void setType(@jakarta.annotation.Nullable String type) {
+    public void setType( String type) {
         this.type = type;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse side(
-            @jakarta.annotation.Nullable String side) {
+             String side) {
         this.side = side;
         return this;
     }
@@ -394,17 +384,17 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return side
      */
-    @jakarta.annotation.Nullable
+    
     public String getSide() {
         return side;
     }
 
-    public void setSide(@jakarta.annotation.Nullable String side) {
+    public void setSide( String side) {
         this.side = side;
     }
 
     public OrderCancelReplaceResponseResultNewOrderResponse selfTradePreventionMode(
-            @jakarta.annotation.Nullable String selfTradePreventionMode) {
+             String selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
         return this;
     }
@@ -414,13 +404,13 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
      *
      * @return selfTradePreventionMode
      */
-    @jakarta.annotation.Nullable
+    
     public String getSelfTradePreventionMode() {
         return selfTradePreventionMode;
     }
 
     public void setSelfTradePreventionMode(
-            @jakarta.annotation.Nullable String selfTradePreventionMode) {
+             String selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
     }
 
@@ -687,228 +677,5 @@ public class OrderCancelReplaceResponseResultNewOrderResponse extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("orderId");
-        openapiFields.add("orderListId");
-        openapiFields.add("clientOrderId");
-        openapiFields.add("transactTime");
-        openapiFields.add("price");
-        openapiFields.add("origQty");
-        openapiFields.add("executedQty");
-        openapiFields.add("origQuoteOrderQty");
-        openapiFields.add("cummulativeQuoteQty");
-        openapiFields.add("status");
-        openapiFields.add("timeInForce");
-        openapiFields.add("type");
-        openapiFields.add("side");
-        openapiFields.add("selfTradePreventionMode");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OrderCancelReplaceResponseResultNewOrderResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderCancelReplaceResponseResultNewOrderResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in"
-                                        + " OrderCancelReplaceResponseResultNewOrderResponse is not"
-                                        + " found in the empty JSON string",
-                                OrderCancelReplaceResponseResultNewOrderResponse
-                                        .openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderCancelReplaceResponseResultNewOrderResponse.openapiFields.contains(
-                    entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OrderCancelReplaceResponseResultNewOrderResponse`"
-                                        + " properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("clientOrderId") != null && !jsonObj.get("clientOrderId").isJsonNull())
-                && !jsonObj.get("clientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `clientOrderId` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("clientOrderId").toString()));
-        }
-        if ((jsonObj.get("price") != null && !jsonObj.get("price").isJsonNull())
-                && !jsonObj.get("price").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `price` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("price").toString()));
-        }
-        if ((jsonObj.get("origQty") != null && !jsonObj.get("origQty").isJsonNull())
-                && !jsonObj.get("origQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `origQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("origQty").toString()));
-        }
-        if ((jsonObj.get("executedQty") != null && !jsonObj.get("executedQty").isJsonNull())
-                && !jsonObj.get("executedQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `executedQty` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("executedQty").toString()));
-        }
-        if ((jsonObj.get("origQuoteOrderQty") != null
-                        && !jsonObj.get("origQuoteOrderQty").isJsonNull())
-                && !jsonObj.get("origQuoteOrderQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `origQuoteOrderQty` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("origQuoteOrderQty").toString()));
-        }
-        if ((jsonObj.get("cummulativeQuoteQty") != null
-                        && !jsonObj.get("cummulativeQuoteQty").isJsonNull())
-                && !jsonObj.get("cummulativeQuoteQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `cummulativeQuoteQty` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("cummulativeQuoteQty").toString()));
-        }
-        if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull())
-                && !jsonObj.get("status").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `status` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("status").toString()));
-        }
-        if ((jsonObj.get("timeInForce") != null && !jsonObj.get("timeInForce").isJsonNull())
-                && !jsonObj.get("timeInForce").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `timeInForce` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("timeInForce").toString()));
-        }
-        if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull())
-                && !jsonObj.get("type").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `type` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("type").toString()));
-        }
-        if ((jsonObj.get("side") != null && !jsonObj.get("side").isJsonNull())
-                && !jsonObj.get("side").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `side` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("side").toString()));
-        }
-        if ((jsonObj.get("selfTradePreventionMode") != null
-                        && !jsonObj.get("selfTradePreventionMode").isJsonNull())
-                && !jsonObj.get("selfTradePreventionMode").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `selfTradePreventionMode` to be a primitive type in"
-                                    + " the JSON string but got `%s`",
-                            jsonObj.get("selfTradePreventionMode").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderCancelReplaceResponseResultNewOrderResponse.class.isAssignableFrom(
-                    type.getRawType())) {
-                return null; // this class only serializes
-                // 'OrderCancelReplaceResponseResultNewOrderResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderCancelReplaceResponseResultNewOrderResponse> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this,
-                            TypeToken.get(OrderCancelReplaceResponseResultNewOrderResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderCancelReplaceResponseResultNewOrderResponse>() {
-                        @Override
-                        public void write(
-                                JsonWriter out,
-                                OrderCancelReplaceResponseResultNewOrderResponse value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderCancelReplaceResponseResultNewOrderResponse read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderCancelReplaceResponseResultNewOrderResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderCancelReplaceResponseResultNewOrderResponse
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OrderCancelReplaceResponseResultNewOrderResponse
-     */
-    public static OrderCancelReplaceResponseResultNewOrderResponse fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson()
-                .fromJson(jsonString, OrderCancelReplaceResponseResultNewOrderResponse.class);
-    }
-
-    /**
-     * Convert an instance of OrderCancelReplaceResponseResultNewOrderResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

@@ -12,65 +12,53 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** KlinesRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class KlinesRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_INTERVAL = "interval";
 
-    @SerializedName(SERIALIZED_NAME_INTERVAL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_INTERVAL)
+
     private Interval interval;
 
     public static final String SERIALIZED_NAME_START_TIME = "startTime";
 
-    @SerializedName(SERIALIZED_NAME_START_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_START_TIME)
+    
     private Long startTime;
 
     public static final String SERIALIZED_NAME_END_TIME = "endTime";
 
-    @SerializedName(SERIALIZED_NAME_END_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_END_TIME)
+    
     private Long endTime;
 
     public static final String SERIALIZED_NAME_TIME_ZONE = "timeZone";
 
-    @SerializedName(SERIALIZED_NAME_TIME_ZONE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TIME_ZONE)
+    
     private String timeZone;
 
     public static final String SERIALIZED_NAME_LIMIT = "limit";
 
-    @SerializedName(SERIALIZED_NAME_LIMIT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIMIT)
+    
     private Integer limit;
 
     public KlinesRequest() {}
 
-    public KlinesRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public KlinesRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -80,17 +68,15 @@ public class KlinesRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public KlinesRequest interval(@jakarta.annotation.Nonnull Interval interval) {
+    public KlinesRequest interval( Interval interval) {
         this.interval = interval;
         return this;
     }
@@ -100,18 +86,15 @@ public class KlinesRequest extends BaseDTO {
      *
      * @return interval
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
     public Interval getInterval() {
         return interval;
     }
 
-    public void setInterval(@jakarta.annotation.Nonnull Interval interval) {
+    public void setInterval( Interval interval) {
         this.interval = interval;
     }
 
-    public KlinesRequest startTime(@jakarta.annotation.Nullable Long startTime) {
+    public KlinesRequest startTime( Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -121,16 +104,16 @@ public class KlinesRequest extends BaseDTO {
      *
      * @return startTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(@jakarta.annotation.Nullable Long startTime) {
+    public void setStartTime( Long startTime) {
         this.startTime = startTime;
     }
 
-    public KlinesRequest endTime(@jakarta.annotation.Nullable Long endTime) {
+    public KlinesRequest endTime( Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -140,16 +123,16 @@ public class KlinesRequest extends BaseDTO {
      *
      * @return endTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(@jakarta.annotation.Nullable Long endTime) {
+    public void setEndTime( Long endTime) {
         this.endTime = endTime;
     }
 
-    public KlinesRequest timeZone(@jakarta.annotation.Nullable String timeZone) {
+    public KlinesRequest timeZone( String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
@@ -159,16 +142,16 @@ public class KlinesRequest extends BaseDTO {
      *
      * @return timeZone
      */
-    @jakarta.annotation.Nullable
+    
     public String getTimeZone() {
         return timeZone;
     }
 
-    public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
+    public void setTimeZone( String timeZone) {
         this.timeZone = timeZone;
     }
 
-    public KlinesRequest limit(@jakarta.annotation.Nullable Integer limit) {
+    public KlinesRequest limit( Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -178,12 +161,12 @@ public class KlinesRequest extends BaseDTO {
      *
      * @return limit
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(@jakarta.annotation.Nullable Integer limit) {
+    public void setLimit( Integer limit) {
         this.limit = limit;
     }
 
@@ -207,20 +190,6 @@ public class KlinesRequest extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(symbol, interval, startTime, endTime, timeZone, limit);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class KlinesRequest {\n");
-        sb.append("		symbol: ").append(toIndentedString(symbol)).append("\n");
-        sb.append("		interval: ").append(toIndentedString(interval)).append("\n");
-        sb.append("		startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("		endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("		timeZone: ").append(toIndentedString(timeZone)).append("\n");
-        sb.append("		limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -265,177 +234,7 @@ public class KlinesRequest extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object symbolValue = getSymbol();
-        if (symbolValue != null) {
-            valMap.put("symbol", symbolValue);
-        }
-        Object intervalValue = getInterval();
-        if (intervalValue != null) {
-            valMap.put("interval", intervalValue);
-        }
-        Object startTimeValue = getStartTime();
-        if (startTimeValue != null) {
-            valMap.put("startTime", startTimeValue);
-        }
-        Object endTimeValue = getEndTime();
-        if (endTimeValue != null) {
-            valMap.put("endTime", endTimeValue);
-        }
-        Object timeZoneValue = getTimeZone();
-        if (timeZoneValue != null) {
-            valMap.put("timeZone", timeZoneValue);
-        }
-        Object limitValue = getLimit();
-        if (limitValue != null) {
-            valMap.put("limit", limitValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("interval");
-        openapiFields.add("startTime");
-        openapiFields.add("endTime");
-        openapiFields.add("timeZone");
-        openapiFields.add("limit");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("interval");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to KlinesRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!KlinesRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in KlinesRequest is not found in the"
-                                        + " empty JSON string",
-                                KlinesRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!KlinesRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `KlinesRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : KlinesRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the required field `interval`
-        Interval.validateJsonElement(jsonObj.get("interval"));
-        if ((jsonObj.get("timeZone") != null && !jsonObj.get("timeZone").isJsonNull())
-                && !jsonObj.get("timeZone").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `timeZone` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("timeZone").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!KlinesRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'KlinesRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<KlinesRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(KlinesRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<KlinesRequest>() {
-                        @Override
-                        public void write(JsonWriter out, KlinesRequest value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public KlinesRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of KlinesRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of KlinesRequest
-     * @throws IOException if the JSON string is invalid with respect to KlinesRequest
-     */
-    public static KlinesRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, KlinesRequest.class);
-    }
-
-    /**
-     * Convert an instance of KlinesRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

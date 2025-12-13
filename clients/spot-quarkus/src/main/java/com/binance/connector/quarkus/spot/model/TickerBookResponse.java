@@ -13,13 +13,6 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.AbstractOpenApiSchema;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,125 +22,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TickerBookResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(TickerBookResponse.class.getName());
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TickerBookResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TickerBookResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TickerBookResponse1> adapterTickerBookResponse1 =
-                    gson.getDelegateAdapter(this, TypeToken.get(TickerBookResponse1.class));
-            final TypeAdapter<TickerBookResponse2> adapterTickerBookResponse2 =
-                    gson.getDelegateAdapter(this, TypeToken.get(TickerBookResponse2.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TickerBookResponse>() {
-                        @Override
-                        public void write(JsonWriter out, TickerBookResponse value)
-                                throws IOException {
-                            if (value == null || value.getActualInstance() == null) {
-                                elementAdapter.write(out, null);
-                                return;
-                            }
-
-                            // check if the actual instance is of the type `TickerBookResponse1`
-                            if (value.getActualInstance() instanceof TickerBookResponse1) {
-                                JsonElement element =
-                                        adapterTickerBookResponse1.toJsonTree(
-                                                (TickerBookResponse1) value.getActualInstance());
-                                elementAdapter.write(out, element);
-                                return;
-                            }
-                            // check if the actual instance is of the type `TickerBookResponse2`
-                            if (value.getActualInstance() instanceof TickerBookResponse2) {
-                                JsonElement element =
-                                        adapterTickerBookResponse2.toJsonTree(
-                                                (TickerBookResponse2) value.getActualInstance());
-                                elementAdapter.write(out, element);
-                                return;
-                            }
-                            throw new IOException(
-                                    "Failed to serialize as the type doesn't match oneOf schemas:"
-                                            + " TickerBookResponse1, TickerBookResponse2");
-                        }
-
-                        @Override
-                        public TickerBookResponse read(JsonReader in) throws IOException {
-                            Object deserialized = null;
-                            JsonElement jsonElement = elementAdapter.read(in);
-
-                            int match = 0;
-                            ArrayList<String> errorMessages = new ArrayList<>();
-                            TypeAdapter actualAdapter = elementAdapter;
-
-                            // deserialize TickerBookResponse1
-                            try {
-                                // validate the JSON object to see if any exception is thrown
-                                TickerBookResponse1.validateJsonElement(jsonElement);
-                                actualAdapter = adapterTickerBookResponse1;
-                                match++;
-                                log.log(
-                                        Level.FINER,
-                                        "Input data matches schema 'TickerBookResponse1'");
-                            } catch (Exception e) {
-                                // deserialization failed, continue
-                                errorMessages.add(
-                                        String.format(
-                                                "Deserialization for TickerBookResponse1 failed"
-                                                        + " with `%s`.",
-                                                e.getMessage()));
-                                log.log(
-                                        Level.FINER,
-                                        "Input data does not match schema 'TickerBookResponse1'",
-                                        e);
-                            }
-                            // deserialize TickerBookResponse2
-                            try {
-                                // validate the JSON object to see if any exception is thrown
-                                TickerBookResponse2.validateJsonElement(jsonElement);
-                                actualAdapter = adapterTickerBookResponse2;
-                                match++;
-                                log.log(
-                                        Level.FINER,
-                                        "Input data matches schema 'TickerBookResponse2'");
-                            } catch (Exception e) {
-                                // deserialization failed, continue
-                                errorMessages.add(
-                                        String.format(
-                                                "Deserialization for TickerBookResponse2 failed"
-                                                        + " with `%s`.",
-                                                e.getMessage()));
-                                log.log(
-                                        Level.FINER,
-                                        "Input data does not match schema 'TickerBookResponse2'",
-                                        e);
-                            }
-
-                            if (match == 1) {
-                                TickerBookResponse ret = new TickerBookResponse();
-                                ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                                return ret;
-                            }
-
-                            throw new IOException(
-                                    String.format(
-                                            "Failed deserialization for TickerBookResponse: %d"
-                                                + " classes match result, expected 1. Detailed"
-                                                + " failure message for oneOf schemas: %s. JSON:"
-                                                + " %s",
-                                            match, errorMessages, jsonElement.toString()));
-                        }
-                    }.nullSafe();
-        }
-    }
 
     // store a list of schema names defined in oneOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
@@ -224,68 +100,5 @@ public class TickerBookResponse extends AbstractOpenApiSchema {
      */
     public TickerBookResponse2 getTickerBookResponse2() throws ClassCastException {
         return (TickerBookResponse2) super.getActualInstance();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TickerBookResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate oneOf schemas one by one
-        int validCount = 0;
-        ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with TickerBookResponse1
-        try {
-            TickerBookResponse1.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(
-                    String.format(
-                            "Deserialization for TickerBookResponse1 failed with `%s`.",
-                            e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with TickerBookResponse2
-        try {
-            TickerBookResponse2.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(
-                    String.format(
-                            "Deserialization for TickerBookResponse2 failed with `%s`.",
-                            e.getMessage()));
-            // continue to the next one
-        }
-        if (validCount != 1) {
-            throw new IOException(
-                    String.format(
-                            "The JSON string is invalid for TickerBookResponse with oneOf schemas:"
-                                + " TickerBookResponse1, TickerBookResponse2. %d class(es) match"
-                                + " the result, expected 1. Detailed failure message for oneOf"
-                                + " schemas: %s. JSON: %s",
-                            validCount, errorMessages, jsonElement.toString()));
-        }
-    }
-
-    /**
-     * Create an instance of TickerBookResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TickerBookResponse
-     * @throws IOException if the JSON string is invalid with respect to TickerBookResponse
-     */
-    public static TickerBookResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TickerBookResponse.class);
-    }
-
-    /**
-     * Convert an instance of TickerBookResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

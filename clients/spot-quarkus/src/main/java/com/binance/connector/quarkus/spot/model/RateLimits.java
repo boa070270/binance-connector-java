@@ -12,57 +12,47 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** RateLimits */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class RateLimits extends BaseDTO {
     public static final String SERIALIZED_NAME_RATE_LIMIT_TYPE = "rateLimitType";
 
-    @SerializedName(SERIALIZED_NAME_RATE_LIMIT_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RATE_LIMIT_TYPE)
+    
     private String rateLimitType;
 
     public static final String SERIALIZED_NAME_INTERVAL = "interval";
 
-    @SerializedName(SERIALIZED_NAME_INTERVAL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_INTERVAL)
+    
     private String interval;
 
     public static final String SERIALIZED_NAME_INTERVAL_NUM = "intervalNum";
 
-    @SerializedName(SERIALIZED_NAME_INTERVAL_NUM)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_INTERVAL_NUM)
+    
     private Long intervalNum;
 
     public static final String SERIALIZED_NAME_LIMIT = "limit";
 
-    @SerializedName(SERIALIZED_NAME_LIMIT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIMIT)
+    
     private Long limit;
 
     public static final String SERIALIZED_NAME_COUNT = "count";
 
-    @SerializedName(SERIALIZED_NAME_COUNT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COUNT)
+    
     private Long count;
 
     public RateLimits() {}
 
-    public RateLimits rateLimitType(@jakarta.annotation.Nullable String rateLimitType) {
+    public RateLimits rateLimitType( String rateLimitType) {
         this.rateLimitType = rateLimitType;
         return this;
     }
@@ -72,16 +62,16 @@ public class RateLimits extends BaseDTO {
      *
      * @return rateLimitType
      */
-    @jakarta.annotation.Nullable
+    
     public String getRateLimitType() {
         return rateLimitType;
     }
 
-    public void setRateLimitType(@jakarta.annotation.Nullable String rateLimitType) {
+    public void setRateLimitType( String rateLimitType) {
         this.rateLimitType = rateLimitType;
     }
 
-    public RateLimits interval(@jakarta.annotation.Nullable String interval) {
+    public RateLimits interval( String interval) {
         this.interval = interval;
         return this;
     }
@@ -91,16 +81,16 @@ public class RateLimits extends BaseDTO {
      *
      * @return interval
      */
-    @jakarta.annotation.Nullable
+    
     public String getInterval() {
         return interval;
     }
 
-    public void setInterval(@jakarta.annotation.Nullable String interval) {
+    public void setInterval( String interval) {
         this.interval = interval;
     }
 
-    public RateLimits intervalNum(@jakarta.annotation.Nullable Long intervalNum) {
+    public RateLimits intervalNum( Long intervalNum) {
         this.intervalNum = intervalNum;
         return this;
     }
@@ -110,16 +100,16 @@ public class RateLimits extends BaseDTO {
      *
      * @return intervalNum
      */
-    @jakarta.annotation.Nullable
+    
     public Long getIntervalNum() {
         return intervalNum;
     }
 
-    public void setIntervalNum(@jakarta.annotation.Nullable Long intervalNum) {
+    public void setIntervalNum( Long intervalNum) {
         this.intervalNum = intervalNum;
     }
 
-    public RateLimits limit(@jakarta.annotation.Nullable Long limit) {
+    public RateLimits limit( Long limit) {
         this.limit = limit;
         return this;
     }
@@ -129,16 +119,16 @@ public class RateLimits extends BaseDTO {
      *
      * @return limit
      */
-    @jakarta.annotation.Nullable
+    
     public Long getLimit() {
         return limit;
     }
 
-    public void setLimit(@jakarta.annotation.Nullable Long limit) {
+    public void setLimit( Long limit) {
         this.limit = limit;
     }
 
-    public RateLimits count(@jakarta.annotation.Nullable Long count) {
+    public RateLimits count( Long count) {
         this.count = count;
         return this;
     }
@@ -148,12 +138,12 @@ public class RateLimits extends BaseDTO {
      *
      * @return count
      */
-    @jakarta.annotation.Nullable
+    
     public Long getCount() {
         return count;
     }
 
-    public void setCount(@jakarta.annotation.Nullable Long count) {
+    public void setCount( Long count) {
         this.count = count;
     }
 
@@ -176,19 +166,6 @@ public class RateLimits extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(rateLimitType, interval, intervalNum, limit, count);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class RateLimits {\n");
-        sb.append("		rateLimitType: ").append(toIndentedString(rateLimitType)).append("\n");
-        sb.append("		interval: ").append(toIndentedString(interval)).append("\n");
-        sb.append("		intervalNum: ").append(toIndentedString(intervalNum)).append("\n");
-        sb.append("		limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("		count: ").append(toIndentedString(count)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -228,159 +205,8 @@ public class RateLimits extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object rateLimitTypeValue = getRateLimitType();
-        if (rateLimitTypeValue != null) {
-            valMap.put("rateLimitType", rateLimitTypeValue);
-        }
-        Object intervalValue = getInterval();
-        if (intervalValue != null) {
-            valMap.put("interval", intervalValue);
-        }
-        Object intervalNumValue = getIntervalNum();
-        if (intervalNumValue != null) {
-            valMap.put("intervalNum", intervalNumValue);
-        }
-        Object limitValue = getLimit();
-        if (limitValue != null) {
-            valMap.put("limit", limitValue);
-        }
-        Object countValue = getCount();
-        if (countValue != null) {
-            valMap.put("count", countValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("rateLimitType");
-        openapiFields.add("interval");
-        openapiFields.add("intervalNum");
-        openapiFields.add("limit");
-        openapiFields.add("count");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to RateLimits
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!RateLimits.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in RateLimits is not found in the empty"
-                                        + " JSON string",
-                                RateLimits.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!RateLimits.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `RateLimits` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("rateLimitType") != null && !jsonObj.get("rateLimitType").isJsonNull())
-                && !jsonObj.get("rateLimitType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `rateLimitType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("rateLimitType").toString()));
-        }
-        if ((jsonObj.get("interval") != null && !jsonObj.get("interval").isJsonNull())
-                && !jsonObj.get("interval").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `interval` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("interval").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!RateLimits.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'RateLimits' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<RateLimits> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(RateLimits.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<RateLimits>() {
-                        @Override
-                        public void write(JsonWriter out, RateLimits value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public RateLimits read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of RateLimits given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of RateLimits
-     * @throws IOException if the JSON string is invalid with respect to RateLimits
-     */
-    public static RateLimits fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, RateLimits.class);
-    }
-
-    /**
-     * Convert an instance of RateLimits to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

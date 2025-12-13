@@ -12,66 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets timeInForce */
-@JsonAdapter(TimeInForce.Adapter.class)
 public enum TimeInForce {
-    GTC("GTC"),
-
-    IOC("IOC"),
-
-    FOK("FOK"),
-
-    NON_REPRESENTABLE("NON_REPRESENTABLE");
-
-    private String value;
-
-    TimeInForce(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static TimeInForce fromValue(String value) {
-        for (TimeInForce b : TimeInForce.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TimeInForce> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final TimeInForce enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public TimeInForce read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return TimeInForce.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        TimeInForce.fromValue(value);
-    }
+    GTC, IOC, FOK, NON_REPRESENTABLE
 }

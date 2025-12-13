@@ -12,12 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -25,50 +20,46 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-/** SessionStatusResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class SessionStatusResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_API_KEY = "apiKey";
 
-    @SerializedName(SERIALIZED_NAME_API_KEY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_API_KEY)
+    
     private String apiKey;
 
     public static final String SERIALIZED_NAME_AUTHORIZED_SINCE = "authorizedSince";
 
-    @SerializedName(SERIALIZED_NAME_AUTHORIZED_SINCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_AUTHORIZED_SINCE)
+    
     private Long authorizedSince;
 
     public static final String SERIALIZED_NAME_CONNECTED_SINCE = "connectedSince";
 
-    @SerializedName(SERIALIZED_NAME_CONNECTED_SINCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CONNECTED_SINCE)
+    
     private Long connectedSince;
 
     public static final String SERIALIZED_NAME_RETURN_RATE_LIMITS = "returnRateLimits";
 
-    @SerializedName(SERIALIZED_NAME_RETURN_RATE_LIMITS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RETURN_RATE_LIMITS)
+    
     private Boolean returnRateLimits;
 
     public static final String SERIALIZED_NAME_SERVER_TIME = "serverTime";
 
-    @SerializedName(SERIALIZED_NAME_SERVER_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SERVER_TIME)
+    
     private Long serverTime;
 
     public static final String SERIALIZED_NAME_USER_DATA_STREAM = "userDataStream";
 
-    @SerializedName(SERIALIZED_NAME_USER_DATA_STREAM)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_USER_DATA_STREAM)
+    
     private Boolean userDataStream;
 
     public SessionStatusResponseResult() {}
 
-    public SessionStatusResponseResult apiKey(@jakarta.annotation.Nullable String apiKey) {
+    public SessionStatusResponseResult apiKey( String apiKey) {
         this.apiKey = apiKey;
         return this;
     }
@@ -78,17 +69,17 @@ public class SessionStatusResponseResult extends BaseDTO {
      *
      * @return apiKey
      */
-    @jakarta.annotation.Nullable
+    
     public String getApiKey() {
         return apiKey;
     }
 
-    public void setApiKey(@jakarta.annotation.Nullable String apiKey) {
+    public void setApiKey( String apiKey) {
         this.apiKey = apiKey;
     }
 
     public SessionStatusResponseResult authorizedSince(
-            @jakarta.annotation.Nullable Long authorizedSince) {
+             Long authorizedSince) {
         this.authorizedSince = authorizedSince;
         return this;
     }
@@ -98,17 +89,17 @@ public class SessionStatusResponseResult extends BaseDTO {
      *
      * @return authorizedSince
      */
-    @jakarta.annotation.Nullable
+    
     public Long getAuthorizedSince() {
         return authorizedSince;
     }
 
-    public void setAuthorizedSince(@jakarta.annotation.Nullable Long authorizedSince) {
+    public void setAuthorizedSince( Long authorizedSince) {
         this.authorizedSince = authorizedSince;
     }
 
     public SessionStatusResponseResult connectedSince(
-            @jakarta.annotation.Nullable Long connectedSince) {
+             Long connectedSince) {
         this.connectedSince = connectedSince;
         return this;
     }
@@ -118,17 +109,17 @@ public class SessionStatusResponseResult extends BaseDTO {
      *
      * @return connectedSince
      */
-    @jakarta.annotation.Nullable
+    
     public Long getConnectedSince() {
         return connectedSince;
     }
 
-    public void setConnectedSince(@jakarta.annotation.Nullable Long connectedSince) {
+    public void setConnectedSince( Long connectedSince) {
         this.connectedSince = connectedSince;
     }
 
     public SessionStatusResponseResult returnRateLimits(
-            @jakarta.annotation.Nullable Boolean returnRateLimits) {
+             Boolean returnRateLimits) {
         this.returnRateLimits = returnRateLimits;
         return this;
     }
@@ -138,16 +129,16 @@ public class SessionStatusResponseResult extends BaseDTO {
      *
      * @return returnRateLimits
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getReturnRateLimits() {
         return returnRateLimits;
     }
 
-    public void setReturnRateLimits(@jakarta.annotation.Nullable Boolean returnRateLimits) {
+    public void setReturnRateLimits( Boolean returnRateLimits) {
         this.returnRateLimits = returnRateLimits;
     }
 
-    public SessionStatusResponseResult serverTime(@jakarta.annotation.Nullable Long serverTime) {
+    public SessionStatusResponseResult serverTime( Long serverTime) {
         this.serverTime = serverTime;
         return this;
     }
@@ -157,17 +148,17 @@ public class SessionStatusResponseResult extends BaseDTO {
      *
      * @return serverTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getServerTime() {
         return serverTime;
     }
 
-    public void setServerTime(@jakarta.annotation.Nullable Long serverTime) {
+    public void setServerTime( Long serverTime) {
         this.serverTime = serverTime;
     }
 
     public SessionStatusResponseResult userDataStream(
-            @jakarta.annotation.Nullable Boolean userDataStream) {
+             Boolean userDataStream) {
         this.userDataStream = userDataStream;
         return this;
     }
@@ -177,12 +168,12 @@ public class SessionStatusResponseResult extends BaseDTO {
      *
      * @return userDataStream
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getUserDataStream() {
         return userDataStream;
     }
 
-    public void setUserDataStream(@jakarta.annotation.Nullable Boolean userDataStream) {
+    public void setUserDataStream( Boolean userDataStream) {
         this.userDataStream = userDataStream;
     }
 
@@ -318,112 +309,4 @@ public class SessionStatusResponseResult extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("apiKey");
-        openapiFields.add("authorizedSince");
-        openapiFields.add("connectedSince");
-        openapiFields.add("returnRateLimits");
-        openapiFields.add("serverTime");
-        openapiFields.add("userDataStream");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     SessionStatusResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!SessionStatusResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in SessionStatusResponseResult is not"
-                                        + " found in the empty JSON string",
-                                SessionStatusResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!SessionStatusResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `SessionStatusResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("apiKey") != null && !jsonObj.get("apiKey").isJsonNull())
-                && !jsonObj.get("apiKey").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `apiKey` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("apiKey").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!SessionStatusResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'SessionStatusResponseResult' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SessionStatusResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(SessionStatusResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<SessionStatusResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, SessionStatusResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public SessionStatusResponseResult read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of SessionStatusResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of SessionStatusResponseResult
-     * @throws IOException if the JSON string is invalid with respect to SessionStatusResponseResult
-     */
-    public static SessionStatusResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, SessionStatusResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of SessionStatusResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

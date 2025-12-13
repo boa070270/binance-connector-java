@@ -12,52 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** KlineResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class KlineResponse extends BaseDTO {
     public static final String SERIALIZED_NAME_E_LOWER_CASE = "e";
 
-    @SerializedName(SERIALIZED_NAME_E_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E_LOWER_CASE)
+    
     private String eLowerCase;
 
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_S_LOWER_CASE = "s";
 
-    @SerializedName(SERIALIZED_NAME_S_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S_LOWER_CASE)
+    
     private String sLowerCase;
 
     public static final String SERIALIZED_NAME_K_LOWER_CASE = "k";
 
-    @SerializedName(SERIALIZED_NAME_K_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_K_LOWER_CASE)
+    
     private KlineResponseK kLowerCase;
 
     public KlineResponse() {}
 
-    public KlineResponse eLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public KlineResponse eLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
         return this;
     }
@@ -67,16 +57,16 @@ public class KlineResponse extends BaseDTO {
      *
      * @return eLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String geteLowerCase() {
         return eLowerCase;
     }
 
-    public void seteLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public void seteLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
     }
 
-    public KlineResponse E(@jakarta.annotation.Nullable Long E) {
+    public KlineResponse E( Long E) {
         this.E = E;
         return this;
     }
@@ -86,16 +76,16 @@ public class KlineResponse extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public KlineResponse sLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public KlineResponse sLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
         return this;
     }
@@ -105,16 +95,16 @@ public class KlineResponse extends BaseDTO {
      *
      * @return sLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getsLowerCase() {
         return sLowerCase;
     }
 
-    public void setsLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public void setsLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
     }
 
-    public KlineResponse kLowerCase(@jakarta.annotation.Nullable KlineResponseK kLowerCase) {
+    public KlineResponse kLowerCase( KlineResponseK kLowerCase) {
         this.kLowerCase = kLowerCase;
         return this;
     }
@@ -124,13 +114,11 @@ public class KlineResponse extends BaseDTO {
      *
      * @return kLowerCase
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public KlineResponseK getkLowerCase() {
         return kLowerCase;
     }
 
-    public void setkLowerCase(@jakarta.annotation.Nullable KlineResponseK kLowerCase) {
+    public void setkLowerCase( KlineResponseK kLowerCase) {
         this.kLowerCase = kLowerCase;
     }
 
@@ -154,18 +142,6 @@ public class KlineResponse extends BaseDTO {
         return Objects.hash(eLowerCase, E, sLowerCase, kLowerCase);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class KlineResponse {\n");
-        sb.append("		eLowerCase: ").append(toIndentedString(eLowerCase)).append("\n");
-        sb.append("		E: ").append(toIndentedString(E)).append("\n");
-        sb.append("		sLowerCase: ").append(toIndentedString(sLowerCase)).append("\n");
-        sb.append("		kLowerCase: ").append(toIndentedString(kLowerCase)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
     public String toUrlQueryString() {
         StringBuilder sb = new StringBuilder();
         Map<String, String> valMap = new TreeMap<String, String>();
@@ -187,7 +163,7 @@ public class KlineResponse extends BaseDTO {
         }
         KlineResponseK kLowerCaseValue = getkLowerCase();
         if (kLowerCaseValue != null) {
-            String kLowerCaseValueAsString = JSON.getGson().toJson(kLowerCaseValue);
+            String kLowerCaseValueAsString = Json.encode(kLowerCaseValue);
             valMap.put("kLowerCase", kLowerCaseValueAsString);
         }
 
@@ -224,132 +200,5 @@ public class KlineResponse extends BaseDTO {
 
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("e");
-        openapiFields.add("E");
-        openapiFields.add("s");
-        openapiFields.add("k");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to KlineResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!KlineResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in KlineResponse is not found in the"
-                                        + " empty JSON string",
-                                KlineResponse.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!KlineResponse.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `KlineResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("e") != null && !jsonObj.get("e").isJsonNull())
-                && !jsonObj.get("e").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `e` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("e").toString()));
-        }
-        if ((jsonObj.get("s") != null && !jsonObj.get("s").isJsonNull())
-                && !jsonObj.get("s").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `s` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("s").toString()));
-        }
-        // validate the optional field `k`
-        if (jsonObj.get("k") != null && !jsonObj.get("k").isJsonNull()) {
-            KlineResponseK.validateJsonElement(jsonObj.get("k"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!KlineResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'KlineResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<KlineResponse> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(KlineResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<KlineResponse>() {
-                        @Override
-                        public void write(JsonWriter out, KlineResponse value) throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public KlineResponse read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of KlineResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of KlineResponse
-     * @throws IOException if the JSON string is invalid with respect to KlineResponse
-     */
-    public static KlineResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, KlineResponse.class);
-    }
-
-    /**
-     * Convert an instance of KlineResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

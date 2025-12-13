@@ -12,75 +12,65 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OrderAmendmentsResponseResultInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OrderAmendmentsResponseResultInner extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_ORDER_ID = "orderId";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_ID)
+    
     private Long orderId;
 
     public static final String SERIALIZED_NAME_EXECUTION_ID = "executionId";
 
-    @SerializedName(SERIALIZED_NAME_EXECUTION_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_EXECUTION_ID)
+    
     private Long executionId;
 
     public static final String SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID = "origClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORIG_CLIENT_ORDER_ID)
+    
     private String origClientOrderId;
 
     public static final String SERIALIZED_NAME_NEW_CLIENT_ORDER_ID = "newClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
+    
     private String newClientOrderId;
 
     public static final String SERIALIZED_NAME_ORIG_QTY = "origQty";
 
-    @SerializedName(SERIALIZED_NAME_ORIG_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORIG_QTY)
+    
     private String origQty;
 
     public static final String SERIALIZED_NAME_NEW_QTY = "newQty";
 
-    @SerializedName(SERIALIZED_NAME_NEW_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_QTY)
+    
     private String newQty;
 
     public static final String SERIALIZED_NAME_TIME = "time";
 
-    @SerializedName(SERIALIZED_NAME_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TIME)
+    
     private Long time;
 
     public OrderAmendmentsResponseResultInner() {}
 
-    public OrderAmendmentsResponseResultInner symbol(@jakarta.annotation.Nullable String symbol) {
+    public OrderAmendmentsResponseResultInner symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -90,16 +80,16 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public OrderAmendmentsResponseResultInner orderId(@jakarta.annotation.Nullable Long orderId) {
+    public OrderAmendmentsResponseResultInner orderId( Long orderId) {
         this.orderId = orderId;
         return this;
     }
@@ -109,17 +99,17 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return orderId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(@jakarta.annotation.Nullable Long orderId) {
+    public void setOrderId( Long orderId) {
         this.orderId = orderId;
     }
 
     public OrderAmendmentsResponseResultInner executionId(
-            @jakarta.annotation.Nullable Long executionId) {
+             Long executionId) {
         this.executionId = executionId;
         return this;
     }
@@ -129,17 +119,17 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return executionId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getExecutionId() {
         return executionId;
     }
 
-    public void setExecutionId(@jakarta.annotation.Nullable Long executionId) {
+    public void setExecutionId( Long executionId) {
         this.executionId = executionId;
     }
 
     public OrderAmendmentsResponseResultInner origClientOrderId(
-            @jakarta.annotation.Nullable String origClientOrderId) {
+             String origClientOrderId) {
         this.origClientOrderId = origClientOrderId;
         return this;
     }
@@ -149,17 +139,17 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return origClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getOrigClientOrderId() {
         return origClientOrderId;
     }
 
-    public void setOrigClientOrderId(@jakarta.annotation.Nullable String origClientOrderId) {
+    public void setOrigClientOrderId( String origClientOrderId) {
         this.origClientOrderId = origClientOrderId;
     }
 
     public OrderAmendmentsResponseResultInner newClientOrderId(
-            @jakarta.annotation.Nullable String newClientOrderId) {
+             String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
         return this;
     }
@@ -169,16 +159,16 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return newClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getNewClientOrderId() {
         return newClientOrderId;
     }
 
-    public void setNewClientOrderId(@jakarta.annotation.Nullable String newClientOrderId) {
+    public void setNewClientOrderId( String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
     }
 
-    public OrderAmendmentsResponseResultInner origQty(@jakarta.annotation.Nullable String origQty) {
+    public OrderAmendmentsResponseResultInner origQty( String origQty) {
         this.origQty = origQty;
         return this;
     }
@@ -188,16 +178,16 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return origQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getOrigQty() {
         return origQty;
     }
 
-    public void setOrigQty(@jakarta.annotation.Nullable String origQty) {
+    public void setOrigQty( String origQty) {
         this.origQty = origQty;
     }
 
-    public OrderAmendmentsResponseResultInner newQty(@jakarta.annotation.Nullable String newQty) {
+    public OrderAmendmentsResponseResultInner newQty( String newQty) {
         this.newQty = newQty;
         return this;
     }
@@ -207,16 +197,16 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return newQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getNewQty() {
         return newQty;
     }
 
-    public void setNewQty(@jakarta.annotation.Nullable String newQty) {
+    public void setNewQty( String newQty) {
         this.newQty = newQty;
     }
 
-    public OrderAmendmentsResponseResultInner time(@jakarta.annotation.Nullable Long time) {
+    public OrderAmendmentsResponseResultInner time( Long time) {
         this.time = time;
         return this;
     }
@@ -226,12 +216,12 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
      *
      * @return time
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTime() {
         return time;
     }
 
-    public void setTime(@jakarta.annotation.Nullable Long time) {
+    public void setTime( Long time) {
         this.time = time;
     }
 
@@ -392,155 +382,5 @@ public class OrderAmendmentsResponseResultInner extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("orderId");
-        openapiFields.add("executionId");
-        openapiFields.add("origClientOrderId");
-        openapiFields.add("newClientOrderId");
-        openapiFields.add("origQty");
-        openapiFields.add("newQty");
-        openapiFields.add("time");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OrderAmendmentsResponseResultInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OrderAmendmentsResponseResultInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OrderAmendmentsResponseResultInner is"
-                                        + " not found in the empty JSON string",
-                                OrderAmendmentsResponseResultInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OrderAmendmentsResponseResultInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `OrderAmendmentsResponseResultInner` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("origClientOrderId") != null
-                        && !jsonObj.get("origClientOrderId").isJsonNull())
-                && !jsonObj.get("origClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `origClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("origClientOrderId").toString()));
-        }
-        if ((jsonObj.get("newClientOrderId") != null
-                        && !jsonObj.get("newClientOrderId").isJsonNull())
-                && !jsonObj.get("newClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `newClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("newClientOrderId").toString()));
-        }
-        if ((jsonObj.get("origQty") != null && !jsonObj.get("origQty").isJsonNull())
-                && !jsonObj.get("origQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `origQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("origQty").toString()));
-        }
-        if ((jsonObj.get("newQty") != null && !jsonObj.get("newQty").isJsonNull())
-                && !jsonObj.get("newQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `newQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("newQty").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OrderAmendmentsResponseResultInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OrderAmendmentsResponseResultInner' and
-                // its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OrderAmendmentsResponseResultInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(OrderAmendmentsResponseResultInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OrderAmendmentsResponseResultInner>() {
-                        @Override
-                        public void write(JsonWriter out, OrderAmendmentsResponseResultInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OrderAmendmentsResponseResultInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OrderAmendmentsResponseResultInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OrderAmendmentsResponseResultInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OrderAmendmentsResponseResultInner
-     */
-    public static OrderAmendmentsResponseResultInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson().fromJson(jsonString, OrderAmendmentsResponseResultInner.class);
-    }
-
-    /**
-     * Convert an instance of OrderAmendmentsResponseResultInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

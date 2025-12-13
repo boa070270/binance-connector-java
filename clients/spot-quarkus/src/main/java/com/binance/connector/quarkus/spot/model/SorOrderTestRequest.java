@@ -13,14 +13,8 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -28,100 +22,96 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-/** SorOrderTestRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class SorOrderTestRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_COMPUTE_COMMISSION_RATES = "computeCommissionRates";
 
-    @SerializedName(SERIALIZED_NAME_COMPUTE_COMMISSION_RATES)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COMPUTE_COMMISSION_RATES)
+    
     private Boolean computeCommissionRates;
 
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+
     private String symbol;
 
     public static final String SERIALIZED_NAME_SIDE = "side";
 
-    @SerializedName(SERIALIZED_NAME_SIDE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SIDE)
+
     private Side side;
 
     public static final String SERIALIZED_NAME_TYPE = "type";
 
-    @SerializedName(SERIALIZED_NAME_TYPE)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_TYPE)
+
     private OrderType type;
 
     public static final String SERIALIZED_NAME_TIME_IN_FORCE = "timeInForce";
 
-    @SerializedName(SERIALIZED_NAME_TIME_IN_FORCE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TIME_IN_FORCE)
+    
     private TimeInForce timeInForce;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private Double price;
 
     public static final String SERIALIZED_NAME_QUANTITY = "quantity";
 
-    @SerializedName(SERIALIZED_NAME_QUANTITY)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_QUANTITY)
+
     private Double quantity;
 
     public static final String SERIALIZED_NAME_NEW_CLIENT_ORDER_ID = "newClientOrderId";
 
-    @SerializedName(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_CLIENT_ORDER_ID)
+    
     private String newClientOrderId;
 
     public static final String SERIALIZED_NAME_NEW_ORDER_RESP_TYPE = "newOrderRespType";
 
-    @SerializedName(SERIALIZED_NAME_NEW_ORDER_RESP_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_NEW_ORDER_RESP_TYPE)
+    
     private NewOrderRespType newOrderRespType;
 
     public static final String SERIALIZED_NAME_ICEBERG_QTY = "icebergQty";
 
-    @SerializedName(SERIALIZED_NAME_ICEBERG_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ICEBERG_QTY)
+    
     private Double icebergQty;
 
     public static final String SERIALIZED_NAME_STRATEGY_ID = "strategyId";
 
-    @SerializedName(SERIALIZED_NAME_STRATEGY_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STRATEGY_ID)
+    
     private Long strategyId;
 
     public static final String SERIALIZED_NAME_STRATEGY_TYPE = "strategyType";
 
-    @SerializedName(SERIALIZED_NAME_STRATEGY_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STRATEGY_TYPE)
+    
     private Integer strategyType;
 
     public static final String SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE =
             "selfTradePreventionMode";
 
-    @SerializedName(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SELF_TRADE_PREVENTION_MODE)
+    
     private SelfTradePreventionMode selfTradePreventionMode;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
-    @SerializedName(SERIALIZED_NAME_RECV_WINDOW)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
+    
     private Double recvWindow;
 
     public SorOrderTestRequest() {}
 
     public SorOrderTestRequest computeCommissionRates(
-            @jakarta.annotation.Nullable Boolean computeCommissionRates) {
+             Boolean computeCommissionRates) {
         this.computeCommissionRates = computeCommissionRates;
         return this;
     }
@@ -131,17 +121,17 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return computeCommissionRates
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getComputeCommissionRates() {
         return computeCommissionRates;
     }
 
     public void setComputeCommissionRates(
-            @jakarta.annotation.Nullable Boolean computeCommissionRates) {
+             Boolean computeCommissionRates) {
         this.computeCommissionRates = computeCommissionRates;
     }
 
-    public SorOrderTestRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public SorOrderTestRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -151,17 +141,17 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public SorOrderTestRequest side(@jakarta.annotation.Nonnull Side side) {
+    public SorOrderTestRequest side( Side side) {
         this.side = side;
         return this;
     }
@@ -171,18 +161,18 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return side
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public Side getSide() {
         return side;
     }
 
-    public void setSide(@jakarta.annotation.Nonnull Side side) {
+    public void setSide( Side side) {
         this.side = side;
     }
 
-    public SorOrderTestRequest type(@jakarta.annotation.Nonnull OrderType type) {
+    public SorOrderTestRequest type( OrderType type) {
         this.type = type;
         return this;
     }
@@ -192,18 +182,18 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return type
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public OrderType getType() {
         return type;
     }
 
-    public void setType(@jakarta.annotation.Nonnull OrderType type) {
+    public void setType( OrderType type) {
         this.type = type;
     }
 
-    public SorOrderTestRequest timeInForce(@jakarta.annotation.Nullable TimeInForce timeInForce) {
+    public SorOrderTestRequest timeInForce( TimeInForce timeInForce) {
         this.timeInForce = timeInForce;
         return this;
     }
@@ -213,17 +203,17 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return timeInForce
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public TimeInForce getTimeInForce() {
         return timeInForce;
     }
 
-    public void setTimeInForce(@jakarta.annotation.Nullable TimeInForce timeInForce) {
+    public void setTimeInForce( TimeInForce timeInForce) {
         this.timeInForce = timeInForce;
     }
 
-    public SorOrderTestRequest price(@jakarta.annotation.Nullable Double price) {
+    public SorOrderTestRequest price( Double price) {
         this.price = price;
         return this;
     }
@@ -233,17 +223,17 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable Double price) {
+    public void setPrice( Double price) {
         this.price = price;
     }
 
-    public SorOrderTestRequest quantity(@jakarta.annotation.Nonnull Double quantity) {
+    public SorOrderTestRequest quantity( Double quantity) {
         this.quantity = quantity;
         return this;
     }
@@ -253,19 +243,19 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return quantity
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
-    @Valid
+
+    
+    
     public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(@jakarta.annotation.Nonnull Double quantity) {
+    public void setQuantity( Double quantity) {
         this.quantity = quantity;
     }
 
     public SorOrderTestRequest newClientOrderId(
-            @jakarta.annotation.Nullable String newClientOrderId) {
+             String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
         return this;
     }
@@ -275,17 +265,17 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return newClientOrderId
      */
-    @jakarta.annotation.Nullable
+    
     public String getNewClientOrderId() {
         return newClientOrderId;
     }
 
-    public void setNewClientOrderId(@jakarta.annotation.Nullable String newClientOrderId) {
+    public void setNewClientOrderId( String newClientOrderId) {
         this.newClientOrderId = newClientOrderId;
     }
 
     public SorOrderTestRequest newOrderRespType(
-            @jakarta.annotation.Nullable NewOrderRespType newOrderRespType) {
+             NewOrderRespType newOrderRespType) {
         this.newOrderRespType = newOrderRespType;
         return this;
     }
@@ -295,18 +285,18 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return newOrderRespType
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public NewOrderRespType getNewOrderRespType() {
         return newOrderRespType;
     }
 
     public void setNewOrderRespType(
-            @jakarta.annotation.Nullable NewOrderRespType newOrderRespType) {
+             NewOrderRespType newOrderRespType) {
         this.newOrderRespType = newOrderRespType;
     }
 
-    public SorOrderTestRequest icebergQty(@jakarta.annotation.Nullable Double icebergQty) {
+    public SorOrderTestRequest icebergQty( Double icebergQty) {
         this.icebergQty = icebergQty;
         return this;
     }
@@ -316,17 +306,17 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return icebergQty
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getIcebergQty() {
         return icebergQty;
     }
 
-    public void setIcebergQty(@jakarta.annotation.Nullable Double icebergQty) {
+    public void setIcebergQty( Double icebergQty) {
         this.icebergQty = icebergQty;
     }
 
-    public SorOrderTestRequest strategyId(@jakarta.annotation.Nullable Long strategyId) {
+    public SorOrderTestRequest strategyId( Long strategyId) {
         this.strategyId = strategyId;
         return this;
     }
@@ -336,16 +326,16 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return strategyId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStrategyId() {
         return strategyId;
     }
 
-    public void setStrategyId(@jakarta.annotation.Nullable Long strategyId) {
+    public void setStrategyId( Long strategyId) {
         this.strategyId = strategyId;
     }
 
-    public SorOrderTestRequest strategyType(@jakarta.annotation.Nullable Integer strategyType) {
+    public SorOrderTestRequest strategyType( Integer strategyType) {
         this.strategyType = strategyType;
         return this;
     }
@@ -355,17 +345,17 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return strategyType
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getStrategyType() {
         return strategyType;
     }
 
-    public void setStrategyType(@jakarta.annotation.Nullable Integer strategyType) {
+    public void setStrategyType( Integer strategyType) {
         this.strategyType = strategyType;
     }
 
     public SorOrderTestRequest selfTradePreventionMode(
-            @jakarta.annotation.Nullable SelfTradePreventionMode selfTradePreventionMode) {
+             SelfTradePreventionMode selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
         return this;
     }
@@ -375,18 +365,18 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return selfTradePreventionMode
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public SelfTradePreventionMode getSelfTradePreventionMode() {
         return selfTradePreventionMode;
     }
 
     public void setSelfTradePreventionMode(
-            @jakarta.annotation.Nullable SelfTradePreventionMode selfTradePreventionMode) {
+             SelfTradePreventionMode selfTradePreventionMode) {
         this.selfTradePreventionMode = selfTradePreventionMode;
     }
 
-    public SorOrderTestRequest recvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public SorOrderTestRequest recvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -396,13 +386,13 @@ public class SorOrderTestRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Double getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow(@jakarta.annotation.Nullable Double recvWindow) {
+    public void setRecvWindow( Double recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -641,158 +631,4 @@ public class SorOrderTestRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("computeCommissionRates");
-        openapiFields.add("symbol");
-        openapiFields.add("side");
-        openapiFields.add("type");
-        openapiFields.add("timeInForce");
-        openapiFields.add("price");
-        openapiFields.add("quantity");
-        openapiFields.add("newClientOrderId");
-        openapiFields.add("newOrderRespType");
-        openapiFields.add("icebergQty");
-        openapiFields.add("strategyId");
-        openapiFields.add("strategyType");
-        openapiFields.add("selfTradePreventionMode");
-        openapiFields.add("recvWindow");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-        openapiRequiredFields.add("side");
-        openapiRequiredFields.add("type");
-        openapiRequiredFields.add("quantity");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to SorOrderTestRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!SorOrderTestRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in SorOrderTestRequest is not found in"
-                                        + " the empty JSON string",
-                                SorOrderTestRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!SorOrderTestRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `SorOrderTestRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : SorOrderTestRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        // validate the required field `side`
-        Side.validateJsonElement(jsonObj.get("side"));
-        // validate the required field `type`
-        OrderType.validateJsonElement(jsonObj.get("type"));
-        // validate the optional field `timeInForce`
-        if (jsonObj.get("timeInForce") != null && !jsonObj.get("timeInForce").isJsonNull()) {
-            TimeInForce.validateJsonElement(jsonObj.get("timeInForce"));
-        }
-        if ((jsonObj.get("newClientOrderId") != null
-                        && !jsonObj.get("newClientOrderId").isJsonNull())
-                && !jsonObj.get("newClientOrderId").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `newClientOrderId` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("newClientOrderId").toString()));
-        }
-        // validate the optional field `newOrderRespType`
-        if (jsonObj.get("newOrderRespType") != null
-                && !jsonObj.get("newOrderRespType").isJsonNull()) {
-            NewOrderRespType.validateJsonElement(jsonObj.get("newOrderRespType"));
-        }
-        // validate the optional field `selfTradePreventionMode`
-        if (jsonObj.get("selfTradePreventionMode") != null
-                && !jsonObj.get("selfTradePreventionMode").isJsonNull()) {
-            SelfTradePreventionMode.validateJsonElement(jsonObj.get("selfTradePreventionMode"));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!SorOrderTestRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'SorOrderTestRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SorOrderTestRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(SorOrderTestRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<SorOrderTestRequest>() {
-                        @Override
-                        public void write(JsonWriter out, SorOrderTestRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public SorOrderTestRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of SorOrderTestRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of SorOrderTestRequest
-     * @throws IOException if the JSON string is invalid with respect to SorOrderTestRequest
-     */
-    public static SorOrderTestRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, SorOrderTestRequest.class);
-    }
-
-    /**
-     * Convert an instance of SorOrderTestRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

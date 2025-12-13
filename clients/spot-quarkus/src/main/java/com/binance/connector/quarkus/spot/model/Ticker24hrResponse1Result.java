@@ -12,12 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -25,140 +20,136 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-/** Ticker24hrResponse1Result */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class Ticker24hrResponse1Result extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_PRICE_CHANGE = "priceChange";
 
-    @SerializedName(SERIALIZED_NAME_PRICE_CHANGE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE_CHANGE)
+    
     private String priceChange;
 
     public static final String SERIALIZED_NAME_PRICE_CHANGE_PERCENT = "priceChangePercent";
 
-    @SerializedName(SERIALIZED_NAME_PRICE_CHANGE_PERCENT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE_CHANGE_PERCENT)
+    
     private String priceChangePercent;
 
     public static final String SERIALIZED_NAME_WEIGHTED_AVG_PRICE = "weightedAvgPrice";
 
-    @SerializedName(SERIALIZED_NAME_WEIGHTED_AVG_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_WEIGHTED_AVG_PRICE)
+    
     private String weightedAvgPrice;
 
     public static final String SERIALIZED_NAME_PREV_CLOSE_PRICE = "prevClosePrice";
 
-    @SerializedName(SERIALIZED_NAME_PREV_CLOSE_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PREV_CLOSE_PRICE)
+    
     private String prevClosePrice;
 
     public static final String SERIALIZED_NAME_LAST_PRICE = "lastPrice";
 
-    @SerializedName(SERIALIZED_NAME_LAST_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LAST_PRICE)
+    
     private String lastPrice;
 
     public static final String SERIALIZED_NAME_LAST_QTY = "lastQty";
 
-    @SerializedName(SERIALIZED_NAME_LAST_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LAST_QTY)
+    
     private String lastQty;
 
     public static final String SERIALIZED_NAME_BID_PRICE = "bidPrice";
 
-    @SerializedName(SERIALIZED_NAME_BID_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BID_PRICE)
+    
     private String bidPrice;
 
     public static final String SERIALIZED_NAME_BID_QTY = "bidQty";
 
-    @SerializedName(SERIALIZED_NAME_BID_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BID_QTY)
+    
     private String bidQty;
 
     public static final String SERIALIZED_NAME_ASK_PRICE = "askPrice";
 
-    @SerializedName(SERIALIZED_NAME_ASK_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASK_PRICE)
+    
     private String askPrice;
 
     public static final String SERIALIZED_NAME_ASK_QTY = "askQty";
 
-    @SerializedName(SERIALIZED_NAME_ASK_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASK_QTY)
+    
     private String askQty;
 
     public static final String SERIALIZED_NAME_OPEN_PRICE = "openPrice";
 
-    @SerializedName(SERIALIZED_NAME_OPEN_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_OPEN_PRICE)
+    
     private String openPrice;
 
     public static final String SERIALIZED_NAME_HIGH_PRICE = "highPrice";
 
-    @SerializedName(SERIALIZED_NAME_HIGH_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_HIGH_PRICE)
+    
     private String highPrice;
 
     public static final String SERIALIZED_NAME_LOW_PRICE = "lowPrice";
 
-    @SerializedName(SERIALIZED_NAME_LOW_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LOW_PRICE)
+    
     private String lowPrice;
 
     public static final String SERIALIZED_NAME_VOLUME = "volume";
 
-    @SerializedName(SERIALIZED_NAME_VOLUME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_VOLUME)
+    
     private String volume;
 
     public static final String SERIALIZED_NAME_QUOTE_VOLUME = "quoteVolume";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_VOLUME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_VOLUME)
+    
     private String quoteVolume;
 
     public static final String SERIALIZED_NAME_OPEN_TIME = "openTime";
 
-    @SerializedName(SERIALIZED_NAME_OPEN_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_OPEN_TIME)
+    
     private Long openTime;
 
     public static final String SERIALIZED_NAME_CLOSE_TIME = "closeTime";
 
-    @SerializedName(SERIALIZED_NAME_CLOSE_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CLOSE_TIME)
+    
     private Long closeTime;
 
     public static final String SERIALIZED_NAME_FIRST_ID = "firstId";
 
-    @SerializedName(SERIALIZED_NAME_FIRST_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FIRST_ID)
+    
     private Long firstId;
 
     public static final String SERIALIZED_NAME_LAST_ID = "lastId";
 
-    @SerializedName(SERIALIZED_NAME_LAST_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LAST_ID)
+    
     private Long lastId;
 
     public static final String SERIALIZED_NAME_COUNT = "count";
 
-    @SerializedName(SERIALIZED_NAME_COUNT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COUNT)
+    
     private Long count;
 
     public Ticker24hrResponse1Result() {}
 
-    public Ticker24hrResponse1Result symbol(@jakarta.annotation.Nullable String symbol) {
+    public Ticker24hrResponse1Result symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -168,16 +159,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public Ticker24hrResponse1Result priceChange(@jakarta.annotation.Nullable String priceChange) {
+    public Ticker24hrResponse1Result priceChange( String priceChange) {
         this.priceChange = priceChange;
         return this;
     }
@@ -187,17 +178,17 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return priceChange
      */
-    @jakarta.annotation.Nullable
+    
     public String getPriceChange() {
         return priceChange;
     }
 
-    public void setPriceChange(@jakarta.annotation.Nullable String priceChange) {
+    public void setPriceChange( String priceChange) {
         this.priceChange = priceChange;
     }
 
     public Ticker24hrResponse1Result priceChangePercent(
-            @jakarta.annotation.Nullable String priceChangePercent) {
+             String priceChangePercent) {
         this.priceChangePercent = priceChangePercent;
         return this;
     }
@@ -207,17 +198,17 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return priceChangePercent
      */
-    @jakarta.annotation.Nullable
+    
     public String getPriceChangePercent() {
         return priceChangePercent;
     }
 
-    public void setPriceChangePercent(@jakarta.annotation.Nullable String priceChangePercent) {
+    public void setPriceChangePercent( String priceChangePercent) {
         this.priceChangePercent = priceChangePercent;
     }
 
     public Ticker24hrResponse1Result weightedAvgPrice(
-            @jakarta.annotation.Nullable String weightedAvgPrice) {
+             String weightedAvgPrice) {
         this.weightedAvgPrice = weightedAvgPrice;
         return this;
     }
@@ -227,17 +218,17 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return weightedAvgPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getWeightedAvgPrice() {
         return weightedAvgPrice;
     }
 
-    public void setWeightedAvgPrice(@jakarta.annotation.Nullable String weightedAvgPrice) {
+    public void setWeightedAvgPrice( String weightedAvgPrice) {
         this.weightedAvgPrice = weightedAvgPrice;
     }
 
     public Ticker24hrResponse1Result prevClosePrice(
-            @jakarta.annotation.Nullable String prevClosePrice) {
+             String prevClosePrice) {
         this.prevClosePrice = prevClosePrice;
         return this;
     }
@@ -247,16 +238,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return prevClosePrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getPrevClosePrice() {
         return prevClosePrice;
     }
 
-    public void setPrevClosePrice(@jakarta.annotation.Nullable String prevClosePrice) {
+    public void setPrevClosePrice( String prevClosePrice) {
         this.prevClosePrice = prevClosePrice;
     }
 
-    public Ticker24hrResponse1Result lastPrice(@jakarta.annotation.Nullable String lastPrice) {
+    public Ticker24hrResponse1Result lastPrice( String lastPrice) {
         this.lastPrice = lastPrice;
         return this;
     }
@@ -266,16 +257,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return lastPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getLastPrice() {
         return lastPrice;
     }
 
-    public void setLastPrice(@jakarta.annotation.Nullable String lastPrice) {
+    public void setLastPrice( String lastPrice) {
         this.lastPrice = lastPrice;
     }
 
-    public Ticker24hrResponse1Result lastQty(@jakarta.annotation.Nullable String lastQty) {
+    public Ticker24hrResponse1Result lastQty( String lastQty) {
         this.lastQty = lastQty;
         return this;
     }
@@ -285,16 +276,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return lastQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getLastQty() {
         return lastQty;
     }
 
-    public void setLastQty(@jakarta.annotation.Nullable String lastQty) {
+    public void setLastQty( String lastQty) {
         this.lastQty = lastQty;
     }
 
-    public Ticker24hrResponse1Result bidPrice(@jakarta.annotation.Nullable String bidPrice) {
+    public Ticker24hrResponse1Result bidPrice( String bidPrice) {
         this.bidPrice = bidPrice;
         return this;
     }
@@ -304,16 +295,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return bidPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getBidPrice() {
         return bidPrice;
     }
 
-    public void setBidPrice(@jakarta.annotation.Nullable String bidPrice) {
+    public void setBidPrice( String bidPrice) {
         this.bidPrice = bidPrice;
     }
 
-    public Ticker24hrResponse1Result bidQty(@jakarta.annotation.Nullable String bidQty) {
+    public Ticker24hrResponse1Result bidQty( String bidQty) {
         this.bidQty = bidQty;
         return this;
     }
@@ -323,16 +314,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return bidQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getBidQty() {
         return bidQty;
     }
 
-    public void setBidQty(@jakarta.annotation.Nullable String bidQty) {
+    public void setBidQty( String bidQty) {
         this.bidQty = bidQty;
     }
 
-    public Ticker24hrResponse1Result askPrice(@jakarta.annotation.Nullable String askPrice) {
+    public Ticker24hrResponse1Result askPrice( String askPrice) {
         this.askPrice = askPrice;
         return this;
     }
@@ -342,16 +333,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return askPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getAskPrice() {
         return askPrice;
     }
 
-    public void setAskPrice(@jakarta.annotation.Nullable String askPrice) {
+    public void setAskPrice( String askPrice) {
         this.askPrice = askPrice;
     }
 
-    public Ticker24hrResponse1Result askQty(@jakarta.annotation.Nullable String askQty) {
+    public Ticker24hrResponse1Result askQty( String askQty) {
         this.askQty = askQty;
         return this;
     }
@@ -361,16 +352,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return askQty
      */
-    @jakarta.annotation.Nullable
+    
     public String getAskQty() {
         return askQty;
     }
 
-    public void setAskQty(@jakarta.annotation.Nullable String askQty) {
+    public void setAskQty( String askQty) {
         this.askQty = askQty;
     }
 
-    public Ticker24hrResponse1Result openPrice(@jakarta.annotation.Nullable String openPrice) {
+    public Ticker24hrResponse1Result openPrice( String openPrice) {
         this.openPrice = openPrice;
         return this;
     }
@@ -380,16 +371,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return openPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getOpenPrice() {
         return openPrice;
     }
 
-    public void setOpenPrice(@jakarta.annotation.Nullable String openPrice) {
+    public void setOpenPrice( String openPrice) {
         this.openPrice = openPrice;
     }
 
-    public Ticker24hrResponse1Result highPrice(@jakarta.annotation.Nullable String highPrice) {
+    public Ticker24hrResponse1Result highPrice( String highPrice) {
         this.highPrice = highPrice;
         return this;
     }
@@ -399,16 +390,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return highPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getHighPrice() {
         return highPrice;
     }
 
-    public void setHighPrice(@jakarta.annotation.Nullable String highPrice) {
+    public void setHighPrice( String highPrice) {
         this.highPrice = highPrice;
     }
 
-    public Ticker24hrResponse1Result lowPrice(@jakarta.annotation.Nullable String lowPrice) {
+    public Ticker24hrResponse1Result lowPrice( String lowPrice) {
         this.lowPrice = lowPrice;
         return this;
     }
@@ -418,16 +409,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return lowPrice
      */
-    @jakarta.annotation.Nullable
+    
     public String getLowPrice() {
         return lowPrice;
     }
 
-    public void setLowPrice(@jakarta.annotation.Nullable String lowPrice) {
+    public void setLowPrice( String lowPrice) {
         this.lowPrice = lowPrice;
     }
 
-    public Ticker24hrResponse1Result volume(@jakarta.annotation.Nullable String volume) {
+    public Ticker24hrResponse1Result volume( String volume) {
         this.volume = volume;
         return this;
     }
@@ -437,16 +428,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return volume
      */
-    @jakarta.annotation.Nullable
+    
     public String getVolume() {
         return volume;
     }
 
-    public void setVolume(@jakarta.annotation.Nullable String volume) {
+    public void setVolume( String volume) {
         this.volume = volume;
     }
 
-    public Ticker24hrResponse1Result quoteVolume(@jakarta.annotation.Nullable String quoteVolume) {
+    public Ticker24hrResponse1Result quoteVolume( String quoteVolume) {
         this.quoteVolume = quoteVolume;
         return this;
     }
@@ -456,16 +447,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return quoteVolume
      */
-    @jakarta.annotation.Nullable
+    
     public String getQuoteVolume() {
         return quoteVolume;
     }
 
-    public void setQuoteVolume(@jakarta.annotation.Nullable String quoteVolume) {
+    public void setQuoteVolume( String quoteVolume) {
         this.quoteVolume = quoteVolume;
     }
 
-    public Ticker24hrResponse1Result openTime(@jakarta.annotation.Nullable Long openTime) {
+    public Ticker24hrResponse1Result openTime( Long openTime) {
         this.openTime = openTime;
         return this;
     }
@@ -475,16 +466,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return openTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getOpenTime() {
         return openTime;
     }
 
-    public void setOpenTime(@jakarta.annotation.Nullable Long openTime) {
+    public void setOpenTime( Long openTime) {
         this.openTime = openTime;
     }
 
-    public Ticker24hrResponse1Result closeTime(@jakarta.annotation.Nullable Long closeTime) {
+    public Ticker24hrResponse1Result closeTime( Long closeTime) {
         this.closeTime = closeTime;
         return this;
     }
@@ -494,16 +485,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return closeTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getCloseTime() {
         return closeTime;
     }
 
-    public void setCloseTime(@jakarta.annotation.Nullable Long closeTime) {
+    public void setCloseTime( Long closeTime) {
         this.closeTime = closeTime;
     }
 
-    public Ticker24hrResponse1Result firstId(@jakarta.annotation.Nullable Long firstId) {
+    public Ticker24hrResponse1Result firstId( Long firstId) {
         this.firstId = firstId;
         return this;
     }
@@ -513,16 +504,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return firstId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getFirstId() {
         return firstId;
     }
 
-    public void setFirstId(@jakarta.annotation.Nullable Long firstId) {
+    public void setFirstId( Long firstId) {
         this.firstId = firstId;
     }
 
-    public Ticker24hrResponse1Result lastId(@jakarta.annotation.Nullable Long lastId) {
+    public Ticker24hrResponse1Result lastId( Long lastId) {
         this.lastId = lastId;
         return this;
     }
@@ -532,16 +523,16 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return lastId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getLastId() {
         return lastId;
     }
 
-    public void setLastId(@jakarta.annotation.Nullable Long lastId) {
+    public void setLastId( Long lastId) {
         this.lastId = lastId;
     }
 
-    public Ticker24hrResponse1Result count(@jakarta.annotation.Nullable Long count) {
+    public Ticker24hrResponse1Result count( Long count) {
         this.count = count;
         return this;
     }
@@ -551,12 +542,12 @@ public class Ticker24hrResponse1Result extends BaseDTO {
      *
      * @return count
      */
-    @jakarta.annotation.Nullable
+    
     public Long getCount() {
         return count;
     }
 
-    public void setCount(@jakarta.annotation.Nullable Long count) {
+    public void setCount( Long count) {
         this.count = count;
     }
 
@@ -874,248 +865,4 @@ public class Ticker24hrResponse1Result extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("priceChange");
-        openapiFields.add("priceChangePercent");
-        openapiFields.add("weightedAvgPrice");
-        openapiFields.add("prevClosePrice");
-        openapiFields.add("lastPrice");
-        openapiFields.add("lastQty");
-        openapiFields.add("bidPrice");
-        openapiFields.add("bidQty");
-        openapiFields.add("askPrice");
-        openapiFields.add("askQty");
-        openapiFields.add("openPrice");
-        openapiFields.add("highPrice");
-        openapiFields.add("lowPrice");
-        openapiFields.add("volume");
-        openapiFields.add("quoteVolume");
-        openapiFields.add("openTime");
-        openapiFields.add("closeTime");
-        openapiFields.add("firstId");
-        openapiFields.add("lastId");
-        openapiFields.add("count");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to Ticker24hrResponse1Result
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!Ticker24hrResponse1Result.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in Ticker24hrResponse1Result is not found"
-                                        + " in the empty JSON string",
-                                Ticker24hrResponse1Result.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!Ticker24hrResponse1Result.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `Ticker24hrResponse1Result` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("priceChange") != null && !jsonObj.get("priceChange").isJsonNull())
-                && !jsonObj.get("priceChange").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `priceChange` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("priceChange").toString()));
-        }
-        if ((jsonObj.get("priceChangePercent") != null
-                        && !jsonObj.get("priceChangePercent").isJsonNull())
-                && !jsonObj.get("priceChangePercent").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `priceChangePercent` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("priceChangePercent").toString()));
-        }
-        if ((jsonObj.get("weightedAvgPrice") != null
-                        && !jsonObj.get("weightedAvgPrice").isJsonNull())
-                && !jsonObj.get("weightedAvgPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `weightedAvgPrice` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("weightedAvgPrice").toString()));
-        }
-        if ((jsonObj.get("prevClosePrice") != null && !jsonObj.get("prevClosePrice").isJsonNull())
-                && !jsonObj.get("prevClosePrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `prevClosePrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("prevClosePrice").toString()));
-        }
-        if ((jsonObj.get("lastPrice") != null && !jsonObj.get("lastPrice").isJsonNull())
-                && !jsonObj.get("lastPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `lastPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("lastPrice").toString()));
-        }
-        if ((jsonObj.get("lastQty") != null && !jsonObj.get("lastQty").isJsonNull())
-                && !jsonObj.get("lastQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `lastQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("lastQty").toString()));
-        }
-        if ((jsonObj.get("bidPrice") != null && !jsonObj.get("bidPrice").isJsonNull())
-                && !jsonObj.get("bidPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `bidPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("bidPrice").toString()));
-        }
-        if ((jsonObj.get("bidQty") != null && !jsonObj.get("bidQty").isJsonNull())
-                && !jsonObj.get("bidQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `bidQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("bidQty").toString()));
-        }
-        if ((jsonObj.get("askPrice") != null && !jsonObj.get("askPrice").isJsonNull())
-                && !jsonObj.get("askPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `askPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("askPrice").toString()));
-        }
-        if ((jsonObj.get("askQty") != null && !jsonObj.get("askQty").isJsonNull())
-                && !jsonObj.get("askQty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `askQty` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("askQty").toString()));
-        }
-        if ((jsonObj.get("openPrice") != null && !jsonObj.get("openPrice").isJsonNull())
-                && !jsonObj.get("openPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `openPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("openPrice").toString()));
-        }
-        if ((jsonObj.get("highPrice") != null && !jsonObj.get("highPrice").isJsonNull())
-                && !jsonObj.get("highPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `highPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("highPrice").toString()));
-        }
-        if ((jsonObj.get("lowPrice") != null && !jsonObj.get("lowPrice").isJsonNull())
-                && !jsonObj.get("lowPrice").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `lowPrice` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("lowPrice").toString()));
-        }
-        if ((jsonObj.get("volume") != null && !jsonObj.get("volume").isJsonNull())
-                && !jsonObj.get("volume").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `volume` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("volume").toString()));
-        }
-        if ((jsonObj.get("quoteVolume") != null && !jsonObj.get("quoteVolume").isJsonNull())
-                && !jsonObj.get("quoteVolume").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `quoteVolume` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("quoteVolume").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!Ticker24hrResponse1Result.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'Ticker24hrResponse1Result' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<Ticker24hrResponse1Result> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(Ticker24hrResponse1Result.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<Ticker24hrResponse1Result>() {
-                        @Override
-                        public void write(JsonWriter out, Ticker24hrResponse1Result value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public Ticker24hrResponse1Result read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of Ticker24hrResponse1Result given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of Ticker24hrResponse1Result
-     * @throws IOException if the JSON string is invalid with respect to Ticker24hrResponse1Result
-     */
-    public static Ticker24hrResponse1Result fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, Ticker24hrResponse1Result.class);
-    }
-
-    /**
-     * Convert an instance of Ticker24hrResponse1Result to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

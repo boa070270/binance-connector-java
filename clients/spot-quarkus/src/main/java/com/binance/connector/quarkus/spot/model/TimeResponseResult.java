@@ -12,33 +12,23 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TimeResponseResult */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TimeResponseResult extends BaseDTO {
     public static final String SERIALIZED_NAME_SERVER_TIME = "serverTime";
 
-    @SerializedName(SERIALIZED_NAME_SERVER_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SERVER_TIME)
+    
     private Long serverTime;
 
     public TimeResponseResult() {}
 
-    public TimeResponseResult serverTime(@jakarta.annotation.Nullable Long serverTime) {
+    public TimeResponseResult serverTime( Long serverTime) {
         this.serverTime = serverTime;
         return this;
     }
@@ -48,12 +38,12 @@ public class TimeResponseResult extends BaseDTO {
      *
      * @return serverTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getServerTime() {
         return serverTime;
     }
 
-    public void setServerTime(@jakarta.annotation.Nullable Long serverTime) {
+    public void setServerTime( Long serverTime) {
         this.serverTime = serverTime;
     }
 
@@ -127,97 +117,4 @@ public class TimeResponseResult extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("serverTime");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TimeResponseResult
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TimeResponseResult.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TimeResponseResult is not found in the"
-                                        + " empty JSON string",
-                                TimeResponseResult.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TimeResponseResult.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TimeResponseResult` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TimeResponseResult.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TimeResponseResult' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TimeResponseResult> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TimeResponseResult.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TimeResponseResult>() {
-                        @Override
-                        public void write(JsonWriter out, TimeResponseResult value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TimeResponseResult read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TimeResponseResult given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TimeResponseResult
-     * @throws IOException if the JSON string is invalid with respect to TimeResponseResult
-     */
-    public static TimeResponseResult fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TimeResponseResult.class);
-    }
-
-    /**
-     * Convert an instance of TimeResponseResult to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

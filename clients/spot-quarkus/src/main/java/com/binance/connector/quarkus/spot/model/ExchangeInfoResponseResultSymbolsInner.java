@@ -12,184 +12,174 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** ExchangeInfoResponseResultSymbolsInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_STATUS = "status";
 
-    @SerializedName(SERIALIZED_NAME_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STATUS)
+    
     private String status;
 
     public static final String SERIALIZED_NAME_BASE_ASSET = "baseAsset";
 
-    @SerializedName(SERIALIZED_NAME_BASE_ASSET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BASE_ASSET)
+    
     private String baseAsset;
 
     public static final String SERIALIZED_NAME_BASE_ASSET_PRECISION = "baseAssetPrecision";
 
-    @SerializedName(SERIALIZED_NAME_BASE_ASSET_PRECISION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BASE_ASSET_PRECISION)
+    
     private Long baseAssetPrecision;
 
     public static final String SERIALIZED_NAME_QUOTE_ASSET = "quoteAsset";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_ASSET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_ASSET)
+    
     private String quoteAsset;
 
     public static final String SERIALIZED_NAME_QUOTE_PRECISION = "quotePrecision";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_PRECISION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_PRECISION)
+    
     private Long quotePrecision;
 
     public static final String SERIALIZED_NAME_QUOTE_ASSET_PRECISION = "quoteAssetPrecision";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_ASSET_PRECISION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_ASSET_PRECISION)
+    
     private Long quoteAssetPrecision;
 
     public static final String SERIALIZED_NAME_BASE_COMMISSION_PRECISION =
             "baseCommissionPrecision";
 
-    @SerializedName(SERIALIZED_NAME_BASE_COMMISSION_PRECISION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BASE_COMMISSION_PRECISION)
+    
     private Long baseCommissionPrecision;
 
     public static final String SERIALIZED_NAME_QUOTE_COMMISSION_PRECISION =
             "quoteCommissionPrecision";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_COMMISSION_PRECISION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_COMMISSION_PRECISION)
+    
     private Long quoteCommissionPrecision;
 
     public static final String SERIALIZED_NAME_ORDER_TYPES = "orderTypes";
 
-    @SerializedName(SERIALIZED_NAME_ORDER_TYPES)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ORDER_TYPES)
+    
     private List<String> orderTypes;
 
     public static final String SERIALIZED_NAME_ICEBERG_ALLOWED = "icebergAllowed";
 
-    @SerializedName(SERIALIZED_NAME_ICEBERG_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ICEBERG_ALLOWED)
+    
     private Boolean icebergAllowed;
 
     public static final String SERIALIZED_NAME_OCO_ALLOWED = "ocoAllowed";
 
-    @SerializedName(SERIALIZED_NAME_OCO_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_OCO_ALLOWED)
+    
     private Boolean ocoAllowed;
 
     public static final String SERIALIZED_NAME_OTO_ALLOWED = "otoAllowed";
 
-    @SerializedName(SERIALIZED_NAME_OTO_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_OTO_ALLOWED)
+    
     private Boolean otoAllowed;
 
     public static final String SERIALIZED_NAME_QUOTE_ORDER_QTY_MARKET_ALLOWED =
             "quoteOrderQtyMarketAllowed";
 
-    @SerializedName(SERIALIZED_NAME_QUOTE_ORDER_QTY_MARKET_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QUOTE_ORDER_QTY_MARKET_ALLOWED)
+    
     private Boolean quoteOrderQtyMarketAllowed;
 
     public static final String SERIALIZED_NAME_ALLOW_TRAILING_STOP = "allowTrailingStop";
 
-    @SerializedName(SERIALIZED_NAME_ALLOW_TRAILING_STOP)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ALLOW_TRAILING_STOP)
+    
     private Boolean allowTrailingStop;
 
     public static final String SERIALIZED_NAME_CANCEL_REPLACE_ALLOWED = "cancelReplaceAllowed";
 
-    @SerializedName(SERIALIZED_NAME_CANCEL_REPLACE_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_CANCEL_REPLACE_ALLOWED)
+    
     private Boolean cancelReplaceAllowed;
 
     public static final String SERIALIZED_NAME_AMEND_ALLOWED = "amendAllowed";
 
-    @SerializedName(SERIALIZED_NAME_AMEND_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_AMEND_ALLOWED)
+    
     private Boolean amendAllowed;
 
     public static final String SERIALIZED_NAME_PEG_INSTRUCTIONS_ALLOWED = "pegInstructionsAllowed";
 
-    @SerializedName(SERIALIZED_NAME_PEG_INSTRUCTIONS_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PEG_INSTRUCTIONS_ALLOWED)
+    
     private Boolean pegInstructionsAllowed;
 
     public static final String SERIALIZED_NAME_IS_SPOT_TRADING_ALLOWED = "isSpotTradingAllowed";
 
-    @SerializedName(SERIALIZED_NAME_IS_SPOT_TRADING_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_IS_SPOT_TRADING_ALLOWED)
+    
     private Boolean isSpotTradingAllowed;
 
     public static final String SERIALIZED_NAME_IS_MARGIN_TRADING_ALLOWED = "isMarginTradingAllowed";
 
-    @SerializedName(SERIALIZED_NAME_IS_MARGIN_TRADING_ALLOWED)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_IS_MARGIN_TRADING_ALLOWED)
+    
     private Boolean isMarginTradingAllowed;
 
     public static final String SERIALIZED_NAME_FILTERS = "filters";
 
-    @SerializedName(SERIALIZED_NAME_FILTERS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FILTERS)
+    
     private List<SymbolFilters> filters;
 
     public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
 
-    @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PERMISSIONS)
+    
     private List<String> permissions;
 
     public static final String SERIALIZED_NAME_PERMISSION_SETS = "permissionSets";
 
-    @SerializedName(SERIALIZED_NAME_PERMISSION_SETS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PERMISSION_SETS)
+    
     private List<List<String>> permissionSets;
 
     public static final String SERIALIZED_NAME_DEFAULT_SELF_TRADE_PREVENTION_MODE =
             "defaultSelfTradePreventionMode";
 
-    @SerializedName(SERIALIZED_NAME_DEFAULT_SELF_TRADE_PREVENTION_MODE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_DEFAULT_SELF_TRADE_PREVENTION_MODE)
+    
     private String defaultSelfTradePreventionMode;
 
     public static final String SERIALIZED_NAME_ALLOWED_SELF_TRADE_PREVENTION_MODES =
             "allowedSelfTradePreventionModes";
 
-    @SerializedName(SERIALIZED_NAME_ALLOWED_SELF_TRADE_PREVENTION_MODES)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ALLOWED_SELF_TRADE_PREVENTION_MODES)
+    
     private List<String> allowedSelfTradePreventionModes;
 
     public ExchangeInfoResponseResultSymbolsInner() {}
 
     public ExchangeInfoResponseResultSymbolsInner symbol(
-            @jakarta.annotation.Nullable String symbol) {
+             String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -199,17 +189,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
     public ExchangeInfoResponseResultSymbolsInner status(
-            @jakarta.annotation.Nullable String status) {
+             String status) {
         this.status = status;
         return this;
     }
@@ -219,17 +209,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return status
      */
-    @jakarta.annotation.Nullable
+    
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(@jakarta.annotation.Nullable String status) {
+    public void setStatus( String status) {
         this.status = status;
     }
 
     public ExchangeInfoResponseResultSymbolsInner baseAsset(
-            @jakarta.annotation.Nullable String baseAsset) {
+             String baseAsset) {
         this.baseAsset = baseAsset;
         return this;
     }
@@ -239,17 +229,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return baseAsset
      */
-    @jakarta.annotation.Nullable
+    
     public String getBaseAsset() {
         return baseAsset;
     }
 
-    public void setBaseAsset(@jakarta.annotation.Nullable String baseAsset) {
+    public void setBaseAsset( String baseAsset) {
         this.baseAsset = baseAsset;
     }
 
     public ExchangeInfoResponseResultSymbolsInner baseAssetPrecision(
-            @jakarta.annotation.Nullable Long baseAssetPrecision) {
+             Long baseAssetPrecision) {
         this.baseAssetPrecision = baseAssetPrecision;
         return this;
     }
@@ -259,17 +249,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return baseAssetPrecision
      */
-    @jakarta.annotation.Nullable
+    
     public Long getBaseAssetPrecision() {
         return baseAssetPrecision;
     }
 
-    public void setBaseAssetPrecision(@jakarta.annotation.Nullable Long baseAssetPrecision) {
+    public void setBaseAssetPrecision( Long baseAssetPrecision) {
         this.baseAssetPrecision = baseAssetPrecision;
     }
 
     public ExchangeInfoResponseResultSymbolsInner quoteAsset(
-            @jakarta.annotation.Nullable String quoteAsset) {
+             String quoteAsset) {
         this.quoteAsset = quoteAsset;
         return this;
     }
@@ -279,17 +269,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return quoteAsset
      */
-    @jakarta.annotation.Nullable
+    
     public String getQuoteAsset() {
         return quoteAsset;
     }
 
-    public void setQuoteAsset(@jakarta.annotation.Nullable String quoteAsset) {
+    public void setQuoteAsset( String quoteAsset) {
         this.quoteAsset = quoteAsset;
     }
 
     public ExchangeInfoResponseResultSymbolsInner quotePrecision(
-            @jakarta.annotation.Nullable Long quotePrecision) {
+             Long quotePrecision) {
         this.quotePrecision = quotePrecision;
         return this;
     }
@@ -299,17 +289,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return quotePrecision
      */
-    @jakarta.annotation.Nullable
+    
     public Long getQuotePrecision() {
         return quotePrecision;
     }
 
-    public void setQuotePrecision(@jakarta.annotation.Nullable Long quotePrecision) {
+    public void setQuotePrecision( Long quotePrecision) {
         this.quotePrecision = quotePrecision;
     }
 
     public ExchangeInfoResponseResultSymbolsInner quoteAssetPrecision(
-            @jakarta.annotation.Nullable Long quoteAssetPrecision) {
+             Long quoteAssetPrecision) {
         this.quoteAssetPrecision = quoteAssetPrecision;
         return this;
     }
@@ -319,17 +309,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return quoteAssetPrecision
      */
-    @jakarta.annotation.Nullable
+    
     public Long getQuoteAssetPrecision() {
         return quoteAssetPrecision;
     }
 
-    public void setQuoteAssetPrecision(@jakarta.annotation.Nullable Long quoteAssetPrecision) {
+    public void setQuoteAssetPrecision( Long quoteAssetPrecision) {
         this.quoteAssetPrecision = quoteAssetPrecision;
     }
 
     public ExchangeInfoResponseResultSymbolsInner baseCommissionPrecision(
-            @jakarta.annotation.Nullable Long baseCommissionPrecision) {
+             Long baseCommissionPrecision) {
         this.baseCommissionPrecision = baseCommissionPrecision;
         return this;
     }
@@ -339,18 +329,18 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return baseCommissionPrecision
      */
-    @jakarta.annotation.Nullable
+    
     public Long getBaseCommissionPrecision() {
         return baseCommissionPrecision;
     }
 
     public void setBaseCommissionPrecision(
-            @jakarta.annotation.Nullable Long baseCommissionPrecision) {
+             Long baseCommissionPrecision) {
         this.baseCommissionPrecision = baseCommissionPrecision;
     }
 
     public ExchangeInfoResponseResultSymbolsInner quoteCommissionPrecision(
-            @jakarta.annotation.Nullable Long quoteCommissionPrecision) {
+             Long quoteCommissionPrecision) {
         this.quoteCommissionPrecision = quoteCommissionPrecision;
         return this;
     }
@@ -360,18 +350,18 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return quoteCommissionPrecision
      */
-    @jakarta.annotation.Nullable
+    
     public Long getQuoteCommissionPrecision() {
         return quoteCommissionPrecision;
     }
 
     public void setQuoteCommissionPrecision(
-            @jakarta.annotation.Nullable Long quoteCommissionPrecision) {
+             Long quoteCommissionPrecision) {
         this.quoteCommissionPrecision = quoteCommissionPrecision;
     }
 
     public ExchangeInfoResponseResultSymbolsInner orderTypes(
-            @jakarta.annotation.Nullable List<String> orderTypes) {
+             List<String> orderTypes) {
         this.orderTypes = orderTypes;
         return this;
     }
@@ -389,17 +379,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return orderTypes
      */
-    @jakarta.annotation.Nullable
+    
     public List<String> getOrderTypes() {
         return orderTypes;
     }
 
-    public void setOrderTypes(@jakarta.annotation.Nullable List<String> orderTypes) {
+    public void setOrderTypes( List<String> orderTypes) {
         this.orderTypes = orderTypes;
     }
 
     public ExchangeInfoResponseResultSymbolsInner icebergAllowed(
-            @jakarta.annotation.Nullable Boolean icebergAllowed) {
+             Boolean icebergAllowed) {
         this.icebergAllowed = icebergAllowed;
         return this;
     }
@@ -409,17 +399,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return icebergAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIcebergAllowed() {
         return icebergAllowed;
     }
 
-    public void setIcebergAllowed(@jakarta.annotation.Nullable Boolean icebergAllowed) {
+    public void setIcebergAllowed( Boolean icebergAllowed) {
         this.icebergAllowed = icebergAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner ocoAllowed(
-            @jakarta.annotation.Nullable Boolean ocoAllowed) {
+             Boolean ocoAllowed) {
         this.ocoAllowed = ocoAllowed;
         return this;
     }
@@ -429,17 +419,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return ocoAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getOcoAllowed() {
         return ocoAllowed;
     }
 
-    public void setOcoAllowed(@jakarta.annotation.Nullable Boolean ocoAllowed) {
+    public void setOcoAllowed( Boolean ocoAllowed) {
         this.ocoAllowed = ocoAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner otoAllowed(
-            @jakarta.annotation.Nullable Boolean otoAllowed) {
+             Boolean otoAllowed) {
         this.otoAllowed = otoAllowed;
         return this;
     }
@@ -449,17 +439,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return otoAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getOtoAllowed() {
         return otoAllowed;
     }
 
-    public void setOtoAllowed(@jakarta.annotation.Nullable Boolean otoAllowed) {
+    public void setOtoAllowed( Boolean otoAllowed) {
         this.otoAllowed = otoAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner quoteOrderQtyMarketAllowed(
-            @jakarta.annotation.Nullable Boolean quoteOrderQtyMarketAllowed) {
+             Boolean quoteOrderQtyMarketAllowed) {
         this.quoteOrderQtyMarketAllowed = quoteOrderQtyMarketAllowed;
         return this;
     }
@@ -469,18 +459,18 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return quoteOrderQtyMarketAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getQuoteOrderQtyMarketAllowed() {
         return quoteOrderQtyMarketAllowed;
     }
 
     public void setQuoteOrderQtyMarketAllowed(
-            @jakarta.annotation.Nullable Boolean quoteOrderQtyMarketAllowed) {
+             Boolean quoteOrderQtyMarketAllowed) {
         this.quoteOrderQtyMarketAllowed = quoteOrderQtyMarketAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner allowTrailingStop(
-            @jakarta.annotation.Nullable Boolean allowTrailingStop) {
+             Boolean allowTrailingStop) {
         this.allowTrailingStop = allowTrailingStop;
         return this;
     }
@@ -490,17 +480,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return allowTrailingStop
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getAllowTrailingStop() {
         return allowTrailingStop;
     }
 
-    public void setAllowTrailingStop(@jakarta.annotation.Nullable Boolean allowTrailingStop) {
+    public void setAllowTrailingStop( Boolean allowTrailingStop) {
         this.allowTrailingStop = allowTrailingStop;
     }
 
     public ExchangeInfoResponseResultSymbolsInner cancelReplaceAllowed(
-            @jakarta.annotation.Nullable Boolean cancelReplaceAllowed) {
+             Boolean cancelReplaceAllowed) {
         this.cancelReplaceAllowed = cancelReplaceAllowed;
         return this;
     }
@@ -510,17 +500,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return cancelReplaceAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getCancelReplaceAllowed() {
         return cancelReplaceAllowed;
     }
 
-    public void setCancelReplaceAllowed(@jakarta.annotation.Nullable Boolean cancelReplaceAllowed) {
+    public void setCancelReplaceAllowed( Boolean cancelReplaceAllowed) {
         this.cancelReplaceAllowed = cancelReplaceAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner amendAllowed(
-            @jakarta.annotation.Nullable Boolean amendAllowed) {
+             Boolean amendAllowed) {
         this.amendAllowed = amendAllowed;
         return this;
     }
@@ -530,17 +520,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return amendAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getAmendAllowed() {
         return amendAllowed;
     }
 
-    public void setAmendAllowed(@jakarta.annotation.Nullable Boolean amendAllowed) {
+    public void setAmendAllowed( Boolean amendAllowed) {
         this.amendAllowed = amendAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner pegInstructionsAllowed(
-            @jakarta.annotation.Nullable Boolean pegInstructionsAllowed) {
+             Boolean pegInstructionsAllowed) {
         this.pegInstructionsAllowed = pegInstructionsAllowed;
         return this;
     }
@@ -550,18 +540,18 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return pegInstructionsAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getPegInstructionsAllowed() {
         return pegInstructionsAllowed;
     }
 
     public void setPegInstructionsAllowed(
-            @jakarta.annotation.Nullable Boolean pegInstructionsAllowed) {
+             Boolean pegInstructionsAllowed) {
         this.pegInstructionsAllowed = pegInstructionsAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner isSpotTradingAllowed(
-            @jakarta.annotation.Nullable Boolean isSpotTradingAllowed) {
+             Boolean isSpotTradingAllowed) {
         this.isSpotTradingAllowed = isSpotTradingAllowed;
         return this;
     }
@@ -571,17 +561,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return isSpotTradingAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIsSpotTradingAllowed() {
         return isSpotTradingAllowed;
     }
 
-    public void setIsSpotTradingAllowed(@jakarta.annotation.Nullable Boolean isSpotTradingAllowed) {
+    public void setIsSpotTradingAllowed( Boolean isSpotTradingAllowed) {
         this.isSpotTradingAllowed = isSpotTradingAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner isMarginTradingAllowed(
-            @jakarta.annotation.Nullable Boolean isMarginTradingAllowed) {
+             Boolean isMarginTradingAllowed) {
         this.isMarginTradingAllowed = isMarginTradingAllowed;
         return this;
     }
@@ -591,18 +581,18 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return isMarginTradingAllowed
      */
-    @jakarta.annotation.Nullable
+    
     public Boolean getIsMarginTradingAllowed() {
         return isMarginTradingAllowed;
     }
 
     public void setIsMarginTradingAllowed(
-            @jakarta.annotation.Nullable Boolean isMarginTradingAllowed) {
+             Boolean isMarginTradingAllowed) {
         this.isMarginTradingAllowed = isMarginTradingAllowed;
     }
 
     public ExchangeInfoResponseResultSymbolsInner filters(
-            @jakarta.annotation.Nullable List<SymbolFilters> filters) {
+             List<SymbolFilters> filters) {
         this.filters = filters;
         return this;
     }
@@ -620,18 +610,16 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return filters
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<SymbolFilters> getFilters() {
         return filters;
     }
 
-    public void setFilters(@jakarta.annotation.Nullable List<SymbolFilters> filters) {
+    public void setFilters( List<SymbolFilters> filters) {
         this.filters = filters;
     }
 
     public ExchangeInfoResponseResultSymbolsInner permissions(
-            @jakarta.annotation.Nullable List<String> permissions) {
+             List<String> permissions) {
         this.permissions = permissions;
         return this;
     }
@@ -649,17 +637,17 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return permissions
      */
-    @jakarta.annotation.Nullable
+    
     public List<String> getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(@jakarta.annotation.Nullable List<String> permissions) {
+    public void setPermissions( List<String> permissions) {
         this.permissions = permissions;
     }
 
     public ExchangeInfoResponseResultSymbolsInner permissionSets(
-            @jakarta.annotation.Nullable List<List<String>> permissionSets) {
+             List<List<String>> permissionSets) {
         this.permissionSets = permissionSets;
         return this;
     }
@@ -678,18 +666,16 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return permissionSets
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<List<String>> getPermissionSets() {
         return permissionSets;
     }
 
-    public void setPermissionSets(@jakarta.annotation.Nullable List<List<String>> permissionSets) {
+    public void setPermissionSets( List<List<String>> permissionSets) {
         this.permissionSets = permissionSets;
     }
 
     public ExchangeInfoResponseResultSymbolsInner defaultSelfTradePreventionMode(
-            @jakarta.annotation.Nullable String defaultSelfTradePreventionMode) {
+             String defaultSelfTradePreventionMode) {
         this.defaultSelfTradePreventionMode = defaultSelfTradePreventionMode;
         return this;
     }
@@ -699,18 +685,18 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return defaultSelfTradePreventionMode
      */
-    @jakarta.annotation.Nullable
+    
     public String getDefaultSelfTradePreventionMode() {
         return defaultSelfTradePreventionMode;
     }
 
     public void setDefaultSelfTradePreventionMode(
-            @jakarta.annotation.Nullable String defaultSelfTradePreventionMode) {
+             String defaultSelfTradePreventionMode) {
         this.defaultSelfTradePreventionMode = defaultSelfTradePreventionMode;
     }
 
     public ExchangeInfoResponseResultSymbolsInner allowedSelfTradePreventionModes(
-            @jakarta.annotation.Nullable List<String> allowedSelfTradePreventionModes) {
+             List<String> allowedSelfTradePreventionModes) {
         this.allowedSelfTradePreventionModes = allowedSelfTradePreventionModes;
         return this;
     }
@@ -729,13 +715,13 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
      *
      * @return allowedSelfTradePreventionModes
      */
-    @jakarta.annotation.Nullable
+    
     public List<String> getAllowedSelfTradePreventionModes() {
         return allowedSelfTradePreventionModes;
     }
 
     public void setAllowedSelfTradePreventionModes(
-            @jakarta.annotation.Nullable List<String> allowedSelfTradePreventionModes) {
+             List<String> allowedSelfTradePreventionModes) {
         this.allowedSelfTradePreventionModes = allowedSelfTradePreventionModes;
     }
 
@@ -837,61 +823,6 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
                 permissionSets,
                 defaultSelfTradePreventionMode,
                 allowedSelfTradePreventionModes);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class ExchangeInfoResponseResultSymbolsInner {\n");
-        sb.append("		symbol: ").append(toIndentedString(symbol)).append("\n");
-        sb.append("		status: ").append(toIndentedString(status)).append("\n");
-        sb.append("		baseAsset: ").append(toIndentedString(baseAsset)).append("\n");
-        sb.append("		baseAssetPrecision: ")
-                .append(toIndentedString(baseAssetPrecision))
-                .append("\n");
-        sb.append("		quoteAsset: ").append(toIndentedString(quoteAsset)).append("\n");
-        sb.append("		quotePrecision: ").append(toIndentedString(quotePrecision)).append("\n");
-        sb.append("		quoteAssetPrecision: ")
-                .append(toIndentedString(quoteAssetPrecision))
-                .append("\n");
-        sb.append("		baseCommissionPrecision: ")
-                .append(toIndentedString(baseCommissionPrecision))
-                .append("\n");
-        sb.append("		quoteCommissionPrecision: ")
-                .append(toIndentedString(quoteCommissionPrecision))
-                .append("\n");
-        sb.append("		orderTypes: ").append(toIndentedString(orderTypes)).append("\n");
-        sb.append("		icebergAllowed: ").append(toIndentedString(icebergAllowed)).append("\n");
-        sb.append("		ocoAllowed: ").append(toIndentedString(ocoAllowed)).append("\n");
-        sb.append("		otoAllowed: ").append(toIndentedString(otoAllowed)).append("\n");
-        sb.append("		quoteOrderQtyMarketAllowed: ")
-                .append(toIndentedString(quoteOrderQtyMarketAllowed))
-                .append("\n");
-        sb.append("		allowTrailingStop: ").append(toIndentedString(allowTrailingStop)).append("\n");
-        sb.append("		cancelReplaceAllowed: ")
-                .append(toIndentedString(cancelReplaceAllowed))
-                .append("\n");
-        sb.append("		amendAllowed: ").append(toIndentedString(amendAllowed)).append("\n");
-        sb.append("		pegInstructionsAllowed: ")
-                .append(toIndentedString(pegInstructionsAllowed))
-                .append("\n");
-        sb.append("		isSpotTradingAllowed: ")
-                .append(toIndentedString(isSpotTradingAllowed))
-                .append("\n");
-        sb.append("		isMarginTradingAllowed: ")
-                .append(toIndentedString(isMarginTradingAllowed))
-                .append("\n");
-        sb.append("		filters: ").append(toIndentedString(filters)).append("\n");
-        sb.append("		permissions: ").append(toIndentedString(permissions)).append("\n");
-        sb.append("		permissionSets: ").append(toIndentedString(permissionSets)).append("\n");
-        sb.append("		defaultSelfTradePreventionMode: ")
-                .append(toIndentedString(defaultSelfTradePreventionMode))
-                .append("\n");
-        sb.append("		allowedSelfTradePreventionModes: ")
-                .append(toIndentedString(allowedSelfTradePreventionModes))
-                .append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -1001,7 +932,7 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
         }
         List<SymbolFilters> filtersValue = getFilters();
         if (filtersValue != null) {
-            String filtersValueAsString = JSON.getGson().toJson(filtersValue);
+            String filtersValueAsString = Json.encode(filtersValue);
             valMap.put("filters", filtersValueAsString);
         }
         List<String> permissionsValue = getPermissions();
@@ -1011,7 +942,7 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
         }
         List<List<String>> permissionSetsValue = getPermissionSets();
         if (permissionSetsValue != null) {
-            String permissionSetsValueAsString = JSON.getGson().toJson(permissionSetsValue);
+            String permissionSetsValueAsString = Json.encode(permissionSetsValue);
             valMap.put("permissionSets", permissionSetsValueAsString);
         }
         String defaultSelfTradePreventionModeValue = getDefaultSelfTradePreventionMode();
@@ -1037,353 +968,8 @@ public class ExchangeInfoResponseResultSymbolsInner extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object symbolValue = getSymbol();
-        if (symbolValue != null) {
-            valMap.put("symbol", symbolValue);
-        }
-        Object statusValue = getStatus();
-        if (statusValue != null) {
-            valMap.put("status", statusValue);
-        }
-        Object baseAssetValue = getBaseAsset();
-        if (baseAssetValue != null) {
-            valMap.put("baseAsset", baseAssetValue);
-        }
-        Object baseAssetPrecisionValue = getBaseAssetPrecision();
-        if (baseAssetPrecisionValue != null) {
-            valMap.put("baseAssetPrecision", baseAssetPrecisionValue);
-        }
-        Object quoteAssetValue = getQuoteAsset();
-        if (quoteAssetValue != null) {
-            valMap.put("quoteAsset", quoteAssetValue);
-        }
-        Object quotePrecisionValue = getQuotePrecision();
-        if (quotePrecisionValue != null) {
-            valMap.put("quotePrecision", quotePrecisionValue);
-        }
-        Object quoteAssetPrecisionValue = getQuoteAssetPrecision();
-        if (quoteAssetPrecisionValue != null) {
-            valMap.put("quoteAssetPrecision", quoteAssetPrecisionValue);
-        }
-        Object baseCommissionPrecisionValue = getBaseCommissionPrecision();
-        if (baseCommissionPrecisionValue != null) {
-            valMap.put("baseCommissionPrecision", baseCommissionPrecisionValue);
-        }
-        Object quoteCommissionPrecisionValue = getQuoteCommissionPrecision();
-        if (quoteCommissionPrecisionValue != null) {
-            valMap.put("quoteCommissionPrecision", quoteCommissionPrecisionValue);
-        }
-        Object orderTypesValue = getOrderTypes();
-        if (orderTypesValue != null) {
-            valMap.put("orderTypes", orderTypesValue);
-        }
-        Object icebergAllowedValue = getIcebergAllowed();
-        if (icebergAllowedValue != null) {
-            valMap.put("icebergAllowed", icebergAllowedValue);
-        }
-        Object ocoAllowedValue = getOcoAllowed();
-        if (ocoAllowedValue != null) {
-            valMap.put("ocoAllowed", ocoAllowedValue);
-        }
-        Object otoAllowedValue = getOtoAllowed();
-        if (otoAllowedValue != null) {
-            valMap.put("otoAllowed", otoAllowedValue);
-        }
-        Object quoteOrderQtyMarketAllowedValue = getQuoteOrderQtyMarketAllowed();
-        if (quoteOrderQtyMarketAllowedValue != null) {
-            valMap.put("quoteOrderQtyMarketAllowed", quoteOrderQtyMarketAllowedValue);
-        }
-        Object allowTrailingStopValue = getAllowTrailingStop();
-        if (allowTrailingStopValue != null) {
-            valMap.put("allowTrailingStop", allowTrailingStopValue);
-        }
-        Object cancelReplaceAllowedValue = getCancelReplaceAllowed();
-        if (cancelReplaceAllowedValue != null) {
-            valMap.put("cancelReplaceAllowed", cancelReplaceAllowedValue);
-        }
-        Object amendAllowedValue = getAmendAllowed();
-        if (amendAllowedValue != null) {
-            valMap.put("amendAllowed", amendAllowedValue);
-        }
-        Object pegInstructionsAllowedValue = getPegInstructionsAllowed();
-        if (pegInstructionsAllowedValue != null) {
-            valMap.put("pegInstructionsAllowed", pegInstructionsAllowedValue);
-        }
-        Object isSpotTradingAllowedValue = getIsSpotTradingAllowed();
-        if (isSpotTradingAllowedValue != null) {
-            valMap.put("isSpotTradingAllowed", isSpotTradingAllowedValue);
-        }
-        Object isMarginTradingAllowedValue = getIsMarginTradingAllowed();
-        if (isMarginTradingAllowedValue != null) {
-            valMap.put("isMarginTradingAllowed", isMarginTradingAllowedValue);
-        }
-        Object filtersValue = getFilters();
-        if (filtersValue != null) {
-            valMap.put("filters", filtersValue);
-        }
-        Object permissionsValue = getPermissions();
-        if (permissionsValue != null) {
-            valMap.put("permissions", permissionsValue);
-        }
-        Object permissionSetsValue = getPermissionSets();
-        if (permissionSetsValue != null) {
-            valMap.put("permissionSets", permissionSetsValue);
-        }
-        Object defaultSelfTradePreventionModeValue = getDefaultSelfTradePreventionMode();
-        if (defaultSelfTradePreventionModeValue != null) {
-            valMap.put("defaultSelfTradePreventionMode", defaultSelfTradePreventionModeValue);
-        }
-        Object allowedSelfTradePreventionModesValue = getAllowedSelfTradePreventionModes();
-        if (allowedSelfTradePreventionModesValue != null) {
-            valMap.put("allowedSelfTradePreventionModes", allowedSelfTradePreventionModesValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("status");
-        openapiFields.add("baseAsset");
-        openapiFields.add("baseAssetPrecision");
-        openapiFields.add("quoteAsset");
-        openapiFields.add("quotePrecision");
-        openapiFields.add("quoteAssetPrecision");
-        openapiFields.add("baseCommissionPrecision");
-        openapiFields.add("quoteCommissionPrecision");
-        openapiFields.add("orderTypes");
-        openapiFields.add("icebergAllowed");
-        openapiFields.add("ocoAllowed");
-        openapiFields.add("otoAllowed");
-        openapiFields.add("quoteOrderQtyMarketAllowed");
-        openapiFields.add("allowTrailingStop");
-        openapiFields.add("cancelReplaceAllowed");
-        openapiFields.add("amendAllowed");
-        openapiFields.add("pegInstructionsAllowed");
-        openapiFields.add("isSpotTradingAllowed");
-        openapiFields.add("isMarginTradingAllowed");
-        openapiFields.add("filters");
-        openapiFields.add("permissions");
-        openapiFields.add("permissionSets");
-        openapiFields.add("defaultSelfTradePreventionMode");
-        openapiFields.add("allowedSelfTradePreventionModes");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     ExchangeInfoResponseResultSymbolsInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!ExchangeInfoResponseResultSymbolsInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in ExchangeInfoResponseResultSymbolsInner"
-                                        + " is not found in the empty JSON string",
-                                ExchangeInfoResponseResultSymbolsInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!ExchangeInfoResponseResultSymbolsInner.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `ExchangeInfoResponseResultSymbolsInner` properties. JSON:"
-                                    + " %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-        if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull())
-                && !jsonObj.get("status").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `status` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("status").toString()));
-        }
-        if ((jsonObj.get("baseAsset") != null && !jsonObj.get("baseAsset").isJsonNull())
-                && !jsonObj.get("baseAsset").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `baseAsset` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("baseAsset").toString()));
-        }
-        if ((jsonObj.get("quoteAsset") != null && !jsonObj.get("quoteAsset").isJsonNull())
-                && !jsonObj.get("quoteAsset").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `quoteAsset` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("quoteAsset").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("orderTypes") != null
-                && !jsonObj.get("orderTypes").isJsonNull()
-                && !jsonObj.get("orderTypes").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `orderTypes` to be an array in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("orderTypes").toString()));
-        }
-        if (jsonObj.get("filters") != null && !jsonObj.get("filters").isJsonNull()) {
-            JsonArray jsonArrayfilters = jsonObj.getAsJsonArray("filters");
-            if (jsonArrayfilters != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("filters").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `filters` to be an array in the JSON string"
-                                            + " but got `%s`",
-                                    jsonObj.get("filters").toString()));
-                }
-
-                // validate the optional field `filters` (array)
-                for (int i = 0; i < jsonArrayfilters.size(); i++) {
-                    SymbolFilters.validateJsonElement(jsonArrayfilters.get(i));
-                }
-                ;
-            }
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("permissions") != null
-                && !jsonObj.get("permissions").isJsonNull()
-                && !jsonObj.get("permissions").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `permissions` to be an array in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("permissions").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("permissionSets") != null
-                && !jsonObj.get("permissionSets").isJsonNull()
-                && !jsonObj.get("permissionSets").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `permissionSets` to be an array in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("permissionSets").toString()));
-        }
-        if ((jsonObj.get("defaultSelfTradePreventionMode") != null
-                        && !jsonObj.get("defaultSelfTradePreventionMode").isJsonNull())
-                && !jsonObj.get("defaultSelfTradePreventionMode").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `defaultSelfTradePreventionMode` to be a primitive"
-                                    + " type in the JSON string but got `%s`",
-                            jsonObj.get("defaultSelfTradePreventionMode").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("allowedSelfTradePreventionModes") != null
-                && !jsonObj.get("allowedSelfTradePreventionModes").isJsonNull()
-                && !jsonObj.get("allowedSelfTradePreventionModes").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `allowedSelfTradePreventionModes` to be an array in"
-                                    + " the JSON string but got `%s`",
-                            jsonObj.get("allowedSelfTradePreventionModes").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!ExchangeInfoResponseResultSymbolsInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'ExchangeInfoResponseResultSymbolsInner'
-                // and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<ExchangeInfoResponseResultSymbolsInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(ExchangeInfoResponseResultSymbolsInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<ExchangeInfoResponseResultSymbolsInner>() {
-                        @Override
-                        public void write(
-                                JsonWriter out, ExchangeInfoResponseResultSymbolsInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public ExchangeInfoResponseResultSymbolsInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of ExchangeInfoResponseResultSymbolsInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of ExchangeInfoResponseResultSymbolsInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     ExchangeInfoResponseResultSymbolsInner
-     */
-    public static ExchangeInfoResponseResultSymbolsInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson().fromJson(jsonString, ExchangeInfoResponseResultSymbolsInner.class);
-    }
-
-    /**
-     * Convert an instance of ExchangeInfoResponseResultSymbolsInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

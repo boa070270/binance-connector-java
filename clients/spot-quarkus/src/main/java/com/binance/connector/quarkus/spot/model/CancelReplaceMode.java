@@ -12,62 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets cancelReplaceMode */
-@JsonAdapter(CancelReplaceMode.Adapter.class)
 public enum CancelReplaceMode {
-    STOP_ON_FAILURE("STOP_ON_FAILURE"),
-
-    ALLOW_FAILURE("ALLOW_FAILURE");
-
-    private String value;
-
-    CancelReplaceMode(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static CancelReplaceMode fromValue(String value) {
-        for (CancelReplaceMode b : CancelReplaceMode.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<CancelReplaceMode> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final CancelReplaceMode enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public CancelReplaceMode read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return CancelReplaceMode.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        CancelReplaceMode.fromValue(value);
-    }
+    STOP_ON_FAILURE, ALLOW_FAILURE
 }

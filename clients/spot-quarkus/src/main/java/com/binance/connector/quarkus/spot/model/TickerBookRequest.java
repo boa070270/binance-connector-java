@@ -12,40 +12,30 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TickerBookRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TickerBookRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_SYMBOLS = "symbols";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOLS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_SYMBOLS)
+    
     private Symbols symbols;
 
     public TickerBookRequest() {}
 
-    public TickerBookRequest symbol(@jakarta.annotation.Nullable String symbol) {
+    public TickerBookRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -55,16 +45,16 @@ public class TickerBookRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nullable
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nullable String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public TickerBookRequest symbols(@jakarta.annotation.Nullable Symbols symbols) {
+    public TickerBookRequest symbols( Symbols symbols) {
         this.symbols = symbols;
         return this;
     }
@@ -74,13 +64,13 @@ public class TickerBookRequest extends BaseDTO {
      *
      * @return symbols
      */
-    @jakarta.annotation.Nullable
-    @Valid
+    
+    
     public Symbols getSymbols() {
         return symbols;
     }
 
-    public void setSymbols(@jakarta.annotation.Nullable Symbols symbols) {
+    public void setSymbols( Symbols symbols) {
         this.symbols = symbols;
     }
 
@@ -123,7 +113,7 @@ public class TickerBookRequest extends BaseDTO {
         }
         Symbols symbolsValue = getSymbols();
         if (symbolsValue != null) {
-            String symbolsValueAsString = JSON.getGson().toJson(symbolsValue);
+            String symbolsValueAsString = Json.encode(symbolsValue);
             valMap.put("symbols", symbolsValueAsString);
         }
 
@@ -165,106 +155,4 @@ public class TickerBookRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("symbols");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TickerBookRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TickerBookRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TickerBookRequest is not found in the"
-                                        + " empty JSON string",
-                                TickerBookRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TickerBookRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TickerBookRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull())
-                && !jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TickerBookRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TickerBookRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TickerBookRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TickerBookRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TickerBookRequest>() {
-                        @Override
-                        public void write(JsonWriter out, TickerBookRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TickerBookRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TickerBookRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TickerBookRequest
-     * @throws IOException if the JSON string is invalid with respect to TickerBookRequest
-     */
-    public static TickerBookRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TickerBookRequest.class);
-    }
-
-    /**
-     * Convert an instance of TickerBookRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

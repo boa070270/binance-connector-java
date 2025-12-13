@@ -12,46 +12,36 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OutboundAccountPosition */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OutboundAccountPosition extends BaseDTO {
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_U_LOWER_CASE = "u";
 
-    @SerializedName(SERIALIZED_NAME_U_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_U_LOWER_CASE)
+    
     private Long uLowerCase;
 
     public static final String SERIALIZED_NAME_B = "B";
 
-    @SerializedName(SERIALIZED_NAME_B)
-    @jakarta.annotation.Nullable
-    private List<@Valid OutboundAccountPositionBInner> B;
+    @JsonProperty(SERIALIZED_NAME_B)
+    
+    private List<OutboundAccountPositionBInner> B;
 
     public OutboundAccountPosition() {}
 
-    public OutboundAccountPosition E(@jakarta.annotation.Nullable Long E) {
+    public OutboundAccountPosition E( Long E) {
         this.E = E;
         return this;
     }
@@ -61,16 +51,16 @@ public class OutboundAccountPosition extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public OutboundAccountPosition uLowerCase(@jakarta.annotation.Nullable Long uLowerCase) {
+    public OutboundAccountPosition uLowerCase( Long uLowerCase) {
         this.uLowerCase = uLowerCase;
         return this;
     }
@@ -80,17 +70,17 @@ public class OutboundAccountPosition extends BaseDTO {
      *
      * @return uLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getuLowerCase() {
         return uLowerCase;
     }
 
-    public void setuLowerCase(@jakarta.annotation.Nullable Long uLowerCase) {
+    public void setuLowerCase( Long uLowerCase) {
         this.uLowerCase = uLowerCase;
     }
 
     public OutboundAccountPosition B(
-            @jakarta.annotation.Nullable List<@Valid OutboundAccountPositionBInner> B) {
+             List<OutboundAccountPositionBInner> B) {
         this.B = B;
         return this;
     }
@@ -108,13 +98,13 @@ public class OutboundAccountPosition extends BaseDTO {
      *
      * @return B
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid OutboundAccountPositionBInner> getB() {
+    
+    
+    public List<OutboundAccountPositionBInner> getB() {
         return B;
     }
 
-    public void setB(@jakarta.annotation.Nullable List<@Valid OutboundAccountPositionBInner> B) {
+    public void setB( List<OutboundAccountPositionBInner> B) {
         this.B = B;
     }
 
@@ -162,9 +152,9 @@ public class OutboundAccountPosition extends BaseDTO {
             String uLowerCaseValueAsString = uLowerCaseValue.toString();
             valMap.put("uLowerCase", uLowerCaseValueAsString);
         }
-        List<@Valid OutboundAccountPositionBInner> BValue = getB();
+        List<OutboundAccountPositionBInner> BValue = getB();
         if (BValue != null) {
-            String BValueAsString = JSON.getGson().toJson(BValue);
+            String BValueAsString = Json.encode(BValue);
             valMap.put("B", BValueAsString);
         }
 
@@ -210,119 +200,4 @@ public class OutboundAccountPosition extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("E");
-        openapiFields.add("u");
-        openapiFields.add("B");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to OutboundAccountPosition
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OutboundAccountPosition.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OutboundAccountPosition is not found"
-                                        + " in the empty JSON string",
-                                OutboundAccountPosition.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OutboundAccountPosition.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OutboundAccountPosition` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (jsonObj.get("B") != null && !jsonObj.get("B").isJsonNull()) {
-            JsonArray jsonArrayB = jsonObj.getAsJsonArray("B");
-            if (jsonArrayB != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("B").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `B` to be an array in the JSON string but"
-                                            + " got `%s`",
-                                    jsonObj.get("B").toString()));
-                }
-
-                // validate the optional field `B` (array)
-                for (int i = 0; i < jsonArrayB.size(); i++) {
-                    OutboundAccountPositionBInner.validateJsonElement(jsonArrayB.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OutboundAccountPosition.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OutboundAccountPosition' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OutboundAccountPosition> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(OutboundAccountPosition.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OutboundAccountPosition>() {
-                        @Override
-                        public void write(JsonWriter out, OutboundAccountPosition value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OutboundAccountPosition read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OutboundAccountPosition given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OutboundAccountPosition
-     * @throws IOException if the JSON string is invalid with respect to OutboundAccountPosition
-     */
-    public static OutboundAccountPosition fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OutboundAccountPosition.class);
-    }
-
-    /**
-     * Convert an instance of OutboundAccountPosition to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

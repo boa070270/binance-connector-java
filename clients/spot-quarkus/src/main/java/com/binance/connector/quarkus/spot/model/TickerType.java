@@ -12,62 +12,6 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
-import java.io.IOException;
-
-
-/** Gets or Sets tickerType */
-@JsonAdapter(TickerType.Adapter.class)
 public enum TickerType {
-    FULL("FULL"),
-
-    MINI("MINI");
-
-    private String value;
-
-    TickerType(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    public static TickerType fromValue(String value) {
-        for (TickerType b : TickerType.values()) {
-            if (b.value.equals(value)) {
-                return b;
-            }
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TickerType> {
-        @Override
-        public void write(final JsonWriter jsonWriter, final TickerType enumeration)
-                throws IOException {
-            jsonWriter.value(enumeration.getValue());
-        }
-
-        @Override
-        public TickerType read(final JsonReader jsonReader) throws IOException {
-            String value = jsonReader.nextString();
-            return TickerType.fromValue(value);
-        }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        String value = Helper.getAsString(jsonElement);
-        TickerType.fromValue(value);
-    }
+    FULL,MINI
 }

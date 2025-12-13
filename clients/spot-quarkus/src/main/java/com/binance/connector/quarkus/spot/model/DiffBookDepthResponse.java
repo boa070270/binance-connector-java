@@ -12,70 +12,60 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** DiffBookDepthResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class DiffBookDepthResponse extends BaseDTO {
     public static final String SERIALIZED_NAME_E_LOWER_CASE = "e";
 
-    @SerializedName(SERIALIZED_NAME_E_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E_LOWER_CASE)
+    
     private String eLowerCase;
 
     public static final String SERIALIZED_NAME_E = "E";
 
-    @SerializedName(SERIALIZED_NAME_E)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_E)
+    
     private Long E;
 
     public static final String SERIALIZED_NAME_S_LOWER_CASE = "s";
 
-    @SerializedName(SERIALIZED_NAME_S_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_S_LOWER_CASE)
+    
     private String sLowerCase;
 
     public static final String SERIALIZED_NAME_U = "U";
 
-    @SerializedName(SERIALIZED_NAME_U)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_U)
+    
     private Long U;
 
     public static final String SERIALIZED_NAME_U_LOWER_CASE = "u";
 
-    @SerializedName(SERIALIZED_NAME_U_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_U_LOWER_CASE)
+    
     private Long uLowerCase;
 
     public static final String SERIALIZED_NAME_B_LOWER_CASE = "b";
 
-    @SerializedName(SERIALIZED_NAME_B_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_B_LOWER_CASE)
+    
     private List<List<String>> bLowerCase;
 
     public static final String SERIALIZED_NAME_A_LOWER_CASE = "a";
 
-    @SerializedName(SERIALIZED_NAME_A_LOWER_CASE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_A_LOWER_CASE)
+    
     private List<List<String>> aLowerCase;
 
     public DiffBookDepthResponse() {}
 
-    public DiffBookDepthResponse eLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public DiffBookDepthResponse eLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
         return this;
     }
@@ -85,16 +75,16 @@ public class DiffBookDepthResponse extends BaseDTO {
      *
      * @return eLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String geteLowerCase() {
         return eLowerCase;
     }
 
-    public void seteLowerCase(@jakarta.annotation.Nullable String eLowerCase) {
+    public void seteLowerCase( String eLowerCase) {
         this.eLowerCase = eLowerCase;
     }
 
-    public DiffBookDepthResponse E(@jakarta.annotation.Nullable Long E) {
+    public DiffBookDepthResponse E( Long E) {
         this.E = E;
         return this;
     }
@@ -104,16 +94,16 @@ public class DiffBookDepthResponse extends BaseDTO {
      *
      * @return E
      */
-    @jakarta.annotation.Nullable
+    
     public Long getE() {
         return E;
     }
 
-    public void setE(@jakarta.annotation.Nullable Long E) {
+    public void setE( Long E) {
         this.E = E;
     }
 
-    public DiffBookDepthResponse sLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public DiffBookDepthResponse sLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
         return this;
     }
@@ -123,16 +113,16 @@ public class DiffBookDepthResponse extends BaseDTO {
      *
      * @return sLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public String getsLowerCase() {
         return sLowerCase;
     }
 
-    public void setsLowerCase(@jakarta.annotation.Nullable String sLowerCase) {
+    public void setsLowerCase( String sLowerCase) {
         this.sLowerCase = sLowerCase;
     }
 
-    public DiffBookDepthResponse U(@jakarta.annotation.Nullable Long U) {
+    public DiffBookDepthResponse U( Long U) {
         this.U = U;
         return this;
     }
@@ -142,16 +132,16 @@ public class DiffBookDepthResponse extends BaseDTO {
      *
      * @return U
      */
-    @jakarta.annotation.Nullable
+    
     public Long getU() {
         return U;
     }
 
-    public void setU(@jakarta.annotation.Nullable Long U) {
+    public void setU( Long U) {
         this.U = U;
     }
 
-    public DiffBookDepthResponse uLowerCase(@jakarta.annotation.Nullable Long uLowerCase) {
+    public DiffBookDepthResponse uLowerCase( Long uLowerCase) {
         this.uLowerCase = uLowerCase;
         return this;
     }
@@ -161,17 +151,17 @@ public class DiffBookDepthResponse extends BaseDTO {
      *
      * @return uLowerCase
      */
-    @jakarta.annotation.Nullable
+    
     public Long getuLowerCase() {
         return uLowerCase;
     }
 
-    public void setuLowerCase(@jakarta.annotation.Nullable Long uLowerCase) {
+    public void setuLowerCase( Long uLowerCase) {
         this.uLowerCase = uLowerCase;
     }
 
     public DiffBookDepthResponse bLowerCase(
-            @jakarta.annotation.Nullable List<List<String>> bLowerCase) {
+             List<List<String>> bLowerCase) {
         this.bLowerCase = bLowerCase;
         return this;
     }
@@ -189,18 +179,16 @@ public class DiffBookDepthResponse extends BaseDTO {
      *
      * @return bLowerCase
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<List<String>> getbLowerCase() {
         return bLowerCase;
     }
 
-    public void setbLowerCase(@jakarta.annotation.Nullable List<List<String>> bLowerCase) {
+    public void setbLowerCase( List<List<String>> bLowerCase) {
         this.bLowerCase = bLowerCase;
     }
 
     public DiffBookDepthResponse aLowerCase(
-            @jakarta.annotation.Nullable List<List<String>> aLowerCase) {
+             List<List<String>> aLowerCase) {
         this.aLowerCase = aLowerCase;
         return this;
     }
@@ -218,13 +206,11 @@ public class DiffBookDepthResponse extends BaseDTO {
      *
      * @return aLowerCase
      */
-    @jakarta.annotation.Nullable
-    @Valid
     public List<List<String>> getaLowerCase() {
         return aLowerCase;
     }
 
-    public void setaLowerCase(@jakarta.annotation.Nullable List<List<String>> aLowerCase) {
+    public void setaLowerCase( List<List<String>> aLowerCase) {
         this.aLowerCase = aLowerCase;
     }
 
@@ -249,21 +235,6 @@ public class DiffBookDepthResponse extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(eLowerCase, E, sLowerCase, U, uLowerCase, bLowerCase, aLowerCase);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class DiffBookDepthResponse {\n");
-        sb.append("		eLowerCase: ").append(toIndentedString(eLowerCase)).append("\n");
-        sb.append("		E: ").append(toIndentedString(E)).append("\n");
-        sb.append("		sLowerCase: ").append(toIndentedString(sLowerCase)).append("\n");
-        sb.append("		U: ").append(toIndentedString(U)).append("\n");
-        sb.append("		uLowerCase: ").append(toIndentedString(uLowerCase)).append("\n");
-        sb.append("		bLowerCase: ").append(toIndentedString(bLowerCase)).append("\n");
-        sb.append("		aLowerCase: ").append(toIndentedString(aLowerCase)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -297,12 +268,12 @@ public class DiffBookDepthResponse extends BaseDTO {
         }
         List<List<String>> bLowerCaseValue = getbLowerCase();
         if (bLowerCaseValue != null) {
-            String bLowerCaseValueAsString = JSON.getGson().toJson(bLowerCaseValue);
+            String bLowerCaseValueAsString = Json.encode(bLowerCaseValue);
             valMap.put("bLowerCase", bLowerCaseValueAsString);
         }
         List<List<String>> aLowerCaseValue = getaLowerCase();
         if (aLowerCaseValue != null) {
-            String aLowerCaseValueAsString = JSON.getGson().toJson(aLowerCaseValue);
+            String aLowerCaseValueAsString = Json.encode(aLowerCaseValue);
             valMap.put("aLowerCase", aLowerCaseValueAsString);
         }
 
@@ -313,188 +284,8 @@ public class DiffBookDepthResponse extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object eLowerCaseValue = geteLowerCase();
-        if (eLowerCaseValue != null) {
-            valMap.put("eLowerCase", eLowerCaseValue);
-        }
-        Object EValue = getE();
-        if (EValue != null) {
-            valMap.put("E", EValue);
-        }
-        Object sLowerCaseValue = getsLowerCase();
-        if (sLowerCaseValue != null) {
-            valMap.put("sLowerCase", sLowerCaseValue);
-        }
-        Object UValue = getU();
-        if (UValue != null) {
-            valMap.put("U", UValue);
-        }
-        Object uLowerCaseValue = getuLowerCase();
-        if (uLowerCaseValue != null) {
-            valMap.put("uLowerCase", uLowerCaseValue);
-        }
-        Object bLowerCaseValue = getbLowerCase();
-        if (bLowerCaseValue != null) {
-            valMap.put("bLowerCase", bLowerCaseValue);
-        }
-        Object aLowerCaseValue = getaLowerCase();
-        if (aLowerCaseValue != null) {
-            valMap.put("aLowerCase", aLowerCaseValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("e");
-        openapiFields.add("E");
-        openapiFields.add("s");
-        openapiFields.add("U");
-        openapiFields.add("u");
-        openapiFields.add("b");
-        openapiFields.add("a");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to DiffBookDepthResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!DiffBookDepthResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in DiffBookDepthResponse is not found in"
-                                        + " the empty JSON string",
-                                DiffBookDepthResponse.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!DiffBookDepthResponse.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `DiffBookDepthResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("e") != null && !jsonObj.get("e").isJsonNull())
-                && !jsonObj.get("e").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `e` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("e").toString()));
-        }
-        if ((jsonObj.get("s") != null && !jsonObj.get("s").isJsonNull())
-                && !jsonObj.get("s").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `s` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("s").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("b") != null
-                && !jsonObj.get("b").isJsonNull()
-                && !jsonObj.get("b").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `b` to be an array in the JSON string but got `%s`",
-                            jsonObj.get("b").toString()));
-        }
-        // ensure the optional json data is an array if present
-        if (jsonObj.get("a") != null
-                && !jsonObj.get("a").isJsonNull()
-                && !jsonObj.get("a").isJsonArray()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `a` to be an array in the JSON string but got `%s`",
-                            jsonObj.get("a").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!DiffBookDepthResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'DiffBookDepthResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<DiffBookDepthResponse> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(DiffBookDepthResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<DiffBookDepthResponse>() {
-                        @Override
-                        public void write(JsonWriter out, DiffBookDepthResponse value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public DiffBookDepthResponse read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of DiffBookDepthResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of DiffBookDepthResponse
-     * @throws IOException if the JSON string is invalid with respect to DiffBookDepthResponse
-     */
-    public static DiffBookDepthResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, DiffBookDepthResponse.class);
-    }
-
-    /**
-     * Convert an instance of DiffBookDepthResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

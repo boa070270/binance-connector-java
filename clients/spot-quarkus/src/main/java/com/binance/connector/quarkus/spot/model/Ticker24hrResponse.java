@@ -13,13 +13,13 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.AbstractOpenApiSchema;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+
+
+
+
+
+
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,126 +28,8 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class Ticker24hrResponse extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Ticker24hrResponse.class.getName());
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!Ticker24hrResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'Ticker24hrResponse' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<Ticker24hrResponse1> adapterTicker24hrResponse1 =
-                    gson.getDelegateAdapter(this, TypeToken.get(Ticker24hrResponse1.class));
-            final TypeAdapter<Ticker24hrResponse2> adapterTicker24hrResponse2 =
-                    gson.getDelegateAdapter(this, TypeToken.get(Ticker24hrResponse2.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<Ticker24hrResponse>() {
-                        @Override
-                        public void write(JsonWriter out, Ticker24hrResponse value)
-                                throws IOException {
-                            if (value == null || value.getActualInstance() == null) {
-                                elementAdapter.write(out, null);
-                                return;
-                            }
-
-                            // check if the actual instance is of the type `Ticker24hrResponse1`
-                            if (value.getActualInstance() instanceof Ticker24hrResponse1) {
-                                JsonElement element =
-                                        adapterTicker24hrResponse1.toJsonTree(
-                                                (Ticker24hrResponse1) value.getActualInstance());
-                                elementAdapter.write(out, element);
-                                return;
-                            }
-                            // check if the actual instance is of the type `Ticker24hrResponse2`
-                            if (value.getActualInstance() instanceof Ticker24hrResponse2) {
-                                JsonElement element =
-                                        adapterTicker24hrResponse2.toJsonTree(
-                                                (Ticker24hrResponse2) value.getActualInstance());
-                                elementAdapter.write(out, element);
-                                return;
-                            }
-                            throw new IOException(
-                                    "Failed to serialize as the type doesn't match oneOf schemas:"
-                                            + " Ticker24hrResponse1, Ticker24hrResponse2");
-                        }
-
-                        @Override
-                        public Ticker24hrResponse read(JsonReader in) throws IOException {
-                            Object deserialized = null;
-                            JsonElement jsonElement = elementAdapter.read(in);
-
-                            int match = 0;
-                            ArrayList<String> errorMessages = new ArrayList<>();
-                            TypeAdapter actualAdapter = elementAdapter;
-
-                            // deserialize Ticker24hrResponse1
-                            try {
-                                // validate the JSON object to see if any exception is thrown
-                                Ticker24hrResponse1.validateJsonElement(jsonElement);
-                                actualAdapter = adapterTicker24hrResponse1;
-                                match++;
-                                log.log(
-                                        Level.FINER,
-                                        "Input data matches schema 'Ticker24hrResponse1'");
-                            } catch (Exception e) {
-                                // deserialization failed, continue
-                                errorMessages.add(
-                                        String.format(
-                                                "Deserialization for Ticker24hrResponse1 failed"
-                                                        + " with `%s`.",
-                                                e.getMessage()));
-                                log.log(
-                                        Level.FINER,
-                                        "Input data does not match schema 'Ticker24hrResponse1'",
-                                        e);
-                            }
-                            // deserialize Ticker24hrResponse2
-                            try {
-                                // validate the JSON object to see if any exception is thrown
-                                Ticker24hrResponse2.validateJsonElement(jsonElement);
-                                actualAdapter = adapterTicker24hrResponse2;
-                                match++;
-                                log.log(
-                                        Level.FINER,
-                                        "Input data matches schema 'Ticker24hrResponse2'");
-                            } catch (Exception e) {
-                                // deserialization failed, continue
-                                errorMessages.add(
-                                        String.format(
-                                                "Deserialization for Ticker24hrResponse2 failed"
-                                                        + " with `%s`.",
-                                                e.getMessage()));
-                                log.log(
-                                        Level.FINER,
-                                        "Input data does not match schema 'Ticker24hrResponse2'",
-                                        e);
-                            }
-
-                            if (match == 1) {
-                                Ticker24hrResponse ret = new Ticker24hrResponse();
-                                ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                                return ret;
-                            }
-
-                            throw new IOException(
-                                    String.format(
-                                            "Failed deserialization for Ticker24hrResponse: %d"
-                                                + " classes match result, expected 1. Detailed"
-                                                + " failure message for oneOf schemas: %s. JSON:"
-                                                + " %s",
-                                            match, errorMessages, jsonElement.toString()));
-                        }
-                    }.nullSafe();
-        }
-    }
 
     // store a list of schema names defined in oneOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
@@ -226,66 +108,4 @@ public class Ticker24hrResponse extends AbstractOpenApiSchema {
         return (Ticker24hrResponse2) super.getActualInstance();
     }
 
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to Ticker24hrResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate oneOf schemas one by one
-        int validCount = 0;
-        ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with Ticker24hrResponse1
-        try {
-            Ticker24hrResponse1.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(
-                    String.format(
-                            "Deserialization for Ticker24hrResponse1 failed with `%s`.",
-                            e.getMessage()));
-            // continue to the next one
-        }
-        // validate the json string with Ticker24hrResponse2
-        try {
-            Ticker24hrResponse2.validateJsonElement(jsonElement);
-            validCount++;
-        } catch (Exception e) {
-            errorMessages.add(
-                    String.format(
-                            "Deserialization for Ticker24hrResponse2 failed with `%s`.",
-                            e.getMessage()));
-            // continue to the next one
-        }
-        if (validCount != 1) {
-            throw new IOException(
-                    String.format(
-                            "The JSON string is invalid for Ticker24hrResponse with oneOf schemas:"
-                                + " Ticker24hrResponse1, Ticker24hrResponse2. %d class(es) match"
-                                + " the result, expected 1. Detailed failure message for oneOf"
-                                + " schemas: %s. JSON: %s",
-                            validCount, errorMessages, jsonElement.toString()));
-        }
-    }
-
-    /**
-     * Create an instance of Ticker24hrResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of Ticker24hrResponse
-     * @throws IOException if the JSON string is invalid with respect to Ticker24hrResponse
-     */
-    public static Ticker24hrResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, Ticker24hrResponse.class);
-    }
-
-    /**
-     * Convert an instance of Ticker24hrResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

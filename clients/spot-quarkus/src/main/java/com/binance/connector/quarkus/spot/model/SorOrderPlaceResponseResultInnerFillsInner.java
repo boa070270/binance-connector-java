@@ -12,12 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -25,57 +20,53 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-/** SorOrderPlaceResponseResultInnerFillsInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
     public static final String SERIALIZED_NAME_MATCH_TYPE = "matchType";
 
-    @SerializedName(SERIALIZED_NAME_MATCH_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MATCH_TYPE)
+    
     private String matchType;
 
     public static final String SERIALIZED_NAME_PRICE = "price";
 
-    @SerializedName(SERIALIZED_NAME_PRICE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_PRICE)
+    
     private String price;
 
     public static final String SERIALIZED_NAME_QTY = "qty";
 
-    @SerializedName(SERIALIZED_NAME_QTY)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QTY)
+    
     private String qty;
 
     public static final String SERIALIZED_NAME_COMMISSION = "commission";
 
-    @SerializedName(SERIALIZED_NAME_COMMISSION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COMMISSION)
+    
     private String commission;
 
     public static final String SERIALIZED_NAME_COMMISSION_ASSET = "commissionAsset";
 
-    @SerializedName(SERIALIZED_NAME_COMMISSION_ASSET)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_COMMISSION_ASSET)
+    
     private String commissionAsset;
 
     public static final String SERIALIZED_NAME_TRADE_ID = "tradeId";
 
-    @SerializedName(SERIALIZED_NAME_TRADE_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_TRADE_ID)
+    
     private Long tradeId;
 
     public static final String SERIALIZED_NAME_ALLOC_ID = "allocId";
 
-    @SerializedName(SERIALIZED_NAME_ALLOC_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ALLOC_ID)
+    
     private Long allocId;
 
     public SorOrderPlaceResponseResultInnerFillsInner() {}
 
     public SorOrderPlaceResponseResultInnerFillsInner matchType(
-            @jakarta.annotation.Nullable String matchType) {
+             String matchType) {
         this.matchType = matchType;
         return this;
     }
@@ -85,17 +76,17 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
      *
      * @return matchType
      */
-    @jakarta.annotation.Nullable
+    
     public String getMatchType() {
         return matchType;
     }
 
-    public void setMatchType(@jakarta.annotation.Nullable String matchType) {
+    public void setMatchType( String matchType) {
         this.matchType = matchType;
     }
 
     public SorOrderPlaceResponseResultInnerFillsInner price(
-            @jakarta.annotation.Nullable String price) {
+             String price) {
         this.price = price;
         return this;
     }
@@ -105,16 +96,16 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
      *
      * @return price
      */
-    @jakarta.annotation.Nullable
+    
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(@jakarta.annotation.Nullable String price) {
+    public void setPrice( String price) {
         this.price = price;
     }
 
-    public SorOrderPlaceResponseResultInnerFillsInner qty(@jakarta.annotation.Nullable String qty) {
+    public SorOrderPlaceResponseResultInnerFillsInner qty( String qty) {
         this.qty = qty;
         return this;
     }
@@ -124,17 +115,17 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
      *
      * @return qty
      */
-    @jakarta.annotation.Nullable
+    
     public String getQty() {
         return qty;
     }
 
-    public void setQty(@jakarta.annotation.Nullable String qty) {
+    public void setQty( String qty) {
         this.qty = qty;
     }
 
     public SorOrderPlaceResponseResultInnerFillsInner commission(
-            @jakarta.annotation.Nullable String commission) {
+             String commission) {
         this.commission = commission;
         return this;
     }
@@ -144,17 +135,17 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
      *
      * @return commission
      */
-    @jakarta.annotation.Nullable
+    
     public String getCommission() {
         return commission;
     }
 
-    public void setCommission(@jakarta.annotation.Nullable String commission) {
+    public void setCommission( String commission) {
         this.commission = commission;
     }
 
     public SorOrderPlaceResponseResultInnerFillsInner commissionAsset(
-            @jakarta.annotation.Nullable String commissionAsset) {
+             String commissionAsset) {
         this.commissionAsset = commissionAsset;
         return this;
     }
@@ -164,17 +155,17 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
      *
      * @return commissionAsset
      */
-    @jakarta.annotation.Nullable
+    
     public String getCommissionAsset() {
         return commissionAsset;
     }
 
-    public void setCommissionAsset(@jakarta.annotation.Nullable String commissionAsset) {
+    public void setCommissionAsset( String commissionAsset) {
         this.commissionAsset = commissionAsset;
     }
 
     public SorOrderPlaceResponseResultInnerFillsInner tradeId(
-            @jakarta.annotation.Nullable Long tradeId) {
+             Long tradeId) {
         this.tradeId = tradeId;
         return this;
     }
@@ -184,17 +175,17 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
      *
      * @return tradeId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getTradeId() {
         return tradeId;
     }
 
-    public void setTradeId(@jakarta.annotation.Nullable Long tradeId) {
+    public void setTradeId( Long tradeId) {
         this.tradeId = tradeId;
     }
 
     public SorOrderPlaceResponseResultInnerFillsInner allocId(
-            @jakarta.annotation.Nullable Long allocId) {
+             Long allocId) {
         this.allocId = allocId;
         return this;
     }
@@ -204,12 +195,12 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
      *
      * @return allocId
      */
-    @jakarta.annotation.Nullable
+    
     public Long getAllocId() {
         return allocId;
     }
 
-    public void setAllocId(@jakarta.annotation.Nullable Long allocId) {
+    public void setAllocId( Long allocId) {
         this.allocId = allocId;
     }
 
@@ -351,158 +342,5 @@ public class SorOrderPlaceResponseResultInnerFillsInner extends BaseDTO {
             return "null";
         }
         return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("matchType");
-        openapiFields.add("price");
-        openapiFields.add("qty");
-        openapiFields.add("commission");
-        openapiFields.add("commissionAsset");
-        openapiFields.add("tradeId");
-        openapiFields.add("allocId");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     SorOrderPlaceResponseResultInnerFillsInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!SorOrderPlaceResponseResultInnerFillsInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in"
-                                    + " SorOrderPlaceResponseResultInnerFillsInner is not found in"
-                                    + " the empty JSON string",
-                                SorOrderPlaceResponseResultInnerFillsInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!SorOrderPlaceResponseResultInnerFillsInner.openapiFields.contains(
-                    entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `SorOrderPlaceResponseResultInnerFillsInner` properties."
-                                    + " JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("matchType") != null && !jsonObj.get("matchType").isJsonNull())
-                && !jsonObj.get("matchType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `matchType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("matchType").toString()));
-        }
-        if ((jsonObj.get("price") != null && !jsonObj.get("price").isJsonNull())
-                && !jsonObj.get("price").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `price` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("price").toString()));
-        }
-        if ((jsonObj.get("qty") != null && !jsonObj.get("qty").isJsonNull())
-                && !jsonObj.get("qty").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `qty` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("qty").toString()));
-        }
-        if ((jsonObj.get("commission") != null && !jsonObj.get("commission").isJsonNull())
-                && !jsonObj.get("commission").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `commission` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("commission").toString()));
-        }
-        if ((jsonObj.get("commissionAsset") != null && !jsonObj.get("commissionAsset").isJsonNull())
-                && !jsonObj.get("commissionAsset").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `commissionAsset` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("commissionAsset").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!SorOrderPlaceResponseResultInnerFillsInner.class.isAssignableFrom(
-                    type.getRawType())) {
-                return null; // this class only serializes
-                // 'SorOrderPlaceResponseResultInnerFillsInner' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SorOrderPlaceResponseResultInnerFillsInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(SorOrderPlaceResponseResultInnerFillsInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<SorOrderPlaceResponseResultInnerFillsInner>() {
-                        @Override
-                        public void write(
-                                JsonWriter out, SorOrderPlaceResponseResultInnerFillsInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public SorOrderPlaceResponseResultInnerFillsInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of SorOrderPlaceResponseResultInnerFillsInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of SorOrderPlaceResponseResultInnerFillsInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     SorOrderPlaceResponseResultInnerFillsInner
-     */
-    public static SorOrderPlaceResponseResultInnerFillsInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson()
-                .fromJson(jsonString, SorOrderPlaceResponseResultInnerFillsInner.class);
-    }
-
-    /**
-     * Convert an instance of SorOrderPlaceResponseResultInnerFillsInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

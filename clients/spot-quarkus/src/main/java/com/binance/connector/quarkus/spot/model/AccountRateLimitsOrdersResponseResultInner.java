@@ -12,153 +12,50 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** AccountRateLimitsOrdersResponseResultInner */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class AccountRateLimitsOrdersResponseResultInner extends BaseDTO {
-    public static final String SERIALIZED_NAME_RATE_LIMIT_TYPE = "rateLimitType";
-
-    @SerializedName(SERIALIZED_NAME_RATE_LIMIT_TYPE)
-    @jakarta.annotation.Nullable
     private String rateLimitType;
-
-    public static final String SERIALIZED_NAME_INTERVAL = "interval";
-
-    @SerializedName(SERIALIZED_NAME_INTERVAL)
-    @jakarta.annotation.Nullable
     private String interval;
-
-    public static final String SERIALIZED_NAME_INTERVAL_NUM = "intervalNum";
-
-    @SerializedName(SERIALIZED_NAME_INTERVAL_NUM)
-    @jakarta.annotation.Nullable
     private Long intervalNum;
-
-    public static final String SERIALIZED_NAME_LIMIT = "limit";
-
-    @SerializedName(SERIALIZED_NAME_LIMIT)
-    @jakarta.annotation.Nullable
     private Long limit;
-
-    public static final String SERIALIZED_NAME_COUNT = "count";
-
-    @SerializedName(SERIALIZED_NAME_COUNT)
-    @jakarta.annotation.Nullable
     private Long count;
 
-    public AccountRateLimitsOrdersResponseResultInner() {}
-
-    public AccountRateLimitsOrdersResponseResultInner rateLimitType(
-            @jakarta.annotation.Nullable String rateLimitType) {
-        this.rateLimitType = rateLimitType;
-        return this;
-    }
-
-    /**
-     * Get rateLimitType
-     *
-     * @return rateLimitType
-     */
-    @jakarta.annotation.Nullable
     public String getRateLimitType() {
         return rateLimitType;
     }
-
-    public void setRateLimitType(@jakarta.annotation.Nullable String rateLimitType) {
+    public void setRateLimitType( String rateLimitType) {
         this.rateLimitType = rateLimitType;
     }
 
-    public AccountRateLimitsOrdersResponseResultInner interval(
-            @jakarta.annotation.Nullable String interval) {
-        this.interval = interval;
-        return this;
-    }
-
-    /**
-     * Get interval
-     *
-     * @return interval
-     */
-    @jakarta.annotation.Nullable
     public String getInterval() {
         return interval;
     }
-
-    public void setInterval(@jakarta.annotation.Nullable String interval) {
+    public void setInterval( String interval) {
         this.interval = interval;
     }
 
-    public AccountRateLimitsOrdersResponseResultInner intervalNum(
-            @jakarta.annotation.Nullable Long intervalNum) {
-        this.intervalNum = intervalNum;
-        return this;
-    }
-
-    /**
-     * Get intervalNum
-     *
-     * @return intervalNum
-     */
-    @jakarta.annotation.Nullable
     public Long getIntervalNum() {
         return intervalNum;
     }
-
-    public void setIntervalNum(@jakarta.annotation.Nullable Long intervalNum) {
+    public void setIntervalNum( Long intervalNum) {
         this.intervalNum = intervalNum;
     }
 
-    public AccountRateLimitsOrdersResponseResultInner limit(
-            @jakarta.annotation.Nullable Long limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * Get limit
-     *
-     * @return limit
-     */
-    @jakarta.annotation.Nullable
     public Long getLimit() {
         return limit;
     }
-
-    public void setLimit(@jakarta.annotation.Nullable Long limit) {
+    public void setLimit( Long limit) {
         this.limit = limit;
     }
 
-    public AccountRateLimitsOrdersResponseResultInner count(
-            @jakarta.annotation.Nullable Long count) {
-        this.count = count;
-        return this;
-    }
-
-    /**
-     * Get count
-     *
-     * @return count
-     */
-    @jakarta.annotation.Nullable
     public Long getCount() {
         return count;
     }
-
-    public void setCount(@jakarta.annotation.Nullable Long count) {
+    public void setCount( Long count) {
         this.count = count;
     }
 
@@ -186,19 +83,6 @@ public class AccountRateLimitsOrdersResponseResultInner extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(rateLimitType, interval, intervalNum, limit, count);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class AccountRateLimitsOrdersResponseResultInner {\n");
-        sb.append("		rateLimitType: ").append(toIndentedString(rateLimitType)).append("\n");
-        sb.append("		interval: ").append(toIndentedString(interval)).append("\n");
-        sb.append("		intervalNum: ").append(toIndentedString(intervalNum)).append("\n");
-        sb.append("		limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("		count: ").append(toIndentedString(count)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -268,143 +152,5 @@ public class AccountRateLimitsOrdersResponseResultInner extends BaseDTO {
 
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("rateLimitType");
-        openapiFields.add("interval");
-        openapiFields.add("intervalNum");
-        openapiFields.add("limit");
-        openapiFields.add("count");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     AccountRateLimitsOrdersResponseResultInner
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!AccountRateLimitsOrdersResponseResultInner.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in"
-                                    + " AccountRateLimitsOrdersResponseResultInner is not found in"
-                                    + " the empty JSON string",
-                                AccountRateLimitsOrdersResponseResultInner.openapiRequiredFields
-                                        .toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!AccountRateLimitsOrdersResponseResultInner.openapiFields.contains(
-                    entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                    + " `AccountRateLimitsOrdersResponseResultInner` properties."
-                                    + " JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("rateLimitType") != null && !jsonObj.get("rateLimitType").isJsonNull())
-                && !jsonObj.get("rateLimitType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `rateLimitType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("rateLimitType").toString()));
-        }
-        if ((jsonObj.get("interval") != null && !jsonObj.get("interval").isJsonNull())
-                && !jsonObj.get("interval").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `interval` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("interval").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!AccountRateLimitsOrdersResponseResultInner.class.isAssignableFrom(
-                    type.getRawType())) {
-                return null; // this class only serializes
-                // 'AccountRateLimitsOrdersResponseResultInner' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<AccountRateLimitsOrdersResponseResultInner> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(AccountRateLimitsOrdersResponseResultInner.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<AccountRateLimitsOrdersResponseResultInner>() {
-                        @Override
-                        public void write(
-                                JsonWriter out, AccountRateLimitsOrdersResponseResultInner value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public AccountRateLimitsOrdersResponseResultInner read(JsonReader in)
-                                throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of AccountRateLimitsOrdersResponseResultInner given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of AccountRateLimitsOrdersResponseResultInner
-     * @throws IOException if the JSON string is invalid with respect to
-     *     AccountRateLimitsOrdersResponseResultInner
-     */
-    public static AccountRateLimitsOrdersResponseResultInner fromJson(String jsonString)
-            throws IOException {
-        return JSON.getGson()
-                .fromJson(jsonString, AccountRateLimitsOrdersResponseResultInner.class);
-    }
-
-    /**
-     * Convert an instance of AccountRateLimitsOrdersResponseResultInner to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
     }
 }

@@ -12,52 +12,42 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.vertx.core.json.Json;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** OpenOrderListsStatusResponse */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class OpenOrderListsStatusResponse extends BaseDTO {
     public static final String SERIALIZED_NAME_ID = "id";
 
-    @SerializedName(SERIALIZED_NAME_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ID)
+    
     private String id;
 
     public static final String SERIALIZED_NAME_STATUS = "status";
 
-    @SerializedName(SERIALIZED_NAME_STATUS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_STATUS)
+    
     private Long status;
 
     public static final String SERIALIZED_NAME_RESULT = "result";
 
-    @SerializedName(SERIALIZED_NAME_RESULT)
-    @jakarta.annotation.Nullable
-    private List<@Valid OpenOrderListsStatusResponseResultInner> result;
+    @JsonProperty(SERIALIZED_NAME_RESULT)
+    
+    private List<OpenOrderListsStatusResponseResultInner> result;
 
     public static final String SERIALIZED_NAME_RATE_LIMITS = "rateLimits";
 
-    @SerializedName(SERIALIZED_NAME_RATE_LIMITS)
-    @jakarta.annotation.Nullable
-    private List<@Valid RateLimits> rateLimits;
+    @JsonProperty(SERIALIZED_NAME_RATE_LIMITS)
+    
+    private List<RateLimits> rateLimits;
 
     public OpenOrderListsStatusResponse() {}
 
-    public OpenOrderListsStatusResponse id(@jakarta.annotation.Nullable String id) {
+    public OpenOrderListsStatusResponse id( String id) {
         this.id = id;
         return this;
     }
@@ -67,16 +57,16 @@ public class OpenOrderListsStatusResponse extends BaseDTO {
      *
      * @return id
      */
-    @jakarta.annotation.Nullable
+    
     public String getId() {
         return id;
     }
 
-    public void setId(@jakarta.annotation.Nullable String id) {
+    public void setId( String id) {
         this.id = id;
     }
 
-    public OpenOrderListsStatusResponse status(@jakarta.annotation.Nullable Long status) {
+    public OpenOrderListsStatusResponse status( Long status) {
         this.status = status;
         return this;
     }
@@ -86,18 +76,18 @@ public class OpenOrderListsStatusResponse extends BaseDTO {
      *
      * @return status
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStatus() {
         return status;
     }
 
-    public void setStatus(@jakarta.annotation.Nullable Long status) {
+    public void setStatus( Long status) {
         this.status = status;
     }
 
     public OpenOrderListsStatusResponse result(
-            @jakarta.annotation.Nullable
-                    List<@Valid OpenOrderListsStatusResponseResultInner> result) {
+            
+                    List<OpenOrderListsStatusResponseResultInner> result) {
         this.result = result;
         return this;
     }
@@ -116,20 +106,20 @@ public class OpenOrderListsStatusResponse extends BaseDTO {
      *
      * @return result
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid OpenOrderListsStatusResponseResultInner> getResult() {
+    
+
+    public List<OpenOrderListsStatusResponseResultInner> getResult() {
         return result;
     }
 
     public void setResult(
-            @jakarta.annotation.Nullable
-                    List<@Valid OpenOrderListsStatusResponseResultInner> result) {
+            
+                    List<OpenOrderListsStatusResponseResultInner> result) {
         this.result = result;
     }
 
     public OpenOrderListsStatusResponse rateLimits(
-            @jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+             List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
         return this;
     }
@@ -147,13 +137,13 @@ public class OpenOrderListsStatusResponse extends BaseDTO {
      *
      * @return rateLimits
      */
-    @jakarta.annotation.Nullable
-    @Valid
-    public List<@Valid RateLimits> getRateLimits() {
+    
+
+    public List<RateLimits> getRateLimits() {
         return rateLimits;
     }
 
-    public void setRateLimits(@jakarta.annotation.Nullable List<@Valid RateLimits> rateLimits) {
+    public void setRateLimits( List<RateLimits> rateLimits) {
         this.rateLimits = rateLimits;
     }
 
@@ -204,14 +194,14 @@ public class OpenOrderListsStatusResponse extends BaseDTO {
             String statusValueAsString = statusValue.toString();
             valMap.put("status", statusValueAsString);
         }
-        List<@Valid OpenOrderListsStatusResponseResultInner> resultValue = getResult();
+        List<OpenOrderListsStatusResponseResultInner> resultValue = getResult();
         if (resultValue != null) {
-            String resultValueAsString = JSON.getGson().toJson(resultValue);
+            String resultValueAsString = Json.encode(resultValue);
             valMap.put("result", resultValueAsString);
         }
-        List<@Valid RateLimits> rateLimitsValue = getRateLimits();
+        List<RateLimits> rateLimitsValue = getRateLimits();
         if (rateLimitsValue != null) {
-            String rateLimitsValueAsString = JSON.getGson().toJson(rateLimitsValue);
+            String rateLimitsValueAsString = Json.encode(rateLimitsValue);
             valMap.put("rateLimits", rateLimitsValueAsString);
         }
 
@@ -261,151 +251,4 @@ public class OpenOrderListsStatusResponse extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("id");
-        openapiFields.add("status");
-        openapiFields.add("result");
-        openapiFields.add("rateLimits");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to
-     *     OpenOrderListsStatusResponse
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!OpenOrderListsStatusResponse.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in OpenOrderListsStatusResponse is not"
-                                        + " found in the empty JSON string",
-                                OpenOrderListsStatusResponse.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!OpenOrderListsStatusResponse.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `OpenOrderListsStatusResponse` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
-                && !jsonObj.get("id").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `id` to be a primitive type in the JSON string but"
-                                    + " got `%s`",
-                            jsonObj.get("id").toString()));
-        }
-        if (jsonObj.get("result") != null && !jsonObj.get("result").isJsonNull()) {
-            JsonArray jsonArrayresult = jsonObj.getAsJsonArray("result");
-            if (jsonArrayresult != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("result").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `result` to be an array in the JSON string"
-                                            + " but got `%s`",
-                                    jsonObj.get("result").toString()));
-                }
-
-                // validate the optional field `result` (array)
-                for (int i = 0; i < jsonArrayresult.size(); i++) {
-                    OpenOrderListsStatusResponseResultInner.validateJsonElement(
-                            jsonArrayresult.get(i));
-                }
-                ;
-            }
-        }
-        if (jsonObj.get("rateLimits") != null && !jsonObj.get("rateLimits").isJsonNull()) {
-            JsonArray jsonArrayrateLimits = jsonObj.getAsJsonArray("rateLimits");
-            if (jsonArrayrateLimits != null) {
-                // ensure the json data is an array
-                if (!jsonObj.get("rateLimits").isJsonArray()) {
-                    throw new IllegalArgumentException(
-                            String.format(
-                                    "Expected the field `rateLimits` to be an array in the JSON"
-                                            + " string but got `%s`",
-                                    jsonObj.get("rateLimits").toString()));
-                }
-
-                // validate the optional field `rateLimits` (array)
-                for (int i = 0; i < jsonArrayrateLimits.size(); i++) {
-                    RateLimits.validateJsonElement(jsonArrayrateLimits.get(i));
-                }
-                ;
-            }
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!OpenOrderListsStatusResponse.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'OpenOrderListsStatusResponse' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<OpenOrderListsStatusResponse> thisAdapter =
-                    gson.getDelegateAdapter(
-                            this, TypeToken.get(OpenOrderListsStatusResponse.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<OpenOrderListsStatusResponse>() {
-                        @Override
-                        public void write(JsonWriter out, OpenOrderListsStatusResponse value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public OpenOrderListsStatusResponse read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of OpenOrderListsStatusResponse given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of OpenOrderListsStatusResponse
-     * @throws IOException if the JSON string is invalid with respect to
-     *     OpenOrderListsStatusResponse
-     */
-    public static OpenOrderListsStatusResponse fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, OpenOrderListsStatusResponse.class);
-    }
-
-    /**
-     * Convert an instance of OpenOrderListsStatusResponse to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

@@ -12,58 +12,47 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** TradesAggregateRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class TradesAggregateRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
-    @SerializedName(SERIALIZED_NAME_SYMBOL)
-    @jakarta.annotation.Nonnull
+    @JsonProperty(SERIALIZED_NAME_SYMBOL)
+    
     private String symbol;
 
     public static final String SERIALIZED_NAME_FROM_ID = "fromId";
 
-    @SerializedName(SERIALIZED_NAME_FROM_ID)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FROM_ID)
+    
     private Integer fromId;
 
     public static final String SERIALIZED_NAME_START_TIME = "startTime";
 
-    @SerializedName(SERIALIZED_NAME_START_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_START_TIME)
+    
     private Long startTime;
 
     public static final String SERIALIZED_NAME_END_TIME = "endTime";
 
-    @SerializedName(SERIALIZED_NAME_END_TIME)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_END_TIME)
+    
     private Long endTime;
 
     public static final String SERIALIZED_NAME_LIMIT = "limit";
 
-    @SerializedName(SERIALIZED_NAME_LIMIT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_LIMIT)
+    
     private Integer limit;
 
     public TradesAggregateRequest() {}
 
-    public TradesAggregateRequest symbol(@jakarta.annotation.Nonnull String symbol) {
+    public TradesAggregateRequest symbol( String symbol) {
         this.symbol = symbol;
         return this;
     }
@@ -73,17 +62,17 @@ public class TradesAggregateRequest extends BaseDTO {
      *
      * @return symbol
      */
-    @jakarta.annotation.Nonnull
-    @NotNull
+    
+    
     public String getSymbol() {
         return symbol;
     }
 
-    public void setSymbol(@jakarta.annotation.Nonnull String symbol) {
+    public void setSymbol( String symbol) {
         this.symbol = symbol;
     }
 
-    public TradesAggregateRequest fromId(@jakarta.annotation.Nullable Integer fromId) {
+    public TradesAggregateRequest fromId( Integer fromId) {
         this.fromId = fromId;
         return this;
     }
@@ -93,16 +82,16 @@ public class TradesAggregateRequest extends BaseDTO {
      *
      * @return fromId
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getFromId() {
         return fromId;
     }
 
-    public void setFromId(@jakarta.annotation.Nullable Integer fromId) {
+    public void setFromId( Integer fromId) {
         this.fromId = fromId;
     }
 
-    public TradesAggregateRequest startTime(@jakarta.annotation.Nullable Long startTime) {
+    public TradesAggregateRequest startTime( Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -112,16 +101,16 @@ public class TradesAggregateRequest extends BaseDTO {
      *
      * @return startTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(@jakarta.annotation.Nullable Long startTime) {
+    public void setStartTime( Long startTime) {
         this.startTime = startTime;
     }
 
-    public TradesAggregateRequest endTime(@jakarta.annotation.Nullable Long endTime) {
+    public TradesAggregateRequest endTime( Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -131,16 +120,16 @@ public class TradesAggregateRequest extends BaseDTO {
      *
      * @return endTime
      */
-    @jakarta.annotation.Nullable
+    
     public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(@jakarta.annotation.Nullable Long endTime) {
+    public void setEndTime( Long endTime) {
         this.endTime = endTime;
     }
 
-    public TradesAggregateRequest limit(@jakarta.annotation.Nullable Integer limit) {
+    public TradesAggregateRequest limit( Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -150,12 +139,12 @@ public class TradesAggregateRequest extends BaseDTO {
      *
      * @return limit
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(@jakarta.annotation.Nullable Integer limit) {
+    public void setLimit( Integer limit) {
         this.limit = limit;
     }
 
@@ -273,119 +262,4 @@ public class TradesAggregateRequest extends BaseDTO {
         return o.toString().replace("\n", "\n		");
     }
 
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("symbol");
-        openapiFields.add("fromId");
-        openapiFields.add("startTime");
-        openapiFields.add("endTime");
-        openapiFields.add("limit");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-        openapiRequiredFields.add("symbol");
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TradesAggregateRequest
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!TradesAggregateRequest.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in TradesAggregateRequest is not found in"
-                                        + " the empty JSON string",
-                                TradesAggregateRequest.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!TradesAggregateRequest.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `TradesAggregateRequest` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-
-        // check to make sure all required properties/fields are present in the JSON string
-        for (String requiredField : TradesAggregateRequest.openapiRequiredFields) {
-            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field `%s` is not found in the JSON string: %s",
-                                requiredField, jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if (!jsonObj.get("symbol").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `symbol` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("symbol").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TradesAggregateRequest.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TradesAggregateRequest' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<TradesAggregateRequest> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(TradesAggregateRequest.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<TradesAggregateRequest>() {
-                        @Override
-                        public void write(JsonWriter out, TradesAggregateRequest value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public TradesAggregateRequest read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of TradesAggregateRequest given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of TradesAggregateRequest
-     * @throws IOException if the JSON string is invalid with respect to TradesAggregateRequest
-     */
-    public static TradesAggregateRequest fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TradesAggregateRequest.class);
-    }
-
-    /**
-     * Convert an instance of TradesAggregateRequest to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

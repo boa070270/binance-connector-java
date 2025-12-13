@@ -12,69 +12,59 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** PercentPriceBySideFilter */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class PercentPriceBySideFilter extends BaseDTO {
     public static final String SERIALIZED_NAME_FILTER_TYPE = "filterType";
 
-    @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FILTER_TYPE)
+    
     private String filterType;
 
     public static final String SERIALIZED_NAME_MULTIPLIER_EXPONENT = "multiplierExponent";
 
-    @SerializedName(SERIALIZED_NAME_MULTIPLIER_EXPONENT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MULTIPLIER_EXPONENT)
+    
     private Integer multiplierExponent;
 
     public static final String SERIALIZED_NAME_BID_MULTIPLIER_UP = "bidMultiplierUp";
 
-    @SerializedName(SERIALIZED_NAME_BID_MULTIPLIER_UP)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BID_MULTIPLIER_UP)
+    
     private String bidMultiplierUp;
 
     public static final String SERIALIZED_NAME_BID_MULTIPLIER_DOWN = "bidMultiplierDown";
 
-    @SerializedName(SERIALIZED_NAME_BID_MULTIPLIER_DOWN)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_BID_MULTIPLIER_DOWN)
+    
     private String bidMultiplierDown;
 
     public static final String SERIALIZED_NAME_ASK_MULTIPLIER_UP = "askMultiplierUp";
 
-    @SerializedName(SERIALIZED_NAME_ASK_MULTIPLIER_UP)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASK_MULTIPLIER_UP)
+    
     private String askMultiplierUp;
 
     public static final String SERIALIZED_NAME_ASK_MULTIPLIER_DOWN = "askMultiplierDown";
 
-    @SerializedName(SERIALIZED_NAME_ASK_MULTIPLIER_DOWN)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_ASK_MULTIPLIER_DOWN)
+    
     private String askMultiplierDown;
 
     public static final String SERIALIZED_NAME_AVG_PRICE_MINS = "avgPriceMins";
 
-    @SerializedName(SERIALIZED_NAME_AVG_PRICE_MINS)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_AVG_PRICE_MINS)
+    
     private Integer avgPriceMins;
 
     public PercentPriceBySideFilter() {}
 
-    public PercentPriceBySideFilter filterType(@jakarta.annotation.Nullable String filterType) {
+    public PercentPriceBySideFilter filterType( String filterType) {
         this.filterType = filterType;
         return this;
     }
@@ -84,17 +74,17 @@ public class PercentPriceBySideFilter extends BaseDTO {
      *
      * @return filterType
      */
-    @jakarta.annotation.Nullable
+    
     public String getFilterType() {
         return filterType;
     }
 
-    public void setFilterType(@jakarta.annotation.Nullable String filterType) {
+    public void setFilterType( String filterType) {
         this.filterType = filterType;
     }
 
     public PercentPriceBySideFilter multiplierExponent(
-            @jakarta.annotation.Nullable Integer multiplierExponent) {
+             Integer multiplierExponent) {
         this.multiplierExponent = multiplierExponent;
         return this;
     }
@@ -104,17 +94,17 @@ public class PercentPriceBySideFilter extends BaseDTO {
      *
      * @return multiplierExponent
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getMultiplierExponent() {
         return multiplierExponent;
     }
 
-    public void setMultiplierExponent(@jakarta.annotation.Nullable Integer multiplierExponent) {
+    public void setMultiplierExponent( Integer multiplierExponent) {
         this.multiplierExponent = multiplierExponent;
     }
 
     public PercentPriceBySideFilter bidMultiplierUp(
-            @jakarta.annotation.Nullable String bidMultiplierUp) {
+             String bidMultiplierUp) {
         this.bidMultiplierUp = bidMultiplierUp;
         return this;
     }
@@ -124,17 +114,17 @@ public class PercentPriceBySideFilter extends BaseDTO {
      *
      * @return bidMultiplierUp
      */
-    @jakarta.annotation.Nullable
+    
     public String getBidMultiplierUp() {
         return bidMultiplierUp;
     }
 
-    public void setBidMultiplierUp(@jakarta.annotation.Nullable String bidMultiplierUp) {
+    public void setBidMultiplierUp( String bidMultiplierUp) {
         this.bidMultiplierUp = bidMultiplierUp;
     }
 
     public PercentPriceBySideFilter bidMultiplierDown(
-            @jakarta.annotation.Nullable String bidMultiplierDown) {
+             String bidMultiplierDown) {
         this.bidMultiplierDown = bidMultiplierDown;
         return this;
     }
@@ -144,17 +134,17 @@ public class PercentPriceBySideFilter extends BaseDTO {
      *
      * @return bidMultiplierDown
      */
-    @jakarta.annotation.Nullable
+    
     public String getBidMultiplierDown() {
         return bidMultiplierDown;
     }
 
-    public void setBidMultiplierDown(@jakarta.annotation.Nullable String bidMultiplierDown) {
+    public void setBidMultiplierDown( String bidMultiplierDown) {
         this.bidMultiplierDown = bidMultiplierDown;
     }
 
     public PercentPriceBySideFilter askMultiplierUp(
-            @jakarta.annotation.Nullable String askMultiplierUp) {
+             String askMultiplierUp) {
         this.askMultiplierUp = askMultiplierUp;
         return this;
     }
@@ -164,17 +154,17 @@ public class PercentPriceBySideFilter extends BaseDTO {
      *
      * @return askMultiplierUp
      */
-    @jakarta.annotation.Nullable
+    
     public String getAskMultiplierUp() {
         return askMultiplierUp;
     }
 
-    public void setAskMultiplierUp(@jakarta.annotation.Nullable String askMultiplierUp) {
+    public void setAskMultiplierUp( String askMultiplierUp) {
         this.askMultiplierUp = askMultiplierUp;
     }
 
     public PercentPriceBySideFilter askMultiplierDown(
-            @jakarta.annotation.Nullable String askMultiplierDown) {
+             String askMultiplierDown) {
         this.askMultiplierDown = askMultiplierDown;
         return this;
     }
@@ -184,17 +174,17 @@ public class PercentPriceBySideFilter extends BaseDTO {
      *
      * @return askMultiplierDown
      */
-    @jakarta.annotation.Nullable
+    
     public String getAskMultiplierDown() {
         return askMultiplierDown;
     }
 
-    public void setAskMultiplierDown(@jakarta.annotation.Nullable String askMultiplierDown) {
+    public void setAskMultiplierDown( String askMultiplierDown) {
         this.askMultiplierDown = askMultiplierDown;
     }
 
     public PercentPriceBySideFilter avgPriceMins(
-            @jakarta.annotation.Nullable Integer avgPriceMins) {
+             Integer avgPriceMins) {
         this.avgPriceMins = avgPriceMins;
         return this;
     }
@@ -204,12 +194,12 @@ public class PercentPriceBySideFilter extends BaseDTO {
      *
      * @return avgPriceMins
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getAvgPriceMins() {
         return avgPriceMins;
     }
 
-    public void setAvgPriceMins(@jakarta.annotation.Nullable Integer avgPriceMins) {
+    public void setAvgPriceMins( Integer avgPriceMins) {
         this.avgPriceMins = avgPriceMins;
     }
 
@@ -244,23 +234,6 @@ public class PercentPriceBySideFilter extends BaseDTO {
                 askMultiplierUp,
                 askMultiplierDown,
                 avgPriceMins);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class PercentPriceBySideFilter {\n");
-        sb.append("		filterType: ").append(toIndentedString(filterType)).append("\n");
-        sb.append("		multiplierExponent: ")
-                .append(toIndentedString(multiplierExponent))
-                .append("\n");
-        sb.append("		bidMultiplierUp: ").append(toIndentedString(bidMultiplierUp)).append("\n");
-        sb.append("		bidMultiplierDown: ").append(toIndentedString(bidMultiplierDown)).append("\n");
-        sb.append("		askMultiplierUp: ").append(toIndentedString(askMultiplierUp)).append("\n");
-        sb.append("		askMultiplierDown: ").append(toIndentedString(askMultiplierDown)).append("\n");
-        sb.append("		avgPriceMins: ").append(toIndentedString(avgPriceMins)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -310,197 +283,8 @@ public class PercentPriceBySideFilter extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object filterTypeValue = getFilterType();
-        if (filterTypeValue != null) {
-            valMap.put("filterType", filterTypeValue);
-        }
-        Object multiplierExponentValue = getMultiplierExponent();
-        if (multiplierExponentValue != null) {
-            valMap.put("multiplierExponent", multiplierExponentValue);
-        }
-        Object bidMultiplierUpValue = getBidMultiplierUp();
-        if (bidMultiplierUpValue != null) {
-            valMap.put("bidMultiplierUp", bidMultiplierUpValue);
-        }
-        Object bidMultiplierDownValue = getBidMultiplierDown();
-        if (bidMultiplierDownValue != null) {
-            valMap.put("bidMultiplierDown", bidMultiplierDownValue);
-        }
-        Object askMultiplierUpValue = getAskMultiplierUp();
-        if (askMultiplierUpValue != null) {
-            valMap.put("askMultiplierUp", askMultiplierUpValue);
-        }
-        Object askMultiplierDownValue = getAskMultiplierDown();
-        if (askMultiplierDownValue != null) {
-            valMap.put("askMultiplierDown", askMultiplierDownValue);
-        }
-        Object avgPriceMinsValue = getAvgPriceMins();
-        if (avgPriceMinsValue != null) {
-            valMap.put("avgPriceMins", avgPriceMinsValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("filterType");
-        openapiFields.add("multiplierExponent");
-        openapiFields.add("bidMultiplierUp");
-        openapiFields.add("bidMultiplierDown");
-        openapiFields.add("askMultiplierUp");
-        openapiFields.add("askMultiplierDown");
-        openapiFields.add("avgPriceMins");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to PercentPriceBySideFilter
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!PercentPriceBySideFilter.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in PercentPriceBySideFilter is not found"
-                                        + " in the empty JSON string",
-                                PercentPriceBySideFilter.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!PercentPriceBySideFilter.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `PercentPriceBySideFilter` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("filterType") != null && !jsonObj.get("filterType").isJsonNull())
-                && !jsonObj.get("filterType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `filterType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("filterType").toString()));
-        }
-        if ((jsonObj.get("bidMultiplierUp") != null && !jsonObj.get("bidMultiplierUp").isJsonNull())
-                && !jsonObj.get("bidMultiplierUp").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `bidMultiplierUp` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("bidMultiplierUp").toString()));
-        }
-        if ((jsonObj.get("bidMultiplierDown") != null
-                        && !jsonObj.get("bidMultiplierDown").isJsonNull())
-                && !jsonObj.get("bidMultiplierDown").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `bidMultiplierDown` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("bidMultiplierDown").toString()));
-        }
-        if ((jsonObj.get("askMultiplierUp") != null && !jsonObj.get("askMultiplierUp").isJsonNull())
-                && !jsonObj.get("askMultiplierUp").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `askMultiplierUp` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("askMultiplierUp").toString()));
-        }
-        if ((jsonObj.get("askMultiplierDown") != null
-                        && !jsonObj.get("askMultiplierDown").isJsonNull())
-                && !jsonObj.get("askMultiplierDown").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `askMultiplierDown` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("askMultiplierDown").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!PercentPriceBySideFilter.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'PercentPriceBySideFilter' and its
-                // subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<PercentPriceBySideFilter> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(PercentPriceBySideFilter.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<PercentPriceBySideFilter>() {
-                        @Override
-                        public void write(JsonWriter out, PercentPriceBySideFilter value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public PercentPriceBySideFilter read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of PercentPriceBySideFilter given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of PercentPriceBySideFilter
-     * @throws IOException if the JSON string is invalid with respect to PercentPriceBySideFilter
-     */
-    public static PercentPriceBySideFilter fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, PercentPriceBySideFilter.class);
-    }
-
-    /**
-     * Convert an instance of PercentPriceBySideFilter to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }

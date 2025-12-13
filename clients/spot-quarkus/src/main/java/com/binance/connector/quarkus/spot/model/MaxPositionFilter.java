@@ -12,45 +12,35 @@
 
 package com.binance.connector.quarkus.spot.model;
 
-import com.binance.connector.client.common.websocket.dtos.BaseDTO;
-import com.google.gson.*;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
-/** MaxPositionFilter */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
 public class MaxPositionFilter extends BaseDTO {
     public static final String SERIALIZED_NAME_FILTER_TYPE = "filterType";
 
-    @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_FILTER_TYPE)
+    
     private String filterType;
 
     public static final String SERIALIZED_NAME_QTY_EXPONENT = "qtyExponent";
 
-    @SerializedName(SERIALIZED_NAME_QTY_EXPONENT)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_QTY_EXPONENT)
+    
     private Integer qtyExponent;
 
     public static final String SERIALIZED_NAME_MAX_POSITION = "maxPosition";
 
-    @SerializedName(SERIALIZED_NAME_MAX_POSITION)
-    @jakarta.annotation.Nullable
+    @JsonProperty(SERIALIZED_NAME_MAX_POSITION)
+    
     private String maxPosition;
 
     public MaxPositionFilter() {}
 
-    public MaxPositionFilter filterType(@jakarta.annotation.Nullable String filterType) {
+    public MaxPositionFilter filterType( String filterType) {
         this.filterType = filterType;
         return this;
     }
@@ -60,16 +50,16 @@ public class MaxPositionFilter extends BaseDTO {
      *
      * @return filterType
      */
-    @jakarta.annotation.Nullable
+    
     public String getFilterType() {
         return filterType;
     }
 
-    public void setFilterType(@jakarta.annotation.Nullable String filterType) {
+    public void setFilterType( String filterType) {
         this.filterType = filterType;
     }
 
-    public MaxPositionFilter qtyExponent(@jakarta.annotation.Nullable Integer qtyExponent) {
+    public MaxPositionFilter qtyExponent( Integer qtyExponent) {
         this.qtyExponent = qtyExponent;
         return this;
     }
@@ -79,16 +69,16 @@ public class MaxPositionFilter extends BaseDTO {
      *
      * @return qtyExponent
      */
-    @jakarta.annotation.Nullable
+    
     public Integer getQtyExponent() {
         return qtyExponent;
     }
 
-    public void setQtyExponent(@jakarta.annotation.Nullable Integer qtyExponent) {
+    public void setQtyExponent( Integer qtyExponent) {
         this.qtyExponent = qtyExponent;
     }
 
-    public MaxPositionFilter maxPosition(@jakarta.annotation.Nullable String maxPosition) {
+    public MaxPositionFilter maxPosition( String maxPosition) {
         this.maxPosition = maxPosition;
         return this;
     }
@@ -98,12 +88,12 @@ public class MaxPositionFilter extends BaseDTO {
      *
      * @return maxPosition
      */
-    @jakarta.annotation.Nullable
+    
     public String getMaxPosition() {
         return maxPosition;
     }
 
-    public void setMaxPosition(@jakarta.annotation.Nullable String maxPosition) {
+    public void setMaxPosition( String maxPosition) {
         this.maxPosition = maxPosition;
     }
 
@@ -124,17 +114,6 @@ public class MaxPositionFilter extends BaseDTO {
     @Override
     public int hashCode() {
         return Objects.hash(filterType, qtyExponent, maxPosition);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class MaxPositionFilter {\n");
-        sb.append("		filterType: ").append(toIndentedString(filterType)).append("\n");
-        sb.append("		qtyExponent: ").append(toIndentedString(qtyExponent)).append("\n");
-        sb.append("		maxPosition: ").append(toIndentedString(maxPosition)).append("\n");
-        sb.append("}");
-        return sb.toString();
     }
 
     public String toUrlQueryString() {
@@ -164,150 +143,8 @@ public class MaxPositionFilter extends BaseDTO {
                         .collect(Collectors.joining("&")));
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object filterTypeValue = getFilterType();
-        if (filterTypeValue != null) {
-            valMap.put("filterType", filterTypeValue);
-        }
-        Object qtyExponentValue = getQtyExponent();
-        if (qtyExponentValue != null) {
-            valMap.put("qtyExponent", qtyExponentValue);
-        }
-        Object maxPositionValue = getMaxPosition();
-        if (maxPositionValue != null) {
-            valMap.put("maxPosition", maxPositionValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
     public static String asciiEncode(String s) {
         return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("filterType");
-        openapiFields.add("qtyExponent");
-        openapiFields.add("maxPosition");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to MaxPositionFilter
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!MaxPositionFilter.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in MaxPositionFilter is not found in the"
-                                        + " empty JSON string",
-                                MaxPositionFilter.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!MaxPositionFilter.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `MaxPositionFilter` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("filterType") != null && !jsonObj.get("filterType").isJsonNull())
-                && !jsonObj.get("filterType").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `filterType` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("filterType").toString()));
-        }
-        if ((jsonObj.get("maxPosition") != null && !jsonObj.get("maxPosition").isJsonNull())
-                && !jsonObj.get("maxPosition").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `maxPosition` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("maxPosition").toString()));
-        }
-    }
-
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!MaxPositionFilter.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'MaxPositionFilter' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<MaxPositionFilter> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(MaxPositionFilter.class));
-
-            return (TypeAdapter<T>)
-                    new TypeAdapter<MaxPositionFilter>() {
-                        @Override
-                        public void write(JsonWriter out, MaxPositionFilter value)
-                                throws IOException {
-                            JsonElement obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public MaxPositionFilter read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            // validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of MaxPositionFilter given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of MaxPositionFilter
-     * @throws IOException if the JSON string is invalid with respect to MaxPositionFilter
-     */
-    public static MaxPositionFilter fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, MaxPositionFilter.class);
-    }
-
-    /**
-     * Convert an instance of MaxPositionFilter to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
 }
