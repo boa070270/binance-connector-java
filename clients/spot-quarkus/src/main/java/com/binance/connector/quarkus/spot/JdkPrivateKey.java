@@ -7,12 +7,15 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 
 public class JdkPrivateKey implements SignatureGenerator {
-
+    final String algorithm;
     private final Signature signature;
 
     public JdkPrivateKey(String algorithm, byte[] keyContent) {
+        this(algorithm, new String(keyContent));
+    }
+    public JdkPrivateKey(String algorithm, String pem) {
         try {
-            String pem = new String(keyContent);
+            this.algorithm = algorithm;
             pem = removeHeaderFooter(pem);
             byte[] der = Base64.getDecoder().decode(pem);
 
@@ -32,6 +35,11 @@ public class JdkPrivateKey implements SignatureGenerator {
         } catch (Exception e) {
             throw new RuntimeException("Failed to init private key", e);
         }
+    }
+
+    @Override
+    public String getAlgorithm() {
+        return algorithm;
     }
 
     @Override

@@ -15,6 +15,11 @@ public class HmacSignatureGenerator implements SignatureGenerator {
     }
 
     @Override
+    public String getAlgorithm() {
+        return "HMAC";
+    }
+
+    @Override
     public byte[] sign(String input) {
         return sign(input.getBytes());
     }

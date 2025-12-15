@@ -12,6 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.nio.charset.StandardCharsets;
@@ -20,6 +21,7 @@ import java.util.Objects;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DepthRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 

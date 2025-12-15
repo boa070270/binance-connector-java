@@ -12,11 +12,14 @@
 
 package com.binance.connector.quarkus.spot.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountCommissionRequest extends BaseDTO {
     private String symbol;
 

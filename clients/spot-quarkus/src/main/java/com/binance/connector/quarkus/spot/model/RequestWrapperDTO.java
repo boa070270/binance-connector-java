@@ -1,24 +1,30 @@
 package com.binance.connector.quarkus.spot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 
-public class RequestWrapperDTO<T extends BaseRequestDTO, U> {
-    protected String id;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class RequestWrapperDTO<T extends BaseRequestDTO, U extends BaseDTO> {
+    protected Long id;
     protected T params;
     protected String method;
-    protected transient Type responseType;
+    @JsonIgnore
+    protected transient RequestResponseUnion.DecodeJson<U> responseType;
+    @JsonIgnore
     protected transient CompletableFuture<U> responseCallback = new CompletableFuture<>();
 
     public RequestWrapperDTO() {}
 
-    public RequestWrapperDTO(String id, T params, String method) {
+    public RequestWrapperDTO(Long id, T params, String method) {
         this.id = id;
         this.params = params;
         this.method = method;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -30,11 +36,11 @@ public class RequestWrapperDTO<T extends BaseRequestDTO, U> {
         return method;
     }
 
-    public Type getResponseType() {
+    public RequestResponseUnion.DecodeJson<U> getResponseType() {
         return responseType;
     }
 
-    public void setResponseType(Type responseType) {
+    public void setResponseType(RequestResponseUnion.DecodeJson<U> responseType) {
         this.responseType = responseType;
     }
 
@@ -48,16 +54,20 @@ public class RequestWrapperDTO<T extends BaseRequestDTO, U> {
     public CompletableFuture<U> getResponseCallback() {
         return responseCallback;
     }
-
-    public static final class Builder<T extends BaseRequestDTO, U> {
-        private String id;
+    public void decodeMsg(String msg) {
+        if (responseType != null && responseCallback != null) {
+            responseCallback.complete(responseType.decode(msg));
+        }
+    }
+    public static final class Builder<T extends BaseRequestDTO, U extends BaseDTO> {
+        private Long id;
         private T params;
         private String method;
-        private Type responseType;
+        private RequestResponseUnion.DecodeJson<U> responseType;
 
         public Builder() {}
 
-        public Builder<T, U> id(String val) {
+        public Builder<T, U> id(Long val) {
             id = val;
             return this;
         }
@@ -72,7 +82,7 @@ public class RequestWrapperDTO<T extends BaseRequestDTO, U> {
             return this;
         }
 
-        public Builder<T, U> responseType(Type val) {
+        public Builder<T, U> responseType(RequestResponseUnion.DecodeJson<U> val) {
             responseType = val;
             return this;
         }

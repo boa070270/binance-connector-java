@@ -1,5 +1,8 @@
 package com.binance.connector.quarkus.spot.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class BaseRequestDTO {
     // For request
     private String apiKey;

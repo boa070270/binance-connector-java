@@ -1,6 +1,11 @@
 package com.binance.connector.quarkus.spot;
 
 public interface SignatureGenerator {
+    /**
+     * RSA, Ed25519, or HMAC
+     * @return
+     */
+    String getAlgorithm();
     byte[] sign(String input) throws CryptoException;
 
     byte[] sign(byte[] input) throws CryptoException;

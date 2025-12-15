@@ -1,24 +1,28 @@
 package com.binance.connector.quarkus.spot.model;
 
-import java.lang.reflect.Type;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class ApiRequestWrapperDTO<T extends BaseRequestDTO, U> extends RequestWrapperDTO<T, U> {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ApiRequestWrapperDTO<T extends BaseRequestDTO, U extends BaseDTO> extends RequestWrapperDTO<T, U> {
+    @JsonIgnore
     private transient boolean signed = true;
+    @JsonIgnore
     private transient boolean apiKeyOnly = false;
-
+    @JsonIgnore
     public boolean isApiKeyOnly() {
         return apiKeyOnly;
     }
-
+    @JsonIgnore
     public boolean isSigned() {
         return signed;
     }
-
+    @JsonIgnore
     public void setSigned(boolean signed) {
         this.signed = signed;
     }
 
-    public ApiRequestWrapperDTO(String id, T params, String method, boolean signed) {
+    public ApiRequestWrapperDTO(Long id, T params, String method, boolean signed) {
         super(id, params, method);
         this.signed = signed;
     }
@@ -36,17 +40,17 @@ public class ApiRequestWrapperDTO<T extends BaseRequestDTO, U> extends RequestWr
         apiKeyOnly = builder.apiKeyOnly;
     }
 
-    public static final class Builder<T extends BaseRequestDTO, U> {
-        private String id;
+    public static final class Builder<T extends BaseRequestDTO, U extends BaseDTO> {
+        private Long id;
         private T params;
         private String method;
-        private Type responseType;
+        private RequestResponseUnion.DecodeJson<U> responseType;
         private boolean signed = true;
         private boolean apiKeyOnly = false;
 
         public Builder() {}
 
-        public Builder<T, U> id(String val) {
+        public Builder<T, U> id(Long val) {
             id = val;
             return this;
         }
@@ -61,7 +65,7 @@ public class ApiRequestWrapperDTO<T extends BaseRequestDTO, U> extends RequestWr
             return this;
         }
 
-        public Builder<T, U> responseType(Type val) {
+        public Builder<T, U> responseType(RequestResponseUnion.DecodeJson<U> val) {
             responseType = val;
             return this;
         }

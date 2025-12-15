@@ -13,6 +13,7 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -23,9 +24,7 @@ import java.util.stream.Collectors;
 
 
 /** OpenOrderListsStatusRequest */
-@jakarta.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        comments = "Generator version: 7.12.0")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpenOrderListsStatusRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 

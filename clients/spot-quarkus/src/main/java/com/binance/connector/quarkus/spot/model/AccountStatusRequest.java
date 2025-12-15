@@ -13,6 +13,7 @@
 package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.DecimalFormatter;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -21,10 +22,10 @@ import java.util.stream.Collectors;
 
 
 /** AccountStatusRequest */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountStatusRequest extends BaseDTO {
     private Boolean omitZeroBalances;
     private Double recvWindow;
-
     public Boolean getOmitZeroBalances() {
         return omitZeroBalances;
     }

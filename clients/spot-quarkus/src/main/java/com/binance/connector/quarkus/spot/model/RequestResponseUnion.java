@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 import java.util.function.Function;
 
 public class RequestResponseUnion {
-    static final Map<String, DecodeJson<?>> TYPES = Map.ofEntries(
+    public static final Map<String, DecodeJson<?>> RequestResponseAssociation = Map.ofEntries(
             Map.entry(AccountCommissionRequest.class.getSimpleName(), new DecodeJson<>(AccountCommissionResponse.class)),
             Map.entry(AccountRateLimitsOrdersRequest.class.getSimpleName(), new DecodeJson<>(AccountRateLimitsOrdersResponse.class)),
             Map.entry(AccountStatusRequest.class.getSimpleName(), new DecodeJson<>(AccountStatusResponse.class)),
@@ -30,26 +30,29 @@ public class RequestResponseUnion {
             Map.entry(MyPreventedMatchesRequest.class.getSimpleName(), new DecodeJson<>(MyPreventedMatchesResponse.class)),
             Map.entry(MyTradesRequest.class.getSimpleName(), new DecodeJson<>(MyTradesResponse.class)),
             Map.entry(OpenOrderListsStatusRequest.class.getSimpleName(), new DecodeJson<>(OpenOrderListsStatusResponse.class)),
-            Map.entry(OpenOrdersCancelAllRequest.class.getSimpleName(), new DecodeJson<>(OpenOrdersCancelAllResponse.class)),
+            Map.entry("openOrders.cancelAll", new DecodeJson<>(OpenOrdersCancelAllResponse.class)),
             Map.entry(OpenOrdersStatusRequest.class.getSimpleName(), new DecodeJson<>(OpenOrdersStatusResponse.class)),
-            Map.entry(OrderAmendKeepPriorityRequest.class.getSimpleName(), new DecodeJson<>(OrderAmendKeepPriorityResponse.class)),
+            Map.entry("order.amend.keepPriority", new DecodeJson<>(OrderAmendKeepPriorityResponse.class)),
             Map.entry(OrderAmendmentsRequest.class.getSimpleName(), new DecodeJson<>(OrderAmendmentsResponse.class)),
-            Map.entry(OrderCancelReplaceRequest.class.getSimpleName(), new DecodeJson<>(OrderCancelReplaceResponse.class)),
-            Map.entry(OrderCancelRequest.class.getSimpleName(), new DecodeJson<>(OrderCancelResponse.class)),
-            Map.entry(OrderListCancelRequest.class.getSimpleName(), new DecodeJson<>(OrderListCancelResponse.class)),
-            Map.entry(OrderListPlaceOcoRequest.class.getSimpleName(), new DecodeJson<>(OrderListPlaceOcoResponse.class)),
-            Map.entry(OrderListPlaceOtocoRequest.class.getSimpleName(), new DecodeJson<>(OrderListPlaceOtocoResponse.class)),
-            Map.entry(OrderListPlaceOtoRequest.class.getSimpleName(), new DecodeJson<>(OrderListPlaceOtoResponse.class)),
-            Map.entry(OrderListPlaceRequest.class.getSimpleName(), new DecodeJson<>(OrderListPlaceResponse.class)),
+            Map.entry("order.cancelReplace", new DecodeJson<>(OrderCancelReplaceResponse.class)),
+            Map.entry("order.cancel", new DecodeJson<>(OrderCancelResponse.class)),
+            Map.entry("orderList.cancel", new DecodeJson<>(OrderListCancelResponse.class)),
+            Map.entry("orderList.place.oco", new DecodeJson<>(OrderListPlaceOcoResponse.class)),
+            Map.entry("orderList.place.otoco", new DecodeJson<>(OrderListPlaceOtocoResponse.class)),
+            Map.entry("orderList.place.oto", new DecodeJson<>(OrderListPlaceOtoResponse.class)),
+            Map.entry("orderList.place", new DecodeJson<>(OrderListPlaceResponse.class)),
             Map.entry(OrderListStatusRequest.class.getSimpleName(), new DecodeJson<>(OrderListStatusResponse.class)),
-            Map.entry(OrderPlaceRequest.class.getSimpleName(), new DecodeJson<>(OrderPlaceResponse.class)),
+            Map.entry("order.place", new DecodeJson<>(OrderPlaceResponse.class)),
             Map.entry(OrderStatusRequest.class.getSimpleName(), new DecodeJson<>(OrderStatusResponse.class)),
-            Map.entry(OrderTestRequest.class.getSimpleName(), new DecodeJson<>(OrderTestResponse.class)),
+            Map.entry("order.test", new DecodeJson<>(OrderTestResponse.class)),
             Map.entry(PartialBookDepthRequest.class.getSimpleName(), new DecodeJson<>(PartialBookDepthResponse.class)),
             Map.entry(RollingWindowTickerRequest.class.getSimpleName(), new DecodeJson<>(RollingWindowTickerResponse.class)),
-            Map.entry(SessionLogonRequest.class.getSimpleName(), new DecodeJson<>(SessionLogonResponse.class)),
-            Map.entry(SorOrderPlaceRequest.class.getSimpleName(), new DecodeJson<>(SorOrderPlaceResponse.class)),
-            Map.entry(SorOrderTestRequest.class.getSimpleName(), new DecodeJson<>(SorOrderTestResponse.class)),
+            Map.entry("session.logon", new DecodeJson<>(SessionLogonResponse.class)),
+            Map.entry("session.status", new DecodeJson<>(SessionStatusResponse.class)),
+            Map.entry("session.logout", new DecodeJson<>(SessionLogoutResponse.class)),
+            Map.entry("sor.order.place", new DecodeJson<>(SorOrderPlaceResponse.class)),
+            Map.entry("sor.order.test", new DecodeJson<>(SorOrderTestResponse.class)),
+            Map.entry("userDataStream.subscribe", new DecodeJson<>(UserDataStreamSubscribeResponse.class)),
 //            Map.entry(Ticker24hrRequest.class.getSimpleName(), new DecodeJson<>(Ticker24hrResponse.class)),
 //            Map.entry(TickerBookRequest.class.getSimpleName(), new DecodeJson<>(TickerBookResponse.class)),
 //            Map.entry(TickerPriceRequest.class.getSimpleName(), new DecodeJson<>(TickerPriceResponse.class)),
@@ -62,14 +65,14 @@ public class RequestResponseUnion {
             Map.entry(UiKlinesRequest.class.getSimpleName(), new DecodeJson<>(UiKlinesResponse.class)),
             Map.entry(UserDataStreamPingRequest.class.getSimpleName(), new DecodeJson<>(UserDataStreamPingResponse.class)),
             Map.entry(UserDataStreamStopRequest.class.getSimpleName(), new DecodeJson<>(UserDataStreamStopResponse.class)),
-            Map.entry(UserDataStreamUnsubscribeRequest.class.getSimpleName(), new DecodeJson<>(UserDataStreamUnsubscribeResponse.class))
+            Map.entry("userDataStream.unsubscribe", new DecodeJson<>(UserDataStreamUnsubscribeResponse.class))
     );
-    static class DecodeJson<T extends BaseDTO> {
+    public static class DecodeJson<T extends BaseDTO> {
         Class<T> result;
         DecodeJson(Class<T> clazz) {
             result = clazz;
         }
-        T decode(String s) {
+        public T decode(String s) {
             return Json.decodeValue(s, result);
         }
     }

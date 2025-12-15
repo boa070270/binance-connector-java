@@ -12,6 +12,7 @@
 
 package com.binance.connector.quarkus.spot.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.vertx.core.json.Json;
 
@@ -21,6 +22,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ExchangeInfoRequest extends BaseDTO {
     public static final String SERIALIZED_NAME_SYMBOL = "symbol";
 
