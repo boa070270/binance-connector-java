@@ -118,23 +118,23 @@ public class TradeApi {
         client.close();
     }
     public void connect(boolean reconnect) {
+        String endpoint = useTestNet ? endpointTest : endpointApi;
         if (reconnect) {
             if (shuttingDown) {
-                LOG.info("Shutting down. Not reconnecting to Binance Book Tickers Stream.");
+                LOG.info("Shutting down. Not reconnecting to "+endpoint);
                 return;
             }
             Exception e = new Exception();
-            LOG.error("Trying reconnect to Binance Book Tickers Stream.",e);
+            LOG.error("Trying reconnect to "+endpoint,e);
         }
         if (webSocket != null) {
             webSocket.close();
             webSocket = null;
         }
-        String endpoint = useTestNet ? endpointTest : endpointApi;
         URI uri = URI.create(endpoint);
         client.connect(uri.getPort() > 0? uri.getPort() : 443, uri.getHost(), uri.getPath())
                 .onSuccess(ws -> {
-                    LOG.info("Connected to Binance Book Tickers Stream.");
+                    LOG.info("Connected Binance Stream: " + endpoint);
                     this.webSocket = ws;
                     ws.textMessageHandler(this::processInputMsg);
 
@@ -142,7 +142,7 @@ public class TradeApi {
                     ws.closeHandler(v -> this.connect(true));
                 })
                 .onFailure(err -> {
-                    LOG.error("Connection to Binance Book Tickers Stream failed", err);
+                    LOG.error("Connection to "+endpoint+" failed", err);
                 });
     }
     protected WebSocket getWebSocket() {
