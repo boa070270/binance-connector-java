@@ -10,7 +10,7 @@ public class RequestResponseUnion {
     public static final Map<String, DecodeJson<?>> RequestResponseAssociation = Map.ofEntries(
             Map.entry(AccountCommissionRequest.class.getSimpleName(), new DecodeJson<>(AccountCommissionResponse.class)),
             Map.entry(AccountRateLimitsOrdersRequest.class.getSimpleName(), new DecodeJson<>(AccountRateLimitsOrdersResponse.class)),
-            Map.entry(AccountStatusRequest.class.getSimpleName(), new DecodeJson<>(AccountStatusResponse.class)),
+            Map.entry("account.status", new DecodeJson<>(AccountStatusResponse.class)),
             Map.entry(AggTradeRequest.class.getSimpleName(), new DecodeJson<>(AggTradeResponse.class)),
 //            Map.entry(AllMarketRollingWindowTickerRequest.class.getSimpleName(), new DecodeJson<>(AllMarketRollingWindowTickerResponse.class))
             Map.entry(AllOrderListsRequest.class.getSimpleName(), new DecodeJson<>(AllOrderListsResponse.class)),
@@ -20,7 +20,7 @@ public class RequestResponseUnion {
             Map.entry(BookTickerRequest.class.getSimpleName(), new DecodeJson<>(BookTickerResponse.class)),
             Map.entry(DepthRequest.class.getSimpleName(), new DecodeJson<>(DepthResponse.class)),
             Map.entry(DiffBookDepthRequest.class.getSimpleName(), new DecodeJson<>(DiffBookDepthResponse.class)),
-            Map.entry(ExchangeInfoRequest.class.getSimpleName(), new DecodeJson<>(ExchangeInfoResponse.class)),
+            Map.entry("exchangeInfo", new DecodeJson<>(ExchangeInfoResponse.class)),
             Map.entry(KlineOffsetRequest.class.getSimpleName(), new DecodeJson<>(KlineOffsetResponse.class)),
             Map.entry(KlineRequest.class.getSimpleName(), new DecodeJson<>(KlineResponse.class)),
             Map.entry(KlinesRequest.class.getSimpleName(), new DecodeJson<>(KlinesResponse.class)),
@@ -55,7 +55,7 @@ public class RequestResponseUnion {
             Map.entry("userDataStream.subscribe", new DecodeJson<>(UserDataStreamSubscribeResponse.class)),
 //            Map.entry(Ticker24hrRequest.class.getSimpleName(), new DecodeJson<>(Ticker24hrResponse.class)),
 //            Map.entry(TickerBookRequest.class.getSimpleName(), new DecodeJson<>(TickerBookResponse.class)),
-//            Map.entry(TickerPriceRequest.class.getSimpleName(), new DecodeJson<>(TickerPriceResponse.class)),
+            Map.entry("ticker.price", new DecodeJson<>(TickerPriceResponse2.class)),
 //            Map.entry(TickerRequest.class.getSimpleName(), new DecodeJson<>(TickerResponse.class)),
             Map.entry(TickerTradingDayRequest.class.getSimpleName(), new DecodeJson<>(TickerTradingDayResponse.class)),
             Map.entry(TradeRequest.class.getSimpleName(), new DecodeJson<>(TradeResponse.class)),
@@ -63,6 +63,8 @@ public class RequestResponseUnion {
             Map.entry(TradesHistoricalRequest.class.getSimpleName(), new DecodeJson<>(TradesHistoricalResponse.class)),
             Map.entry(TradesRecentRequest.class.getSimpleName(), new DecodeJson<>(TradesRecentResponse.class)),
             Map.entry(UiKlinesRequest.class.getSimpleName(), new DecodeJson<>(UiKlinesResponse.class)),
+            Map.entry("time", new DecodeJson<>(TimeResponse.class)),
+            Map.entry("ping", new DecodeJson<>(PingResponse.class)),
             Map.entry(UserDataStreamPingRequest.class.getSimpleName(), new DecodeJson<>(UserDataStreamPingResponse.class)),
             Map.entry(UserDataStreamStopRequest.class.getSimpleName(), new DecodeJson<>(UserDataStreamStopResponse.class)),
             Map.entry("userDataStream.unsubscribe", new DecodeJson<>(UserDataStreamUnsubscribeResponse.class))

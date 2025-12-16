@@ -22,10 +22,12 @@ public class OutboundAccountPosition extends AbstractEvent {
   ]
      */
     public Balance[] balances;
+    public Long lastUpdateTime;
     public static OutboundAccountPosition fromMap(Map<String,?> m) {
         OutboundAccountPosition o = new OutboundAccountPosition();
         o.eventType = "outboundAccountPosition";
         o.eventTime = BinanceUtils.fromMapLong(m, "E");
+        o.lastUpdateTime = BinanceUtils.fromMapLong(m, "u");
         o.balances = BinanceUtils.listToArray((List<Map<String,?>>) m.get("B"), Balance::fromEventMap, Balance[]::new, new Balance[0]);
         return o;
     }

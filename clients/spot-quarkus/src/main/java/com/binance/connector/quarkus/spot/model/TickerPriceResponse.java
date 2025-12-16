@@ -14,11 +14,8 @@ package com.binance.connector.quarkus.spot.model;
 
 import com.binance.connector.client.common.AbstractOpenApiSchema;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TickerPriceResponse extends AbstractOpenApiSchema {

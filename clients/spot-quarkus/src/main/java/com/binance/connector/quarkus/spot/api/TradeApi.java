@@ -13,6 +13,7 @@
 package com.binance.connector.quarkus.spot.api;
 
 import com.binance.connector.client.common.ApiException;
+import com.binance.connector.client.common.exception.ConstraintViolationException;
 import com.binance.connector.quarkus.spot.CryptoException;
 import com.binance.connector.quarkus.spot.KindOfResponseEnum;
 import com.binance.connector.quarkus.spot.SecurityKeysLoader;
@@ -27,9 +28,13 @@ import io.vertx.core.http.WebSocketClient;
 import io.vertx.core.http.WebSocketClientOptions;
 import io.vertx.core.json.Json;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
 import org.jboss.logging.Logger;
 
 import java.net.URI;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
@@ -47,7 +52,6 @@ public class TradeApi {
     private boolean useTestNet = true;
     private String endpointApi, endpointTest;
     private String storeKey;
-    private long recvWindow = 1000;
     private boolean shuttingDown;
     private ConcurrentHashMap<Long, RequestWrapperDTO<?, ?>> pendingRequests = new ConcurrentHashMap<>();
     private BookTickersParser bookTickersParser = new BookTickersParser();
@@ -65,7 +69,6 @@ public class TradeApi {
         endpointApi = spotConfig.endpointApi();
         endpointTest = spotConfig.endpointTest();
         storeKey = spotConfig.storeKey();
-        recvWindow = spotConfig.recvWindow();
         options = createClientOptions();
         client = vertx.createWebSocketClient(options);
     }
@@ -910,9 +913,221 @@ public class TradeApi {
         }
         return build.getResponseCallback();
     }
+    /**
+     * WebSocket Account information Query information about your account. Weight: 20
+     *
+     * @param accountStatusRequest (optional)
+     * @return AccountStatusResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     * @http.response.details
+     *     <table border="1">
+     * <caption>Response Details</caption>
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> Account information </td><td>  -  </td></tr>
+     * </table>
+     *
+     * @see <a
+     *     href="https://developers.binance.com/docs/binance-spot-api-docs/websocket-api/account-requests#account-information-user_data">WebSocket
+     *     Account information Documentation</a>
+     */
+    public CompletableFuture<AccountStatusResponse> accountStatus(
+            AccountStatusRequest accountStatusRequest) throws ApiException {
+        accountStatusValidateBeforeCall(accountStatusRequest);
+        String methodName = "/account.status".substring(1);
+        RequestWrapperDTO<AccountStatusRequest, AccountStatusResponse> build =
+                new RequestWrapperDTO.Builder<AccountStatusRequest, AccountStatusResponse>()
+                        .id(getRequestID())
+                        .method(methodName)
+                        .params(accountStatusRequest)
+                        .responseType((RequestResponseUnion.DecodeJson<AccountStatusResponse>) RequestResponseUnion.RequestResponseAssociation.get("account.status"))
+                        .build();
+
+        try {
+            webSocketSend(build);
+        } catch (InterruptedException | CryptoException e) {
+            throw new ApiException(e);
+        }
+        return build.getResponseCallback();
+    }
+
+    @SuppressWarnings("rawtypes")
+    private void accountStatusValidateBeforeCall(AccountStatusRequest accountStatusRequest)
+            throws ApiException {
+    }
+
 
     @SuppressWarnings("rawtypes")
     private void sorOrderTestValidateBeforeCall(SorOrderTestRequest sorOrderTestRequest)
+            throws ApiException {}
+
+    /**
+     * WebSocket Exchange information Query current exchange trading rules, rate limits, and symbol
+     * information. Weight: 20
+     *
+     * @param exchangeInfoRequest (optional)
+     * @return ExchangeInfoResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     * @http.response.details
+     *     <table border="1">
+     * <caption>Response Details</caption>
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> Exchange information </td><td>  -  </td></tr>
+     * </table>
+     *
+     * @see <a
+     *     href="https://developers.binance.com/docs/binance-spot-api-docs/websocket-api/general-requests#exchange-information">WebSocket
+     *     Exchange information Documentation</a>
+     */
+    public CompletableFuture<ExchangeInfoResponse> exchangeInfo(
+            ExchangeInfoRequest exchangeInfoRequest) throws ApiException {
+        exchangeInfoValidateBeforeCall(exchangeInfoRequest);
+        String methodName = "/exchangeInfo".substring(1);
+        ApiRequestWrapperDTO<ExchangeInfoRequest, ExchangeInfoResponse> build =
+                new ApiRequestWrapperDTO.Builder<ExchangeInfoRequest, ExchangeInfoResponse>()
+                        .id(getRequestID())
+                        .method(methodName)
+                        .params(exchangeInfoRequest)
+                        .responseType((RequestResponseUnion.DecodeJson<ExchangeInfoResponse>) RequestResponseUnion.RequestResponseAssociation.get("exchangeInfo"))
+                        .signed(false)
+                        .build();
+
+        try {
+            webSocketSend(build);
+        } catch (InterruptedException | CryptoException e) {
+            throw new ApiException(e);
+        }
+        return build.getResponseCallback();
+    }
+
+    @SuppressWarnings("rawtypes")
+    private void exchangeInfoValidateBeforeCall(ExchangeInfoRequest exchangeInfoRequest)
+            throws ApiException {}
+
+    /**
+     * WebSocket Test connectivity Test connectivity to the WebSocket API. Weight: 1
+     *
+     * @return PingResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     * @http.response.details
+     *     <table border="1">
+     * <caption>Response Details</caption>
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> Test connectivity </td><td>  -  </td></tr>
+     * </table>
+     *
+     * @see <a
+     *     href="https://developers.binance.com/docs/binance-spot-api-docs/websocket-api/general-requests#test-connectivity">WebSocket
+     *     Test connectivity Documentation</a>
+     */
+    public CompletableFuture<PingResponse> ping() throws ApiException {
+        pingValidateBeforeCall();
+        String methodName = "/ping".substring(1);
+        ApiRequestWrapperDTO<BaseRequestDTO, PingResponse> build =
+                new ApiRequestWrapperDTO.Builder<BaseRequestDTO, PingResponse>()
+                        .id(getRequestID())
+                        .method(methodName)
+                        .params(new BaseRequestDTO())
+                        .responseType((RequestResponseUnion.DecodeJson<PingResponse>) RequestResponseUnion.RequestResponseAssociation.get("ping"))
+                        .signed(false)
+                        .build();
+
+        try {
+            webSocketSend(build);
+        } catch (InterruptedException | CryptoException e) {
+            throw new ApiException(e);
+        }
+        return build.getResponseCallback();
+    }
+
+    @SuppressWarnings("rawtypes")
+    private void pingValidateBeforeCall() throws ApiException {}
+
+    /**
+     * WebSocket Check server time Test connectivity to the WebSocket API and get the current server
+     * time. Weight: 1
+     *
+     * @return TimeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     * @http.response.details
+     *     <table border="1">
+     * <caption>Response Details</caption>
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> Check server time </td><td>  -  </td></tr>
+     * </table>
+     *
+     * @see <a
+     *     href="https://developers.binance.com/docs/binance-spot-api-docs/websocket-api/general-requests#check-server-time">WebSocket
+     *     Check server time Documentation</a>
+     */
+    public CompletableFuture<TimeResponse> time() throws ApiException {
+        timeValidateBeforeCall();
+        String methodName = "/time".substring(1);
+        ApiRequestWrapperDTO<BaseRequestDTO, TimeResponse> build =
+                new ApiRequestWrapperDTO.Builder<BaseRequestDTO, TimeResponse>()
+                        .id(getRequestID())
+                        .method(methodName)
+                        .params(new BaseRequestDTO())
+                        .responseType((RequestResponseUnion.DecodeJson<TimeResponse>) RequestResponseUnion.RequestResponseAssociation.get("time"))
+                        .signed(false)
+                        .build();
+
+        try {
+            webSocketSend(build);
+        } catch (InterruptedException | CryptoException e) {
+            throw new ApiException(e);
+        }
+        return build.getResponseCallback();
+    }
+    private void timeValidateBeforeCall() throws ApiException {}
+    /**
+     * WebSocket Symbol price ticker Get the latest market price for a symbol. If you need access to
+     * real-time price updates, please consider using WebSocket Streams: *
+     * &#x60;&lt;symbol&gt;@aggTrade&#x60; * &#x60;&lt;symbol&gt;@trade&#x60; Weight: Adjusted based
+     * on the number of requested symbols: | Parameter | Weight | | --------- |:------:| |
+     * &#x60;symbol&#x60; | 2 | | &#x60;symbols&#x60; | 4 | | none | 4 |
+     *
+     * @param tickerPriceRequest (optional)
+     * @return TickerPriceResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     * @http.response.details
+     *     <table border="1">
+     * <caption>Response Details</caption>
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> Symbol price ticker </td><td>  -  </td></tr>
+     * </table>
+     *
+     * @see <a
+     *     href="https://developers.binance.com/docs/binance-spot-api-docs/websocket-api/market-data-requests#symbol-price-ticker">WebSocket
+     *     Symbol price ticker Documentation</a>
+     */
+    public CompletableFuture<TickerPriceResponse2> tickerPrice(TickerPriceRequest tickerPriceRequest)
+            throws ApiException {
+        tickerPriceValidateBeforeCall(tickerPriceRequest);
+        String methodName = "/ticker.price".substring(1);
+        ApiRequestWrapperDTO<TickerPriceRequest, TickerPriceResponse2> build =
+                new ApiRequestWrapperDTO.Builder<TickerPriceRequest, TickerPriceResponse2>()
+                        .id(getRequestID())
+                        .method(methodName)
+                        .params(tickerPriceRequest)
+                        .responseType((RequestResponseUnion.DecodeJson<TickerPriceResponse2>) RequestResponseUnion.RequestResponseAssociation.get("ticker.price"))
+                        .signed(false)
+                        .build();
+
+        try {
+            webSocketSend(build);
+        } catch (InterruptedException | CryptoException e) {
+            throw new ApiException(e);
+        }
+        return build.getResponseCallback();
+    }
+
+    @SuppressWarnings("rawtypes")
+    private void tickerPriceValidateBeforeCall(TickerPriceRequest tickerPriceRequest)
             throws ApiException {}
 
     public long getRequestID() {
