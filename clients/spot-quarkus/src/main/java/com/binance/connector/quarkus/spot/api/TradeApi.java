@@ -140,11 +140,16 @@ public class TradeApi {
 
                     ws.exceptionHandler(this::handleException);
                     ws.closeHandler(v -> this.connect(true));
+                    handleConnected();
                 })
                 .onFailure(err -> {
                     LOG.error("Connection to "+endpoint+" failed", err);
                 });
     }
+
+    protected void handleConnected() {
+    }
+
     protected WebSocket getWebSocket() {
         return webSocket;
     }
