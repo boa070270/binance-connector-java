@@ -20,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class OutboundAccountPosition extends BaseDTO {
+public class OutboundAccountPosition {
     public static final String SERIALIZED_NAME_E = "E";
 
     @JsonProperty(SERIALIZED_NAME_E)
@@ -107,97 +107,4 @@ public class OutboundAccountPosition extends BaseDTO {
     public void setB( List<OutboundAccountPositionBInner> B) {
         this.B = B;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        OutboundAccountPosition outboundAccountPosition = (OutboundAccountPosition) o;
-        return Objects.equals(this.E, outboundAccountPosition.E)
-                && Objects.equals(this.uLowerCase, outboundAccountPosition.uLowerCase)
-                && Objects.equals(this.B, outboundAccountPosition.B);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(E, uLowerCase, B);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class OutboundAccountPosition {\n");
-        sb.append("		E: ").append(toIndentedString(E)).append("\n");
-        sb.append("		uLowerCase: ").append(toIndentedString(uLowerCase)).append("\n");
-        sb.append("		B: ").append(toIndentedString(B)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
-    public String toUrlQueryString() {
-        StringBuilder sb = new StringBuilder();
-        Map<String, String> valMap = new TreeMap<String, String>();
-        valMap.put("apiKey", getApiKey());
-        Long EValue = getE();
-        if (EValue != null) {
-            String EValueAsString = EValue.toString();
-            valMap.put("E", EValueAsString);
-        }
-        Long uLowerCaseValue = getuLowerCase();
-        if (uLowerCaseValue != null) {
-            String uLowerCaseValueAsString = uLowerCaseValue.toString();
-            valMap.put("uLowerCase", uLowerCaseValueAsString);
-        }
-        List<OutboundAccountPositionBInner> BValue = getB();
-        if (BValue != null) {
-            String BValueAsString = Json.encode(BValue);
-            valMap.put("B", BValueAsString);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return asciiEncode(
-                valMap.keySet().stream()
-                        .map(key -> key + "=" + valMap.get(key))
-                        .collect(Collectors.joining("&")));
-    }
-
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object EValue = getE();
-        if (EValue != null) {
-            valMap.put("E", EValue);
-        }
-        Object uLowerCaseValue = getuLowerCase();
-        if (uLowerCaseValue != null) {
-            valMap.put("uLowerCase", uLowerCaseValue);
-        }
-        Object BValue = getB();
-        if (BValue != null) {
-            valMap.put("B", BValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
-    public static String asciiEncode(String s) {
-        return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
-    }
-
 }

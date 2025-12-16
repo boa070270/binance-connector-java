@@ -26,10 +26,7 @@ import io.vertx.core.http.WebSocket;
 import io.vertx.core.http.WebSocketClient;
 import io.vertx.core.http.WebSocketClientOptions;
 import io.vertx.core.json.Json;
-import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.event.Observes;
-import jakarta.inject.Inject;
 import org.jboss.logging.Logger;
 
 import java.net.URI;
@@ -39,33 +36,47 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @ApplicationScoped
 public class TradeApi {
-    static final Logger LOG = Logger.getLogger(TradeApi.class);
-    AtomicLong requestID = new AtomicLong(0L);
-    @Inject
-    Vertx vertx;
-    @Inject
-    SecurityKeysLoader securityKeysLoader;
-    @Inject
-    BinanceSpotConfig spotConfig;
-    WebSocketClientOptions options;
-    WebSocketClient client;
-    WebSocket webSocket;
-    boolean useTestNet = true;
-    String endpointApi, endpointTest;
-    String storeKey;
+    private static final Logger LOG = Logger.getLogger(TradeApi.class);
+    private AtomicLong requestID = new AtomicLong(0L);
+    private Vertx vertx;
+    private SecurityKeysLoader securityKeysLoader;
+    private BinanceSpotConfig spotConfig;
+    private WebSocketClientOptions options;
+    private WebSocketClient client;
+    private WebSocket webSocket;
+    private boolean useTestNet = true;
+    private String endpointApi, endpointTest;
+    private String storeKey;
+    private long recvWindow = 1000;
     private boolean shuttingDown;
-    ConcurrentHashMap<Long, RequestWrapperDTO<?, ?>> pendingRequests = new ConcurrentHashMap<>();
-    BookTickersParser bookTickersParser = new BookTickersParser();
-    SignatureGenerator signatureGenerator;
+    private ConcurrentHashMap<Long, RequestWrapperDTO<?, ?>> pendingRequests = new ConcurrentHashMap<>();
+    private BookTickersParser bookTickersParser = new BookTickersParser();
+    private SignatureGenerator signatureGenerator;
     private String apiKey;
-    @PostConstruct
-    void init() {
+    public TradeApi(){}
+    public TradeApi (BinanceSpotConfig spotConfig, Vertx vertx, SecurityKeysLoader securityKeysLoader) {
+        this.spotConfig = spotConfig;
+        this.vertx = vertx;
+        this.securityKeysLoader = securityKeysLoader;
+        init();
+    }
+    protected void init() {
         useTestNet = spotConfig.useTestNet();
         endpointApi = spotConfig.endpointApi();
         endpointTest = spotConfig.endpointTest();
         storeKey = spotConfig.storeKey();
+        recvWindow = spotConfig.recvWindow();
         options = createClientOptions();
         client = vertx.createWebSocketClient(options);
+    }
+    public void setSpotConfig(BinanceSpotConfig spotConfig) {
+        this.spotConfig = spotConfig;
+    }
+    public void setVertx(Vertx vertx) {
+        this.vertx = vertx;
+    }
+    public void setSecurityKeysLoader(SecurityKeysLoader securityKeysLoader) {
+        this.securityKeysLoader = securityKeysLoader;
     }
     public void setUseTestNet(boolean useTestNet) {
         this.useTestNet = useTestNet;
@@ -83,26 +94,27 @@ public class TradeApi {
         return new WebSocketClientOptions()
                 .setSsl(true);
     }
-    void start() {
+    public void start() {
         SecurityKeysLoader.LoaderResult result = securityKeysLoader.load(storeKey);
         apiKey = result.apiKey;
         signatureGenerator = result.signatureGenerator;
         connect(false);
     }
-    void onStart(@Observes StartupEvent ev) {
+    protected void onStart(StartupEvent ev) {
+        start();
         LOG.info("App started");
     }
-    void onStop(@Observes ShutdownEvent ev) {
+    protected void onStop(ShutdownEvent ev) {
         shuttingDown = true;
         close();
         LOG.info("App stopped");
     }
-    void close() {
+    public void close() {
         LOG.info("Stopping Binance Book Tickers Stream.");
         webSocket.close();
         client.close();
     }
-    void connect(boolean reconnect) {
+    public void connect(boolean reconnect) {
         if (reconnect) {
             if (shuttingDown) {
                 LOG.info("Shutting down. Not reconnecting to Binance Book Tickers Stream.");
@@ -130,7 +142,10 @@ public class TradeApi {
                     LOG.error("Connection to Binance Book Tickers Stream failed", err);
                 });
     }
-    void processInputMsg(String msg) {
+    protected WebSocket getWebSocket() {
+        return webSocket;
+    }
+    protected void processInputMsg(String msg) {
         KindOfResponseEnum kind = KindOfResponseEnum.chkKindOfResponse(msg);
         switch (kind) {
             case ERROR -> handleErrorMsg(msg);
@@ -182,7 +197,7 @@ public class TradeApi {
     }
     protected void webSocketSend(RequestWrapperDTO<?,?> wrapperDTO) throws InterruptedException, CryptoException {
         if (webSocket == null || webSocket.isClosed()) {
-            isNotReady();
+            handleNotReady();
             return;
         }
         wrapperDTO.getParams().setApiKey(apiKey);
@@ -194,7 +209,7 @@ public class TradeApi {
 //        Future.await(result);
     }
 
-    protected void isNotReady() {
+    protected void handleNotReady() {
         LOG.warn("WebSocket is not ready yet.");
     }
 

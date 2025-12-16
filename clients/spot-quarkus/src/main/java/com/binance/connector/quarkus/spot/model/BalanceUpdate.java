@@ -19,7 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class BalanceUpdate extends BaseDTO {
+public class BalanceUpdate {
     public static final String SERIALIZED_NAME_E = "E";
 
     @JsonProperty(SERIALIZED_NAME_E)
@@ -120,62 +120,6 @@ public class BalanceUpdate extends BaseDTO {
 
     public void setT( Long T) {
         this.T = T;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        BalanceUpdate balanceUpdate = (BalanceUpdate) o;
-        return Objects.equals(this.E, balanceUpdate.E)
-                && Objects.equals(this.aLowerCase, balanceUpdate.aLowerCase)
-                && Objects.equals(this.dLowerCase, balanceUpdate.dLowerCase)
-                && Objects.equals(this.T, balanceUpdate.T);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(E, aLowerCase, dLowerCase, T);
-    }
-
-    public String toUrlQueryString() {
-        StringBuilder sb = new StringBuilder();
-        Map<String, String> valMap = new TreeMap<String, String>();
-        valMap.put("apiKey", getApiKey());
-        Long EValue = getE();
-        if (EValue != null) {
-            String EValueAsString = EValue.toString();
-            valMap.put("E", EValueAsString);
-        }
-        String aLowerCaseValue = getaLowerCase();
-        if (aLowerCaseValue != null) {
-            String aLowerCaseValueAsString = aLowerCaseValue.toString();
-            valMap.put("aLowerCase", aLowerCaseValueAsString);
-        }
-        String dLowerCaseValue = getdLowerCase();
-        if (dLowerCaseValue != null) {
-            String dLowerCaseValueAsString = dLowerCaseValue.toString();
-            valMap.put("dLowerCase", dLowerCaseValueAsString);
-        }
-        Long TValue = getT();
-        if (TValue != null) {
-            String TValueAsString = TValue.toString();
-            valMap.put("T", TValueAsString);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return asciiEncode(
-                valMap.keySet().stream()
-                        .map(key -> key + "=" + valMap.get(key))
-                        .collect(Collectors.joining("&")));
-    }
-
-    public static String asciiEncode(String s) {
-        return new String(s.getBytes(), StandardCharsets.US_ASCII);
     }
 
 }

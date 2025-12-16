@@ -19,7 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class OutboundAccountPositionBInner extends BaseDTO {
+public class OutboundAccountPositionBInner {
     public static final String SERIALIZED_NAME_A_LOWER_CASE = "a";
 
     @JsonProperty(SERIALIZED_NAME_A_LOWER_CASE)
@@ -37,15 +37,6 @@ public class OutboundAccountPositionBInner extends BaseDTO {
     @JsonProperty(SERIALIZED_NAME_L_LOWER_CASE)
     
     private String lLowerCase;
-
-    public OutboundAccountPositionBInner() {}
-
-    public OutboundAccountPositionBInner aLowerCase(
-             String aLowerCase) {
-        this.aLowerCase = aLowerCase;
-        return this;
-    }
-
     /**
      * Get aLowerCase
      *
@@ -59,13 +50,6 @@ public class OutboundAccountPositionBInner extends BaseDTO {
     public void setaLowerCase( String aLowerCase) {
         this.aLowerCase = aLowerCase;
     }
-
-    public OutboundAccountPositionBInner fLowerCase(
-             String fLowerCase) {
-        this.fLowerCase = fLowerCase;
-        return this;
-    }
-
     /**
      * Get fLowerCase
      *
@@ -80,12 +64,6 @@ public class OutboundAccountPositionBInner extends BaseDTO {
         this.fLowerCase = fLowerCase;
     }
 
-    public OutboundAccountPositionBInner lLowerCase(
-             String lLowerCase) {
-        this.lLowerCase = lLowerCase;
-        return this;
-    }
-
     /**
      * Get lLowerCase
      *
@@ -98,98 +76,5 @@ public class OutboundAccountPositionBInner extends BaseDTO {
 
     public void setlLowerCase( String lLowerCase) {
         this.lLowerCase = lLowerCase;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        OutboundAccountPositionBInner outboundAccountPositionBInner =
-                (OutboundAccountPositionBInner) o;
-        return Objects.equals(this.aLowerCase, outboundAccountPositionBInner.aLowerCase)
-                && Objects.equals(this.fLowerCase, outboundAccountPositionBInner.fLowerCase)
-                && Objects.equals(this.lLowerCase, outboundAccountPositionBInner.lLowerCase);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(aLowerCase, fLowerCase, lLowerCase);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class OutboundAccountPositionBInner {\n");
-        sb.append("		aLowerCase: ").append(toIndentedString(aLowerCase)).append("\n");
-        sb.append("		fLowerCase: ").append(toIndentedString(fLowerCase)).append("\n");
-        sb.append("		lLowerCase: ").append(toIndentedString(lLowerCase)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
-    public String toUrlQueryString() {
-        StringBuilder sb = new StringBuilder();
-        Map<String, String> valMap = new TreeMap<String, String>();
-        valMap.put("apiKey", getApiKey());
-        String aLowerCaseValue = getaLowerCase();
-        if (aLowerCaseValue != null) {
-            String aLowerCaseValueAsString = aLowerCaseValue.toString();
-            valMap.put("aLowerCase", aLowerCaseValueAsString);
-        }
-        String fLowerCaseValue = getfLowerCase();
-        if (fLowerCaseValue != null) {
-            String fLowerCaseValueAsString = fLowerCaseValue.toString();
-            valMap.put("fLowerCase", fLowerCaseValueAsString);
-        }
-        String lLowerCaseValue = getlLowerCase();
-        if (lLowerCaseValue != null) {
-            String lLowerCaseValueAsString = lLowerCaseValue.toString();
-            valMap.put("lLowerCase", lLowerCaseValueAsString);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return asciiEncode(
-                valMap.keySet().stream()
-                        .map(key -> key + "=" + valMap.get(key))
-                        .collect(Collectors.joining("&")));
-    }
-
-    public Map<String, Object> toMap() {
-        Map<String, Object> valMap = new TreeMap<String, Object>();
-        valMap.put("apiKey", getApiKey());
-        Object aLowerCaseValue = getaLowerCase();
-        if (aLowerCaseValue != null) {
-            valMap.put("aLowerCase", aLowerCaseValue);
-        }
-        Object fLowerCaseValue = getfLowerCase();
-        if (fLowerCaseValue != null) {
-            valMap.put("fLowerCase", fLowerCaseValue);
-        }
-        Object lLowerCaseValue = getlLowerCase();
-        if (lLowerCaseValue != null) {
-            valMap.put("lLowerCase", lLowerCaseValue);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return valMap;
-    }
-
-    public static String asciiEncode(String s) {
-        return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n		");
     }
 }
