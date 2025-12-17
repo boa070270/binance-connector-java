@@ -869,6 +869,7 @@ public class TradeApi {
                         .method(methodName)
                         .params(request)
                         .responseType((RequestResponseUnion.DecodeJson<UserDataStreamUnsubscribeResponse>) RequestResponseUnion.RequestResponseAssociation.get("userDataStream.unsubscribe"))
+                        .signed(false)
                         .build();
         try {
             webSocketSend(build);
