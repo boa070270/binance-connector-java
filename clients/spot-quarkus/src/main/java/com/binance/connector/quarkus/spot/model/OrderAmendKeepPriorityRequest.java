@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -52,7 +53,7 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_NEW_QTY)
 
-    private Double newQty;
+    private BigDecimal newQty;
 
     public static final String SERIALIZED_NAME_RECV_WINDOW = "recvWindow";
 
@@ -142,7 +143,7 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
     }
 
     public OrderAmendKeepPriorityRequest newQty( Double newQty) {
-        this.newQty = newQty;
+        this.newQty = BinanceUtils.asBigDecimal(newQty);
         return this;
     }
 
@@ -154,12 +155,12 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
 
     
 
-    public Double getNewQty() {
+    public BigDecimal getNewQty() {
         return newQty;
     }
 
     public void setNewQty( Double newQty) {
-        this.newQty = newQty;
+        this.newQty = BinanceUtils.asBigDecimal(newQty);
     }
 
     public OrderAmendKeepPriorityRequest recvWindow(
@@ -247,7 +248,7 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
             String newClientOrderIdValueAsString = newClientOrderIdValue.toString();
             valMap.put("newClientOrderId", newClientOrderIdValueAsString);
         }
-        Double newQtyValue = getNewQty();
+        BigDecimal newQtyValue = getNewQty();
         if (newQtyValue != null) {
             String newQtyValueAsString = DecimalFormatter.getFormatter().format(newQtyValue);
             valMap.put("newQty", newQtyValueAsString);

@@ -1,5 +1,7 @@
 package com.binance.connector.quarkus.spot.model;
 
+import com.binance.connector.client.common.DecimalFormatter;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -8,6 +10,13 @@ import java.util.function.Function;
 import java.util.function.IntFunction;
 
 public class BinanceUtils {
+    public static BigDecimal asBigDecimal(Double value) {
+        if (value != null) {
+            String valueAsString = DecimalFormatter.getFormatter().format(value);
+            return new BigDecimal(valueAsString);
+        }
+        return null;
+    }
     public static String pDouble(double d) {
         return BigDecimal.valueOf(d).setScale(8, RoundingMode.HALF_DOWN).toPlainString();
     }

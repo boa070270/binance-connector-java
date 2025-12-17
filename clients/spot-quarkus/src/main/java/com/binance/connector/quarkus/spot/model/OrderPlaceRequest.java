@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -52,19 +53,19 @@ public class OrderPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_PRICE)
     
-    private Double price;
+    private BigDecimal price;
 
     public static final String SERIALIZED_NAME_QUANTITY = "quantity";
 
     @JsonProperty(SERIALIZED_NAME_QUANTITY)
     
-    private Double quantity;
+    private BigDecimal quantity;
 
     public static final String SERIALIZED_NAME_QUOTE_ORDER_QTY = "quoteOrderQty";
 
     @JsonProperty(SERIALIZED_NAME_QUOTE_ORDER_QTY)
     
-    private Double quoteOrderQty;
+    private BigDecimal quoteOrderQty;
 
     public static final String SERIALIZED_NAME_NEW_CLIENT_ORDER_ID = "newClientOrderId";
 
@@ -82,7 +83,7 @@ public class OrderPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_STOP_PRICE)
     
-    private Double stopPrice;
+    private BigDecimal stopPrice;
 
     public static final String SERIALIZED_NAME_TRAILING_DELTA = "trailingDelta";
 
@@ -94,7 +95,7 @@ public class OrderPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_ICEBERG_QTY)
     
-    private Double icebergQty;
+    private BigDecimal icebergQty;
 
     public static final String SERIALIZED_NAME_STRATEGY_ID = "strategyId";
 
@@ -224,7 +225,7 @@ public class OrderPlaceRequest extends BaseDTO {
     }
 
     public OrderPlaceRequest price( Double price) {
-        this.price = price;
+        this.price = BinanceUtils.asBigDecimal(price);
         return this;
     }
 
@@ -235,16 +236,16 @@ public class OrderPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     public void setPrice( Double price) {
-        this.price = price;
+        this.price = BinanceUtils.asBigDecimal(price);
     }
 
     public OrderPlaceRequest quantity( Double quantity) {
-        this.quantity = quantity;
+        this.quantity = BinanceUtils.asBigDecimal(quantity);
         return this;
     }
 
@@ -255,16 +256,16 @@ public class OrderPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
     public void setQuantity( Double quantity) {
-        this.quantity = quantity;
+        this.quantity = BinanceUtils.asBigDecimal(quantity);
     }
 
     public OrderPlaceRequest quoteOrderQty( Double quoteOrderQty) {
-        this.quoteOrderQty = quoteOrderQty;
+        this.quoteOrderQty = BinanceUtils.asBigDecimal(quoteOrderQty);
         return this;
     }
 
@@ -275,12 +276,12 @@ public class OrderPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getQuoteOrderQty() {
+    public BigDecimal getQuoteOrderQty() {
         return quoteOrderQty;
     }
 
     public void setQuoteOrderQty( Double quoteOrderQty) {
-        this.quoteOrderQty = quoteOrderQty;
+        this.quoteOrderQty = BinanceUtils.asBigDecimal(quoteOrderQty);
     }
 
     public OrderPlaceRequest newClientOrderId(
@@ -326,7 +327,7 @@ public class OrderPlaceRequest extends BaseDTO {
     }
 
     public OrderPlaceRequest stopPrice( Double stopPrice) {
-        this.stopPrice = stopPrice;
+        this.stopPrice = BinanceUtils.asBigDecimal(stopPrice);
         return this;
     }
 
@@ -337,12 +338,12 @@ public class OrderPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getStopPrice() {
+    public BigDecimal getStopPrice() {
         return stopPrice;
     }
 
     public void setStopPrice( Double stopPrice) {
-        this.stopPrice = stopPrice;
+        this.stopPrice = BinanceUtils.asBigDecimal(stopPrice);
     }
 
     public OrderPlaceRequest trailingDelta( Integer trailingDelta) {
@@ -365,7 +366,7 @@ public class OrderPlaceRequest extends BaseDTO {
     }
 
     public OrderPlaceRequest icebergQty( Double icebergQty) {
-        this.icebergQty = icebergQty;
+        this.icebergQty = BinanceUtils.asBigDecimal(icebergQty);
         return this;
     }
 
@@ -376,12 +377,12 @@ public class OrderPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getIcebergQty() {
+    public BigDecimal getIcebergQty() {
         return icebergQty;
     }
 
     public void setIcebergQty( Double icebergQty) {
-        this.icebergQty = icebergQty;
+        this.icebergQty = BinanceUtils.asBigDecimal(icebergQty);
     }
 
     public OrderPlaceRequest strategyId( Long strategyId) {
@@ -632,17 +633,17 @@ public class OrderPlaceRequest extends BaseDTO {
             String timeInForceValueAsString = timeInForceValue.toString();
             valMap.put("timeInForce", timeInForceValueAsString);
         }
-        Double priceValue = getPrice();
+        BigDecimal priceValue = getPrice();
         if (priceValue != null) {
             String priceValueAsString = DecimalFormatter.getFormatter().format(priceValue);
             valMap.put("price", priceValueAsString);
         }
-        Double quantityValue = getQuantity();
+        BigDecimal quantityValue = getQuantity();
         if (quantityValue != null) {
             String quantityValueAsString = DecimalFormatter.getFormatter().format(quantityValue);
             valMap.put("quantity", quantityValueAsString);
         }
-        Double quoteOrderQtyValue = getQuoteOrderQty();
+        BigDecimal quoteOrderQtyValue = getQuoteOrderQty();
         if (quoteOrderQtyValue != null) {
             String quoteOrderQtyValueAsString =
                     DecimalFormatter.getFormatter().format(quoteOrderQtyValue);
@@ -658,7 +659,7 @@ public class OrderPlaceRequest extends BaseDTO {
             String newOrderRespTypeValueAsString = newOrderRespTypeValue.toString();
             valMap.put("newOrderRespType", newOrderRespTypeValueAsString);
         }
-        Double stopPriceValue = getStopPrice();
+        BigDecimal stopPriceValue = getStopPrice();
         if (stopPriceValue != null) {
             String stopPriceValueAsString = DecimalFormatter.getFormatter().format(stopPriceValue);
             valMap.put("stopPrice", stopPriceValueAsString);
@@ -668,7 +669,7 @@ public class OrderPlaceRequest extends BaseDTO {
             String trailingDeltaValueAsString = trailingDeltaValue.toString();
             valMap.put("trailingDelta", trailingDeltaValueAsString);
         }
-        Double icebergQtyValue = getIcebergQty();
+        BigDecimal icebergQtyValue = getIcebergQty();
         if (icebergQtyValue != null) {
             String icebergQtyValueAsString =
                     DecimalFormatter.getFormatter().format(icebergQtyValue);

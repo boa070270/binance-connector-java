@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -40,13 +41,13 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_PRICE)
 
-    private Double price;
+    private BigDecimal price;
 
     public static final String SERIALIZED_NAME_QUANTITY = "quantity";
 
     @JsonProperty(SERIALIZED_NAME_QUANTITY)
 
-    private Double quantity;
+    private BigDecimal quantity;
 
     public static final String SERIALIZED_NAME_LIST_CLIENT_ORDER_ID = "listClientOrderId";
 
@@ -64,7 +65,7 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_LIMIT_ICEBERG_QTY)
     
-    private Double limitIcebergQty;
+    private BigDecimal limitIcebergQty;
 
     public static final String SERIALIZED_NAME_LIMIT_STRATEGY_ID = "limitStrategyId";
 
@@ -82,7 +83,7 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_STOP_PRICE)
     
-    private Double stopPrice;
+    private BigDecimal stopPrice;
 
     public static final String SERIALIZED_NAME_TRAILING_DELTA = "trailingDelta";
 
@@ -100,7 +101,7 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_STOP_LIMIT_PRICE)
     
-    private Double stopLimitPrice;
+    private BigDecimal stopLimitPrice;
 
     public static final String SERIALIZED_NAME_STOP_LIMIT_TIME_IN_FORCE = "stopLimitTimeInForce";
 
@@ -112,7 +113,7 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_STOP_ICEBERG_QTY)
     
-    private Double stopIcebergQty;
+    private BigDecimal stopIcebergQty;
 
     public static final String SERIALIZED_NAME_STOP_STRATEGY_ID = "stopStrategyId";
 
@@ -189,7 +190,7 @@ public class OrderListPlaceRequest extends BaseDTO {
     }
 
     public OrderListPlaceRequest price( Double price) {
-        this.price = price;
+        this.price = BinanceUtils.asBigDecimal(price);
         return this;
     }
 
@@ -201,16 +202,16 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     
     
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     public void setPrice( Double price) {
-        this.price = price;
+        this.price = BinanceUtils.asBigDecimal(price);
     }
 
     public OrderListPlaceRequest quantity( Double quantity) {
-        this.quantity = quantity;
+        this.quantity = BinanceUtils.asBigDecimal(quantity);
         return this;
     }
 
@@ -222,12 +223,12 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     
     
-    public Double getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
     public void setQuantity( Double quantity) {
-        this.quantity = quantity;
+        this.quantity = BinanceUtils.asBigDecimal(quantity);
     }
 
     public OrderListPlaceRequest listClientOrderId(
@@ -272,7 +273,7 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     public OrderListPlaceRequest limitIcebergQty(
              Double limitIcebergQty) {
-        this.limitIcebergQty = limitIcebergQty;
+        this.limitIcebergQty = BinanceUtils.asBigDecimal(limitIcebergQty);
         return this;
     }
 
@@ -283,12 +284,12 @@ public class OrderListPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getLimitIcebergQty() {
+    public BigDecimal getLimitIcebergQty() {
         return limitIcebergQty;
     }
 
     public void setLimitIcebergQty( Double limitIcebergQty) {
-        this.limitIcebergQty = limitIcebergQty;
+        this.limitIcebergQty = BinanceUtils.asBigDecimal(limitIcebergQty);
     }
 
     public OrderListPlaceRequest limitStrategyId(
@@ -332,7 +333,7 @@ public class OrderListPlaceRequest extends BaseDTO {
     }
 
     public OrderListPlaceRequest stopPrice( Double stopPrice) {
-        this.stopPrice = stopPrice;
+        this.stopPrice = BinanceUtils.asBigDecimal(stopPrice);
         return this;
     }
 
@@ -343,12 +344,12 @@ public class OrderListPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getStopPrice() {
+    public BigDecimal getStopPrice() {
         return stopPrice;
     }
 
     public void setStopPrice( Double stopPrice) {
-        this.stopPrice = stopPrice;
+        this.stopPrice = BinanceUtils.asBigDecimal(stopPrice);
     }
 
     public OrderListPlaceRequest trailingDelta( Integer trailingDelta) {
@@ -392,7 +393,7 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     public OrderListPlaceRequest stopLimitPrice(
              Double stopLimitPrice) {
-        this.stopLimitPrice = stopLimitPrice;
+        this.stopLimitPrice = BinanceUtils.asBigDecimal(stopLimitPrice);
         return this;
     }
 
@@ -403,12 +404,12 @@ public class OrderListPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getStopLimitPrice() {
+    public BigDecimal getStopLimitPrice() {
         return stopLimitPrice;
     }
 
     public void setStopLimitPrice( Double stopLimitPrice) {
-        this.stopLimitPrice = stopLimitPrice;
+        this.stopLimitPrice = BinanceUtils.asBigDecimal(stopLimitPrice);
     }
 
     public OrderListPlaceRequest stopLimitTimeInForce(
@@ -435,7 +436,7 @@ public class OrderListPlaceRequest extends BaseDTO {
 
     public OrderListPlaceRequest stopIcebergQty(
              Double stopIcebergQty) {
-        this.stopIcebergQty = stopIcebergQty;
+        this.stopIcebergQty = BinanceUtils.asBigDecimal(stopIcebergQty);
         return this;
     }
 
@@ -446,12 +447,12 @@ public class OrderListPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getStopIcebergQty() {
+    public BigDecimal getStopIcebergQty() {
         return stopIcebergQty;
     }
 
     public void setStopIcebergQty( Double stopIcebergQty) {
-        this.stopIcebergQty = stopIcebergQty;
+        this.stopIcebergQty = BinanceUtils.asBigDecimal(stopIcebergQty);
     }
 
     public OrderListPlaceRequest stopStrategyId( Long stopStrategyId) {
@@ -663,12 +664,12 @@ public class OrderListPlaceRequest extends BaseDTO {
             String sideValueAsString = sideValue.toString();
             valMap.put("side", sideValueAsString);
         }
-        Double priceValue = getPrice();
+        BigDecimal priceValue = getPrice();
         if (priceValue != null) {
             String priceValueAsString = DecimalFormatter.getFormatter().format(priceValue);
             valMap.put("price", priceValueAsString);
         }
-        Double quantityValue = getQuantity();
+        BigDecimal quantityValue = getQuantity();
         if (quantityValue != null) {
             String quantityValueAsString = DecimalFormatter.getFormatter().format(quantityValue);
             valMap.put("quantity", quantityValueAsString);
@@ -683,7 +684,7 @@ public class OrderListPlaceRequest extends BaseDTO {
             String limitClientOrderIdValueAsString = limitClientOrderIdValue.toString();
             valMap.put("limitClientOrderId", limitClientOrderIdValueAsString);
         }
-        Double limitIcebergQtyValue = getLimitIcebergQty();
+        BigDecimal limitIcebergQtyValue = getLimitIcebergQty();
         if (limitIcebergQtyValue != null) {
             String limitIcebergQtyValueAsString =
                     DecimalFormatter.getFormatter().format(limitIcebergQtyValue);
@@ -699,7 +700,7 @@ public class OrderListPlaceRequest extends BaseDTO {
             String limitStrategyTypeValueAsString = limitStrategyTypeValue.toString();
             valMap.put("limitStrategyType", limitStrategyTypeValueAsString);
         }
-        Double stopPriceValue = getStopPrice();
+        BigDecimal stopPriceValue = getStopPrice();
         if (stopPriceValue != null) {
             String stopPriceValueAsString = DecimalFormatter.getFormatter().format(stopPriceValue);
             valMap.put("stopPrice", stopPriceValueAsString);
@@ -714,7 +715,7 @@ public class OrderListPlaceRequest extends BaseDTO {
             String stopClientOrderIdValueAsString = stopClientOrderIdValue.toString();
             valMap.put("stopClientOrderId", stopClientOrderIdValueAsString);
         }
-        Double stopLimitPriceValue = getStopLimitPrice();
+        BigDecimal stopLimitPriceValue = getStopLimitPrice();
         if (stopLimitPriceValue != null) {
             String stopLimitPriceValueAsString =
                     DecimalFormatter.getFormatter().format(stopLimitPriceValue);
@@ -725,7 +726,7 @@ public class OrderListPlaceRequest extends BaseDTO {
             String stopLimitTimeInForceValueAsString = stopLimitTimeInForceValue.toString();
             valMap.put("stopLimitTimeInForce", stopLimitTimeInForceValueAsString);
         }
-        Double stopIcebergQtyValue = getStopIcebergQty();
+        BigDecimal stopIcebergQtyValue = getStopIcebergQty();
         if (stopIcebergQtyValue != null) {
             String stopIcebergQtyValueAsString =
                     DecimalFormatter.getFormatter().format(stopIcebergQtyValue);

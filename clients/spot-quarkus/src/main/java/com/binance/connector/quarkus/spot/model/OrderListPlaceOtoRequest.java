@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -71,19 +72,19 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_WORKING_PRICE)
 
-    private Double workingPrice;
+    private BigDecimal workingPrice;
 
     public static final String SERIALIZED_NAME_WORKING_QUANTITY = "workingQuantity";
 
     @JsonProperty(SERIALIZED_NAME_WORKING_QUANTITY)
 
-    private Double workingQuantity;
+    private BigDecimal workingQuantity;
 
     public static final String SERIALIZED_NAME_WORKING_ICEBERG_QTY = "workingIcebergQty";
 
     @JsonProperty(SERIALIZED_NAME_WORKING_ICEBERG_QTY)
     
-    private Double workingIcebergQty;
+    private BigDecimal workingIcebergQty;
 
     public static final String SERIALIZED_NAME_WORKING_TIME_IN_FORCE = "workingTimeInForce";
 
@@ -143,31 +144,31 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_PENDING_PRICE)
     
-    private Double pendingPrice;
+    private BigDecimal pendingPrice;
 
     public static final String SERIALIZED_NAME_PENDING_STOP_PRICE = "pendingStopPrice";
 
     @JsonProperty(SERIALIZED_NAME_PENDING_STOP_PRICE)
     
-    private Double pendingStopPrice;
+    private BigDecimal pendingStopPrice;
 
     public static final String SERIALIZED_NAME_PENDING_TRAILING_DELTA = "pendingTrailingDelta";
 
     @JsonProperty(SERIALIZED_NAME_PENDING_TRAILING_DELTA)
     
-    private Double pendingTrailingDelta;
+    private BigDecimal pendingTrailingDelta;
 
     public static final String SERIALIZED_NAME_PENDING_QUANTITY = "pendingQuantity";
 
     @JsonProperty(SERIALIZED_NAME_PENDING_QUANTITY)
 
-    private Double pendingQuantity;
+    private BigDecimal pendingQuantity;
 
     public static final String SERIALIZED_NAME_PENDING_ICEBERG_QTY = "pendingIcebergQty";
 
     @JsonProperty(SERIALIZED_NAME_PENDING_ICEBERG_QTY)
     
-    private Double pendingIcebergQty;
+    private BigDecimal pendingIcebergQty;
 
     public static final String SERIALIZED_NAME_PENDING_TIME_IN_FORCE = "pendingTimeInForce";
 
@@ -362,7 +363,7 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
     }
 
     public OrderListPlaceOtoRequest workingPrice( Double workingPrice) {
-        this.workingPrice = workingPrice;
+        this.workingPrice = BinanceUtils.asBigDecimal(workingPrice);
         return this;
     }
 
@@ -374,17 +375,17 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
 
     
     
-    public Double getWorkingPrice() {
+    public BigDecimal getWorkingPrice() {
         return workingPrice;
     }
 
     public void setWorkingPrice( Double workingPrice) {
-        this.workingPrice = workingPrice;
+        this.workingPrice = BinanceUtils.asBigDecimal(workingPrice);
     }
 
     public OrderListPlaceOtoRequest workingQuantity(
              Double workingQuantity) {
-        this.workingQuantity = workingQuantity;
+        this.workingQuantity = BinanceUtils.asBigDecimal(workingQuantity);
         return this;
     }
 
@@ -396,17 +397,17 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
 
     
     
-    public Double getWorkingQuantity() {
+    public BigDecimal getWorkingQuantity() {
         return workingQuantity;
     }
 
     public void setWorkingQuantity( Double workingQuantity) {
-        this.workingQuantity = workingQuantity;
+        this.workingQuantity = BinanceUtils.asBigDecimal(workingQuantity);
     }
 
     public OrderListPlaceOtoRequest workingIcebergQty(
              Double workingIcebergQty) {
-        this.workingIcebergQty = workingIcebergQty;
+        this.workingIcebergQty = BinanceUtils.asBigDecimal(workingIcebergQty);
         return this;
     }
 
@@ -417,12 +418,12 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
      */
     
     
-    public Double getWorkingIcebergQty() {
+    public BigDecimal getWorkingIcebergQty() {
         return workingIcebergQty;
     }
 
     public void setWorkingIcebergQty( Double workingIcebergQty) {
-        this.workingIcebergQty = workingIcebergQty;
+        this.workingIcebergQty = BinanceUtils.asBigDecimal(workingIcebergQty);
     }
 
     public OrderListPlaceOtoRequest workingTimeInForce(
@@ -617,7 +618,7 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
     }
 
     public OrderListPlaceOtoRequest pendingPrice( Double pendingPrice) {
-        this.pendingPrice = pendingPrice;
+        this.pendingPrice = BinanceUtils.asBigDecimal(pendingPrice);
         return this;
     }
 
@@ -628,17 +629,17 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
      */
     
     
-    public Double getPendingPrice() {
+    public BigDecimal getPendingPrice() {
         return pendingPrice;
     }
 
     public void setPendingPrice( Double pendingPrice) {
-        this.pendingPrice = pendingPrice;
+        this.pendingPrice = BinanceUtils.asBigDecimal(pendingPrice);
     }
 
     public OrderListPlaceOtoRequest pendingStopPrice(
              Double pendingStopPrice) {
-        this.pendingStopPrice = pendingStopPrice;
+        this.pendingStopPrice = BinanceUtils.asBigDecimal(pendingStopPrice);
         return this;
     }
 
@@ -649,17 +650,17 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
      */
     
     
-    public Double getPendingStopPrice() {
+    public BigDecimal getPendingStopPrice() {
         return pendingStopPrice;
     }
 
     public void setPendingStopPrice( Double pendingStopPrice) {
-        this.pendingStopPrice = pendingStopPrice;
+        this.pendingStopPrice = BinanceUtils.asBigDecimal(pendingStopPrice);
     }
 
     public OrderListPlaceOtoRequest pendingTrailingDelta(
              Double pendingTrailingDelta) {
-        this.pendingTrailingDelta = pendingTrailingDelta;
+        this.pendingTrailingDelta = BinanceUtils.asBigDecimal(pendingTrailingDelta);
         return this;
     }
 
@@ -670,17 +671,17 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
      */
     
     
-    public Double getPendingTrailingDelta() {
+    public BigDecimal getPendingTrailingDelta() {
         return pendingTrailingDelta;
     }
 
     public void setPendingTrailingDelta( Double pendingTrailingDelta) {
-        this.pendingTrailingDelta = pendingTrailingDelta;
+        this.pendingTrailingDelta = BinanceUtils.asBigDecimal(pendingTrailingDelta);
     }
 
     public OrderListPlaceOtoRequest pendingQuantity(
              Double pendingQuantity) {
-        this.pendingQuantity = pendingQuantity;
+        this.pendingQuantity = BinanceUtils.asBigDecimal(pendingQuantity);
         return this;
     }
 
@@ -692,17 +693,17 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
 
     
     
-    public Double getPendingQuantity() {
+    public BigDecimal getPendingQuantity() {
         return pendingQuantity;
     }
 
     public void setPendingQuantity( Double pendingQuantity) {
-        this.pendingQuantity = pendingQuantity;
+        this.pendingQuantity = BinanceUtils.asBigDecimal(pendingQuantity);
     }
 
     public OrderListPlaceOtoRequest pendingIcebergQty(
              Double pendingIcebergQty) {
-        this.pendingIcebergQty = pendingIcebergQty;
+        this.pendingIcebergQty = BinanceUtils.asBigDecimal(pendingIcebergQty);
         return this;
     }
 
@@ -713,12 +714,12 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
      */
     
     
-    public Double getPendingIcebergQty() {
+    public BigDecimal getPendingIcebergQty() {
         return pendingIcebergQty;
     }
 
     public void setPendingIcebergQty( Double pendingIcebergQty) {
-        this.pendingIcebergQty = pendingIcebergQty;
+        this.pendingIcebergQty = BinanceUtils.asBigDecimal(pendingIcebergQty);
     }
 
     public OrderListPlaceOtoRequest pendingTimeInForce(
@@ -1072,19 +1073,19 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
             String workingClientOrderIdValueAsString = workingClientOrderIdValue.toString();
             valMap.put("workingClientOrderId", workingClientOrderIdValueAsString);
         }
-        Double workingPriceValue = getWorkingPrice();
+        BigDecimal workingPriceValue = getWorkingPrice();
         if (workingPriceValue != null) {
             String workingPriceValueAsString =
                     DecimalFormatter.getFormatter().format(workingPriceValue);
             valMap.put("workingPrice", workingPriceValueAsString);
         }
-        Double workingQuantityValue = getWorkingQuantity();
+        BigDecimal workingQuantityValue = getWorkingQuantity();
         if (workingQuantityValue != null) {
             String workingQuantityValueAsString =
                     DecimalFormatter.getFormatter().format(workingQuantityValue);
             valMap.put("workingQuantity", workingQuantityValueAsString);
         }
-        Double workingIcebergQtyValue = getWorkingIcebergQty();
+        BigDecimal workingIcebergQtyValue = getWorkingIcebergQty();
         if (workingIcebergQtyValue != null) {
             String workingIcebergQtyValueAsString =
                     DecimalFormatter.getFormatter().format(workingIcebergQtyValue);
@@ -1135,31 +1136,31 @@ public class OrderListPlaceOtoRequest extends BaseDTO {
             String pendingClientOrderIdValueAsString = pendingClientOrderIdValue.toString();
             valMap.put("pendingClientOrderId", pendingClientOrderIdValueAsString);
         }
-        Double pendingPriceValue = getPendingPrice();
+        BigDecimal pendingPriceValue = getPendingPrice();
         if (pendingPriceValue != null) {
             String pendingPriceValueAsString =
                     DecimalFormatter.getFormatter().format(pendingPriceValue);
             valMap.put("pendingPrice", pendingPriceValueAsString);
         }
-        Double pendingStopPriceValue = getPendingStopPrice();
+        BigDecimal pendingStopPriceValue = getPendingStopPrice();
         if (pendingStopPriceValue != null) {
             String pendingStopPriceValueAsString =
                     DecimalFormatter.getFormatter().format(pendingStopPriceValue);
             valMap.put("pendingStopPrice", pendingStopPriceValueAsString);
         }
-        Double pendingTrailingDeltaValue = getPendingTrailingDelta();
+        BigDecimal pendingTrailingDeltaValue = getPendingTrailingDelta();
         if (pendingTrailingDeltaValue != null) {
             String pendingTrailingDeltaValueAsString =
                     DecimalFormatter.getFormatter().format(pendingTrailingDeltaValue);
             valMap.put("pendingTrailingDelta", pendingTrailingDeltaValueAsString);
         }
-        Double pendingQuantityValue = getPendingQuantity();
+        BigDecimal pendingQuantityValue = getPendingQuantity();
         if (pendingQuantityValue != null) {
             String pendingQuantityValueAsString =
                     DecimalFormatter.getFormatter().format(pendingQuantityValue);
             valMap.put("pendingQuantity", pendingQuantityValueAsString);
         }
-        Double pendingIcebergQtyValue = getPendingIcebergQty();
+        BigDecimal pendingIcebergQtyValue = getPendingIcebergQty();
         if (pendingIcebergQtyValue != null) {
             String pendingIcebergQtyValueAsString =
                     DecimalFormatter.getFormatter().format(pendingIcebergQtyValue);

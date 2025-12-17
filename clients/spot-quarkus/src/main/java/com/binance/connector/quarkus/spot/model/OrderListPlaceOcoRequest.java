@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -47,7 +48,7 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_QUANTITY)
 
-    private Double quantity;
+    private BigDecimal quantity;
 
     public static final String SERIALIZED_NAME_ABOVE_TYPE = "aboveType";
 
@@ -71,13 +72,13 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_ABOVE_PRICE)
     
-    private Double abovePrice;
+    private BigDecimal abovePrice;
 
     public static final String SERIALIZED_NAME_ABOVE_STOP_PRICE = "aboveStopPrice";
 
     @JsonProperty(SERIALIZED_NAME_ABOVE_STOP_PRICE)
     
-    private Double aboveStopPrice;
+    private BigDecimal aboveStopPrice;
 
     public static final String SERIALIZED_NAME_ABOVE_TRAILING_DELTA = "aboveTrailingDelta";
 
@@ -143,13 +144,13 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_BELOW_PRICE)
     
-    private Double belowPrice;
+    private BigDecimal belowPrice;
 
     public static final String SERIALIZED_NAME_BELOW_STOP_PRICE = "belowStopPrice";
 
     @JsonProperty(SERIALIZED_NAME_BELOW_STOP_PRICE)
     
-    private Double belowStopPrice;
+    private BigDecimal belowStopPrice;
 
     public static final String SERIALIZED_NAME_BELOW_TRAILING_DELTA = "belowTrailingDelta";
 
@@ -276,7 +277,7 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
     }
 
     public OrderListPlaceOcoRequest quantity( Double quantity) {
-        this.quantity = quantity;
+        this.quantity = BinanceUtils.asBigDecimal(quantity);
         return this;
     }
 
@@ -288,12 +289,12 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
 
     
     
-    public Double getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
     public void setQuantity( Double quantity) {
-        this.quantity = quantity;
+        this.quantity = BinanceUtils.asBigDecimal(quantity);
     }
 
     public OrderListPlaceOcoRequest aboveType( AboveType aboveType) {
@@ -358,7 +359,7 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
     }
 
     public OrderListPlaceOcoRequest abovePrice( Double abovePrice) {
-        this.abovePrice = abovePrice;
+        this.abovePrice = BinanceUtils.asBigDecimal(abovePrice);
         return this;
     }
 
@@ -369,17 +370,17 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
      */
     
     
-    public Double getAbovePrice() {
+    public BigDecimal getAbovePrice() {
         return abovePrice;
     }
 
     public void setAbovePrice( Double abovePrice) {
-        this.abovePrice = abovePrice;
+        this.abovePrice = BinanceUtils.asBigDecimal(abovePrice);
     }
 
     public OrderListPlaceOcoRequest aboveStopPrice(
              Double aboveStopPrice) {
-        this.aboveStopPrice = aboveStopPrice;
+        this.aboveStopPrice = BinanceUtils.asBigDecimal(aboveStopPrice);
         return this;
     }
 
@@ -390,12 +391,12 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
      */
     
     
-    public Double getAboveStopPrice() {
+    public BigDecimal getAboveStopPrice() {
         return aboveStopPrice;
     }
 
     public void setAboveStopPrice( Double aboveStopPrice) {
-        this.aboveStopPrice = aboveStopPrice;
+        this.aboveStopPrice = BinanceUtils.asBigDecimal(aboveStopPrice);
     }
 
     public OrderListPlaceOcoRequest aboveTrailingDelta(
@@ -606,7 +607,7 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
     }
 
     public OrderListPlaceOcoRequest belowPrice( Double belowPrice) {
-        this.belowPrice = belowPrice;
+        this.belowPrice = BinanceUtils.asBigDecimal(belowPrice);
         return this;
     }
 
@@ -617,17 +618,17 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
      */
     
     
-    public Double getBelowPrice() {
+    public BigDecimal getBelowPrice() {
         return belowPrice;
     }
 
     public void setBelowPrice( Double belowPrice) {
-        this.belowPrice = belowPrice;
+        this.belowPrice = BinanceUtils.asBigDecimal(belowPrice);
     }
 
     public OrderListPlaceOcoRequest belowStopPrice(
              Double belowStopPrice) {
-        this.belowStopPrice = belowStopPrice;
+        this.belowStopPrice = BinanceUtils.asBigDecimal(belowStopPrice);
         return this;
     }
 
@@ -638,12 +639,12 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
      */
     
     
-    public Double getBelowStopPrice() {
+    public BigDecimal getBelowStopPrice() {
         return belowStopPrice;
     }
 
     public void setBelowStopPrice( Double belowStopPrice) {
-        this.belowStopPrice = belowStopPrice;
+        this.belowStopPrice = BinanceUtils.asBigDecimal(belowStopPrice);
     }
 
     public OrderListPlaceOcoRequest belowTrailingDelta(
@@ -1025,7 +1026,7 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
             String sideValueAsString = sideValue.toString();
             valMap.put("side", sideValueAsString);
         }
-        Double quantityValue = getQuantity();
+        BigDecimal quantityValue = getQuantity();
         if (quantityValue != null) {
             String quantityValueAsString = DecimalFormatter.getFormatter().format(quantityValue);
             valMap.put("quantity", quantityValueAsString);
@@ -1045,13 +1046,13 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
             String aboveIcebergQtyValueAsString = aboveIcebergQtyValue.toString();
             valMap.put("aboveIcebergQty", aboveIcebergQtyValueAsString);
         }
-        Double abovePriceValue = getAbovePrice();
+        BigDecimal abovePriceValue = getAbovePrice();
         if (abovePriceValue != null) {
             String abovePriceValueAsString =
                     DecimalFormatter.getFormatter().format(abovePriceValue);
             valMap.put("abovePrice", abovePriceValueAsString);
         }
-        Double aboveStopPriceValue = getAboveStopPrice();
+        BigDecimal aboveStopPriceValue = getAboveStopPrice();
         if (aboveStopPriceValue != null) {
             String aboveStopPriceValueAsString =
                     DecimalFormatter.getFormatter().format(aboveStopPriceValue);
@@ -1107,13 +1108,13 @@ public class OrderListPlaceOcoRequest extends BaseDTO {
             String belowIcebergQtyValueAsString = belowIcebergQtyValue.toString();
             valMap.put("belowIcebergQty", belowIcebergQtyValueAsString);
         }
-        Double belowPriceValue = getBelowPrice();
+        BigDecimal belowPriceValue = getBelowPrice();
         if (belowPriceValue != null) {
             String belowPriceValueAsString =
                     DecimalFormatter.getFormatter().format(belowPriceValue);
             valMap.put("belowPrice", belowPriceValueAsString);
         }
-        Double belowStopPriceValue = getBelowStopPrice();
+        BigDecimal belowStopPriceValue = getBelowStopPrice();
         if (belowStopPriceValue != null) {
             String belowStopPriceValueAsString =
                     DecimalFormatter.getFormatter().format(belowStopPriceValue);
