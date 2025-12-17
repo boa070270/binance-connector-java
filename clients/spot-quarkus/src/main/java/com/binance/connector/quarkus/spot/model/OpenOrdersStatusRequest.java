@@ -34,7 +34,7 @@ public class OpenOrdersStatusRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public OpenOrdersStatusRequest() {}
 
@@ -57,7 +57,7 @@ public class OpenOrdersStatusRequest extends BaseDTO {
         this.symbol = symbol;
     }
 
-    public OpenOrdersStatusRequest recvWindow( Double recvWindow) {
+    public OpenOrdersStatusRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -69,11 +69,11 @@ public class OpenOrdersStatusRequest extends BaseDTO {
      */
     
 
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -114,7 +114,7 @@ public class OpenOrdersStatusRequest extends BaseDTO {
             String symbolValueAsString = symbolValue.toString();
             valMap.put("symbol", symbolValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

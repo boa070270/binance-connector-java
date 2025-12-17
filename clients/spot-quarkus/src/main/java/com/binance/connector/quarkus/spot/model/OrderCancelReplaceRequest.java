@@ -176,7 +176,7 @@ public class OrderCancelReplaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public OrderCancelReplaceRequest() {}
 
@@ -668,7 +668,7 @@ public class OrderCancelReplaceRequest extends BaseDTO {
         this.pegOffsetType = pegOffsetType;
     }
 
-    public OrderCancelReplaceRequest recvWindow( Double recvWindow) {
+    public OrderCancelReplaceRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -680,11 +680,11 @@ public class OrderCancelReplaceRequest extends BaseDTO {
      */
     
 
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -936,7 +936,7 @@ public class OrderCancelReplaceRequest extends BaseDTO {
             String pegOffsetTypeValueAsString = pegOffsetTypeValue.toString();
             valMap.put("pegOffsetType", pegOffsetTypeValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

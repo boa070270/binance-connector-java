@@ -57,7 +57,7 @@ public class AllOrdersRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public AllOrdersRequest() {}
 
@@ -150,7 +150,7 @@ public class AllOrdersRequest extends BaseDTO {
         this.limit = limit;
     }
 
-    public AllOrdersRequest recvWindow( Double recvWindow) {
+    public AllOrdersRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -161,11 +161,11 @@ public class AllOrdersRequest extends BaseDTO {
      * @return recvWindow
      */
     
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -220,7 +220,7 @@ public class AllOrdersRequest extends BaseDTO {
             String limitValueAsString = limitValue.toString();
             valMap.put("limit", limitValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

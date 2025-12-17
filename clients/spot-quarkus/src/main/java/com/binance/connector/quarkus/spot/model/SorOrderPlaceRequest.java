@@ -101,7 +101,7 @@ public class SorOrderPlaceRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public SorOrderPlaceRequest() {}
 
@@ -350,7 +350,7 @@ public class SorOrderPlaceRequest extends BaseDTO {
         this.selfTradePreventionMode = selfTradePreventionMode;
     }
 
-    public SorOrderPlaceRequest recvWindow( Double recvWindow) {
+    public SorOrderPlaceRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -362,11 +362,11 @@ public class SorOrderPlaceRequest extends BaseDTO {
      */
     
     
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -501,7 +501,7 @@ public class SorOrderPlaceRequest extends BaseDTO {
             String selfTradePreventionModeValueAsString = selfTradePreventionModeValue.toString();
             valMap.put("selfTradePreventionMode", selfTradePreventionModeValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

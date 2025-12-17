@@ -58,7 +58,7 @@ public class MyPreventedMatchesRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public MyPreventedMatchesRequest() {}
 
@@ -158,7 +158,7 @@ public class MyPreventedMatchesRequest extends BaseDTO {
         this.limit = limit;
     }
 
-    public MyPreventedMatchesRequest recvWindow( Double recvWindow) {
+    public MyPreventedMatchesRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -168,11 +168,11 @@ public class MyPreventedMatchesRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -245,7 +245,7 @@ public class MyPreventedMatchesRequest extends BaseDTO {
             String limitValueAsString = limitValue.toString();
             valMap.put("limit", limitValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

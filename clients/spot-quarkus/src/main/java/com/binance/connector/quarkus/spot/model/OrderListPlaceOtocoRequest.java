@@ -295,7 +295,7 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public OrderListPlaceOtocoRequest() {}
 
@@ -1201,7 +1201,7 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
         this.pendingBelowPegOffsetValue = pendingBelowPegOffsetValue;
     }
 
-    public OrderListPlaceOtocoRequest recvWindow( Double recvWindow) {
+    public OrderListPlaceOtocoRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -1213,11 +1213,11 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
      */
     
     
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -1717,7 +1717,7 @@ public class OrderListPlaceOtocoRequest extends BaseDTO {
                     pendingBelowPegOffsetValueValue.toString();
             valMap.put("pendingBelowPegOffsetValue", pendingBelowPegOffsetValueValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

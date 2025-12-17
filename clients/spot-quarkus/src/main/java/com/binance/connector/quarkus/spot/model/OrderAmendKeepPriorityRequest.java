@@ -58,7 +58,7 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public OrderAmendKeepPriorityRequest() {}
 
@@ -163,7 +163,7 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
     }
 
     public OrderAmendKeepPriorityRequest recvWindow(
-             Double recvWindow) {
+             Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -175,11 +175,11 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
      */
     
 
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -252,7 +252,7 @@ public class OrderAmendKeepPriorityRequest extends BaseDTO {
             String newQtyValueAsString = DecimalFormatter.getFormatter().format(newQtyValue);
             valMap.put("newQty", newQtyValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

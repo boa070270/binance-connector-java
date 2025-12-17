@@ -24,12 +24,12 @@ import java.util.stream.Collectors;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountRateLimitsOrdersRequest extends BaseDTO {
-    private Double recvWindow;
+    private Long recvWindow;
 
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -55,7 +55,7 @@ public class AccountRateLimitsOrdersRequest extends BaseDTO {
         StringBuilder sb = new StringBuilder();
         Map<String, String> valMap = new TreeMap<String, String>();
         valMap.put("apiKey", getApiKey());
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

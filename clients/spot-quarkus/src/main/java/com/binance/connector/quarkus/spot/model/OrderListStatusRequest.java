@@ -40,7 +40,7 @@ public class OrderListStatusRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public OrderListStatusRequest() {}
 
@@ -83,7 +83,7 @@ public class OrderListStatusRequest extends BaseDTO {
         this.orderListId = orderListId;
     }
 
-    public OrderListStatusRequest recvWindow( Double recvWindow) {
+    public OrderListStatusRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -95,11 +95,11 @@ public class OrderListStatusRequest extends BaseDTO {
      */
     
     
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -147,7 +147,7 @@ public class OrderListStatusRequest extends BaseDTO {
             String orderListIdValueAsString = orderListIdValue.toString();
             valMap.put("orderListId", orderListIdValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

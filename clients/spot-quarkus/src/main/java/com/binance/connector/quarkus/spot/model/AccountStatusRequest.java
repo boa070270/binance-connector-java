@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountStatusRequest extends BaseDTO {
     private Boolean omitZeroBalances;
-    private Double recvWindow;
+    private Long recvWindow;
     public Boolean getOmitZeroBalances() {
         return omitZeroBalances;
     }
@@ -33,10 +33,10 @@ public class AccountStatusRequest extends BaseDTO {
         this.omitZeroBalances = omitZeroBalances;
     }
 
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -67,7 +67,7 @@ public class AccountStatusRequest extends BaseDTO {
             String omitZeroBalancesValueAsString = omitZeroBalancesValue.toString();
             valMap.put("omitZeroBalances", omitZeroBalancesValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

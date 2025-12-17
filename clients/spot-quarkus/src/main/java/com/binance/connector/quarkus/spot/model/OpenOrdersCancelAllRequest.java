@@ -34,7 +34,7 @@ public class OpenOrdersCancelAllRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public OpenOrdersCancelAllRequest() {}
 
@@ -56,7 +56,7 @@ public class OpenOrdersCancelAllRequest extends BaseDTO {
         this.symbol = symbol;
     }
 
-    public OpenOrdersCancelAllRequest recvWindow( Double recvWindow) {
+    public OpenOrdersCancelAllRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -68,11 +68,11 @@ public class OpenOrdersCancelAllRequest extends BaseDTO {
      */
     
 
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -113,7 +113,7 @@ public class OpenOrdersCancelAllRequest extends BaseDTO {
             String symbolValueAsString = symbolValue.toString();
             valMap.put("symbol", symbolValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

@@ -34,7 +34,7 @@ public class MyFiltersRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public MyFiltersRequest() {}
 
@@ -56,7 +56,7 @@ public class MyFiltersRequest extends BaseDTO {
         this.symbol = symbol;
     }
 
-    public MyFiltersRequest recvWindow( Double recvWindow) {
+    public MyFiltersRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -66,11 +66,11 @@ public class MyFiltersRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -111,7 +111,7 @@ public class MyFiltersRequest extends BaseDTO {
             String symbolValueAsString = symbolValue.toString();
             valMap.put("symbol", symbolValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);

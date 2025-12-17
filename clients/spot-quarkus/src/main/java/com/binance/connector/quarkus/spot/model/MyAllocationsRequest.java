@@ -64,7 +64,7 @@ public class MyAllocationsRequest extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RECV_WINDOW)
     
-    private Double recvWindow;
+    private Long recvWindow;
 
     public MyAllocationsRequest() {}
 
@@ -182,7 +182,7 @@ public class MyAllocationsRequest extends BaseDTO {
         this.orderId = orderId;
     }
 
-    public MyAllocationsRequest recvWindow( Double recvWindow) {
+    public MyAllocationsRequest recvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
         return this;
     }
@@ -192,11 +192,11 @@ public class MyAllocationsRequest extends BaseDTO {
      *
      * @return recvWindow
      */
-    public Double getRecvWindow() {
+    public Long getRecvWindow() {
         return recvWindow;
     }
 
-    public void setRecvWindow( Double recvWindow) {
+    public void setRecvWindow( Long recvWindow) {
         this.recvWindow = recvWindow;
     }
 
@@ -273,7 +273,7 @@ public class MyAllocationsRequest extends BaseDTO {
             String orderIdValueAsString = orderIdValue.toString();
             valMap.put("orderId", orderIdValueAsString);
         }
-        Double recvWindowValue = getRecvWindow();
+        Long recvWindowValue = getRecvWindow();
         if (recvWindowValue != null) {
             String recvWindowValueAsString =
                     DecimalFormatter.getFormatter().format(recvWindowValue);
