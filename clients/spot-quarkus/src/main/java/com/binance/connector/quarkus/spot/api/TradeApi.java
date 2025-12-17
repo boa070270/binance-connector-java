@@ -139,7 +139,7 @@ public class TradeApi {
                     ws.textMessageHandler(this::processInputMsg);
 
                     ws.exceptionHandler(this::handleException);
-                    ws.closeHandler(v -> this.connect(true));
+                    ws.closeHandler(this::handleDisconnected);
                     handleConnected();
                 })
                 .onFailure(err -> {
@@ -147,9 +147,13 @@ public class TradeApi {
                 });
     }
 
-    protected void handleConnected() {
+    protected void handleDisconnected(Void unused) {
+        LOG.infof("Disconnected from Binance Stream. Trying reconnect. [StatusCode: %s, Reason: %s]", webSocket.closeStatusCode(), webSocket.closeReason());
+        this.connect(true);
     }
 
+    protected void handleConnected() {
+    }
     protected WebSocket getWebSocket() {
         return webSocket;
     }
@@ -203,15 +207,19 @@ public class TradeApi {
     protected void handleException(Throwable cause) {
         LOG.error("WS error: " + cause.getMessage(), cause);
     }
-    protected void webSocketSend(RequestWrapperDTO<?,?> wrapperDTO) throws InterruptedException, CryptoException {
+    protected void webSocketSend(ApiRequestWrapperDTO<?,?> wrapperDTO) throws InterruptedException, CryptoException {
         if (webSocket == null || webSocket.isClosed()) {
             handleNotReady();
             return;
         }
-        wrapperDTO.getParams().setApiKey(apiKey);
-        String sign = wrapperDTO.getParams().toUrlQueryString();
-        wrapperDTO.getParams().setSignature(signatureGenerator.signAsString(sign));
+        wrapperDTO.getParams().setTimestamp(Long.toString(System.currentTimeMillis()));
+        if (wrapperDTO.isSigned()) {
+            wrapperDTO.getParams().setApiKey(apiKey);
+            String sign = wrapperDTO.getParams().toUrlQueryString();
+            wrapperDTO.getParams().setSignature(signatureGenerator.signAsString(sign));
+        }
         String msg = Json.encode(wrapperDTO);
+        LOG.debug("Sending: " + msg);
         pendingRequests.put(wrapperDTO.getId(), wrapperDTO);
         Future<Void> result = webSocket.writeTextMessage(msg);
 //        Future.await(result);
@@ -244,8 +252,8 @@ public class TradeApi {
             OpenOrdersCancelAllRequest openOrdersCancelAllRequest) throws ApiException {
         openOrdersCancelAllValidateBeforeCall(openOrdersCancelAllRequest);
         String methodName = "/openOrders.cancelAll".substring(1);
-        RequestWrapperDTO<OpenOrdersCancelAllRequest, OpenOrdersCancelAllResponse> build =
-                new RequestWrapperDTO.Builder<
+        ApiRequestWrapperDTO<OpenOrdersCancelAllRequest, OpenOrdersCancelAllResponse> build =
+                new ApiRequestWrapperDTO.Builder<
                                 OpenOrdersCancelAllRequest, OpenOrdersCancelAllResponse>()
                         .id(getRequestID())
                         .method(methodName)
@@ -291,8 +299,8 @@ public class TradeApi {
             OrderAmendKeepPriorityRequest orderAmendKeepPriorityRequest) throws ApiException {
         orderAmendKeepPriorityValidateBeforeCall(orderAmendKeepPriorityRequest);
         String methodName = "/order.amend.keepPriority".substring(1);
-        RequestWrapperDTO<OrderAmendKeepPriorityRequest, OrderAmendKeepPriorityResponse> build =
-                new RequestWrapperDTO.Builder<
+        ApiRequestWrapperDTO<OrderAmendKeepPriorityRequest, OrderAmendKeepPriorityResponse> build =
+                new ApiRequestWrapperDTO.Builder<
                                 OrderAmendKeepPriorityRequest, OrderAmendKeepPriorityResponse>()
                         .id(getRequestID())
                         .method(methodName)
@@ -335,8 +343,8 @@ public class TradeApi {
             throws ApiException {
         orderCancelValidateBeforeCall(orderCancelRequest);
         String methodName = "/order.cancel".substring(1);
-        RequestWrapperDTO<OrderCancelRequest, OrderCancelResponse> build =
-                new RequestWrapperDTO.Builder<OrderCancelRequest, OrderCancelResponse>()
+        ApiRequestWrapperDTO<OrderCancelRequest, OrderCancelResponse> build =
+                new ApiRequestWrapperDTO.Builder<OrderCancelRequest, OrderCancelResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(orderCancelRequest)
@@ -381,8 +389,8 @@ public class TradeApi {
             OrderCancelReplaceRequest orderCancelReplaceRequest) throws ApiException {
         orderCancelReplaceValidateBeforeCall(orderCancelReplaceRequest);
         String methodName = "/order.cancelReplace".substring(1);
-        RequestWrapperDTO<OrderCancelReplaceRequest, OrderCancelReplaceResponse> build =
-                new RequestWrapperDTO.Builder<
+        ApiRequestWrapperDTO<OrderCancelReplaceRequest, OrderCancelReplaceResponse> build =
+                new ApiRequestWrapperDTO.Builder<
                                 OrderCancelReplaceRequest, OrderCancelReplaceResponse>()
                         .id(getRequestID())
                         .method(methodName)
@@ -425,8 +433,8 @@ public class TradeApi {
             OrderListCancelRequest orderListCancelRequest) throws ApiException {
         orderListCancelValidateBeforeCall(orderListCancelRequest);
         String methodName = "/orderList.cancel".substring(1);
-        RequestWrapperDTO<OrderListCancelRequest, OrderListCancelResponse> build =
-                new RequestWrapperDTO.Builder<OrderListCancelRequest, OrderListCancelResponse>()
+        ApiRequestWrapperDTO<OrderListCancelRequest, OrderListCancelResponse> build =
+                new ApiRequestWrapperDTO.Builder<OrderListCancelRequest, OrderListCancelResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(orderListCancelRequest)
@@ -472,8 +480,8 @@ public class TradeApi {
             OrderListPlaceRequest orderListPlaceRequest) throws ApiException {
         orderListPlaceValidateBeforeCall(orderListPlaceRequest);
         String methodName = "/orderList.place".substring(1);
-        RequestWrapperDTO<OrderListPlaceRequest, OrderListPlaceResponse> build =
-                new RequestWrapperDTO.Builder<OrderListPlaceRequest, OrderListPlaceResponse>()
+        ApiRequestWrapperDTO<OrderListPlaceRequest, OrderListPlaceResponse> build =
+                new ApiRequestWrapperDTO.Builder<OrderListPlaceRequest, OrderListPlaceResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(orderListPlaceRequest)
@@ -528,8 +536,8 @@ public class TradeApi {
             OrderListPlaceOcoRequest orderListPlaceOcoRequest) throws ApiException {
         orderListPlaceOcoValidateBeforeCall(orderListPlaceOcoRequest);
         String methodName = "/orderList.place.oco".substring(1);
-        RequestWrapperDTO<OrderListPlaceOcoRequest, OrderListPlaceOcoResponse> build =
-                new RequestWrapperDTO.Builder<
+        ApiRequestWrapperDTO<OrderListPlaceOcoRequest, OrderListPlaceOcoResponse> build =
+                new ApiRequestWrapperDTO.Builder<
                                 OrderListPlaceOcoRequest, OrderListPlaceOcoResponse>()
                         .id(getRequestID())
                         .method(methodName)
@@ -584,8 +592,8 @@ public class TradeApi {
             OrderListPlaceOtoRequest orderListPlaceOtoRequest) throws ApiException {
         orderListPlaceOtoValidateBeforeCall(orderListPlaceOtoRequest);
         String methodName = "/orderList.place.oto".substring(1);
-        RequestWrapperDTO<OrderListPlaceOtoRequest, OrderListPlaceOtoResponse> build =
-                new RequestWrapperDTO.Builder<
+        ApiRequestWrapperDTO<OrderListPlaceOtoRequest, OrderListPlaceOtoResponse> build =
+                new ApiRequestWrapperDTO.Builder<
                                 OrderListPlaceOtoRequest, OrderListPlaceOtoResponse>()
                         .id(getRequestID())
                         .method(methodName)
@@ -638,8 +646,8 @@ public class TradeApi {
             OrderListPlaceOtocoRequest orderListPlaceOtocoRequest) throws ApiException {
         orderListPlaceOtocoValidateBeforeCall(orderListPlaceOtocoRequest);
         String methodName = "/orderList.place.otoco".substring(1);
-        RequestWrapperDTO<OrderListPlaceOtocoRequest, OrderListPlaceOtocoResponse> build =
-                new RequestWrapperDTO.Builder<
+        ApiRequestWrapperDTO<OrderListPlaceOtocoRequest, OrderListPlaceOtocoResponse> build =
+                new ApiRequestWrapperDTO.Builder<
                                 OrderListPlaceOtocoRequest, OrderListPlaceOtocoResponse>()
                         .id(getRequestID())
                         .method(methodName)
@@ -683,8 +691,8 @@ public class TradeApi {
             throws ApiException {
         orderPlaceValidateBeforeCall(orderPlaceRequest);
         String methodName = "/order.place".substring(1);
-        RequestWrapperDTO<OrderPlaceRequest, OrderPlaceResponse> build =
-                new RequestWrapperDTO.Builder<OrderPlaceRequest, OrderPlaceResponse>()
+        ApiRequestWrapperDTO<OrderPlaceRequest, OrderPlaceResponse> build =
+                new ApiRequestWrapperDTO.Builder<OrderPlaceRequest, OrderPlaceResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(orderPlaceRequest)
@@ -729,8 +737,8 @@ public class TradeApi {
             throws ApiException {
         orderTestValidateBeforeCall(orderTestRequest);
         String methodName = "/order.test".substring(1);
-        RequestWrapperDTO<OrderTestRequest, OrderTestResponse> build =
-                new RequestWrapperDTO.Builder<OrderTestRequest, OrderTestResponse>()
+        ApiRequestWrapperDTO<OrderTestRequest, OrderTestResponse> build =
+                new ApiRequestWrapperDTO.Builder<OrderTestRequest, OrderTestResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(orderTestRequest)
@@ -774,8 +782,8 @@ public class TradeApi {
             SorOrderPlaceRequest sorOrderPlaceRequest) throws ApiException {
         sorOrderPlaceValidateBeforeCall(sorOrderPlaceRequest);
         String methodName = "/sor.order.place".substring(1);
-        RequestWrapperDTO<SorOrderPlaceRequest, SorOrderPlaceResponse> build =
-                new RequestWrapperDTO.Builder<SorOrderPlaceRequest, SorOrderPlaceResponse>()
+        ApiRequestWrapperDTO<SorOrderPlaceRequest, SorOrderPlaceResponse> build =
+                new ApiRequestWrapperDTO.Builder<SorOrderPlaceRequest, SorOrderPlaceResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(sorOrderPlaceRequest)
@@ -820,8 +828,8 @@ public class TradeApi {
             SorOrderTestRequest sorOrderTestRequest) throws ApiException {
         sorOrderTestValidateBeforeCall(sorOrderTestRequest);
         String methodName = "/sor.order.test".substring(1);
-        RequestWrapperDTO<SorOrderTestRequest, SorOrderTestResponse> build =
-                new RequestWrapperDTO.Builder<SorOrderTestRequest, SorOrderTestResponse>()
+        ApiRequestWrapperDTO<SorOrderTestRequest, SorOrderTestResponse> build =
+                new ApiRequestWrapperDTO.Builder<SorOrderTestRequest, SorOrderTestResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(sorOrderTestRequest)
@@ -837,8 +845,8 @@ public class TradeApi {
     }
     public CompletableFuture<UserDataStreamSubscribeResponse> userDataStreamSubscribe() {
         String methodName = "/userDataStream.subscribe".substring(1);
-        RequestWrapperDTO<BaseDTO, UserDataStreamSubscribeResponse> build =
-                new RequestWrapperDTO.Builder<BaseDTO, UserDataStreamSubscribeResponse>()
+        ApiRequestWrapperDTO<BaseDTO, UserDataStreamSubscribeResponse> build =
+                new ApiRequestWrapperDTO.Builder<BaseDTO, UserDataStreamSubscribeResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(new BaseDTO())
@@ -855,8 +863,8 @@ public class TradeApi {
         String methodName = "/userDataStream.unsubscribe".substring(1);
         UserDataStreamUnsubscribeRequest request = new UserDataStreamUnsubscribeRequest();
         request.setSubscriptionId(subscriptionId);
-        RequestWrapperDTO<UserDataStreamUnsubscribeRequest, UserDataStreamUnsubscribeResponse> build =
-                new RequestWrapperDTO.Builder<UserDataStreamUnsubscribeRequest, UserDataStreamUnsubscribeResponse>()
+        ApiRequestWrapperDTO<UserDataStreamUnsubscribeRequest, UserDataStreamUnsubscribeResponse> build =
+                new ApiRequestWrapperDTO.Builder<UserDataStreamUnsubscribeRequest, UserDataStreamUnsubscribeResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(request)
@@ -872,8 +880,8 @@ public class TradeApi {
     public CompletableFuture<SessionLogonResponse> sessionLogon() {
         String methodName = "/session.logon".substring(1);
         SessionLogonRequest request = new SessionLogonRequest();
-        RequestWrapperDTO<SessionLogonRequest, SessionLogonResponse> build =
-                new RequestWrapperDTO.Builder<SessionLogonRequest, SessionLogonResponse>()
+        ApiRequestWrapperDTO<SessionLogonRequest, SessionLogonResponse> build =
+                new ApiRequestWrapperDTO.Builder<SessionLogonRequest, SessionLogonResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(request)
@@ -888,8 +896,8 @@ public class TradeApi {
     }
     public CompletableFuture<SessionStatusResponse> sessionStatus() {
         String methodName = "/session.status".substring(1);
-        RequestWrapperDTO<BaseDTO, SessionStatusResponse> build =
-                new RequestWrapperDTO.Builder<BaseDTO, SessionStatusResponse>()
+        ApiRequestWrapperDTO<BaseDTO, SessionStatusResponse> build =
+                new ApiRequestWrapperDTO.Builder<BaseDTO, SessionStatusResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(new BaseDTO())
@@ -904,8 +912,8 @@ public class TradeApi {
     }
     public CompletableFuture<SessionLogoutResponse> sessionLogout() {
         String methodName = "/session.logout".substring(1);
-        RequestWrapperDTO<BaseDTO, SessionLogoutResponse> build =
-                new RequestWrapperDTO.Builder<BaseDTO, SessionLogoutResponse>()
+        ApiRequestWrapperDTO<BaseDTO, SessionLogoutResponse> build =
+                new ApiRequestWrapperDTO.Builder<BaseDTO, SessionLogoutResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(new BaseDTO())
@@ -940,8 +948,8 @@ public class TradeApi {
             AccountStatusRequest accountStatusRequest) throws ApiException {
         accountStatusValidateBeforeCall(accountStatusRequest);
         String methodName = "/account.status".substring(1);
-        RequestWrapperDTO<AccountStatusRequest, AccountStatusResponse> build =
-                new RequestWrapperDTO.Builder<AccountStatusRequest, AccountStatusResponse>()
+        ApiRequestWrapperDTO<AccountStatusRequest, AccountStatusResponse> build =
+                new ApiRequestWrapperDTO.Builder<AccountStatusRequest, AccountStatusResponse>()
                         .id(getRequestID())
                         .method(methodName)
                         .params(accountStatusRequest)
