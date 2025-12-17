@@ -1,5 +1,6 @@
 package com.binance.connector.quarkus.spot.model.events;
 
+import com.binance.connector.quarkus.spot.model.BinanceUtils;
 import org.jboss.logging.Logger;
 
 import java.util.Map;

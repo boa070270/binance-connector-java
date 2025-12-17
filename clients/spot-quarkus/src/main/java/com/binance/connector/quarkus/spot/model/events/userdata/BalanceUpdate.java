@@ -2,7 +2,7 @@ package com.binance.connector.quarkus.spot.model.events.userdata;
 
 
 import com.binance.connector.quarkus.spot.model.events.AbstractEvent;
-import com.binance.connector.quarkus.spot.model.events.BinanceUtils;
+import com.binance.connector.quarkus.spot.model.BinanceUtils;
 
 import java.util.Map;
 

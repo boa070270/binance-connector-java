@@ -1,4 +1,4 @@
-package com.binance.connector.quarkus.spot.model.events;
+package com.binance.connector.quarkus.spot.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

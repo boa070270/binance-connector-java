@@ -5,7 +5,7 @@ import com.binance.connector.quarkus.spot.model.OrderType;
 import com.binance.connector.quarkus.spot.model.Side;
 import com.binance.connector.quarkus.spot.model.TimeInForce;
 import com.binance.connector.quarkus.spot.model.events.AbstractEvent;
-import com.binance.connector.quarkus.spot.model.events.BinanceUtils;
+import com.binance.connector.quarkus.spot.model.BinanceUtils;
 
 import java.util.Map;
 
