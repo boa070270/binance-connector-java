@@ -216,6 +216,7 @@ public class TradeApi {
             wrapperDTO.getParams().setTimestamp(Long.toString(System.currentTimeMillis()));
             wrapperDTO.getParams().setApiKey(apiKey);
             String sign = wrapperDTO.getParams().toUrlQueryString();
+            LOG.debug("Signing: " + sign);
             wrapperDTO.getParams().setSignature(signatureGenerator.signAsString(sign));
         }
         String msg = Json.encode(wrapperDTO);
