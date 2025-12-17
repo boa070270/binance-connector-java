@@ -844,7 +844,7 @@ public class TradeApi {
         return build.getResponseCallback();
     }
     public CompletableFuture<UserDataStreamSubscribeResponse> userDataStreamSubscribe() {
-        String methodName = "/userDataStream.subscribe".substring(1);
+        String methodName = "/uuserDataStream.subscribe.signature".substring(1);
         ApiRequestWrapperDTO<BaseDTO, UserDataStreamSubscribeResponse> build =
                 new ApiRequestWrapperDTO.Builder<BaseDTO, UserDataStreamSubscribeResponse>()
                         .id(getRequestID())
