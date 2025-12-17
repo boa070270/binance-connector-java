@@ -212,8 +212,8 @@ public class TradeApi {
             handleNotReady();
             return;
         }
-        wrapperDTO.getParams().setTimestamp(Long.toString(System.currentTimeMillis()));
         if (wrapperDTO.isSigned()) {
+            wrapperDTO.getParams().setTimestamp(Long.toString(System.currentTimeMillis()));
             wrapperDTO.getParams().setApiKey(apiKey);
             String sign = wrapperDTO.getParams().toUrlQueryString();
             wrapperDTO.getParams().setSignature(signatureGenerator.signAsString(sign));
