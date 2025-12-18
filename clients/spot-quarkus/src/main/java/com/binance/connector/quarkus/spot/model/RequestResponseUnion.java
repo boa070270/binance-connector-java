@@ -20,7 +20,7 @@ public class RequestResponseUnion {
             Map.entry(BookTickerRequest.class.getSimpleName(), new DecodeJson<>(BookTickerResponse.class)),
             Map.entry(DepthRequest.class.getSimpleName(), new DecodeJson<>(DepthResponse.class)),
             Map.entry(DiffBookDepthRequest.class.getSimpleName(), new DecodeJson<>(DiffBookDepthResponse.class)),
-            Map.entry("exchangeInfo", new DecodeJson<>(ExchangeInfoResponse.class)),
+            Map.entry("exchangeInfo", new DecodeJson<>(ExchangeInfoResponse::fromMap)),
             Map.entry(KlineOffsetRequest.class.getSimpleName(), new DecodeJson<>(KlineOffsetResponse.class)),
             Map.entry(KlineRequest.class.getSimpleName(), new DecodeJson<>(KlineResponse.class)),
             Map.entry(KlinesRequest.class.getSimpleName(), new DecodeJson<>(KlinesResponse.class)),
@@ -71,10 +71,18 @@ public class RequestResponseUnion {
     );
     public static class DecodeJson<T extends BaseDTO> {
         Class<T> result;
+        Function<Map, T> map;
         DecodeJson(Class<T> clazz) {
             result = clazz;
         }
+        DecodeJson(Function<Map, T> fMap) {
+            map = fMap;
+        }
         public T decode(String s) {
+            if (map != null) {
+                Map m = Json.decodeValue(s, Map.class);
+                return map.apply(m);
+            }
             return Json.decodeValue(s, result);
         }
     }

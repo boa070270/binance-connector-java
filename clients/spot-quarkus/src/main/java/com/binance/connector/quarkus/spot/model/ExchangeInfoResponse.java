@@ -12,6 +12,8 @@
 
 package com.binance.connector.quarkus.spot.model;
 
+import com.binance.connector.quarkus.spot.domain.ExchangeInfo;
+import com.binance.connector.quarkus.spot.domain.filters.AbstractRateLimit;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.vertx.core.json.Json;
 
@@ -37,13 +39,13 @@ public class ExchangeInfoResponse extends BaseDTO {
 
     @JsonProperty(SERIALIZED_NAME_RESULT)
     
-    private ExchangeInfoResponseResult result;
+    private ExchangeInfo result;
 
     public static final String SERIALIZED_NAME_RATE_LIMITS = "rateLimits";
 
     @JsonProperty(SERIALIZED_NAME_RATE_LIMITS)
     
-    private List<RateLimits> rateLimits;
+    private List<AbstractRateLimit> rateLimits;
 
     public ExchangeInfoResponse() {}
 
@@ -86,7 +88,7 @@ public class ExchangeInfoResponse extends BaseDTO {
     }
 
     public ExchangeInfoResponse result(
-             ExchangeInfoResponseResult result) {
+            ExchangeInfo result) {
         this.result = result;
         return this;
     }
@@ -96,21 +98,21 @@ public class ExchangeInfoResponse extends BaseDTO {
      *
      * @return result
      */
-    public ExchangeInfoResponseResult getResult() {
+    public ExchangeInfo getResult() {
         return result;
     }
 
-    public void setResult( ExchangeInfoResponseResult result) {
+    public void setResult( ExchangeInfo result) {
         this.result = result;
     }
 
     public ExchangeInfoResponse rateLimits(
-             List<RateLimits> rateLimits) {
+            List<AbstractRateLimit> rateLimits) {
         this.rateLimits = rateLimits;
         return this;
     }
 
-    public ExchangeInfoResponse addRateLimitsItem(RateLimits rateLimitsItem) {
+    public ExchangeInfoResponse addRateLimitsItem(AbstractRateLimit rateLimitsItem) {
         if (this.rateLimits == null) {
             this.rateLimits = new ArrayList<>();
         }
@@ -123,68 +125,21 @@ public class ExchangeInfoResponse extends BaseDTO {
      *
      * @return rateLimits
      */
-    public List<RateLimits> getRateLimits() {
+    public List<AbstractRateLimit> getRateLimits() {
         return rateLimits;
     }
 
-    public void setRateLimits( List<RateLimits> rateLimits) {
+    public void setRateLimits( List<AbstractRateLimit> rateLimits) {
         this.rateLimits = rateLimits;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        ExchangeInfoResponse exchangeInfoResponse = (ExchangeInfoResponse) o;
-        return Objects.equals(this.id, exchangeInfoResponse.id)
-                && Objects.equals(this.status, exchangeInfoResponse.status)
-                && Objects.equals(this.result, exchangeInfoResponse.result)
-                && Objects.equals(this.rateLimits, exchangeInfoResponse.rateLimits);
+    public static ExchangeInfoResponse fromMap(Map<String, Object> map) {
+        ExchangeInfoResponse exchangeInfoResponse = new ExchangeInfoResponse();
+        exchangeInfoResponse.setId(map.get(SERIALIZED_NAME_ID).toString());
+        exchangeInfoResponse.setStatus(Long.valueOf(map.get(SERIALIZED_NAME_STATUS).toString()));
+        exchangeInfoResponse.setResult(ExchangeInfo.fromMap((Map<String, ?>) map.get(SERIALIZED_NAME_RESULT)));
+        List<AbstractRateLimit> rl = Arrays.stream(BinanceUtils.listToArray((List<Map<String,?>>) map.get("rateLimits"), AbstractRateLimit::fromMap, AbstractRateLimit[]::new, new AbstractRateLimit[0])).toList();
+        exchangeInfoResponse.setRateLimits(rl);
+        return exchangeInfoResponse;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, status, result, rateLimits);
-    }
-
-    public String toUrlQueryString() {
-        StringBuilder sb = new StringBuilder();
-        Map<String, String> valMap = new TreeMap<String, String>();
-        valMap.put("apiKey", getApiKey());
-        String idValue = getId();
-        if (idValue != null) {
-            String idValueAsString = idValue.toString();
-            valMap.put("id", idValueAsString);
-        }
-        Long statusValue = getStatus();
-        if (statusValue != null) {
-            String statusValueAsString = statusValue.toString();
-            valMap.put("status", statusValueAsString);
-        }
-        ExchangeInfoResponseResult resultValue = getResult();
-        if (resultValue != null) {
-            String resultValueAsString = Json.encode(resultValue);
-            valMap.put("result", resultValueAsString);
-        }
-        List<RateLimits> rateLimitsValue = getRateLimits();
-        if (rateLimitsValue != null) {
-            String rateLimitsValueAsString = Json.encode(rateLimitsValue);
-            valMap.put("rateLimits", rateLimitsValueAsString);
-        }
-
-        valMap.put("timestamp", getTimestamp());
-        return asciiEncode(
-                valMap.keySet().stream()
-                        .map(key -> key + "=" + valMap.get(key))
-                        .collect(Collectors.joining("&")));
-    }
-
-    public static String asciiEncode(String s) {
-        return new String(s.getBytes(), StandardCharsets.US_ASCII);
-    }
-
 }

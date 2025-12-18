@@ -13,7 +13,6 @@
 package com.binance.connector.quarkus.spot.api;
 
 import com.binance.connector.client.common.ApiException;
-import com.binance.connector.client.common.exception.ConstraintViolationException;
 import com.binance.connector.quarkus.spot.CryptoException;
 import com.binance.connector.quarkus.spot.KindOfResponseEnum;
 import com.binance.connector.quarkus.spot.SecurityKeysLoader;
@@ -28,13 +27,9 @@ import io.vertx.core.http.WebSocketClient;
 import io.vertx.core.http.WebSocketClientOptions;
 import io.vertx.core.json.Json;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validation;
-import jakarta.validation.Validator;
 import org.jboss.logging.Logger;
 
 import java.net.URI;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
@@ -49,9 +44,9 @@ public class TradeApi {
     private WebSocketClientOptions options;
     private WebSocketClient client;
     private WebSocket webSocket;
-    private boolean useTestNet = true;
-    private String endpointApi, endpointTest;
-    private String storeKey;
+    protected boolean useTestNet = true;
+    protected String endpointApi, endpointTest;
+    protected String storeKey;
     private boolean shuttingDown;
     private ConcurrentHashMap<Long, RequestWrapperDTO<?, ?>> pendingRequests = new ConcurrentHashMap<>();
     private BookTickersParser bookTickersParser = new BookTickersParser();
